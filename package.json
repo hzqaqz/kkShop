@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
@@ -15,6 +16,8 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "rollup": "npm:@rollup/wasm-node@^4.60.4"
+    "@cloudflare/vite-plugin": "^1.39.0",
+    "rollup": "npm:@rollup/wasm-node@^4.60.4",
+    "wrangler": "^4.95.0"
   }
 }
