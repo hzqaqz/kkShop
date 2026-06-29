@@ -130,7 +130,8 @@ img {
 
 .hero-carousel {
   position: relative;
-  min-height: 520px;
+  aspect-ratio: 16 / 9;
+  min-height: 360px;
   border-radius: 8px;
   background: #334c51;
   color: #fef5ed;
@@ -139,7 +140,7 @@ img {
 
 .carousel-track {
   display: flex;
-  min-height: 520px;
+  height: 100%;
   backface-visibility: hidden;
   transform-style: preserve-3d;
   /* 方案A：经典缓入缓出（最稳，不易掉帧） */
@@ -155,7 +156,7 @@ img {
   position: relative;
   display: block;
   flex: 0 0 100%;
-  min-height: 520px;
+  height: 100%;
   color: inherit;
   transform: translateZ(0);
 }
@@ -441,10 +442,8 @@ img {
     width: 100%;
   }
 
-  .hero-carousel,
-  .carousel-track,
-  .carousel-slide {
-    min-height: 480px;
+  .hero-carousel {
+    min-height: 390px;
   }
 
   .carousel-dots {
@@ -479,10 +478,8 @@ img {
     font-size: 13px;
   }
 
-  .hero-carousel,
-  .carousel-track,
-  .carousel-slide {
-    min-height: 430px;
+  .hero-carousel {
+    min-height: 360px;
   }
 
   .carousel-controls {

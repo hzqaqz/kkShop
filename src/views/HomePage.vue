@@ -8,18 +8,10 @@ const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
 
 const slides = [
-  {
-    title: 'Meower 100',
-    text: 'A compact fresh-air routine designed for everyday pet-friendly rooms.',
-    image: '/images/products/mw100/00-carousel.png',
-    to: mw100Route,
-  },
-  {
-    title: 'Meower 200',
-    text: 'Smart air purification for cat-and-dog-loving families with cleaner comfort.',
-    image: '/images/products/mw200/01-hero-overview.png',
-    to: mw200Route,
-  },
+  { image: '/images/carousel/轮播01.png', to: mw100Route },
+  { image: '/images/carousel/轮播02.png', to: mw200Route },
+  { image: '/images/carousel/轮播03.png', to: '#' },
+  { image: '/images/carousel/轮播04.png', to: '#' },
 ];
 
 const categories = [
@@ -127,14 +119,14 @@ onBeforeUnmount(() => {
     <section id="home" class="hero-carousel" aria-label="Product lifestyle scenes">
       <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
         <RouterLink
-          v-for="slide in slides"
-          :key="slide.title"
+          v-for="(slide, index) in slides"
+          :key="index"
           class="carousel-slide"
           :to="slide.to"
-          :aria-label="`View ${slide.title} details`"
+          :aria-label="slide.image"
         >
           <div class="slide-media">
-            <img :src="slide.image" :alt="slide.title" />
+            <img :src="slide.image" alt="" />
           </div>
         </RouterLink>
       </div>
@@ -151,7 +143,7 @@ onBeforeUnmount(() => {
       <div class="carousel-dots" aria-label="Choose slide">
         <button
           v-for="(slide, index) in slides"
-          :key="slide.title"
+          :key="index"
           class="dot"
           :class="{ active: currentSlide === index }"
           type="button"
