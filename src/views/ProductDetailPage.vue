@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 
 const route = useRoute();
@@ -22,7 +23,7 @@ const productDetails = {
         alt: 'MW100 features and filtration benefits',
       },
       {
-        src: '/images/products/mw100/04-hero-overview.png',
+        src: '/images/products/mw100/04-mw100-with-cat.png',
         alt: 'MW100 smart air purifier overview',
       },
     ],
@@ -49,8 +50,10 @@ const currentProduct = computed(() => productDetails[route.params.productId] ?? 
   <main class="site-shell product-page">
     <SiteHeader />
 
+    <Mw100ProductPage v-if="route.params.productId === 'mw100'" />
+
     <section
-      v-if="currentProduct"
+      v-else-if="currentProduct"
       class="product-detail-images"
       :aria-label="`${currentProduct.label} product details`"
     >

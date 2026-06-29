@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Now";
-  src: url("/fonts/Now-Regular.woff") format("woff");
-  font-weight: 400;
+  font-family: "Google Sans Flex";
+  src: url("/fonts/GoogleSansFlex-Variable.ttf") format("truetype");
+  font-weight: 100 1000;
   font-style: normal;
   font-display: swap;
 }
@@ -10,11 +10,16 @@
   color: #334c51;
   background: #fef5ed;
   font-family:
-    "Now", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
+  /* 统一定义：段落标题、小标题、正文 */
+  --title-size: clamp(30px, 4vw, 48px);
+  --subtitle-size: clamp(15px, 1.3vw, 22px);
+  --content-size: clamp(14px, 1vw, 16px);
 }
 
 * {
