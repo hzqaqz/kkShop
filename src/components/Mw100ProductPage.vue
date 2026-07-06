@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from 'vue';
 import {
   BedDouble,
   Fan,
@@ -10,6 +11,13 @@ import {
   Wind,
   Zap,
 } from 'lucide-vue-next';
+
+const props = defineProps({
+  productId: {
+    type: String,
+    default: 'mw100',
+  },
+});
 
 const spaces = [
   {
@@ -33,51 +41,149 @@ const spaces = [
   },
 ];
 
-const specs = [
+const productContent = {
+  mw100: {
+    name: 'Meower 100',
+    model: 'MW100',
+    heroImage: '/images/products/mw100/hero-scene.png',
+    heroDescription:
+      'Designed for pet-loving families with cleaner air, quieter comfort, and smarter control.',
+    heroFeatures: [
+      {
+        title: 'Smart App Control',
+        description: 'Control your air purifier anytime, anywhere.',
+        icon: Smartphone,
+      },
+      {
+        title: '3-Color Air Quality Indicator',
+        description: 'Real-time air quality feedback with a 3-color LED light.',
+        qualityRing: true,
+      },
+      {
+        title: '3-Stage Composite Filtration',
+        description: 'Captures particles and helps reduce odors for fresher air.',
+        icon: ShieldCheck,
+      },
+    ],
+    whyTagline: 'Cleaner Air. Happier Cats. Healthier Homes.',
+    whyIntro:
+      'Advanced filtration, smart control, and real-time quality feedback work together for a fresher, more comfortable home for every pet-loving family.',
+    benefits: [
+      {
+        title: 'Smart App Control',
+        description: 'Control your air purifier anytime, anywhere.',
+        icon: Smartphone,
+      },
+      {
+        title: '3-Color Air Quality Indicator',
+        description: 'Real-time air quality feedback with a 3-color LED light.',
+        qualityRing: true,
+      },
+      {
+        title: '3-Stage Composite Filtration',
+        description: 'Captures particles and helps reduce odors for fresher air.',
+        icon: ShieldCheck,
+      },
+    ],
+    specs: {
+      power: '36W',
+      cadr: '200 m³/h',
+      noise: '36-45 dB(A)',
+      fan: '3 Levels',
+      coverage: '20–30',
+    },
+    showClosing: true,
+  },
+  mw200: {
+    name: 'Meower 200',
+    model: 'MW200',
+    heroImage: '/images/products/mw200/hero-scene.png',
+    heroDescription:
+      'Designed for cat-and-dog-loving families with cleaner air, quieter comfort, and all-around purification.',
+    heroFeatures: [
+      {
+        title: '360° Air Intake',
+        description:
+          'Surrounding airflow helps capture airborne fur, dust, and everyday particles from every direction.',
+        icon: Smartphone,
+      },
+      {
+        title: 'Quiet Everyday Comfort',
+        description:
+          'Compact purification designed to blend into bedrooms, living rooms and pet spaces.',
+        qualityRing: true,
+      },
+      {
+        title: 'Pet-Friendly Fresh Air',
+        description: 'Helps reduce pet dander and odors for a cleaner, calmer home.',
+        icon: ShieldCheck,
+      },
+    ],
+    whyTagline: 'Cleaner Air. Smarter Comfort. Healthier Homes.',
+    whyIntro:
+      'Meower 200 is designed for cat-and-dog-loving families. Advanced purification, real-time intelligence, and quiet performance work together to create cleaner, fresher, more comfortable indoor air.',
+    benefits: [
+      {
+        title: 'Auto Mode Adjustment',
+        description: 'Automatically adjusts fan speed based on air quality.',
+        icon: Smartphone,
+      },
+      {
+        title: 'Real-Time Air Quality Monitoring',
+        description: 'Continuously monitors and displays air quality in real time.',
+        qualityRing: true,
+      },
+      {
+        title: 'Timer Shut-Off',
+        description: 'Set a schedule for automatic shut-off for peace of mind.',
+        icon: ShieldCheck,
+      },
+    ],
+    specs: {
+      power: '38W',
+      cadr: '400 m³/h',
+      noise: '36-50 dB(A)',
+      fan: '4 Levels',
+      coverage: '20–40',
+    },
+    showClosing: false,
+  },
+};
+
+const product = computed(() => productContent[props.productId] ?? productContent.mw100);
+
+const specs = computed(() => [
   {
     area: 'hepa',
     label: 'H13 HEPA',
     value: 'Captures 99.97% of particles as small as 0.3 microns.',
     icon: ShieldCheck,
   },
-  { area: 'power', label: 'Rated Power', value: '36W', icon: Zap },
-  { area: 'cadr', label: 'CADR (Particles)', value: '200 m³/h', icon: Wind },
-  { area: 'noise', label: 'Noise Level', value: '36-45 dB(A)', icon: Volume2 },
-  { area: 'fan', label: 'Fan Speeds', value: '3 Levels', icon: Fan },
-];
+  { area: 'power', label: 'Rated Power', value: product.value.specs.power, icon: Zap },
+  { area: 'cadr', label: 'CADR (Particles)', value: product.value.specs.cadr, icon: Wind },
+  { area: 'noise', label: 'Noise Level', value: product.value.specs.noise, icon: Volume2 },
+  { area: 'fan', label: 'Fan Speeds', value: product.value.specs.fan, icon: Fan },
+]);
 </script>
 
 <template>
-  <article class="mw100">
-    <section class="mw-hero" aria-labelledby="mw100-title">
+  <article class="mw100" :style="{ '--hero-image': `url(${product.heroImage})` }">
+    <section class="mw-hero" :aria-labelledby="`${product.model.toLowerCase()}-title`">
       <div class="hero-copy">
-        <h1 id="mw100-title">Meower 100</h1>
+        <h1 :id="`${product.model.toLowerCase()}-title`">{{ product.name }}</h1>
         <p class="hero-subtitle">Smart Air Purifier for Pet Homes</p>
-        <p class="hero-description">
-          Designed for pet-loving families with cleaner air, quieter comfort, and smarter control.
-        </p>
+        <p class="hero-description">{{ product.heroDescription }}</p>
       </div>
 
       <div class="hero-features" aria-label="Key features">
-        <div class="hero-feature">
-          <span class="round-icon"><Smartphone aria-hidden="true" /></span>
-          <span>
-            <strong>Smart App Control</strong>
-            <small>Control your air purifier anytime, anywhere.</small>
+        <div v-for="feature in product.heroFeatures" :key="feature.title" class="hero-feature">
+          <span class="round-icon">
+            <i v-if="feature.qualityRing" class="quality-ring" aria-hidden="true"></i>
+            <component v-else :is="feature.icon" aria-hidden="true" />
           </span>
-        </div>
-        <div class="hero-feature">
-          <span class="round-icon"><i class="quality-ring" aria-hidden="true"></i></span>
           <span>
-            <strong>3-Color Air Quality Indicator</strong>
-            <small>Real-time air quality feedback with a 3-color LED light.</small>
-          </span>
-        </div>
-        <div class="hero-feature">
-          <span class="round-icon"><ShieldCheck aria-hidden="true" /></span>
-          <span>
-            <strong>3-Stage Composite Filtration</strong>
-            <small>Captures particles and helps reduce odors for fresher air.</small>
+            <strong>{{ feature.title }}</strong>
+            <small>{{ feature.description }}</small>
           </span>
         </div>
       </div>
@@ -87,7 +193,7 @@ const specs = [
       <div class="section-heading">
         <h2 id="spaces-title">Perfect for Every<br />Pet-Friendly Space</h2>
         <p>
-          Meower 100 Air Purifier fits naturally into the places where pets and people spend the
+          {{ product.name }} Air Purifier fits naturally into the places where pets and people spend the
           most time.
         </p>
       </div>
@@ -99,7 +205,7 @@ const specs = [
           class="space-card"
           :class="{ 'bedroom-card': space.hasImageShadow }"
         >
-          <img :src="space.image" :alt="`Meower 100 in a ${space.title.toLowerCase()}`" />
+          <img :src="space.image" :alt="`${product.name} in a ${space.title.toLowerCase()}`" />
           <div class="space-copy">
             <span class="space-icon"><component :is="space.icon" aria-hidden="true" /></span>
             <span>
@@ -115,29 +221,19 @@ const specs = [
       <div class="why-layout">
         <div class="why-left">
           <div class="why-heading">
-            <h2 id="why-title">Why Meower 100</h2>
-            <p class="why-tagline">Cleaner Air. Happier Cats. Healthier Homes.</p>
-            <p class="why-intro">
-              Advanced filtration, smart control, and real-time quality feedback work together for
-              a fresher, more comfortable home for every pet-loving family.
-            </p>
+            <h2 id="why-title">Why {{ product.name }}</h2>
+            <p class="why-tagline">{{ product.whyTagline }}</p>
+            <p class="why-intro">{{ product.whyIntro }}</p>
           </div>
 
           <div class="benefit-grid">
-            <article class="benefit-card">
-              <span class="benefit-icon"><Smartphone aria-hidden="true" /></span>
-              <h3>Smart App Control</h3>
-              <p>Control your air purifier anytime, anywhere.</p>
-            </article>
-            <article class="benefit-card">
-              <span class="benefit-icon"><i class="quality-ring" aria-hidden="true"></i></span>
-              <h3>3-Color Air Quality Indicator</h3>
-              <p>Real-time air quality feedback with a 3-color LED light.</p>
-            </article>
-            <article class="benefit-card">
-              <span class="benefit-icon"><ShieldCheck aria-hidden="true" /></span>
-              <h3>3-Stage Composite Filtration</h3>
-              <p>Captures particles and helps reduce odors for fresher air.</p>
+            <article v-for="benefit in product.benefits" :key="benefit.title" class="benefit-card">
+              <span class="benefit-icon">
+                <i v-if="benefit.qualityRing" class="quality-ring" aria-hidden="true"></i>
+                <component v-else :is="benefit.icon" aria-hidden="true" />
+              </span>
+              <h3>{{ benefit.title }}</h3>
+              <p>{{ benefit.description }}</p>
             </article>
           </div>
 
@@ -167,7 +263,7 @@ const specs = [
           <img
             class="why-image bedroom-image-shadow"
             src="/images/products/mw100/bedroom.webp"
-            alt="Meower 100 beside a cat in a bright bedroom"
+            :alt="`${product.name} beside a cat in a bright bedroom`"
           />
           <div class="spec-grid">
             <article
@@ -184,7 +280,7 @@ const specs = [
             </article>
             <article class="coverage-card">
               <span class="coverage-label">Ideal for</span>
-              <strong>20–30&nbsp;m<sup>2</sup></strong>
+              <strong>{{ product.specs.coverage }}&nbsp;m<sup>2</sup></strong>
               <p>Perfect for bedrooms, living rooms, and home offices.</p>
             </article>
           </div>
@@ -192,7 +288,11 @@ const specs = [
       </div>
     </section>
 
-    <section class="closing-section" aria-labelledby="self-grooming-title">
+    <section
+      v-if="product.showClosing"
+      class="closing-section"
+      aria-labelledby="self-grooming-title"
+    >
       <img
         src="/images/products/mw100/04-mw100-with-cat.png"
         alt="MW100 smart air purifier with a cat"
@@ -246,7 +346,7 @@ const specs = [
   padding: clamp(130px, 11vw, 175px) max(5vw, calc((100vw - 1180px) / 2)) 64px;
   background:
     linear-gradient(90deg, rgba(255, 246, 232, 0.2), transparent 58%), 
-    url("/images/products/mw100/hero-scene.png") center / cover no-repeat;
+    var(--hero-image) center / cover no-repeat;
   overflow: hidden;
 }
 
