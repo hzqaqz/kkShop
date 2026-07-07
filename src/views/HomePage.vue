@@ -6,6 +6,10 @@ import SiteHeader from '../components/SiteHeader.vue';
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
+const commercialDehumidifierRoute = {
+  name: 'product-detail',
+  params: { productId: 'commercial-dehumidifier' },
+};
 
 const slides = [
   { image: '/images/carousel/轮播01.png', to: mw100Route },
@@ -17,7 +21,11 @@ const slides = [
 const categories = [
   { title: 'MW100', image: '/images/products/mw100/04-hero-overview.png', to: mw100Route },
   { title: 'MW200', image: '/images/products/mw200/01-hero-overview.png', to: mw200Route },
-  { title: 'Category 03', image: '/images/collection-gift.png', to: '#' },
+  {
+    title: 'Commercial Dehumidifier',
+    image: '/images/products/md0001/product-white.png',
+    to: commercialDehumidifierRoute,
+  },
   { title: 'Category 04', image: '/images/collection-limited.png', to: '#' },
   { title: 'Category 05', image: '/images/hero-lifestyle.png', to: '#' },
 ];
