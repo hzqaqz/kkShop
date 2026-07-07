@@ -4,10 +4,12 @@ import {
   BedDouble,
   Fan,
   PawPrint,
+  RefreshCw,
   ShieldCheck,
   Smartphone,
   Sofa,
   Volume2,
+  VolumeX,
   Wind,
   Zap,
 } from 'lucide-vue-next';
@@ -19,27 +21,18 @@ const props = defineProps({
   },
 });
 
-const spaces = [
-  {
-    title: 'Bedroom',
-    description: 'Quiet, comfortable purification for restful nights and fresher mornings.',
-    image: '/images/products/mw100/bedroom.webp',
-    icon: BedDouble,
-    hasImageShadow: true,
+const spaceImages = {
+  mw100: {
+    bedroom: '/images/products/mw100/bedroom.webp',
+    livingRoom: '/images/products/mw100/living-room.png',
+    petRoom: '/images/products/mw100/pet-room.webp',
   },
-  {
-    title: 'Living Room',
-    description: 'Keeps shared spaces feeling cleaner, calmer, and more comfortable every day.',
-    image: '/images/products/mw100/living-room.png',
-    icon: Sofa,
+  mw200: {
+    bedroom: '/images/products/mw200/space-bedroom.png',
+    livingRoom: '/images/products/mw200/space-living-room.png',
+    petRoom: '/images/products/mw200/space-pet-room.png',
   },
-  {
-    title: 'Pet Room',
-    description: 'Helps reduce pet dander and odors in the spaces your cats love most.',
-    image: '/images/products/mw100/pet-room.webp',
-    icon: PawPrint,
-  },
-];
+};
 
 const productContent = {
   mw100: {
@@ -105,13 +98,13 @@ const productContent = {
         title: '360° Air Intake',
         description:
           'Surrounding airflow helps capture airborne fur, dust, and everyday particles from every direction.',
-        icon: Smartphone,
+        icon: RefreshCw,
       },
       {
         title: 'Quiet Everyday Comfort',
         description:
           'Compact purification designed to blend into bedrooms, living rooms and pet spaces.',
-        qualityRing: true,
+        icon: VolumeX,
       },
       {
         title: 'Pet-Friendly Fresh Air',
@@ -151,6 +144,32 @@ const productContent = {
 };
 
 const product = computed(() => productContent[props.productId] ?? productContent.mw100);
+
+const spaces = computed(() => {
+  const images = spaceImages[props.productId] ?? spaceImages.mw100;
+
+  return [
+    {
+      title: 'Bedroom',
+      description: 'Quiet, comfortable purification for restful nights and fresher mornings.',
+      image: images.bedroom,
+      icon: BedDouble,
+      hasImageShadow: true,
+    },
+    {
+      title: 'Living Room',
+      description: 'Keeps shared spaces feeling cleaner, calmer, and more comfortable every day.',
+      image: images.livingRoom,
+      icon: Sofa,
+    },
+    {
+      title: 'Pet Room',
+      description: 'Helps reduce pet dander and odors in the spaces your cats love most.',
+      image: images.petRoom,
+      icon: PawPrint,
+    },
+  ];
+});
 
 const specs = computed(() => [
   {
@@ -351,7 +370,7 @@ const specs = computed(() => [
 }
 
 .hero-copy {
-  width: min(560px, 46vw);
+  width: min(610px, 49vw);
 }
 
 .hero-copy h1 {
@@ -399,7 +418,7 @@ const specs = computed(() => [
 }
 
 .hero-description {
-  max-width: 430px;
+  max-width: 540px;
 }
 
 .hero-features {
