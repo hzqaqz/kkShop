@@ -625,9 +625,15 @@ img {
   max-width: 480px;
 }
 
+.contact-copy .cooperation-intro {
+  margin-top: clamp(10px, 1.2vw, 16px);
+  margin-bottom: 0;
+}
+
 .cooperation-list {
   margin: 0;
-  padding-left: 34px;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 .contact-panel {
@@ -915,10 +921,6 @@ img {
   .contact-copy .contact-lead {
     margin-top: 22px;
     margin-bottom: 30px;
-  }
-
-  .cooperation-list {
-    padding-left: 28px;
   }
 
   .contact-panel h3 {

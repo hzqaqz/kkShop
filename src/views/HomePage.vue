@@ -208,7 +208,7 @@ onBeforeUnmount(() => {
           We provide residential and commercial air purification and humidity control solutions
           for distributors, retailers, contractors, and project buyers worldwide.
         </p>
-        <p>Our cooperation options include:</p>
+        <p class="cooperation-intro">Our cooperation options include:</p>
         <ul class="cooperation-list" aria-label="Cooperation options">
           <li>Wholesale and bulk orders</li>
           <li>OEM and ODM services</li>
