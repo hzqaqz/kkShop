@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
+import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
@@ -197,15 +197,48 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section id="dehumidifier" class="about-band" aria-label="Dehumidifier and About Us">
-      <div>
-        <p class="eyebrow">Air Purifiers & Dehumidifier</p>
-        <h2>Designed for cleaner air and calmer indoor comfort.</h2>
+    <section id="dehumidifier" class="about-band" aria-label="Contact us">
+      <span id="about" class="contact-anchor" aria-hidden="true"></span>
+      <div class="contact-copy">
+        <h2>Partner with Meower</h2>
+        <p class="contact-lead">
+          Looking for reliable air purifiers and dehumidifiers for your market?
+        </p>
+        <p>
+          We provide residential and commercial air purification and humidity control solutions
+          for distributors, retailers, contractors, and project buyers worldwide.
+        </p>
+        <p>Our cooperation options include:</p>
+        <ul class="cooperation-list" aria-label="Cooperation options">
+          <li>Wholesale and bulk orders</li>
+          <li>OEM and ODM services</li>
+          <li>Residential and commercial product solutions</li>
+          <li>Long-term distribution partnerships</li>
+          <li>Project-based product support</li>
+        </ul>
       </div>
-      <p id="about">
-        kkShop brings together practical air purifiers, dehumidifier solutions, and everyday care
-        guides for healthier-feeling home routines.
-      </p>
+
+      <div class="contact-panel">
+        <h3>Contact us to start your business inquiry today.</h3>
+        <ul class="contact-list" aria-label="Contact information">
+          <li>
+            <Mail :size="34" stroke-width="1.8" aria-hidden="true" />
+            <span>Email: info@meowerair.com</span>
+          </li>
+          <li>
+            <PhoneCall :size="34" stroke-width="2" aria-hidden="true" />
+            <span>Mobile: +86 1337 049 7731</span>
+          </li>
+          <li>
+            <MessageCircle :size="34" stroke-width="2" aria-hidden="true" />
+            <span>Whatsapp: 18902169202</span>
+          </li>
+          <li>
+            <House :size="34" stroke-width="2" aria-hidden="true" />
+            <span>Address: Beijing, China</span>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 </template>
