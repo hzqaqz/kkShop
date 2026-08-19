@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
+import { blogArticles } from '../data/blogArticles';
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
@@ -30,28 +31,7 @@ const categories = [
   { title: 'Category 05', image: '/images/hero-lifestyle.png', to: '#' },
 ];
 
-const blogs = [
-  {
-    title: 'How to place an air purifier in a bedroom',
-    text: 'Simple placement tips for quieter nights and better airflow.',
-    image: '/images/collection-daily.png',
-  },
-  {
-    title: 'When your home needs a dehumidifier',
-    text: 'Common signs of excess moisture and how to respond early.',
-    image: '/images/collection-gift.png',
-  },
-  {
-    title: 'Filter care for everyday performance',
-    text: 'A practical rhythm for keeping fresh air routines consistent.',
-    image: '/images/collection-limited.png',
-  },
-  {
-    title: 'Creating a fresher family living room',
-    text: 'Small changes that help shared spaces feel lighter and cleaner.',
-    image: '/images/hero-lifestyle.png',
-  },
-];
+const featuredBlogs = blogArticles.slice(0, 4);
 
 const currentSlide = ref(0);
 let slideTimer;
@@ -183,17 +163,21 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="blog-grid">
-        <article v-for="item in blogs" :key="item.title" class="blog-card">
-          <img :src="item.image" :alt="item.title" />
+        <RouterLink
+          v-for="item in featuredBlogs"
+          :key="item.slug"
+          class="blog-card blog-card-link"
+          :to="{ name: 'blog-detail', params: { slug: item.slug } }"
+        >
+          <img :src="item.coverImage" :alt="item.title" />
           <div class="blog-card-copy">
             <h3>{{ item.title }}</h3>
-            <p>{{ item.text }}</p>
           </div>
-        </article>
+        </RouterLink>
       </div>
 
       <div class="more-row">
-        <a class="more-button" href="#">More</a>
+        <RouterLink class="more-button" :to="{ name: 'blogs' }">More</RouterLink>
       </div>
     </section>
 

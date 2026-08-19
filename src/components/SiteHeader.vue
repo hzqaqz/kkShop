@@ -47,7 +47,7 @@ const menuPanels = {
 const navItems = [
   { label: 'Air Purifiers', menu: 'airPurifiers' },
   { label: 'Dehumidifier', menu: 'dehumidifier' },
-  { label: 'Blogs' },
+  { label: 'Blogs', to: { name: 'blogs' } },
   { label: 'About Us' },
 ];
 
@@ -115,6 +115,15 @@ onBeforeUnmount(() => {
         >
           {{ item.label }}
         </button>
+        <RouterLink
+          v-else-if="item.to"
+          class="nav-label"
+          :to="item.to"
+          @click="closeMenu"
+          @mouseenter="closeMenu"
+        >
+          {{ item.label }}
+        </RouterLink>
         <span v-else class="nav-label" @mouseenter="closeMenu">{{ item.label }}</span>
       </div>
     </nav>
