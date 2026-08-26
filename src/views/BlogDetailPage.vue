@@ -18,7 +18,7 @@ const renderedContent = computed(() => (article.value ? markdown.render(article.
     <article v-if="article" class="blog-detail" :aria-label="article.title">
       <RouterLink class="blog-back-link" :to="{ name: 'blogs' }">Back to blogs</RouterLink>
 
-      <time class="blog-detail-date" :datetime="article.date">{{ article.date }}</time>
+      <time v-if="article.date" class="blog-detail-date" :datetime="article.date">{{ article.date }}</time>
       <div class="blog-detail-body" v-html="renderedContent" />
     </article>
 

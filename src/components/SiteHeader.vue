@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
+import { blogArticles } from '../data/blogArticles';
 
 const SCROLL_FADE_DISTANCE = 120;
 
@@ -15,24 +16,24 @@ const menuPanels = {
     categories: [
       {
         id: 'home',
-        label: '家用',
+        label: 'Home Use',
         links: [
           { label: 'MW100', to: { name: 'product-detail', params: { productId: 'mw100' } } },
           { label: 'MW200', to: { name: 'product-detail', params: { productId: 'mw200' } } },
         ],
       },
-      { id: 'commercial', label: '商用', links: [] },
-      { id: 'filter', label: '滤网', links: [] },
+      { id: 'commercial', label: 'Commercial Use', links: [] },
+      { id: 'filter', label: 'Filters', links: [] },
     ],
   },
   dehumidifier: {
     eyebrow: 'Dehumidifier',
     title: 'Shop Dehumidifiers',
     categories: [
-      { id: 'home', label: '家用', links: [] },
+      { id: 'home', label: 'Home Use', links: [] },
       {
         id: 'commercial',
-        label: '商用',
+        label: 'Commercial Use',
         links: [
           {
             label: 'Commercial Dehumidifier',
@@ -46,12 +47,17 @@ const menuPanels = {
 
 const navItems = [
   { label: 'Air Purifiers', menu: 'airPurifiers' },
-  { label: 'Dehumidifier', menu: 'dehumidifier' },
-  { label: 'Blogs', to: { name: 'blogs' } },
+  { label: 'Dehumidifiers', menu: 'dehumidifier' },
+  { label: 'Blogs', menu: 'blogs' },
   { label: 'About Us' },
 ];
 
 const activeMenuPanel = computed(() => (activeMenu.value ? menuPanels[activeMenu.value] : null));
+const recentBlogs = computed(() =>
+  [...blogArticles]
+    .sort((first, second) => (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''))
+    .slice(0, 9),
+);
 const activeCategoryPanel = computed(() => {
   if (!activeMenuPanel.value) {
     return null;
@@ -65,7 +71,7 @@ const activeCategoryPanel = computed(() => {
 
 function openMenu(menu) {
   activeMenu.value = menu ?? null;
-  activeCategory.value = activeMenuPanel.value?.categories[0]?.id ?? null;
+  activeCategory.value = activeMenuPanel.value?.categories?.[0]?.id ?? null;
 }
 
 function closeMenu() {
@@ -112,6 +118,7 @@ onBeforeUnmount(() => {
           :aria-label="`${item.label} products`"
           @focus="openMenu(item.menu)"
           @mouseenter="openMenu(item.menu)"
+          @click="openMenu(item.menu)"
         >
           {{ item.label }}
         </button>
@@ -129,7 +136,29 @@ onBeforeUnmount(() => {
     </nav>
 
     <Transition name="mega-menu">
-      <div v-if="activeMenuPanel" class="mega-menu" role="region" :aria-label="activeMenuPanel.title">
+      <div
+        v-if="activeMenu === 'blogs'"
+        class="mega-menu mega-menu--blogs"
+        role="region"
+        aria-label="Recent blogs"
+      >
+        <div class="mega-menu-inner">
+          <p class="mega-menu-eyebrow">Latest insights</p>
+          <div class="mega-blog-grid">
+            <RouterLink
+              v-for="article in recentBlogs"
+              :key="article.slug"
+              class="mega-blog-card"
+              :to="{ name: 'blog-detail', params: { slug: article.slug } }"
+              @click="closeMenu"
+            >
+              <img :src="article.coverImage" :alt="article.title" />
+              <span>{{ article.title }}</span>
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+      <div v-else-if="activeMenuPanel" class="mega-menu" role="region" :aria-label="activeMenuPanel.title">
         <div class="mega-menu-inner">
           <p class="mega-menu-eyebrow">{{ activeMenuPanel.eyebrow }}</p>
           <div class="mega-menu-content">

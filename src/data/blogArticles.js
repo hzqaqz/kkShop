@@ -197,6 +197,110 @@ Place air care products where airflow is open, clean soft surfaces regularly, an
 
 A consistent routine matters more than a complicated one. Pair regular cleaning with steady purification or humidity control to make the main room feel ready for daily life.`,
   },
+  {
+    slug: 'overcoming-the-ac-misconception',
+    title: 'Overcoming the AC Misconception',
+    sortDate: '2026-08-26',
+    coverImage: '/images/blogs/new/ac-dry-mode-dehumidifier.png',
+    heroImage: '/images/blogs/new/ac-dry-mode-dehumidifier.png',
+    contentMarkdown: `# Overcoming the AC Misconception
+
+## Why a Dry Mode Is Not the Same as Dedicated Dehumidification
+
+“My AC has a dry mode, so why do I need a dedicated dehumidifier?” It is one of the most common questions in indoor air treatment.
+
+The key difference is control. Air conditioners are primarily driven by **temperature**, not humidity. Once a room reaches its set temperature, the AC compressor can cycle off even if moisture is still trapped in the air.
+
+During humid seasons and rainy nights, a room can feel cool while relative humidity stays above 60%. That is the range where damp surfaces are more likely to support mold growth and where indoor air quality can become harder to manage.
+
+## Control Humidity Independently of Temperature
+
+A dedicated dehumidifier is engineered to maintain a stable humidity target regardless of whether the room needs more cooling. It removes excess moisture while helping you keep indoor conditions in a healthier, more comfortable range.
+
+For a resilient indoor air strategy, use air conditioning for temperature control and dedicated dehumidification when moisture remains the weak link.`,
+  },
+  {
+    slug: 'property-management-asset-protection',
+    title: 'Property Management & Asset Protection',
+    sortDate: '2026-08-19',
+    coverImage: '/images/blogs/new/property-asset-protection.png',
+    heroImage: '/images/blogs/new/property-asset-protection.png',
+    contentMarkdown: `# Property Management & Asset Protection
+
+## A Dehumidifier Is More Than a Comfort Appliance
+
+From a property management perspective, a dehumidifier is an asset protection tool. Peeling drywall, warped hardwood floors and persistent musty basement odors are often signs that moisture has been left unmanaged for too long.
+
+Moisture-related structural damage can lead to costly repairs and mold remediation. The good news is that many of these risks can be reduced before they become visible.
+
+## Match Equipment to the Building
+
+Choose equipment by matching the size and use of the space with dehumidification capacity and airflow. A properly sized unit helps suppress moisture risks in basements, storage areas and other spaces where damp conditions can threaten building materials.
+
+High-efficiency dehumidification is not simply a comfort expense. It is a practical, proactive approach to protecting property value and maintenance budgets.`,
+  },
+  {
+    slug: 'humidity-science-mold-control',
+    title: 'Data-Driven Science for Mold Control',
+    sortDate: '2026-08-19',
+    coverImage: '/images/blogs/new/humidity-science.png',
+    heroImage: '/images/blogs/new/humidity-science.png',
+    contentMarkdown: `# Data-Driven Science for Mold Control
+
+## The Humidity Threshold That Matters
+
+Mold spores exist in many indoor environments, but moisture is the condition that allows them to become a larger problem. When relative humidity is kept below 50%, indoor conditions are much less favorable for mold growth.
+
+As humidity remains above 60%, damp surfaces and stagnant spaces can create a more supportive environment for spores, allergens and musty odors.
+
+## Keep Indoor Air in a Healthier Range
+
+Controlling temperature or changing a building’s materials can be difficult. Controlling moisture is often more direct. A correctly sized dehumidifier can help maintain a relative humidity target in the 30%–50% range.
+
+Capacity is usually measured in liters or pints per day, while airflow determines how effectively the unit can circulate air through the room. Together, these specifications help create a more stable indoor environment.`,
+  },
+  {
+    slug: 'how-humid-air-affects-pets',
+    title: 'How Humid Air Affects Pets',
+    sortDate: '2026-07-14',
+    coverImage: '/images/blogs/new/pet-humidity-air-quality.png',
+    heroImage: '/images/blogs/new/pet-humidity-air-quality.png',
+    contentMarkdown: `# How Humid Air Affects Pets
+
+## A Healthier Home for Pets Starts With Humidity Control
+
+Cats and dogs breathe the same indoor air we do, but they also spend more time close to carpets, floors, pet beds and soft furnishings where dust and moisture can collect. A damp home can affect their comfort, breathing, skin, coat and bedding.
+
+High humidity creates conditions that encourage mold, dust mites, bacteria and unpleasant odors. It may not act like a single toxic pollutant, but it can make other indoor triggers more persistent.
+
+## A Combined Air-Care Approach
+
+A dehumidifier helps reduce excess moisture, while an air purifier helps capture airborne particles such as pet dander, dust and allergens. Together with regular cleaning and ventilation, they can support a fresher, more comfortable home for pets.`,
+  },
+  {
+    slug: 'how-indoor-air-quality-affects-your-pets',
+    title: 'How Indoor Air Quality Affects Your Pets',
+    sortDate: '2026-08-26',
+    coverImage: '/images/blogs/new/pet-indoor-air-quality.png',
+    heroImage: '/images/blogs/new/pet-indoor-air-quality.png',
+    contentMarkdown: `# How Indoor Air Quality Affects Your Pets
+
+## Your Pet Spends the Most Time at Home
+
+For many pets, home is where they spend the greatest part of every day. They sleep near the floor, rest in beds and blankets, and breathe the same indoor air as the rest of the family. That makes indoor air quality an important part of everyday pet wellbeing.
+
+## Why Damp Air Can Be Hard on Pets
+
+Humid air can feel heavy and uncomfortable, especially in warm weather. When moisture stays elevated, it can make it harder for pets to cool themselves and may worsen stuffiness in rooms with poor airflow. Keeping humidity balanced helps create a more comfortable place to rest and play.
+
+## Dust Mites, Mold and Other Indoor Triggers
+
+Dust mites and mold thrive more easily in damp environments. They can gather in carpets, fabric furniture, pet beds and corners with limited ventilation. For sensitive pets, these indoor triggers may contribute to coughing, sneezing, watery eyes, skin discomfort or irritation.
+
+## Simple Steps for Cleaner Pet Air
+
+Use a dehumidifier to manage excess moisture, choose an air purifier that can circulate the room effectively, and clean pet bedding and soft surfaces regularly. Fresh airflow, routine cleaning and balanced humidity work together to support a healthier indoor space for every member of the household—including the ones with paws.`,
+  },
 ];
 
 export function getBlogArticle(slug) {
