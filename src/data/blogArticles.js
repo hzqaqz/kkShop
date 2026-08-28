@@ -213,6 +213,8 @@ The key difference is control. Air conditioners are primarily driven by **temper
 
 During humid seasons and rainy nights, a room can feel cool while relative humidity stays above 60%. That is the range where damp surfaces are more likely to support mold growth and where indoor air quality can become harder to manage.
 
+![Meower dehumidifier moisture-control cycle](/images/blogs/new/ac-dry-mode-dehumidifier.png)
+
 ## Control Humidity Independently of Temperature
 
 A dedicated dehumidifier is engineered to maintain a stable humidity target regardless of whether the room needs more cooling. It removes excess moisture while helping you keep indoor conditions in a healthier, more comfortable range.
@@ -232,6 +234,8 @@ For a resilient indoor air strategy, use air conditioning for temperature contro
 From a property management perspective, a dehumidifier is an asset protection tool. Peeling drywall, warped hardwood floors and persistent musty basement odors are often signs that moisture has been left unmanaged for too long.
 
 Moisture-related structural damage can lead to costly repairs and mold remediation. The good news is that many of these risks can be reduced before they become visible.
+
+![Meower dehumidifier protecting a storage space](/images/blogs/new/property-asset-protection.png)
 
 ## Match Equipment to the Building
 
@@ -253,6 +257,8 @@ Mold spores exist in many indoor environments, but moisture is the condition tha
 
 As humidity remains above 60%, damp surfaces and stagnant spaces can create a more supportive environment for spores, allergens and musty odors.
 
+![Indoor humidity control and mold prevention](/images/blogs/new/humidity-science.png)
+
 ## Keep Indoor Air in a Healthier Range
 
 Controlling temperature or changing a building’s materials can be difficult. Controlling moisture is often more direct. A correctly sized dehumidifier can help maintain a relative humidity target in the 30%–50% range.
@@ -272,6 +278,8 @@ Capacity is usually measured in liters or pints per day, while airflow determine
 Cats and dogs breathe the same indoor air we do, but they also spend more time close to carpets, floors, pet beds and soft furnishings where dust and moisture can collect. A damp home can affect their comfort, breathing, skin, coat and bedding.
 
 High humidity creates conditions that encourage mold, dust mites, bacteria and unpleasant odors. It may not act like a single toxic pollutant, but it can make other indoor triggers more persistent.
+
+![Meower air care appliances in a pet-friendly home](/images/blogs/new/pet-humidity-air-quality.png)
 
 ## A Combined Air-Care Approach
 
@@ -296,6 +304,8 @@ Humid air can feel heavy and uncomfortable, especially in warm weather. When moi
 ## Dust Mites, Mold and Other Indoor Triggers
 
 Dust mites and mold thrive more easily in damp environments. They can gather in carpets, fabric furniture, pet beds and corners with limited ventilation. For sensitive pets, these indoor triggers may contribute to coughing, sneezing, watery eyes, skin discomfort or irritation.
+
+![Meower air purifier and dehumidifier supporting pet air quality](/images/blogs/new/pet-indoor-air-quality.png)
 
 ## Simple Steps for Cleaner Pet Air
 

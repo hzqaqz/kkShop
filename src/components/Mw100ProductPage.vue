@@ -39,6 +39,7 @@ const productContent = {
     name: 'Meower 100',
     model: 'MW100',
     heroImage: '/images/products/mw100/hero-scene.png',
+    whyImage: '/images/products/mw100/bedroom.webp',
     heroDescription:
       'Designed for pet-loving families with cleaner air, quieter comfort, and smarter control.',
     heroFeatures: [
@@ -90,7 +91,8 @@ const productContent = {
   mw200: {
     name: 'Meower 200',
     model: 'MW200',
-    heroImage: '/images/products/mw200/hero-scene.png',
+    heroImage: '/images/products/mw200/mw200-detail-hero.png',
+    whyImage: '/images/products/mw200/mw200-why-image.png',
     heroDescription:
       'Designed for cat-and-dog-loving families with cleaner air, quieter comfort, and all-around purification.',
     heroFeatures: [
@@ -186,7 +188,11 @@ const specs = computed(() => [
 </script>
 
 <template>
-  <article class="mw100" :style="{ '--hero-image': `url(${product.heroImage})` }">
+  <article
+    class="mw100"
+    :class="`mw100--${product.model.toLowerCase()}`"
+    :style="{ '--hero-image': `url(${product.heroImage})` }"
+  >
     <section class="mw-hero" :aria-labelledby="`${product.model.toLowerCase()}-title`">
       <div class="hero-copy">
         <h1 :id="`${product.model.toLowerCase()}-title`">{{ product.name }}</h1>
@@ -281,8 +287,8 @@ const specs = computed(() => [
         <div class="why-right">
           <img
             class="why-image bedroom-image-shadow"
-            src="/images/products/mw100/bedroom.webp"
-            :alt="`${product.name} beside a cat in a bright bedroom`"
+            :src="product.whyImage"
+            :alt="`${product.name} in a pet-friendly living room`"
           />
           <div class="spec-grid">
             <article
@@ -899,6 +905,36 @@ const specs = computed(() => [
 }
 
 @media (min-width: 901px) {
+  .mw100--mw200 .hero-features {
+    width: min(350px, 28vw);
+    margin: clamp(56px, 6vw, 88px) 0 0;
+  }
+
+  .mw100--mw200 .hero-feature {
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    min-height: 82px;
+    padding: 12px 18px;
+  }
+
+  .mw100--mw200 .round-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .mw100--mw200 .round-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .mw100--mw200 .hero-feature strong {
+    font-size: 15px;
+  }
+
+  .mw100--mw200 .hero-feature small {
+    font-size: 12px;
+  }
+
   .why-left {
     grid-template-rows: auto auto minmax(0, 1fr);
     align-content: stretch;

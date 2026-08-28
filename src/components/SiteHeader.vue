@@ -18,8 +18,16 @@ const menuPanels = {
         id: 'home',
         label: 'Home Use',
         links: [
-          { label: 'MW100', to: { name: 'product-detail', params: { productId: 'mw100' } } },
-          { label: 'MW200', to: { name: 'product-detail', params: { productId: 'mw200' } } },
+          {
+            label: 'MW100',
+            image: '/images/products/navigation/mw100-transparent.png',
+            to: { name: 'product-detail', params: { productId: 'mw100' } },
+          },
+          {
+            label: 'MW200',
+            image: '/images/products/navigation/mw200-transparent.png',
+            to: { name: 'product-detail', params: { productId: 'mw200' } },
+          },
         ],
       },
       { id: 'commercial', label: 'Commercial Use', links: [] },
@@ -30,14 +38,30 @@ const menuPanels = {
     eyebrow: 'Dehumidifier',
     title: 'Shop Dehumidifiers',
     categories: [
-      { id: 'home', label: 'Home Use', links: [] },
+      {
+        id: 'home',
+        label: 'Home Use',
+        links: [
+          {
+            label: 'MD001 Dehumidifier',
+            image: '/images/products/md001/product-transparent.png',
+            to: { name: 'product-detail', params: { productId: 'md001' } },
+          },
+        ],
+      },
       {
         id: 'commercial',
         label: 'Commercial Use',
         links: [
           {
             label: 'Commercial Dehumidifier',
+            image: '/images/products/navigation/md0001-transparent.png',
             to: { name: 'product-detail', params: { productId: 'commercial-dehumidifier' } },
+          },
+          {
+            label: 'Ceiling-Mounted Dehumidifier',
+            image: '/images/products/navigation/md0002-transparent.png',
+            to: { name: 'product-detail', params: { productId: 'ceiling-mounted-dehumidifier' } },
           },
         ],
       },
@@ -46,10 +70,18 @@ const menuPanels = {
 };
 
 const navItems = [
-  { label: 'Air Purifiers', menu: 'airPurifiers' },
-  { label: 'Dehumidifiers', menu: 'dehumidifier' },
-  { label: 'Blogs', menu: 'blogs' },
-  { label: 'About Us' },
+  {
+    label: 'Air Purifiers',
+    menu: 'airPurifiers',
+    to: { name: 'products', hash: '#home-air-purifiers' },
+  },
+  {
+    label: 'Dehumidifiers',
+    menu: 'dehumidifier',
+    to: { name: 'products', hash: '#home-dehumidifiers' },
+  },
+  { label: 'Blogs', menu: 'blogs', to: { name: 'blogs' } },
+  { label: 'About Us', to: { name: 'about' } },
 ];
 
 const activeMenuPanel = computed(() => (activeMenu.value ? menuPanels[activeMenu.value] : null));
@@ -110,8 +142,19 @@ onBeforeUnmount(() => {
 
     <nav class="nav-links" aria-label="Primary navigation">
       <div v-for="item in navItems" :key="item.label" class="nav-item">
+        <RouterLink
+          v-if="item.to"
+          class="nav-label"
+          :to="item.to"
+          :aria-expanded="item.menu ? activeMenu === item.menu : undefined"
+          @focus="item.menu ? openMenu(item.menu) : closeMenu()"
+          @mouseenter="item.menu ? openMenu(item.menu) : closeMenu()"
+          @click="closeMenu"
+        >
+          {{ item.label }}
+        </RouterLink>
         <button
-          v-if="item.menu"
+          v-else-if="item.menu"
           class="nav-trigger"
           type="button"
           :aria-expanded="activeMenu === item.menu"
@@ -122,15 +165,6 @@ onBeforeUnmount(() => {
         >
           {{ item.label }}
         </button>
-        <RouterLink
-          v-else-if="item.to"
-          class="nav-label"
-          :to="item.to"
-          @click="closeMenu"
-          @mouseenter="closeMenu"
-        >
-          {{ item.label }}
-        </RouterLink>
         <span v-else class="nav-label" @mouseenter="closeMenu">{{ item.label }}</span>
       </div>
     </nav>
@@ -180,12 +214,13 @@ onBeforeUnmount(() => {
               <h2>{{ activeCategoryPanel?.label }}</h2>
               <RouterLink
                 v-for="link in activeCategoryPanel?.links"
-                :key="link.label"
-                class="mega-menu-link"
+              :key="link.label"
+                class="mega-product-card"
                 :to="link.to"
                 @click="closeMenu"
               >
-                {{ link.label }}
+                <img :src="link.image" :alt="link.label" />
+                <span>{{ link.label }}</span>
               </RouterLink>
               <p v-if="!activeCategoryPanel?.links.length" class="mega-menu-empty">Coming soon</p>
             </div>

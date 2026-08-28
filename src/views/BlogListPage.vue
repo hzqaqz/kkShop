@@ -1,7 +1,14 @@
 <script setup>
+import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import SiteHeader from '../components/SiteHeader.vue';
 import { blogArticles } from '../data/blogArticles';
+
+const sortedBlogArticles = computed(() =>
+  [...blogArticles].sort((first, second) =>
+    (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''),
+  ),
+);
 </script>
 
 <template>
@@ -16,7 +23,7 @@ import { blogArticles } from '../data/blogArticles';
     <section class="section blog-list-section" aria-label="Blog articles">
       <div class="blog-grid blog-list-grid">
         <RouterLink
-          v-for="article in blogArticles"
+          v-for="article in sortedBlogArticles"
           :key="article.slug"
           class="blog-card blog-card-link"
           :to="{ name: 'blog-detail', params: { slug: article.slug } }"

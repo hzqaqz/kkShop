@@ -1,7 +1,9 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
+import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 
@@ -18,6 +20,14 @@ const productDetails = {
     label: 'Commercial Dehumidifier',
     page: 'commercial',
   },
+  'ceiling-mounted-dehumidifier': {
+    label: 'Ceiling-Mounted Dehumidifier',
+    page: 'ceiling-mounted',
+  },
+  md001: {
+    label: 'MD001 Dehumidifier',
+    page: 'md001',
+  },
 };
 
 const currentProduct = computed(() => productDetails[route.params.productId] ?? null);
@@ -31,6 +41,10 @@ const currentProduct = computed(() => productDetails[route.params.productId] ?? 
     <SiteHeader />
 
     <CommercialDehumidifierPage v-if="currentProduct?.page === 'commercial'" />
+
+    <CeilingMountedDehumidifierPage v-else-if="currentProduct?.page === 'ceiling-mounted'" />
+
+    <Md001DehumidifierPage v-else-if="currentProduct?.page === 'md001'" />
 
     <Mw100ProductPage
       v-else-if="currentProduct"

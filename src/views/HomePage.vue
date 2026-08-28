@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
@@ -7,31 +7,39 @@ import { blogArticles } from '../data/blogArticles';
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
-const commercialDehumidifierRoute = {
-  name: 'product-detail',
-  params: { productId: 'commercial-dehumidifier' },
-};
 
 const slides = [
-  { image: '/images/carousel/轮播01.png', to: mw100Route },
-  { image: '/images/carousel/轮播02.png', to: mw200Route },
+  { image: '/images/carousel/meower-air-purifier.jpg', to: mw200Route },
+  { image: '/images/carousel/meower-100-carousel.png', to: mw100Route },
   { image: '/images/carousel/轮播03.png', to: '#' },
-  { image: '/images/carousel/轮播04.png', to: '#' },
+  { image: '/images/carousel/轮播02.png', to: '#' },
 ];
 
 const categories = [
-  { title: 'MW100', image: '/images/products/mw100/04-hero-overview.png', to: mw100Route },
-  { title: 'MW200', image: '/images/products/mw200/01-hero-overview.png', to: mw200Route },
+  {
+    title: 'Home Use Air Purifier',
+    image: '/images/categories/home-use-air-purifier.png',
+    to: { name: 'products', hash: '#home-air-purifiers' },
+  },
+  {
+    title: 'Home Use Dehumidifier',
+    image: '/images/categories/home-use-dehumidifier.png',
+    to: { name: 'products', hash: '#home-dehumidifiers' },
+  },
   {
     title: 'Commercial Dehumidifier',
-    image: '/images/products/md0001/product-white.png',
-    to: commercialDehumidifierRoute,
+    image: '/images/categories/commercial-dehumidifier.png',
+    to: { name: 'products', hash: '#commercial-dehumidifiers' },
   },
-  { title: 'Category 04', image: '/images/collection-limited.png', to: '#' },
-  { title: 'Category 05', image: '/images/hero-lifestyle.png', to: '#' },
 ];
 
-const featuredBlogs = blogArticles.slice(0, 4);
+const featuredBlogs = computed(() =>
+  [...blogArticles]
+    .sort((first, second) =>
+      (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''),
+    )
+    .slice(0, 4),
+);
 
 const currentSlide = ref(0);
 let slideTimer;
@@ -143,9 +151,9 @@ onBeforeUnmount(() => {
     </section>
 
     <section id="air-purifiers" class="section category-section" aria-labelledby="category-title">
-      <div class="section-heading">
+      <div class="section-heading centered">
         <p class="eyebrow">Shop by category</p>
-        <h2 id="category-title">Find the right air care fit</h2>
+        <h2 id="category-title">Find The Right Air Care Fit</h2>
       </div>
 
       <div class="category-grid">
@@ -181,47 +189,53 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section id="dehumidifier" class="about-band" aria-label="Contact us">
+    <section id="dehumidifier" class="section partner-section" aria-labelledby="contact-title">
       <span id="about" class="contact-anchor" aria-hidden="true"></span>
-      <div class="contact-copy">
-        <h2>Partner with Meower</h2>
-        <p class="contact-lead">
-          Looking for reliable air purifiers and dehumidifiers for your market?
-        </p>
-        <p>
-          We provide residential and commercial air purification and humidity control solutions
-          for distributors, retailers, contractors, and project buyers worldwide.
-        </p>
-        <p class="cooperation-intro">Our cooperation options include:</p>
-        <ul class="cooperation-list" aria-label="Cooperation options">
-          <li>Wholesale and bulk orders</li>
-          <li>OEM and ODM services</li>
-          <li>Residential and commercial product solutions</li>
-          <li>Long-term distribution partnerships</li>
-          <li>Project-based product support</li>
-        </ul>
+      <div class="section-heading centered">
+        <p class="eyebrow">Partner with Meower</p>
+        <h2 id="contact-title">Contact Us</h2>
       </div>
 
-      <div class="contact-panel">
-        <h3>Contact us to start your business inquiry today.</h3>
-        <ul class="contact-list" aria-label="Contact information">
-          <li>
-            <Mail :size="34" stroke-width="1.8" aria-hidden="true" />
-            <span>Email: info@meowerair.com</span>
-          </li>
-          <li>
-            <PhoneCall :size="34" stroke-width="2" aria-hidden="true" />
-            <span>Mobile: +86 1337 049 7731</span>
-          </li>
-          <li>
-            <MessageCircle :size="34" stroke-width="2" aria-hidden="true" />
-            <span>Whatsapp: 18902169202</span>
-          </li>
-          <li>
-            <House :size="34" stroke-width="2" aria-hidden="true" />
-            <span>Address: Beijing, China</span>
-          </li>
-        </ul>
+      <div class="about-band">
+        <div class="contact-copy">
+          <p class="contact-lead">
+            Looking for reliable air purifiers and dehumidifiers for your market?
+          </p>
+          <p>
+            We provide residential and commercial air purification and humidity control solutions
+            for distributors, retailers, contractors, and project buyers worldwide.
+          </p>
+          <p class="cooperation-intro">Our cooperation options include:</p>
+          <ul class="cooperation-list" aria-label="Cooperation options">
+            <li>Wholesale and bulk orders</li>
+            <li>OEM and ODM services</li>
+            <li>Residential and commercial product solutions</li>
+            <li>Long-term distribution partnerships</li>
+            <li>Project-based product support</li>
+          </ul>
+        </div>
+
+        <div class="contact-panel">
+          <h3>Contact us to start your business inquiry today.</h3>
+          <ul class="contact-list" aria-label="Contact information">
+            <li>
+              <Mail :size="34" stroke-width="1.8" aria-hidden="true" />
+              <span>Email: info@meowerair.com</span>
+            </li>
+            <li>
+              <PhoneCall :size="34" stroke-width="2" aria-hidden="true" />
+              <span>Mobile: +86 1337 049 7731</span>
+            </li>
+            <li>
+              <MessageCircle :size="34" stroke-width="2" aria-hidden="true" />
+              <span>Whatsapp: 18902169202</span>
+            </li>
+            <li>
+              <House :size="34" stroke-width="2" aria-hidden="true" />
+              <span>Address: Beijing, China</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
