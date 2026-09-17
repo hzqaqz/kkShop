@@ -311,6 +311,179 @@ Dust mites and mold thrive more easily in damp environments. They can gather in 
 
 Use a dehumidifier to manage excess moisture, choose an air purifier that can circulate the room effectively, and clean pet bedding and soft surfaces regularly. Fresh airflow, routine cleaning and balanced humidity work together to support a healthier indoor space for every member of the household—including the ones with paws.`,
   },
+  {
+    slug: 'the-air-our-children-breathe',
+    title: 'The Air Our Children Breathe: Why Indoor Air Quality Should Be a Parenting Priority',
+    sortDate: '2026-09-08',
+    coverImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.png',
+    heroImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.png',
+    contentMarkdown: `# The Air Our Children Breathe: Why Indoor Air Quality Should Be a Parenting Priority
+
+![A mother and her teenage son working together at the kitchen table](/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.png)
+
+As the mother of a 14-year-old boy, I spend a lot of time thinking about my son's health.
+
+Like most parents, I think about whether he is eating well, sleeping enough, exercising enough, spending too much time on screens, and managing the pressures of school. But recently, I have found myself thinking about something much more fundamental:
+
+**What is the air he is breathing every day?**
+
+It is a simple question, yet it is one that many of us rarely ask. Our children spend a significant part of their lives indoors — at home, at school, in sports facilities, on school buses, and in other shared spaces.
+
+They cannot choose the ventilation system in their classroom. They cannot decide when the HVAC filters are replaced. They cannot control whether a classroom is crowded during flu season. And they certainly cannot choose the quality of the air they breathe for six or seven hours a day.
+
+**As parents, perhaps we should be paying much more attention.**
+
+![Students in a bright classroom with an air purifier running](/images/blogs/children-air-quality/classroom-air-purifier.png)
+
+## When One Child Gets Sick, the Whole Classroom Can Change
+
+Every parent knows what happens during flu season. One child comes to school sick. A few days later, another child is absent. Then another. Soon, several seats in the classroom are empty. Parents start receiving messages from the school, and children begin missing classes, exams, sports, and social activities.
+
+We often think of this as simply part of childhood, and to some extent, it is. Children interact closely with one another, respiratory viruses are highly transmissible, and we cannot eliminate every infection from a school environment.
+
+But there is an important question we should ask: **how much can the indoor environment influence the risk of transmission?** The answer is: potentially quite a lot.
+
+According to the U.S. CDC, small particles exhaled by people can contain respiratory viruses, including influenza viruses. Improving ventilation can reduce the concentration of virus particles in indoor air and can therefore help reduce the likelihood of transmission. The U.S. EPA similarly recommends ventilation, filtration, and supplemental air cleaning as part of a multilayered approach to reducing the spread of respiratory viruses indoors.
+
+This distinction is important. **An air purifier does not make a classroom "virus-proof."** It is not a replacement for ventilation, vaccination, staying home when sick, hand hygiene, or other infection-control measures.
+
+But if an infected person is continuously releasing respiratory particles into a poorly ventilated room, reducing the concentration of airborne particles can reduce the amount of virus-containing material circulating in that space. **That is why clean indoor air deserves to be considered as one layer of protection.**
+
+## The Afternoon Problem: Is It Really "Lack of Oxygen"?
+
+There is another experience that many parents and teachers recognize. It is early afternoon. The classroom has been occupied for several hours. The windows are closed, and dozens of students and a teacher have been breathing the same air.
+
+Then something changes. Children become tired. They lose focus. They stare at the page but cannot seem to process what they are reading. A student may say: **"I can't concentrate anymore."** Or: **"My brain isn't working."**
+
+It is tempting to describe this as "not enough oxygen." But scientifically, that explanation is usually too simple. In a normally occupied classroom, oxygen levels do not typically fall to dangerously low levels simply because students are present.
+
+**Carbon dioxide (CO₂) is a much more useful indicator of ventilation.** Every person exhales CO₂. When a room is occupied and outdoor-air ventilation is insufficient, CO₂ concentrations rise.
+
+That does not mean that CO₂ itself is necessarily the only — or even the main — reason someone feels tired. Rather, elevated CO₂ can be a useful signal that a room is not receiving enough fresh outdoor air relative to its occupancy. And inadequate ventilation can allow other indoor pollutants and bioeffluents to accumulate as well.
+
+This is why measuring indoor air matters. Instead of simply saying, "The classroom feels stuffy," we can ask: **what is actually happening in the air?**
+
+![A classroom with open windows and a portable air cleaner in front](/images/blogs/children-air-quality/classroom-ventilation-air-cleaner.png)
+
+## A Classroom Is Also a Learning Environment
+
+This matters because the classroom is not just a place where children sit. **It is where they are expected to think.** To solve equations. To memorize vocabulary. To understand science. To write essays. To take exams. To make decisions. To stay focused for hours.
+
+Research has increasingly examined the relationship between indoor environmental conditions, ventilation, CO₂ concentrations, and cognitive performance. The evidence is not a license to claim that every sleepy student is suffering from poor ventilation, but it does give us a reason to take the indoor environment seriously.
+
+If the quality of the indoor environment can influence how well people think and perform, then indoor air quality is not merely a building-management issue. **It is an educational issue.**
+
+## What About the Developing Brain?
+
+This is the part that concerns me most as a mother. A 14-year-old is not simply a smaller version of an adult. His brain is still developing. His body is still developing. The neurological systems that support learning, memory, attention, emotional regulation, and decision-making are still maturing.
+
+So what happens when developing children are repeatedly exposed to polluted air?
+
+We should be careful here. Science does not support a simplistic statement such as "air pollution damages every child's brain." The reality is more complicated. But there is enough evidence to make this a serious public-health question.
+
+The World Health Organization has identified adverse effects of air pollution on children's brain development and cognitive ability among the health concerns associated with air pollution exposure. A recent systematic review of research on air pollution and childhood brain outcomes identified studies linking air pollution exposure with a range of structural and functional brain outcomes, while also emphasizing that this is an evolving area of research.
+
+That distinction matters. We should not exaggerate what the science proves. **But we also should not ignore a potentially important risk simply because researchers are still learning about it.**
+
+As a parent, my thinking is simple: if we can reasonably reduce children's exposure to harmful airborne particles, why wouldn't we? We don't wait for absolute scientific certainty before encouraging children to wear seat belts. We don't wait for perfect evidence before telling them not to smoke. And we don't intentionally expose them to unnecessary pollution just because we cannot eliminate every source of it.
+
+## What Can Parents Actually Do?
+
+The good news is that improving indoor air does not require magical technology. **It requires a system.**
+
+### 1. Start with Ventilation
+
+Fresh outdoor air is fundamental. The CDC recommends improving ventilation in schools by bringing in outdoor air when conditions allow, optimizing HVAC operation, and ensuring ventilation systems are properly maintained. Opening windows can help when outdoor air quality, temperature, weather, and safety conditions permit, and mechanical ventilation should also be properly designed, operated, and maintained.
+
+But ventilation has an important limitation: **you cannot always bring in more outdoor air.** During wildfire smoke events, severe outdoor pollution, extreme heat, or extreme cold, opening windows may not be appropriate. That is where filtration becomes particularly valuable.
+
+### 2. Measure CO₂ Instead of Guessing
+
+A CO₂ monitor cannot tell you everything about indoor air quality. It does not measure viruses. It does not measure every pollutant. And a "good" CO₂ reading does not automatically mean that a room is healthy.
+
+But CO₂ can provide useful information about ventilation. It allows schools, teachers, and parents to move from "This classroom feels stuffy" to **"We have evidence that ventilation may not be adequate for the number of people in this room."**
+
+**Measurement turns an invisible problem into something we can manage.**
+
+### 3. Use Filtration as Another Layer of Protection
+
+When ventilation alone is not enough, portable air cleaners can provide additional particle removal. The EPA recommends choosing an air cleaner appropriately sized for the room and paying attention to its Clean Air Delivery Rate (CADR). Higher CADR generally means that the unit can remove more particles from the air over time.
+
+For classrooms and other occupied spaces, high-efficiency filtration such as HEPA can be particularly useful. The CDC notes that properly functioning HEPA filters are highly efficient at capturing particles, including respiratory particles that may carry viruses.
+
+But there is an important lesson here for consumers: **buying an air purifier is not enough.** The purifier needs to be appropriate for the room. Its airflow needs to be sufficient. Its filters need to be maintained. And the unit needs to be operated for an appropriate amount of time. A beautiful product sitting quietly in the corner is not necessarily an effective air-cleaning strategy.
+
+## CADR Matters More Than Many Marketing Claims
+
+As a parent, I would encourage other parents to look beyond phrases such as "99.97% filtration," "removes viruses," "medical grade," or "advanced purification."
+
+The real-world question is: **how much clean air does this machine actually deliver into the room?**
+
+This is where CADR becomes important. EPA guidance emphasizes selecting a portable air cleaner with a CADR appropriate for the size of the room. Higher fan speeds and longer operating times generally increase the amount of air filtered. For a classroom, this becomes even more important because the room may contain dozens of students rather than one or two people.
+
+The right question is not "Is this purifier powerful?" It is **"Is this purifier powerful enough for this room and this occupancy?"** That is a much better question.
+
+## And Please Don't Forget the HVAC System
+
+Portable air cleaners are only one part of the solution. Schools should also look at their central HVAC systems.
+
+The EPA recommends considering MERV 13 filters, or the highest efficiency rating that the building's HVAC system can accommodate, when appropriate. But simply installing a higher-rated filter is not enough. The system needs to be able to handle the increased resistance to airflow. Filters need to fit properly. They need to be replaced on schedule. And the HVAC system itself needs regular inspection and maintenance. The CDC specifically emphasizes proper filter sizing, installation, maintenance, and minimizing air bypass around filters.
+
+**Clean air is an engineering problem as much as it is a consumer-product problem.**
+
+## What I Would Like Schools to Measure
+
+If I could change one thing about what we think about healthy classrooms, I would make indoor air quality more visible. Imagine a classroom dashboard showing:
+
+- CO₂
+- PM2.5
+- Temperature
+- Humidity
+- Ventilation status
+- Filtration status
+
+Imagine parents being able to ask their children's schools:
+
+- How well is each classroom ventilated?
+- Are CO₂ levels being monitored?
+- What filtration does the HVAC system use?
+- Are portable air cleaners needed in areas with poor ventilation?
+- How often are filters replaced?
+- What happens during flu season?
+- What is the school's plan during wildfire smoke or other outdoor pollution events?
+
+These are not unreasonable questions. **They are questions about the environment in which our children spend a significant part of their childhood.**
+
+## We Don't Need Perfect Air. We Need Better Air.
+
+I am not suggesting that we create sterile classrooms. Children need to interact with one another. They need to play. They need to explore. They need to experience the real world. And no technology can eliminate every health risk, nor should we pretend that an air purifier can solve every indoor air problem.
+
+But there is a huge difference between eliminating every risk and reducing unnecessary exposure. We cannot control everything our children encounter, but we can control some things. **The air inside our homes and schools is one of them.**
+
+## As a Mother, I Have a Simple Question
+
+I am not writing this simply as someone who works in the air purification industry. **I am writing this as a mother.**
+
+When my 14-year-old son spends most of his school day in a classroom, I want to know that the adults responsible for that environment are thinking about more than desks, lights, temperature, and cleanliness. I want them to think about the air.
+
+I want us to ask:
+
+- Is there enough fresh air?
+- Is the ventilation working properly?
+- What happens to CO₂ after several hours of occupancy?
+- How much particulate matter is in the room?
+- Is the filtration capacity appropriate for the size and occupancy of the classroom?
+- Are filters properly maintained?
+- And perhaps most importantly: are we doing what we reasonably can to create an indoor environment that supports our children's health and ability to learn?
+
+We may not have every answer yet. **But we already know enough to start paying attention.**
+
+The CDC recognizes cleaner air as an important part of reducing respiratory-virus transmission in schools. The EPA recommends ventilation and filtration as complementary layers of protection. And the WHO has highlighted the importance of air pollution as a threat to children's health, including brain development and cognitive ability.
+
+That should be enough to make us pause. Our children spend thousands of hours inside buildings while they are growing, learning, and developing. **The air they breathe should not be an invisible afterthought.** It should be part of the conversation about children's health.
+
+Because clean air is not a luxury. For our children, it is part of the environment in which they grow, learn, and become who they are. And as a mother, I believe it is worth protecting.`,
+  },
 ];
 
 export function getBlogArticle(slug) {
