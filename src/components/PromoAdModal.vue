@@ -159,8 +159,8 @@ onBeforeUnmount(() => {
 
           <figure class="promo-ad-media">
             <img
-              src="/images/products/mw200/space-living-room.png"
-              alt="Meower air purifier with a cat and dog in a sunlit living room"
+              src="/images/promo-ad-lifestyle.jpg"
+              alt="Meower air purifier beside a cat in a sunlit room with a yellow pet bowl"
             />
             <figcaption class="promo-ad-headline-wrap">
               <h2 id="promo-ad-title" class="promo-ad-headline">
