@@ -954,6 +954,25 @@ img {
   object-fit: cover;
 }
 
+/* Per-article image treatment (opt in from `src/data/blogArticles.js`):
+
+   `imageFit: 'natural'` — the article body shows the artwork at its own ratio
+   instead of forcing it into the default 16:9 box.
+
+   `cardCrop: 'right'` — cards keep the left edge of the artwork and crop the
+   right side only, instead of cropping both sides evenly. */
+.blog-detail-body--natural img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.blog-card img.blog-card-image--crop-right,
+.mega-blog-card img.blog-card-image--crop-right,
+.blog-section .blog-card img.blog-card-image--crop-right {
+  object-position: left center;
+}
+
 .blog-empty {
   display: grid;
   justify-items: start;

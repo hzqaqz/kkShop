@@ -1,5 +1,94 @@
 export const blogArticles = [
   {
+    slug: 'pollen-season-new-zealand-indoor-air',
+    title: 'Pollen Season in New Zealand: A Family Guide to Cleaner Indoor Air',
+    date: '2026-09-29',
+    sortDate: '2026-09-29',
+    coverImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg',
+    heroImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg',
+    // Body keeps the artwork's own 4:3 ratio (no crop, no letterboxing);
+    // cards crop the right side only so the left-hand Meower lock-up stays intact.
+    imageFit: 'natural',
+    cardCrop: 'right',
+    contentMarkdown: `# Pollen Season in New Zealand: A Family Guide to Cleaner Indoor Air
+
+New Zealand's natural environment is one of the country's greatest attractions. Long summers, green hills and gardens in full bloom are a large part of why we live here.
+
+**We don't believe families should have to stop enjoying it because of pollen.**
+
+Instead, consider a simple approach:
+
+- **Reduce** what comes inside.
+- **Clean** what is already inside.
+- **Filter** the air your family breathes.
+
+![A cat sleeping in a sunlit living room while a Meower air purifier filters pollen, dust and pet dander from the indoor air](/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg)
+
+## Pollen Season in New Zealand Lasts Longer Than You Might Think
+
+Pollen season is not a single month on the calendar. Different plants release pollen at different times, and the timing shifts with region, altitude and weather.
+
+- **Tree pollen** generally arrives first, in early spring.
+- **Grass pollen** tends to peak through late spring and summer, and it is one of the most common triggers for seasonal allergies in New Zealand.
+- **Weed pollen** can linger into autumn.
+
+Counts usually rise on warm, dry, windy days and fall after rain. That means pollen season can stretch across much of the year depending on where you live — and it is one reason allergy symptoms can feel unpredictable.
+
+## Why Pollen Follows You Indoors
+
+Outdoor pollen counts are only half the story. Pollen grains are light enough to travel on the wind and small enough to drift through an open window. They also ride indoors on hair, clothing, shoes, pets and laundry.
+
+Once inside, pollen settles into bedding, carpets, rugs, upholstery and soft furnishings. Everyday activity — walking through a room, sitting down, making the bed, children playing on the floor — can lift those settled particles back into the air, where they stay suspended long enough to be breathed in.
+
+**Closing the door does not automatically reduce your exposure.** The good news is that indoor pollen responds well to a layered routine. These three steps work together.
+
+## Step 1: Reduce What Comes Inside
+
+- **Check the local pollen forecast** and plan outdoor time for lower-count periods, such as after rain.
+- **Keep windows closed** during high-count hours, especially on dry, windy days.
+- **Change clothes and shower** after outdoor activity — particularly before bed, so pollen is not carried into your bedding.
+- **Leave shoes at the door** and dry laundry indoors on high-count days, since line-dried clothing collects pollen.
+- **Wipe down pets' coats and paws** when they come in from outside.
+
+## Step 2: Clean What Is Already Inside
+
+- **Vacuum regularly** with a unit fitted with a HEPA filter, focusing on carpets, rugs and soft furniture.
+- **Damp-dust with a microfibre cloth** instead of dry dusting, which can lift settled particles back into the air.
+- **Wash bedding** in hot water on a regular schedule, and wash pet bedding too.
+- **Keep entryways clean** and wipe hard floors near doors, where pollen is tracked in.
+- **Ventilate deliberately** — short bursts of fresh air on lower-count days, rather than leaving windows open through a windy afternoon.
+
+## Step 3: Filter the Air Your Family Breathes
+
+Good habits reduce how much pollen gets in. Filtration helps with what is left.
+
+**A HEPA air purifier can add another layer of indoor particle filtration by continuously circulating and filtering the air in your home.** Placed in the rooms where your family spends the most time — bedrooms, living areas, home offices — it can capture pollen and other fine particles that make it past the doorway.
+
+For pet-owning households, the [Meower MW200](/products/mw200) combines 360° air intake with three-stage composite filtration and H13 HEPA media, so particles drawn in from every direction are captured instead of being left to settle again. A 400 m³/h particle CADR suits rooms of roughly 20–40 m², which covers most bedrooms and living areas.
+
+A few practical points when choosing and using one:
+
+- **Look for true HEPA filtration.** Meower air purifiers use **H13 HEPA** filters designed to capture fine airborne particles, including pollen, dust and pet dander.
+- **Match the purifier to the room.** Check the clean air delivery rate (CADR) against the size of the space; an undersized unit will struggle to cycle the air effectively.
+- **Run it continuously** in the rooms that matter most, so air is being filtered while pollen arrives rather than afterwards.
+- **Keep airflow clear.** Position the unit away from walls, curtains and bulky furniture.
+- **Replace filters on schedule.** A loaded filter loses efficiency, no matter how good the original specification was.
+
+## What an Air Purifier Can and Cannot Do
+
+**An air purifier won't eliminate every particle, and it isn't a substitute for medical treatment when someone has allergies.** If symptoms are persistent, severe, or affecting sleep and daily life, talk to your GP, nurse or pharmacist, and follow your allergy or asthma action plan.
+
+What a purifier can do is form part of a practical routine: **reduce the pollen that comes in, clean up what has settled, and filter the air your family breathes.** Combined with sensible household habits, it is a realistic way to take greater control of your indoor air environment.
+
+## Make Cleaner Air Part of Your Family's Daily Routine
+
+Pollen season doesn't have to mean staying indoors all day.
+
+**Enjoy the outdoors. Let the kids play.** Then come home, clean up, and let Meower take care of the air-cleaning routine indoors.
+
+Keep pollen outdoors. Clean the air indoors. Breathe better with [Meower](/products/mw200).`,
+  },
+  {
     slug: 'beyond-comfort-humidity-control-indoor-air-quality',
     title: 'Beyond Comfort: Why Humidity Control Is the Missing Link in Indoor Air Quality',
     date: '2026-08-05',

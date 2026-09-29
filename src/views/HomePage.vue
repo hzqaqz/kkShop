@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
+import PromoAdModal from '../components/PromoAdModal.vue';
 import { blogArticles } from '../data/blogArticles';
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
@@ -177,7 +178,11 @@ onBeforeUnmount(() => {
           class="blog-card blog-card-link"
           :to="{ name: 'blog-detail', params: { slug: item.slug } }"
         >
-          <img :src="item.coverImage" :alt="item.title" />
+          <img
+            :src="item.coverImage"
+            :alt="item.title"
+            :class="{ 'blog-card-image--crop-right': item.cardCrop === 'right' }"
+          />
           <div class="blog-card-copy">
             <h3>{{ item.title }}</h3>
           </div>
@@ -238,5 +243,7 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </section>
+
+    <PromoAdModal />
   </main>
 </template>

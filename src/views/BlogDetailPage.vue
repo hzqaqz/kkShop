@@ -19,7 +19,11 @@ const renderedContent = computed(() => (article.value ? markdown.render(article.
       <RouterLink class="blog-back-link" :to="{ name: 'blogs' }">Back to blogs</RouterLink>
 
       <time v-if="article.date" class="blog-detail-date" :datetime="article.date">{{ article.date }}</time>
-      <div class="blog-detail-body" v-html="renderedContent" />
+      <div
+        class="blog-detail-body"
+        :class="{ 'blog-detail-body--natural': article.imageFit === 'natural' }"
+        v-html="renderedContent"
+      />
     </article>
 
     <section v-else class="blog-empty" aria-label="Blog article not found">

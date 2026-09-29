@@ -186,7 +186,11 @@ onBeforeUnmount(() => {
               :to="{ name: 'blog-detail', params: { slug: article.slug } }"
               @click="closeMenu"
             >
-              <img :src="article.coverImage" :alt="article.title" />
+              <img
+                :src="article.coverImage"
+                :alt="article.title"
+                :class="{ 'blog-card-image--crop-right': article.cardCrop === 'right' }"
+              />
               <span>{{ article.title }}</span>
             </RouterLink>
           </div>

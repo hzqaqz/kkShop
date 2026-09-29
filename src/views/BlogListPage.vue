@@ -28,7 +28,11 @@ const sortedBlogArticles = computed(() =>
           class="blog-card blog-card-link"
           :to="{ name: 'blog-detail', params: { slug: article.slug } }"
         >
-          <img :src="article.coverImage" :alt="article.title" />
+          <img
+            :src="article.coverImage"
+            :alt="article.title"
+            :class="{ 'blog-card-image--crop-right': article.cardCrop === 'right' }"
+          />
           <div class="blog-card-copy">
             <h2>{{ article.title }}</h2>
           </div>
