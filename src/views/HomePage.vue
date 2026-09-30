@@ -5,6 +5,14 @@ import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from
 import SiteHeader from '../components/SiteHeader.vue';
 import PromoAdModal from '../components/PromoAdModal.vue';
 import { blogArticles } from '../data/blogArticles';
+import { useSeo } from '../composables/useSeo';
+
+useSeo({
+  title: 'Pet-Friendly Air Purifiers & Dehumidifiers',
+  description:
+    'Meower air purifiers and dehumidifiers for pet-friendly homes and businesses. HEPA H13 air purification and humidity control for distributors, retailers, and OEM/ODM buyers worldwide.',
+  path: '/',
+});
 
 const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
@@ -112,6 +120,8 @@ onBeforeUnmount(() => {
 <template>
   <main class="site-shell">
     <SiteHeader />
+
+    <h1 class="sr-only">Meower — Pet-Friendly Air Purifiers &amp; Dehumidifiers</h1>
 
     <section id="home" class="hero-carousel" aria-label="Product lifestyle scenes">
       <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">

@@ -3,6 +3,14 @@ import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import SiteHeader from '../components/SiteHeader.vue';
 import { blogArticles } from '../data/blogArticles';
+import { useSeo } from '../composables/useSeo';
+
+useSeo({
+  title: 'Air Quality & Pet Care Guides',
+  description:
+    'Guides and inspiration from Meower on indoor air quality, pet-friendly air purification, humidity control, pollen season, and more.',
+  path: '/blogs',
+});
 
 const sortedBlogArticles = computed(() =>
   [...blogArticles].sort((first, second) =>

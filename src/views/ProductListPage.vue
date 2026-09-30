@@ -1,6 +1,14 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import SiteHeader from '../components/SiteHeader.vue';
+import { useSeo } from '../composables/useSeo';
+
+useSeo({
+  title: 'Air Purifiers & Dehumidifiers',
+  description:
+    'Explore Meower air purifiers and dehumidifiers: pet-friendly HEPA H13 air purifiers, home dehumidifiers, and commercial dehumidifiers for homes and businesses.',
+  path: '/products',
+});
 
 const productGroups = [
   {

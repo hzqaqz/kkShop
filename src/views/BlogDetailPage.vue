@@ -2,13 +2,58 @@
 import { computed } from 'vue';
 import MarkdownIt from 'markdown-it';
 import { RouterLink, useRoute } from 'vue-router';
+import { useHead } from '@unhead/vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { getBlogArticle } from '../data/blogArticles';
+import { excerptFromMarkdown, useSeo } from '../composables/useSeo';
 
 const route = useRoute();
 const markdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
 const article = computed(() => getBlogArticle(route.params.slug));
 const renderedContent = computed(() => (article.value ? markdown.render(article.value.contentMarkdown) : ''));
+
+const currentMeta = computed(() => {
+  const item = article.value;
+  if (!item) {
+    return {
+      title: 'Blog Not Found',
+      description: 'The requested Meower blog article could not be found.',
+      path: route.path,
+    };
+  }
+  return {
+    title: item.title,
+    description: excerptFromMarkdown(item.contentMarkdown),
+    path: route.path,
+    image: item.coverImage ? `https://meowerair.com${item.coverImage}` : undefined,
+    type: 'article',
+  };
+});
+
+useSeo(currentMeta.value);
+
+const articleJsonLd = computed(() => {
+  const item = article.value;
+  if (!item) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: item.title,
+    description: excerptFromMarkdown(item.contentMarkdown),
+    image: item.coverImage ? `https://meowerair.com${item.coverImage}` : undefined,
+    datePublished: item.date,
+    dateModified: item.date,
+    author: { '@type': 'Organization', name: 'Meower', url: 'https://meowerair.com/' },
+    publisher: { '@type': 'Organization', name: 'Meower', url: 'https://meowerair.com/' },
+    mainEntityOfPage: `https://meowerair.com${route.path}`,
+  };
+});
+
+useHead(() => ({
+  script: articleJsonLd.value
+    ? [{ type: 'application/ld+json', innerHTML: JSON.stringify(articleJsonLd.value) }]
+    : [],
+}));
 </script>
 
 <template>

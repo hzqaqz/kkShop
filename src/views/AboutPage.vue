@@ -1,6 +1,14 @@
 <script setup>
 import { House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
+import { useSeo } from '../composables/useSeo';
+
+useSeo({
+  title: 'About Meower',
+  description:
+    'Meower makes pet-friendly air purifiers and dehumidifiers for cat-loving families and businesses. Learn about our brand and OEM/ODM partnership options.',
+  path: '/about',
+});
 
 const cooperationOptions = [
   'Wholesale and bulk orders',
