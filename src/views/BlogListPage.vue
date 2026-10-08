@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
+import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { blogArticles } from '../data/blogArticles';
 import { useSeo } from '../composables/useSeo';
@@ -11,6 +12,11 @@ useSeo({
     'Guides and inspiration from Meower on indoor air quality, pet-friendly air purification, humidity control, pollen season, and more.',
   path: '/blogs',
 });
+
+const breadcrumbs = [
+  { label: 'Home', to: '/' },
+  { label: 'Blogs', to: '/blogs' },
+];
 
 const sortedBlogArticles = computed(() =>
   [...blogArticles].sort((first, second) =>
@@ -24,6 +30,7 @@ const sortedBlogArticles = computed(() =>
     <SiteHeader />
 
     <section class="blog-list-hero" aria-labelledby="blog-list-title">
+      <SiteBreadcrumbs :items="breadcrumbs" />
       <p class="eyebrow">Guides and inspiration</p>
       <h1 id="blog-list-title">Explore Our Blogs</h1>
     </section>

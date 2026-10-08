@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 
@@ -9,6 +10,11 @@ useSeo({
     'Explore Meower air purifiers and dehumidifiers: pet-friendly HEPA H13 air purifiers, home dehumidifiers, and commercial dehumidifiers for homes and businesses.',
   path: '/products',
 });
+
+const breadcrumbs = [
+  { label: 'Home', to: '/' },
+  { label: 'Products', to: '/products' },
+];
 
 const productGroups = [
   {
@@ -65,6 +71,7 @@ const productGroups = [
     <SiteHeader />
 
     <header class="product-list-hero">
+      <SiteBreadcrumbs :items="breadcrumbs" />
       <p class="eyebrow">Products</p>
       <h1>Find The Right Air Care Fit</h1>
       <p>Explore air purification and dehumidification solutions for homes and commercial spaces.</p>
