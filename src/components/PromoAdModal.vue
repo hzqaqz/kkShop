@@ -3,12 +3,21 @@ import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { X } from 'lucide-vue-next';
 
 /**
- * Interrupt only after real engagement: either the visitor has scrolled a
- * third of the way down, or they have stayed long enough to be interested.
- * Firing 0.6s after load pushed people away before they saw anything.
+ * Exit intent: the offer appears when a visitor looks like they are leaving,
+ * not while they are reading.
+ *
+ *  - Desktop: the pointer leaves the viewport through the top edge — the
+ *    classic "heading for the back button or tab bar" signal.
+ *  - Touch: a fast upward flick, once the visitor has read a fair amount.
+ *  - Fallback: a patient timer, armed only after someone has scrolled 25%, so
+ *    it never interrupts a visitor who has barely arrived.
+ *
+ * Firing 0.6s after load used to push people away before they saw anything.
  */
-const OPEN_DELAY_MS = 18000;
-const SCROLL_TRIGGER_RATIO = 0.35;
+const MIN_DWELL_MS = 6000;
+const FALLBACK_DELAY_MS = 60000;
+const ENGAGED_DEPTH = 0.25;
+const FAST_UPWARD_PX_PER_MS = 1.1;
 const SESSION_KEY = 'meower-promo-seen';
 
 const isOpen = ref(false);
@@ -17,7 +26,13 @@ const closeButtonRef = ref(null);
 
 let openTimer;
 let scrollHandler;
+let pointerOutHandler;
 let opened = false;
+let mountedAt = 0;
+let lastScrollY = 0;
+let lastScrollAt = 0;
+let maxDepth = 0;
+let fallbackArmed = false;
 let previousBodyOverflow = '';
 let lastFocusedElement = null;
 let scrollLocked = false;
@@ -49,6 +64,15 @@ function markSeen() {
   }
 }
 
+function scrollDepth() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  if (scrollable <= 0) {
+    return 0;
+  }
+
+  return window.scrollY / scrollable;
+}
+
 function cleanupTriggers() {
   if (openTimer) {
     window.clearTimeout(openTimer);
@@ -59,10 +83,15 @@ function cleanupTriggers() {
     window.removeEventListener('scroll', scrollHandler);
     scrollHandler = undefined;
   }
+
+  if (pointerOutHandler) {
+    document.removeEventListener('mouseout', pointerOutHandler);
+    pointerOutHandler = undefined;
+  }
 }
 
 function openModal() {
-  if (opened) {
+  if (opened || Date.now() - mountedAt < MIN_DWELL_MS) {
     return;
   }
 
@@ -74,15 +103,42 @@ function openModal() {
   nextTick(() => closeButtonRef.value?.focus());
 }
 
-function handleScroll() {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  if (scrollable <= 0) {
+/** Desktop: the pointer left through the top edge rather than into the page. */
+function handlePointerOut(event) {
+  if (event.relatedTarget || event.toElement) {
     return;
   }
 
-  if (window.scrollY / scrollable >= SCROLL_TRIGGER_RATIO) {
+  if (event.clientY > 0) {
+    return;
+  }
+
+  openModal();
+}
+
+/** Touch: a fast upward flick once the visitor has read a fair amount. */
+function handleScroll() {
+  const now = Date.now();
+  const y = window.scrollY;
+  const elapsed = Math.max(now - lastScrollAt, 1);
+  const moved = y - lastScrollY;
+
+  maxDepth = Math.max(maxDepth, scrollDepth());
+
+  const flickedUp = moved < 0 && Math.abs(moved) / elapsed >= FAST_UPWARD_PX_PER_MS;
+
+  if (flickedUp && maxDepth >= ENGAGED_DEPTH) {
     openModal();
   }
+
+  // Arm the patient fallback once the visitor has actually engaged.
+  if (!fallbackArmed && maxDepth >= ENGAGED_DEPTH) {
+    fallbackArmed = true;
+    openTimer = window.setTimeout(openModal, FALLBACK_DELAY_MS);
+  }
+
+  lastScrollY = y;
+  lastScrollAt = now;
 }
 
 function lockScroll() {
@@ -173,6 +229,9 @@ function handleKeydown(event) {
 
 onMounted(() => {
   lastFocusedElement = document.activeElement;
+  mountedAt = Date.now();
+  lastScrollY = window.scrollY;
+  lastScrollAt = Date.now();
   window.addEventListener('keydown', handleKeydown);
 
   // Do not interrupt a visitor who has already been shown the offer.
@@ -180,9 +239,11 @@ onMounted(() => {
     return;
   }
 
+  pointerOutHandler = handlePointerOut;
+  document.addEventListener('mouseout', pointerOutHandler);
+
   scrollHandler = handleScroll;
   window.addEventListener('scroll', scrollHandler, { passive: true });
-  openTimer = window.setTimeout(openModal, OPEN_DELAY_MS);
 });
 
 onBeforeUnmount(() => {
