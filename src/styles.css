@@ -1890,20 +1890,20 @@ img {
 .hero-copy {
   position: absolute;
   z-index: 2;
-  top: clamp(22px, 3.2vw, 50px);
-  left: clamp(20px, 3vw, 46px);
+  top: clamp(18px, 2.56vw, 40px);
+  right: clamp(16px, 2.4vw, 37px);
   display: grid;
-  gap: 16px;
-  max-width: min(600px, 62%);
-  padding: clamp(24px, 2.6vw, 36px) clamp(24px, 2.8vw, 38px);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 20px 46px rgba(18, 41, 45, 0.18);
+  gap: 13px;
+  max-width: min(480px, 50%);
+  padding: clamp(19px, 2.08vw, 29px) clamp(19px, 2.24vw, 30px);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 16px 37px rgba(18, 41, 45, 0.15);
 }
 
 @supports (backdrop-filter: blur(10px)) {
   .hero-copy {
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
   }
 }
@@ -1911,24 +1911,24 @@ img {
 .hero-copy h1 {
   margin: 0;
   color: #334c51;
-  font-size: clamp(24px, 2.6vw, 38px);
+  font-size: clamp(19px, 2.08vw, 30px);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
 .hero-subline {
-  max-width: 520px;
+  max-width: 416px;
   margin: 0;
   color: #5a7c85;
-  font-size: clamp(14px, 1.1vw, 17px);
-  line-height: 1.58;
+  font-size: clamp(12.5px, 0.88vw, 14px);
+  line-height: 1.55;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   margin-top: 2px;
 }
 
@@ -1936,10 +1936,10 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 28px;
-  border-radius: 8px;
-  font-size: 15px;
+  min-height: 40px;
+  padding: 0 22px;
+  border-radius: 7px;
+  font-size: 13px;
   font-weight: 800;
   text-decoration: none;
   transition:
@@ -2058,21 +2058,21 @@ img {
   }
 
   .hero-copy {
-    top: 14px;
-    right: 14px;
-    left: 14px;
-    gap: 12px;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    gap: 10px;
     max-width: none;
-    padding: 20px 20px 22px;
-    border-radius: 14px;
+    padding: 17px 17px 19px;
+    border-radius: 12px;
   }
 
   .hero-copy h1 {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .hero-subline {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .brand-layout {
@@ -2087,11 +2087,11 @@ img {
   }
 
   .hero-copy h1 {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .hero-subline {
-    font-size: 13.5px;
+    font-size: 12.5px;
   }
 
   .hero-cta {
