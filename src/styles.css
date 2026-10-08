@@ -382,7 +382,7 @@ img {
   transform: translate(-50%, 0);
 }
 
-.hero-carousel,
+.hero,
 .section,
 .about-band {
   width: min(1180px, calc(100% - 32px));
@@ -1291,7 +1291,7 @@ img {
 }
 
 @media (max-width: 560px) {
-  .hero-carousel,
+  .hero,
   .section,
   .about-band {
     width: min(100% - 24px, 1180px);
@@ -1870,60 +1870,46 @@ img {
    Homepage: hero overlay, featured products, brand copy
    ------------------------------------------------------------------ */
 
-/* The carousel artwork has its headline baked into the image, so the HTML
-   overlay is anchored bottom-left where it stays clear of it — and gives the
-   page real, crawlable text and a clear primary action. */
-.hero-overlay {
-  position: absolute;
-  z-index: 2;
-  bottom: clamp(18px, 2.4vw, 34px);
-  left: clamp(18px, 2.4vw, 34px);
+/* With text-free artwork the copy now sits below the carousel, so nothing is
+   covered — and every headline is real HTML, which baked-in text never was. */
+.hero-copy {
   display: grid;
-  gap: 12px;
-  max-width: min(620px, 68%);
-  padding: clamp(20px, 2.2vw, 32px) clamp(22px, 2.4vw, 34px);
-  border-radius: 16px;
-  background: rgba(14, 34, 38, 0.85);
-  color: #fff;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, auto);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: end;
+  padding-top: clamp(26px, 3vw, 42px);
 }
 
-@supports (backdrop-filter: blur(8px)) {
-  .hero-overlay {
-    background: rgba(14, 34, 38, 0.72);
-    backdrop-filter: blur(8px);
-  }
-}
-
-.hero-overlay h1 {
-  margin: 0;
-  color: #fff;
-  font-size: clamp(21px, 2.3vw, 34px);
+.hero-copy h1 {
+  margin: 0 0 14px;
+  color: #334c51;
+  font-size: clamp(27px, 3.5vw, 48px);
   font-weight: 900;
-  line-height: 1.14;
-  letter-spacing: -0.02em;
+  line-height: 1.07;
+  letter-spacing: -0.032em;
 }
 
 .hero-subline {
-  max-width: 560px;
+  max-width: 720px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.55;
+  color: #5a7c85;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 4px;
+  justify-content: flex-end;
 }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 26px;
+  min-height: 48px;
+  padding: 0 28px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 800;
@@ -1936,25 +1922,25 @@ img {
 }
 
 .hero-cta--primary {
-  background: #fff;
-  color: #1d3b40;
+  background: #334c51;
+  color: #fff;
 }
 
 .hero-cta--primary:hover,
 .hero-cta--primary:focus-visible {
-  background: #d9eee8;
+  background: #22383c;
   transform: translateY(-2px);
 }
 
 .hero-cta--ghost {
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
-  color: #fff;
+  border: 1.5px solid rgba(51, 76, 81, 0.3);
+  color: #334c51;
 }
 
 .hero-cta--ghost:hover,
 .hero-cta--ghost:focus-visible {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.16);
+  border-color: #334c51;
+  background: rgba(212, 235, 229, 0.5);
   transform: translateY(-2px);
 }
 
@@ -2038,23 +2024,14 @@ img {
 }
 
 @media (max-width: 900px) {
-  /* Taller hero so the overlay does not swallow the artwork on phones. */
-  .hero-carousel {
-    min-height: 470px;
+  .hero-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
   }
 
-  .hero-overlay {
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: none;
-    gap: 10px;
-    padding: 22px 22px 24px;
-    border-radius: 0;
-  }
-
-  .hero-overlay h1 {
-    font-size: 21px;
+  .hero-actions {
+    justify-content: flex-start;
   }
 
   .brand-layout {
@@ -2064,16 +2041,12 @@ img {
 }
 
 @media (max-width: 560px) {
-  .hero-carousel {
-    min-height: 440px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 19px;
+  .hero-copy h1 {
+    font-size: 24px;
   }
 
   .hero-subline {
-    font-size: 13.5px;
+    font-size: 14.5px;
   }
 
   .hero-cta {

@@ -23,20 +23,16 @@ const contactEmail =
 
 const slides = [
   {
-    image: '/images/carousel/meower-air-purifier.jpg',
-    alt: 'Meower air purifier running in a sunlit living room with a cat and a dog playing nearby',
+    image: '/images/carousel/hero-air-purifier-pets.jpg',
+    alt: 'Meower air purifier in a sunlit living room while a Bengal cat and a schnauzer play with a toy',
   },
   {
-    image: '/images/carousel/meower-100-carousel.jpg',
-    alt: 'Meower 100 air purifier beside a bed with a Bengal cat resting on the rug',
+    image: '/images/carousel/hero-dehumidifier-home.jpg',
+    alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
   },
   {
-    image: '/images/carousel/轮播03.jpg',
-    alt: 'Meower dehumidifier in a bright living room with a cream armchair and rug',
-  },
-  {
-    image: '/images/carousel/轮播02.jpg',
-    alt: 'Meower dehumidifier in a light living room with plants and large windows',
+    image: '/images/carousel/hero-dehumidifier-plants.jpg',
+    alt: 'Meower dehumidifier in a bright living room filled with plants beside floor-to-ceiling windows',
   },
 ];
 
@@ -182,65 +178,68 @@ onBeforeUnmount(() => {
   <main class="site-shell">
     <SiteHeader />
 
-    <section
-      id="home"
-      class="hero-carousel"
-      aria-labelledby="hero-title"
-      @mouseenter="stopAutoSlide"
-      @mouseleave="startAutoSlide"
-      @focusin="stopAutoSlide"
-      @focusout="startAutoSlide"
-    >
-      <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
-        <div v-for="(slide, index) in slides" :key="slide.image" class="carousel-slide">
-          <div class="slide-media">
-            <img
-              :src="slide.image"
-              :alt="slide.alt"
-              :loading="index === 0 ? 'eager' : 'lazy'"
-              :fetchpriority="index === 0 ? 'high' : 'auto'"
-              decoding="async"
-            />
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div
+        class="hero-carousel"
+        @mouseenter="stopAutoSlide"
+        @mouseleave="startAutoSlide"
+        @focusin="stopAutoSlide"
+        @focusout="startAutoSlide"
+      >
+        <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
+          <div v-for="(slide, index) in slides" :key="slide.image" class="carousel-slide">
+            <div class="slide-media">
+              <img
+                :src="slide.image"
+                :alt="slide.alt"
+                :loading="index === 0 ? 'eager' : 'lazy'"
+                :fetchpriority="index === 0 ? 'high' : 'auto'"
+                decoding="async"
+              />
+            </div>
           </div>
+        </div>
+
+        <div class="carousel-controls" aria-label="Carousel controls">
+          <button class="control-button" type="button" aria-label="Previous slide" @click="handlePreviousSlide">
+            <ChevronLeft :size="22" aria-hidden="true" />
+          </button>
+          <button class="control-button" type="button" aria-label="Next slide" @click="handleNextSlide">
+            <ChevronRight :size="22" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div class="carousel-dots" aria-label="Choose slide">
+          <button
+            v-for="(slide, index) in slides"
+            :key="`dot-${index}`"
+            class="dot"
+            :class="{ active: currentSlide === index }"
+            type="button"
+            :aria-label="`Show slide ${index + 1}`"
+            :aria-pressed="currentSlide === index"
+            @click="handleManualSlide(index)"
+          />
         </div>
       </div>
 
-      <div class="hero-overlay">
-        <h1 id="hero-title">
-          Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
-        </h1>
-        <p class="hero-subline">
-          HEPA H13 air purification and humidity control for distributors, retailers and
-          OEM/ODM buyers worldwide.
-        </p>
+      <div class="hero-copy">
+        <div class="hero-copy-text">
+          <h1 id="hero-title">
+            Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
+          </h1>
+          <p class="hero-subline">
+            HEPA H13 air purification and humidity control for distributors, retailers and
+            OEM/ODM buyers worldwide.
+          </p>
+        </div>
+
         <div class="hero-actions">
           <RouterLink class="hero-cta hero-cta--primary" :to="{ name: 'products' }">
             Explore Products
           </RouterLink>
           <a class="hero-cta hero-cta--ghost" :href="contactEmail">Get a Quote</a>
         </div>
-      </div>
-
-      <div class="carousel-controls" aria-label="Carousel controls">
-        <button class="control-button" type="button" aria-label="Previous slide" @click="handlePreviousSlide">
-          <ChevronLeft :size="22" aria-hidden="true" />
-        </button>
-        <button class="control-button" type="button" aria-label="Next slide" @click="handleNextSlide">
-          <ChevronRight :size="22" aria-hidden="true" />
-        </button>
-      </div>
-
-      <div class="carousel-dots" aria-label="Choose slide">
-        <button
-          v-for="(slide, index) in slides"
-          :key="`dot-${index}`"
-          class="dot"
-          :class="{ active: currentSlide === index }"
-          type="button"
-          :aria-label="`Show slide ${index + 1}`"
-          :aria-pressed="currentSlide === index"
-          @click="handleManualSlide(index)"
-        />
       </div>
     </section>
 
