@@ -6,6 +6,7 @@ import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage
 import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import ProductFaq from '../components/ProductFaq.vue';
+import ProductOverview from '../components/ProductOverview.vue';
 import RelatedArticles from '../components/RelatedArticles.vue';
 import RelatedProducts from '../components/RelatedProducts.vue';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
@@ -72,6 +73,8 @@ useSeo(currentMeta.value);
 
     <div v-if="currentProduct" class="product-post-content">
       <SiteBreadcrumbs :items="breadcrumbs" />
+
+      <ProductOverview :product-id="route.params.productId" />
 
       <ProductFaq :product-id="route.params.productId" />
 
