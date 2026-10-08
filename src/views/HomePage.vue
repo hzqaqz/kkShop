@@ -25,16 +25,22 @@ const slides = [
   {
     image: '/images/carousel/hero-air-purifier-pets.jpg',
     alt: 'Meower air purifier in a sunlit living room while a Bengal cat and a schnauzer play with a toy',
+    title: 'Meower Air Purifier',
+    subtitle: 'Cleaner Air. Happier Pet Homes.',
     to: mw200Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-home.jpg',
     alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
+    title: 'Meower Dehumidifier',
+    subtitle: 'Cleaner Air. Happier Pet Homes.',
     to: md001Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-plants.jpg',
     alt: 'Meower dehumidifier in a bright living room filled with plants beside floor-to-ceiling windows',
+    title: 'Meower Dehumidifier',
+    subtitle: 'Cleaner Air. Happier Pet Homes.',
   },
 ];
 
@@ -206,6 +212,10 @@ onBeforeUnmount(() => {
                 :fetchpriority="index === 0 ? 'high' : 'auto'"
                 decoding="async"
               />
+            </div>
+            <div class="slide-caption">
+              <h2>{{ slide.title }}</h2>
+              <p>{{ slide.subtitle }}</p>
             </div>
           </component>
         </div>

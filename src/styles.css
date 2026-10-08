@@ -455,6 +455,52 @@ img {
   transform: scale(1.02);
 }
 
+/* Per-slide headline, clear of the dots in the lower-left of the artwork. */
+.slide-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: clamp(62px, 7vw, 86px);
+  left: clamp(24px, 4vw, 64px);
+  max-width: min(560px, 60%);
+}
+
+.slide-caption h2 {
+  margin: 0 0 8px;
+  color: #2b4a4f;
+  font-size: clamp(26px, 3.2vw, 46px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.7);
+}
+
+.slide-caption p {
+  margin: 0;
+  color: #3f6369;
+  font-size: clamp(14px, 1.3vw, 20px);
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+  .slide-caption {
+    right: 24px;
+    bottom: clamp(58px, 13vw, 74px);
+    left: 24px;
+    max-width: none;
+  }
+
+  .slide-caption h2 {
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+
+  .slide-caption p {
+    font-size: 14px;
+  }
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: #b8d4d8;
