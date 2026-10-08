@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { useHead } from '@unhead/vue';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
 import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
@@ -73,26 +72,6 @@ const currentMeta = computed(() => {
 });
 
 useSeo(currentMeta.value);
-
-const productJsonLd = computed(() => {
-  const product = currentProduct.value;
-  if (!product) return null;
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.title,
-    description: product.description,
-    image: `https://meowerair.com${product.image}`,
-    brand: { '@type': 'Brand', name: 'Meower' },
-    url: `https://meowerair.com${route.path}`,
-  };
-});
-
-useHead(() => ({
-  script: productJsonLd.value
-    ? [{ type: 'application/ld+json', innerHTML: JSON.stringify(productJsonLd.value) }]
-    : [],
-}));
 </script>
 
 <template>
