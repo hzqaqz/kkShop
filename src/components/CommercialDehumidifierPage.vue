@@ -20,19 +20,6 @@ const spaces = [
     alt: 'MD0001 commercial dehumidifier in a warehouse',
   },
 ];
-
-const specifications = [
-  ['Model', 'MD0001'],
-  ['Dehumidification Capacity (Rated)', '1.25 kg/h'],
-  ['Dehumidification Capacity (High Temp.)', '50L/day'],
-  ['Max. Dehumidification Capacity', '60L/day'],
-  ['Rated Power', '650W'],
-  ['Max. Current', '4.5A'],
-  ['Rated Voltage / Frequency', '220V~50Hz'],
-  ['Airflow', '320 m³/h'],
-  ['Net Weight', '28kg'],
-  ['Dimensions', '375×295×625 mm'],
-];
 </script>
 
 <template>
@@ -83,25 +70,6 @@ const specifications = [
       </div>
     </section>
 
-    <section class="specifications-section" aria-labelledby="specifications-title">
-      <div class="commercial-section-heading">
-        <h2 id="specifications-title">Technical Specifications</h2>
-        <span class="section-rule" aria-hidden="true"></span>
-      </div>
-
-      <div class="specifications-table" role="table" aria-label="MD0001 technical specifications">
-        <div
-          v-for="([label, value], index) in specifications"
-          :key="label"
-          class="specification-row"
-          :class="{ tinted: index % 2 === 0 }"
-          role="row"
-        >
-          <strong role="rowheader">{{ label }}</strong>
-          <span role="cell">{{ value }}</span>
-        </div>
-      </div>
-    </section>
   </article>
 </template>
 
@@ -237,8 +205,7 @@ const specifications = [
   object-fit: cover;
 }
 
-.commercial-spaces-section,
-.specifications-section {
+.commercial-spaces-section {
   padding: clamp(40px, 4vw, 64px) max(5vw, calc((100vw - 1540px) / 2));
   background: #fff;
 }
@@ -288,33 +255,6 @@ const specifications = [
   font-size: clamp(18px, 1.45vw, 25px);
   line-height: 1;
   white-space: nowrap;
-}
-
-.specifications-section {
-  padding-bottom: clamp(44px, 4vw, 64px);
-}
-
-.specifications-table {
-  width: min(100%, 1260px);
-  margin: 0 auto;
-  font-size: clamp(16px, 1.25vw, 21px);
-  font-weight: 700;
-}
-
-.specification-row {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  min-height: 50px;
-  padding: 6px 38px;
-}
-
-.specification-row.tinted {
-  background: var(--commercial-tint);
-}
-
-.specification-row span {
-  font-weight: 700;
 }
 
 @media (max-width: 900px) {
@@ -382,8 +322,7 @@ const specifications = [
     object-fit: contain;
   }
 
-  .commercial-spaces-section,
-  .specifications-section {
+  .commercial-spaces-section {
     padding: 42px 24px;
   }
 
@@ -456,17 +395,6 @@ const specifications = [
     bottom: 18px;
     padding: 14px 8px;
     font-size: 18px;
-  }
-
-  .specifications-table {
-    font-size: 14px;
-  }
-
-  .specification-row {
-    grid-template-columns: minmax(0, 1.2fr) minmax(110px, 0.8fr);
-    gap: 16px;
-    min-height: 50px;
-    padding: 7px 14px;
   }
 }
 </style>

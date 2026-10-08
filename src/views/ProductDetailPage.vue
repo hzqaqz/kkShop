@@ -17,6 +17,17 @@ import { getProduct, getRelatedProducts } from '../data/products';
 
 const route = useRoute();
 
+/** Each product page supplies its own palette to the SEO content zone. */
+const THEME_CLASSES = {
+  mw100: 'post-theme-cream',
+  mw200: 'post-theme-cream',
+  md001: 'post-theme-warm',
+  'commercial-dehumidifier': 'post-theme-teal',
+  'ceiling-mounted-dehumidifier': 'post-theme-green',
+};
+
+const themeClass = computed(() => THEME_CLASSES[route.params.productId] ?? '');
+
 const currentProduct = computed(() => getProduct(route.params.productId));
 const relatedProducts = computed(() => getRelatedProducts(route.params.productId, 3));
 const relatedArticles = computed(() => getArticlesForProduct(route.params.productId, 3));
@@ -71,7 +82,7 @@ useSeo(currentMeta.value);
       <RouterLink to="/">Back to home</RouterLink>
     </section>
 
-    <div v-if="currentProduct" class="product-post-content">
+    <div v-if="currentProduct" class="product-post-content" :class="themeClass">
       <SiteBreadcrumbs :items="breadcrumbs" />
 
       <ProductOverview :product-id="route.params.productId" />

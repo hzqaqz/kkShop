@@ -49,20 +49,6 @@ const spaces = [
   { label: 'Living Room', image: '/images/products/md001/space-living-room.png' },
   { label: 'Bedroom', image: '/images/products/md001/space-bedroom.png' },
 ];
-
-const specifications = [
-  ['Model', 'MD001'],
-  ['Nominal Dehumidification Capacity', '0.28 kg/h'],
-  ['High-Temperature Dehumidification Capacity', '12 L/day'],
-  ['Maximum Dehumidification Capacity', '15 L/day'],
-  ['Rated Power', '223 W'],
-  ['Maximum Current', '1.6 A'],
-  ['Rated Voltage', '220 V'],
-  ['Frequency', '50 Hz'],
-  ['Airflow', '103 m³/h'],
-  ['Water Tank Capacity', '1.6 L'],
-  ['Net Weight', '7.3 kg'],
-];
 </script>
 
 <template>
@@ -133,18 +119,6 @@ const specifications = [
       </div>
     </section>
 
-    <section class="md001-specifications" aria-labelledby="md001-specifications-title">
-      <div class="md001-section-heading">
-        <p>MD001 at a glance</p>
-        <h2 id="md001-specifications-title">Technical Specifications</h2>
-      </div>
-      <div class="md001-specification-table" role="table" aria-label="MD001 technical specifications">
-        <div v-for="([label, value], index) in specifications" :key="label" class="md001-specification-row" :class="{ tinted: index % 2 === 0 }" role="row">
-          <strong role="rowheader">{{ label }}</strong>
-          <span role="cell">{{ value }}</span>
-        </div>
-      </div>
-    </section>
   </article>
 </template>
 
@@ -164,7 +138,7 @@ const specifications = [
 .md001-benefit svg { width: 45px; height: 45px; color: var(--accent); stroke-width: 1.55; }
 .md001-benefit h2 { margin: 0 0 8px; color: var(--ink); font-size: clamp(18px, 1.5vw, 23px); }
 .md001-benefit p { max-width: 280px; margin: 0; font-size: 15px; line-height: 1.5; }
-.md001-features, .md001-spaces, .md001-specifications { padding: clamp(62px, 7vw, 108px) max(7vw, calc((100vw - 1440px) / 2)); }
+.md001-features, .md001-spaces { padding: clamp(62px, 7vw, 108px) max(7vw, calc((100vw - 1440px) / 2)); }
 .md001-features { background: #fff; }
 .md001-section-heading { margin-bottom: clamp(30px, 4vw, 54px); text-align: center; }
 .md001-section-heading h2 { font-size: clamp(38px, 4vw, 64px); }
@@ -187,11 +161,6 @@ const specifications = [
 .md001-space-card { overflow: hidden; border-radius: 14px; background: var(--warm); }
 .md001-space-card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .md001-space-card h3 { margin: 0; padding: 16px; color: var(--ink); font-size: 18px; text-align: center; }
-.md001-specifications { background: var(--warm); }
-.md001-specification-table { width: min(100%, 1080px); margin: 0 auto; font-size: clamp(15px, 1.3vw, 20px); }
-.md001-specification-row { display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; min-height: 52px; padding: 8px 28px; border-bottom: 1px solid #efe7dc; background: #fff; }
-.md001-specification-row.tinted { background: var(--warm); }
-.md001-specification-row strong, .md001-specification-row span { font-weight: 750; }
-@media (max-width: 900px) { .md001-hero { min-height: 590px; } .md001-hero::after { background: linear-gradient(90deg, rgba(255,250,244,.93), rgba(255,250,244,.22)); } .md001-hero-copy { width: min(620px, 100%); padding: 176px 28px 48px; } .md001-benefits { grid-template-columns: 1fr; padding: 48px 28px; } .md001-features, .md001-spaces, .md001-specifications { padding: 64px 28px; } .md001-feature-grid { grid-template-columns: repeat(2, 1fr); } .md001-overview { grid-template-columns: 1fr; min-height: 0; padding: 64px 28px; } .md001-space-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .md001-hero { min-height: 640px; } .md001-hero-copy { padding-top: 170px; } .md001-feature { min-height: 126px; } .md001-space-grid { grid-template-columns: 1fr; } .md001-specification-row { grid-template-columns: 1fr; gap: 3px; padding: 14px 18px; } }
+@media (max-width: 900px) { .md001-hero { min-height: 590px; } .md001-hero::after { background: linear-gradient(90deg, rgba(255,250,244,.93), rgba(255,250,244,.22)); } .md001-hero-copy { width: min(620px, 100%); padding: 176px 28px 48px; } .md001-benefits { grid-template-columns: 1fr; padding: 48px 28px; } .md001-features, .md001-spaces { padding: 64px 28px; } .md001-feature-grid { grid-template-columns: repeat(2, 1fr); } .md001-overview { grid-template-columns: 1fr; min-height: 0; padding: 64px 28px; } .md001-space-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .md001-hero { min-height: 640px; } .md001-hero-copy { padding-top: 170px; } .md001-feature { min-height: 126px; } .md001-space-grid { grid-template-columns: 1fr; } }
 </style>

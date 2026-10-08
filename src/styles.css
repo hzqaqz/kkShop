@@ -20,6 +20,16 @@
   --title-size: clamp(30px, 4vw, 48px);
   --subtitle-size: clamp(15px, 1.3vw, 22px);
   --content-size: clamp(14px, 1vw, 16px);
+
+  /* SEO 内容区（面包屑 / FAQ / 相关推荐 / 产品长文）默认配色，
+     由 .post-theme-* 按产品页覆盖 */
+  --seo-ink: #334c51;
+  --seo-muted: #5a7c85;
+  --seo-body: #46646c;
+  --seo-surface: rgba(212, 235, 229, 0.32);
+  --seo-surface-strong: rgba(212, 235, 229, 0.58);
+  --seo-border: rgba(51, 76, 81, 0.14);
+  --seo-accent: #334c51;
 }
 
 * {
@@ -1539,49 +1549,58 @@ img {
   align-items: center;
   gap: 8px;
   max-width: 100%;
-  color: #5a7c85;
+  color: var(--seo-muted);
 }
 
 .site-breadcrumbs li + li::before {
   content: '/';
-  color: rgba(51, 76, 81, 0.32);
+  color: var(--seo-border);
 }
 
 .site-breadcrumbs a {
-  color: #5a7c85;
+  color: var(--seo-muted);
   text-decoration: none;
 }
 
 .site-breadcrumbs a:hover,
 .site-breadcrumbs a:focus-visible {
-  color: #334c51;
+  color: var(--seo-ink);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .site-breadcrumbs [aria-current='page'] {
-  color: #334c51;
+  color: var(--seo-ink);
   font-weight: 800;
 }
 
 .blog-detail > .site-breadcrumbs {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-/* Post-content zone shared by the product and blog detail pages. */
+/* Post-content zone shared by the product and blog detail pages.
+   Generous, consistent breathing room between every added block. */
 .product-post-content,
 .blog-related-content {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0 96px;
+  padding: 108px 0 124px;
 }
 
-.product-post-content > .site-breadcrumbs {
-  margin-bottom: 56px;
+.product-post-content > * + * {
+  margin-top: 108px;
+}
+
+.product-post-content > .site-breadcrumbs + * {
+  margin-top: 80px;
 }
 
 .related-section + .related-section {
-  margin-top: 78px;
+  margin-top: 108px;
+}
+
+.related-section .section-heading {
+  margin-bottom: 40px;
 }
 
 .related-blog-grid {
@@ -1590,29 +1609,43 @@ img {
 
 .related-product-subtitle {
   margin: 8px 0 0;
-  color: #5a7c85;
+  color: var(--seo-muted);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
 }
 
+/* Related cards and headings follow the page theme. */
+.product-post-content .blog-card {
+  border-color: var(--seo-border);
+  background: var(--seo-surface);
+}
+
+.product-post-content .product-list-card {
+  border-color: var(--seo-border);
+}
+
+.product-post-content .section-heading h2 {
+  color: var(--seo-ink);
+}
+
 /* FAQ blocks */
 .product-faq .faq-list {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   width: min(860px, 100%);
-  margin: 30px auto 0;
+  margin: 40px auto 0;
 }
 
 .faq-item {
-  padding: 18px 22px;
-  border: 1px solid rgba(51, 76, 81, 0.14);
+  padding: 20px 24px;
+  border: 1px solid var(--seo-border);
   border-radius: 10px;
-  background: rgba(212, 235, 229, 0.35);
+  background: var(--seo-surface);
 }
 
 .faq-item[open] {
-  background: rgba(212, 235, 229, 0.55);
+  background: var(--seo-surface-strong);
 }
 
 .faq-question {
@@ -1630,7 +1663,7 @@ img {
   justify-content: space-between;
   gap: 16px;
   margin: 0;
-  color: #334c51;
+  color: var(--seo-ink);
   font-size: clamp(17px, 1.6vw, 21px);
   font-weight: 850;
   line-height: 1.35;
@@ -1639,7 +1672,7 @@ img {
 .faq-question h3::after {
   content: '+';
   flex: 0 0 auto;
-  color: #5a7c85;
+  color: var(--seo-accent);
   font-size: 24px;
   font-weight: 800;
   line-height: 1;
@@ -1650,35 +1683,35 @@ img {
 }
 
 .faq-answer {
-  margin: 14px 0 0;
-  color: #46646c;
+  margin: 16px 0 0;
+  color: var(--seo-body);
   font-size: clamp(15px, 1.3vw, 17px);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* Long-form product overview */
 .product-overview h2 {
   max-width: 900px;
   margin: 0 auto;
-  color: #334c51;
+  color: var(--seo-ink);
   font-size: clamp(28px, 3.6vw, 44px);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.12;
   text-align: center;
 }
 
 .product-overview-copy {
   display: grid;
-  gap: 18px;
+  gap: 20px;
   width: min(820px, 100%);
-  margin: 28px auto 0;
+  margin: 36px auto 0;
 }
 
 .product-overview-copy p {
   margin: 0;
-  color: #46646c;
+  color: var(--seo-body);
   font-size: clamp(16px, 1.4vw, 18px);
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 .product-overview-columns {
@@ -1686,31 +1719,31 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
   width: min(980px, 100%);
-  margin: 44px auto 0;
+  margin: 52px auto 0;
 }
 
 .product-overview-block {
-  padding: 26px 28px;
-  border: 1px solid rgba(51, 76, 81, 0.14);
-  border-radius: 10px;
-  background: rgba(212, 235, 229, 0.3);
+  padding: 28px 30px;
+  border: 1px solid var(--seo-border);
+  border-radius: 12px;
+  background: var(--seo-surface);
 }
 
 .product-overview-block h3 {
-  margin: 0 0 16px;
-  color: #334c51;
+  margin: 0 0 18px;
+  color: var(--seo-ink);
   font-size: clamp(18px, 1.7vw, 22px);
   font-weight: 850;
 }
 
 .product-overview-block ul {
   display: grid;
-  gap: 11px;
+  gap: 12px;
   margin: 0;
   padding-left: 1.15em;
-  color: #46646c;
+  color: var(--seo-body);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .product-spec-list {
@@ -1722,8 +1755,8 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: 14px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(51, 76, 81, 0.1);
+  padding: 11px 0;
+  border-bottom: 1px solid var(--seo-border);
 }
 
 .product-spec-row:last-child {
@@ -1731,7 +1764,7 @@ img {
 }
 
 .product-spec-row dt {
-  color: #5a7c85;
+  color: var(--seo-muted);
   font-size: 15px;
   font-weight: 700;
   line-height: 1.5;
@@ -1739,10 +1772,58 @@ img {
 
 .product-spec-row dd {
   margin: 0;
-  color: #334c51;
+  color: var(--seo-ink);
   font-size: 15px;
   font-weight: 700;
   line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------
+   Per-product themes — match each product page's own palette.
+   ------------------------------------------------------------------ */
+
+/* MW100 / MW200 — warm cream */
+.post-theme-cream {
+  --seo-ink: #21150f;
+  --seo-muted: #8a7563;
+  --seo-body: #4d3d32;
+  --seo-surface: rgba(255, 248, 238, 0.82);
+  --seo-surface-strong: rgba(255, 244, 230, 0.98);
+  --seo-border: rgba(111, 77, 50, 0.18);
+  --seo-accent: #b98d5f;
+}
+
+/* MD001 — warm beige with muted teal */
+.post-theme-warm {
+  --seo-ink: #314e53;
+  --seo-muted: #75949a;
+  --seo-body: #40595e;
+  --seo-surface: rgba(245, 238, 229, 0.78);
+  --seo-surface-strong: rgba(245, 238, 229, 0.98);
+  --seo-border: rgba(117, 148, 154, 0.26);
+  --seo-accent: #75949a;
+}
+
+/* Commercial dehumidifier — teal */
+.post-theme-teal {
+  --seo-ink: #324f54;
+  --seo-muted: #5f858d;
+  --seo-body: #3f6167;
+  --seo-surface: rgba(191, 216, 220, 0.34);
+  --seo-surface-strong: rgba(191, 216, 220, 0.62);
+  --seo-border: rgba(95, 133, 141, 0.26);
+  --seo-accent: #5f858d;
+}
+
+/* Ceiling-mounted dehumidifier — light green */
+.post-theme-green {
+  --seo-ink: #2f4f4a;
+  --seo-muted: #6b9a8e;
+  --seo-body: #3f6159;
+  --seo-surface: rgba(213, 232, 226, 0.58);
+  --seo-surface-strong: rgba(213, 232, 226, 0.9);
+  --seo-border: rgba(107, 154, 142, 0.3);
+  --seo-accent: #6b9a8e;
 }
 
 @media (max-width: 900px) {
@@ -1752,13 +1833,27 @@ img {
 
   .product-overview-columns {
     grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 640px) {
+  .product-post-content,
+  .blog-related-content {
+    padding: 72px 0 88px;
+  }
+
+  .product-post-content > * + *,
+  .related-section + .related-section {
+    margin-top: 72px;
+  }
+
+  .product-post-content > .site-breadcrumbs + * {
+    margin-top: 52px;
+  }
+
   .product-overview-block {
-    padding: 20px 18px;
+    padding: 22px 20px;
   }
 
   .product-spec-row {
@@ -1768,14 +1863,5 @@ img {
 
   .related-blog-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .product-post-content,
-  .blog-related-content {
-    padding: 48px 0 72px;
-  }
-
-  .product-post-content > .site-breadcrumbs {
-    margin-bottom: 40px;
   }
 }

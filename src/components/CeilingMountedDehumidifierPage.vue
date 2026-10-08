@@ -7,19 +7,6 @@ const features = [
   { label: 'Gravity drainage', icon: ArrowDownToLine },
   { label: 'Auto defrost', icon: Snowflake },
 ];
-
-const specifications = [
-  ['Model', 'MD0002'],
-  ['Dehumidification Capacity (Rated)', '3.3 kg/h'],
-  ['Dehumidification Capacity (High Temp.)', '4.0 kg/h'],
-  ['Max. Dehumidification Capacity', '7.0 kg/h'],
-  ['Rated Power', '1400W'],
-  ['Max. Current', '9.2A'],
-  ['Rated Voltage / Frequency', '220V~50Hz'],
-  ['Airflow', '800 m³/h'],
-  ['Net Weight', '45kg'],
-  ['Dimensions', '600×520×450 mm'],
-];
 </script>
 
 <template>
@@ -60,25 +47,6 @@ const specifications = [
       />
     </section>
 
-    <section class="ceiling-specifications" aria-labelledby="ceiling-specifications-title">
-      <div class="ceiling-section-heading">
-        <h2 id="ceiling-specifications-title">Technical Specifications</h2>
-        <span class="ceiling-rule" aria-hidden="true"></span>
-      </div>
-
-      <div class="ceiling-specifications-table" role="table" aria-label="MD0002 technical specifications">
-        <div
-          v-for="([label, value], index) in specifications"
-          :key="label"
-          class="ceiling-specification-row"
-          :class="{ tinted: index % 2 === 0 }"
-          role="row"
-        >
-          <strong role="rowheader">{{ label }}</strong>
-          <span role="cell">{{ value }}</span>
-        </div>
-      </div>
-    </section>
   </article>
 </template>
 
@@ -205,45 +173,6 @@ const specifications = [
   object-fit: contain;
 }
 
-.ceiling-specifications {
-  padding: clamp(56px, 6vw, 92px) max(7vw, calc((100vw - 1440px) / 2));
-  background: #fff;
-}
-
-.ceiling-section-heading {
-  display: grid;
-  justify-items: center;
-  margin-bottom: 38px;
-  text-align: center;
-}
-
-.ceiling-section-heading .ceiling-rule {
-  margin: 22px 0 0;
-}
-
-.ceiling-specifications-table {
-  width: min(100%, 1180px);
-  margin: 0 auto;
-  font-size: clamp(16px, 1.3vw, 21px);
-}
-
-.ceiling-specification-row {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  min-height: 58px;
-  padding: 8px 32px;
-}
-
-.ceiling-specification-row.tinted {
-  background: var(--tint);
-}
-
-.ceiling-specification-row strong,
-.ceiling-specification-row span {
-  font-weight: 800;
-}
-
 @media (max-width: 900px) {
   .ceiling-hero {
     grid-template-columns: 1fr;
@@ -272,10 +201,6 @@ const specifications = [
     max-width: 580px;
     justify-self: center;
   }
-
-  .ceiling-specifications {
-    padding: 64px 28px;
-  }
 }
 
 @media (max-width: 560px) {
@@ -296,22 +221,12 @@ const specifications = [
     gap: 26px 12px;
   }
 
-  .ceiling-engineered,
-  .ceiling-specifications {
+  .ceiling-engineered {
     padding: 54px 20px;
   }
 
-  .ceiling-engineered h2,
-  .ceiling-section-heading h2 {
+  .ceiling-engineered h2 {
     font-size: 36px;
-  }
-
-  .ceiling-specification-row {
-    grid-template-columns: minmax(0, 1.2fr) minmax(108px, 0.8fr);
-    gap: 16px;
-    min-height: 52px;
-    padding: 8px 14px;
-    font-size: 14px;
   }
 }
 </style>
