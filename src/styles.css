@@ -455,13 +455,14 @@ img {
   transform: scale(1.02);
 }
 
-/* Per-slide headline, clear of the dots in the lower-left of the artwork. */
+/* Per-slide headline in the upper-left. Width is capped at 40% so it always
+   stays clear of the CTA card anchored top-right. */
 .slide-caption {
   position: absolute;
   z-index: 2;
-  bottom: clamp(62px, 7vw, 86px);
+  top: clamp(37px, 4.64vw, 69px);
   left: clamp(24px, 4vw, 64px);
-  max-width: min(560px, 60%);
+  max-width: min(560px, 40%);
 }
 
 .slide-caption h2 {
@@ -484,7 +485,10 @@ img {
 }
 
 @media (max-width: 900px) {
+  /* On phones the CTA card spans the full width of the top, so the headline
+     drops to the lower-left rather than colliding with it. */
   .slide-caption {
+    top: auto;
     right: 24px;
     bottom: clamp(58px, 13vw, 74px);
     left: 24px;
