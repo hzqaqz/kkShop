@@ -441,6 +441,20 @@ img {
   content: "";
 }
 
+/* Slides that lead to a product get a click affordance. */
+.carousel-slide--link {
+  cursor: pointer;
+}
+
+.carousel-slide--link .slide-media img {
+  transition: transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide--link:hover .slide-media img,
+.carousel-slide--link:focus-visible .slide-media img {
+  transform: scale(1.02);
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: #b8d4d8;

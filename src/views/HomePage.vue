@@ -15,8 +15,8 @@ useSeo({
   path: '/',
 });
 
-const mw100Route = { name: 'product-detail', params: { productId: 'mw100' } };
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
+const md001Route = { name: 'product-detail', params: { productId: 'md001' } };
 
 const contactEmail =
   'mailto:info@meowerair.com?subject=Product%20enquiry%20from%20meowerair.com';
@@ -25,10 +25,12 @@ const slides = [
   {
     image: '/images/carousel/hero-air-purifier-pets.jpg',
     alt: 'Meower air purifier in a sunlit living room while a Bengal cat and a schnauzer play with a toy',
+    to: mw200Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-home.jpg',
     alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
+    to: md001Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-plants.jpg',
@@ -187,7 +189,14 @@ onBeforeUnmount(() => {
         @focusout="startAutoSlide"
       >
         <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
-          <div v-for="(slide, index) in slides" :key="slide.image" class="carousel-slide">
+          <component
+            :is="slide.to ? RouterLink : 'div'"
+            v-for="(slide, index) in slides"
+            :key="slide.image"
+            class="carousel-slide"
+            :class="{ 'carousel-slide--link': slide.to }"
+            v-bind="slide.to ? { to: slide.to } : {}"
+          >
             <div class="slide-media">
               <img
                 :src="slide.image"
@@ -197,7 +206,7 @@ onBeforeUnmount(() => {
                 decoding="async"
               />
             </div>
-          </div>
+          </component>
         </div>
 
         <div class="carousel-controls" aria-label="Carousel controls">
