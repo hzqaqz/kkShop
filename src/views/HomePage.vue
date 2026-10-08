@@ -284,11 +284,13 @@ onBeforeUnmount(() => {
     </section>
 
     <section id="why-meower" class="section brand-section" aria-labelledby="brand-title">
+      <div class="brand-heading">
+        <p class="eyebrow">Why Meower</p>
+        <h2 id="brand-title">Air Care Built Around Pets, Made for Business</h2>
+      </div>
+
       <div class="brand-layout">
         <div class="brand-copy">
-          <p class="eyebrow">Why Meower</p>
-          <h2 id="brand-title">Air Care Built Around Pets, Made for Business</h2>
-
           <p>
             Meower designs air purifiers and dehumidifiers for households where cats and dogs
             share the living space. Fur, dander and the fine particles that carry odour settle

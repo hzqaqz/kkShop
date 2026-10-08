@@ -1972,21 +1972,27 @@ img {
 }
 
 /* Brand copy */
+/* Heading sits above both columns so the capability card can align exactly
+   with the body copy — top of the first paragraph to the bottom of the last. */
+.brand-heading {
+  max-width: 780px;
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+
+.brand-heading h2 {
+  margin: 0;
+  color: #334c51;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
 .brand-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr);
   gap: clamp(38px, 6vw, 96px);
   /* Stretch so the capability card matches the height of the copy column. */
   align-items: stretch;
-}
-
-.brand-copy h2 {
-  max-width: 700px;
-  margin: 0 0 26px;
-  color: #334c51;
-  font-size: clamp(30px, 4vw, 50px);
-  font-weight: 900;
-  line-height: 1.08;
 }
 
 .brand-copy p {
