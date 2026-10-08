@@ -180,14 +180,15 @@ onBeforeUnmount(() => {
   <main class="site-shell">
     <SiteHeader />
 
-    <section id="home" class="hero" aria-labelledby="hero-title">
-      <div
-        class="hero-carousel"
-        @mouseenter="stopAutoSlide"
-        @mouseleave="startAutoSlide"
-        @focusin="stopAutoSlide"
-        @focusout="startAutoSlide"
-      >
+    <section
+      id="home"
+      class="hero-carousel"
+      aria-labelledby="hero-title"
+      @mouseenter="stopAutoSlide"
+      @mouseleave="startAutoSlide"
+      @focusin="stopAutoSlide"
+      @focusout="startAutoSlide"
+    >
         <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
           <component
             :is="slide.to ? RouterLink : 'div'"
@@ -207,6 +208,22 @@ onBeforeUnmount(() => {
               />
             </div>
           </component>
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
+          </h1>
+          <p class="hero-subline">
+            HEPA H13 air purification and humidity control for distributors, retailers and
+            OEM/ODM buyers worldwide.
+          </p>
+          <div class="hero-actions">
+            <RouterLink class="hero-cta hero-cta--primary" :to="{ name: 'products' }">
+              Explore Products
+            </RouterLink>
+            <a class="hero-cta hero-cta--ghost" :href="contactEmail">Get a Quote</a>
+          </div>
         </div>
 
         <div class="carousel-controls" aria-label="Carousel controls">
@@ -230,26 +247,6 @@ onBeforeUnmount(() => {
             @click="handleManualSlide(index)"
           />
         </div>
-      </div>
-
-      <div class="hero-copy">
-        <div class="hero-copy-text">
-          <h1 id="hero-title">
-            Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
-          </h1>
-          <p class="hero-subline">
-            HEPA H13 air purification and humidity control for distributors, retailers and
-            OEM/ODM buyers worldwide.
-          </p>
-        </div>
-
-        <div class="hero-actions">
-          <RouterLink class="hero-cta hero-cta--primary" :to="{ name: 'products' }">
-            Explore Products
-          </RouterLink>
-          <a class="hero-cta hero-cta--ghost" :href="contactEmail">Get a Quote</a>
-        </div>
-      </div>
     </section>
 
     <section id="featured" class="section featured-section" aria-labelledby="featured-title">
@@ -273,7 +270,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="more-row">
-        <RouterLink class="more-button" :to="{ name: 'products' }">View all products</RouterLink>
+        <RouterLink class="more-button" :to="{ name: 'products' }">View all</RouterLink>
       </div>
     </section>
 
