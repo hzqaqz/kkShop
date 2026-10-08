@@ -70,6 +70,33 @@ const featuredBlogs = computed(() =>
     .slice(0, 4),
 );
 
+const brandPoints = [
+  {
+    title: 'H13 HEPA filtration',
+    text: 'Pet-friendly air purifiers that capture dander, dust and pollen.',
+  },
+  {
+    title: '200–400 m³/h CADR',
+    text: 'Across the MW100 and MW200, sized for rooms of roughly 20–40 m².',
+  },
+  {
+    title: 'Home to commercial dehumidifiers',
+    text: 'Including ceiling-mounted units for factories and facilities.',
+  },
+  {
+    title: 'OEM & ODM services',
+    text: 'Custom specification, branding and packaging support.',
+  },
+  {
+    title: 'Wholesale and bulk orders',
+    text: 'For distributors, retailers and project buyers worldwide.',
+  },
+  {
+    title: 'Project support',
+    text: 'From initial specification through to repeat orders.',
+  },
+];
+
 /** Slower than before: 4s was too fast to read, and it hurt perceived stability. */
 const SLIDE_INTERVAL_MS = 7000;
 
@@ -288,12 +315,10 @@ onBeforeUnmount(() => {
         </div>
 
         <ul class="brand-points" aria-label="Meower capabilities">
-          <li><strong>H13 HEPA filtration</strong> on pet-friendly air purifiers</li>
-          <li><strong>200–400 m³/h CADR</strong> across the MW100 and MW200</li>
-          <li><strong>Home to commercial dehumidifiers</strong>, including ceiling-mounted units</li>
-          <li><strong>OEM &amp; ODM services</strong> with custom specification support</li>
-          <li><strong>Wholesale and bulk orders</strong> for distributors and retailers</li>
-          <li><strong>Project support</strong> for contractors and facility buyers</li>
+          <li v-for="point in brandPoints" :key="point.title">
+            <strong>{{ point.title }}</strong>
+            <span>{{ point.text }}</span>
+          </li>
         </ul>
       </div>
     </section>
