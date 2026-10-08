@@ -1887,7 +1887,7 @@ img {
 /* Overlay card, top-aligned. The artwork carries no baked-in text now, so the
    card sits in the clear upper-left area without covering the product — and
    every headline is real HTML. */
-.hero-copy {
+.hero-card {
   position: absolute;
   z-index: 2;
   top: clamp(18px, 2.56vw, 40px);
@@ -1902,13 +1902,13 @@ img {
 }
 
 @supports (backdrop-filter: blur(10px)) {
-  .hero-copy {
+  .hero-card {
     background: rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(10px);
   }
 }
 
-.hero-copy h1 {
+.hero-card h1 {
   margin: 0;
   color: #334c51;
   font-size: clamp(19px, 2.08vw, 30px);
@@ -1917,7 +1917,7 @@ img {
   letter-spacing: -0.03em;
 }
 
-.hero-subline {
+.hero-card-subline {
   max-width: 416px;
   margin: 0;
   color: #5a7c85;
@@ -1925,14 +1925,14 @@ img {
   line-height: 1.55;
 }
 
-.hero-actions {
+.hero-card-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 2px;
 }
 
-.hero-cta {
+.hero-card-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1949,24 +1949,24 @@ img {
     transform 180ms ease;
 }
 
-.hero-cta--primary {
+.hero-card-cta--primary {
   background: #334c51;
   color: #fff;
 }
 
-.hero-cta--primary:hover,
-.hero-cta--primary:focus-visible {
+.hero-card-cta--primary:hover,
+.hero-card-cta--primary:focus-visible {
   background: #22383c;
   transform: translateY(-2px);
 }
 
-.hero-cta--ghost {
+.hero-card-cta--ghost {
   border: 1.5px solid rgba(51, 76, 81, 0.3);
   color: #334c51;
 }
 
-.hero-cta--ghost:hover,
-.hero-cta--ghost:focus-visible {
+.hero-card-cta--ghost:hover,
+.hero-card-cta--ghost:focus-visible {
   border-color: #334c51;
   background: rgba(212, 235, 229, 0.5);
   transform: translateY(-2px);
@@ -2057,7 +2057,7 @@ img {
     min-height: 470px;
   }
 
-  .hero-copy {
+  .hero-card {
     top: 12px;
     right: 12px;
     left: 12px;
@@ -2067,11 +2067,11 @@ img {
     border-radius: 12px;
   }
 
-  .hero-copy h1 {
+  .hero-card h1 {
     font-size: 18px;
   }
 
-  .hero-subline {
+  .hero-card-subline {
     font-size: 13px;
   }
 
@@ -2086,15 +2086,15 @@ img {
     min-height: 450px;
   }
 
-  .hero-copy h1 {
+  .hero-card h1 {
     font-size: 17px;
   }
 
-  .hero-subline {
+  .hero-card-subline {
     font-size: 12.5px;
   }
 
-  .hero-cta {
+  .hero-card-cta {
     flex: 1 1 auto;
     padding: 0 16px;
   }

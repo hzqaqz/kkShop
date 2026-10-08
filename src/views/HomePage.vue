@@ -210,19 +210,19 @@ onBeforeUnmount(() => {
           </component>
         </div>
 
-        <div class="hero-copy">
+        <div class="hero-card">
           <h1 id="hero-title">
             Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
           </h1>
-          <p class="hero-subline">
+          <p class="hero-card-subline">
             HEPA H13 air purification and humidity control for distributors, retailers and
             OEM/ODM buyers worldwide.
           </p>
-          <div class="hero-actions">
-            <RouterLink class="hero-cta hero-cta--primary" :to="{ name: 'products' }">
+          <div class="hero-card-actions">
+            <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
               Explore Products
             </RouterLink>
-            <a class="hero-cta hero-cta--ghost" :href="contactEmail">Get a Quote</a>
+            <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmail">Get a Quote</a>
           </div>
         </div>
 
