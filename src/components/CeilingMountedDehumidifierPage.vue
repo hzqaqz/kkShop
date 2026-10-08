@@ -20,7 +20,7 @@ const features = [
 
       <img
         class="ceiling-hero-scene"
-        src="/images/products/md0002/ceiling-mounted-factory-scene.png"
+        src="/images/products/md0002/ceiling-mounted-factory-scene.jpg"
         alt="White and black MD0002 ceiling-mounted dehumidifiers in a factory"
       />
 
@@ -42,7 +42,7 @@ const features = [
         </p>
       </div>
       <img
-        src="/images/products/md0002/ceiling-mounted-dehumidifier-white.png"
+        src="/images/products/md0002/ceiling-mounted-dehumidifier-white.jpg"
         alt="MD0002 industrial dehumidifier"
       />
     </section>

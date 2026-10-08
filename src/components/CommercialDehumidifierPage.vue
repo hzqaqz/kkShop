@@ -11,12 +11,12 @@ const features = [
 const spaces = [
   {
     label: 'Basement & Garages',
-    image: '/images/products/md0001/basement-garage.png',
+    image: '/images/products/md0001/basement-garage.jpg',
     alt: 'MD0001 commercial dehumidifier in a basement garage',
   },
   {
     label: 'Warehouse',
-    image: '/images/products/md0001/warehouse-space.png',
+    image: '/images/products/md0001/warehouse-space.jpg',
     alt: 'MD0001 commercial dehumidifier in a warehouse',
   },
 ];
@@ -51,7 +51,7 @@ const spaces = [
         </p>
       </div>
       <img
-        src="/images/products/md0001/product-white.png"
+        src="/images/products/md0001/product-white.jpg"
         alt="MD0001 commercial dehumidifier"
       />
     </section>
@@ -95,7 +95,7 @@ const spaces = [
   position: relative;
   min-height: clamp(560px, 48vw, 720px);
   padding: clamp(120px, 11vw, 170px) 9vw clamp(32px, 3vw, 48px);
-  background: url("/images/products/md0001/warehouse-hero.png") center / cover no-repeat;
+  background: url("/images/products/md0001/warehouse-hero.jpg") center / cover no-repeat;
   overflow: hidden;
 }
 

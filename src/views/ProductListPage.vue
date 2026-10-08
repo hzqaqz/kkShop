@@ -24,12 +24,12 @@ const productGroups = [
     products: [
       {
         name: 'MW100',
-        image: '/images/products/list/mw100.png',
+        image: '/images/products/list/mw100.jpg',
         to: { name: 'product-detail', params: { productId: 'mw100' } },
       },
       {
         name: 'MW200',
-        image: '/images/products/list/mw200.png',
+        image: '/images/products/list/mw200.jpg',
         to: { name: 'product-detail', params: { productId: 'mw200' } },
       },
     ],
@@ -41,7 +41,7 @@ const productGroups = [
     products: [
       {
         name: 'MD001 Dehumidifier',
-        image: '/images/products/md001/product-white.png',
+        image: '/images/products/md001/product-white.jpg',
         to: { name: 'product-detail', params: { productId: 'md001' } },
       },
     ],
@@ -53,12 +53,12 @@ const productGroups = [
     products: [
       {
         name: 'Commercial Dehumidifier',
-        image: '/images/products/list/commercial-dehumidifier.png',
+        image: '/images/products/list/commercial-dehumidifier.jpg',
         to: { name: 'product-detail', params: { productId: 'commercial-dehumidifier' } },
       },
       {
         name: 'Ceiling-Mounted Dehumidifier',
-        image: '/images/products/md0002/ceiling-mounted-dehumidifier-white.png',
+        image: '/images/products/md0002/ceiling-mounted-dehumidifier-white.jpg',
         to: { name: 'product-detail', params: { productId: 'ceiling-mounted-dehumidifier' } },
       },
     ],

@@ -1,7 +1,7 @@
 import { useHead, useSeoMeta } from '@unhead/vue';
 
 const SITE_URL = 'https://meowerair.com';
-const DEFAULT_IMAGE = `${SITE_URL}/images/hero-lifestyle.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/images/hero-lifestyle.jpg`;
 const SITE_NAME = 'Meower';
 const DEFAULT_TITLE = 'Meower | Pet-Friendly Air Purifiers & Dehumidifiers';
 const DEFAULT_DESCRIPTION =

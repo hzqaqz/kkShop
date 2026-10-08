@@ -2,13 +2,22 @@
 import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { X } from 'lucide-vue-next';
 
-const OPEN_DELAY_MS = 600;
+/**
+ * Interrupt only after real engagement: either the visitor has scrolled a
+ * third of the way down, or they have stayed long enough to be interested.
+ * Firing 0.6s after load pushed people away before they saw anything.
+ */
+const OPEN_DELAY_MS = 18000;
+const SCROLL_TRIGGER_RATIO = 0.35;
+const SESSION_KEY = 'meower-promo-seen';
 
 const isOpen = ref(false);
 const dialogRef = ref(null);
 const closeButtonRef = ref(null);
 
 let openTimer;
+let scrollHandler;
+let opened = false;
 let previousBodyOverflow = '';
 let lastFocusedElement = null;
 let scrollLocked = false;
@@ -23,6 +32,58 @@ const partnershipBullets = [
 ];
 
 const ctaMailto = 'mailto:info@meowerair.com?subject=Distributor%20pricing%20inquiry';
+
+function alreadySeen() {
+  try {
+    return window.sessionStorage.getItem(SESSION_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function markSeen() {
+  try {
+    window.sessionStorage.setItem(SESSION_KEY, '1');
+  } catch {
+    /* sessionStorage is unavailable in some private modes */
+  }
+}
+
+function cleanupTriggers() {
+  if (openTimer) {
+    window.clearTimeout(openTimer);
+    openTimer = undefined;
+  }
+
+  if (scrollHandler) {
+    window.removeEventListener('scroll', scrollHandler);
+    scrollHandler = undefined;
+  }
+}
+
+function openModal() {
+  if (opened) {
+    return;
+  }
+
+  opened = true;
+  cleanupTriggers();
+  markSeen();
+  lockScroll();
+  isOpen.value = true;
+  nextTick(() => closeButtonRef.value?.focus());
+}
+
+function handleScroll() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  if (scrollable <= 0) {
+    return;
+  }
+
+  if (window.scrollY / scrollable >= SCROLL_TRIGGER_RATIO) {
+    openModal();
+  }
+}
 
 function lockScroll() {
   if (scrollLocked) {
@@ -114,20 +175,18 @@ onMounted(() => {
   lastFocusedElement = document.activeElement;
   window.addEventListener('keydown', handleKeydown);
 
-  openTimer = window.setTimeout(() => {
-    openTimer = undefined;
-    lockScroll();
-    isOpen.value = true;
-    nextTick(() => closeButtonRef.value?.focus());
-  }, OPEN_DELAY_MS);
+  // Do not interrupt a visitor who has already been shown the offer.
+  if (alreadySeen()) {
+    return;
+  }
+
+  scrollHandler = handleScroll;
+  window.addEventListener('scroll', scrollHandler, { passive: true });
+  openTimer = window.setTimeout(openModal, OPEN_DELAY_MS);
 });
 
 onBeforeUnmount(() => {
-  if (openTimer) {
-    window.clearTimeout(openTimer);
-    openTimer = undefined;
-  }
-
+  cleanupTriggers();
   window.removeEventListener('keydown', handleKeydown);
   unlockScroll();
   restoreFocus();
@@ -159,7 +218,7 @@ onBeforeUnmount(() => {
 
           <figure class="promo-ad-media">
             <img
-              src="/images/promo-ad-lifestyle.png"
+              src="/images/promo-ad-lifestyle.jpg"
               alt="Meower air purifier with a cat in a sunlit room, beside a wooden cat tree and a yellow pet litter box"
             />
             <figcaption class="promo-ad-headline-wrap">

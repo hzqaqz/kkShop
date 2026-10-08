@@ -44,10 +44,10 @@ const features = [
 ];
 
 const spaces = [
-  { label: 'Closet', image: '/images/products/md001/space-closet.png' },
-  { label: 'Bathroom', image: '/images/products/md001/space-bathroom.png' },
-  { label: 'Living Room', image: '/images/products/md001/space-living-room.png' },
-  { label: 'Bedroom', image: '/images/products/md001/space-bedroom.png' },
+  { label: 'Closet', image: '/images/products/md001/space-closet.jpg' },
+  { label: 'Bathroom', image: '/images/products/md001/space-bathroom.jpg' },
+  { label: 'Living Room', image: '/images/products/md001/space-living-room.jpg' },
+  { label: 'Bedroom', image: '/images/products/md001/space-bedroom.jpg' },
 ];
 </script>
 
@@ -56,7 +56,7 @@ const spaces = [
     <section class="md001-hero" aria-labelledby="md001-title">
       <img
         class="md001-hero-image"
-        src="/images/products/md001/hero-living-room.png"
+        src="/images/products/md001/hero-living-room.jpg"
         alt="MD001 dehumidifier in a sunlit living room"
       />
       <div class="md001-hero-copy">

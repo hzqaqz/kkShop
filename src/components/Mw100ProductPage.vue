@@ -24,13 +24,13 @@ const props = defineProps({
 const spaceImages = {
   mw100: {
     bedroom: '/images/products/mw100/bedroom.webp',
-    livingRoom: '/images/products/mw100/living-room.png',
+    livingRoom: '/images/products/mw100/living-room.jpg',
     petRoom: '/images/products/mw100/pet-room.webp',
   },
   mw200: {
-    bedroom: '/images/products/mw200/space-bedroom.png',
-    livingRoom: '/images/products/mw200/space-living-room.png',
-    petRoom: '/images/products/mw200/space-pet-room.png',
+    bedroom: '/images/products/mw200/space-bedroom.jpg',
+    livingRoom: '/images/products/mw200/space-living-room.jpg',
+    petRoom: '/images/products/mw200/space-pet-room.jpg',
   },
 };
 
@@ -38,7 +38,7 @@ const productContent = {
   mw100: {
     name: 'Meower 100',
     model: 'MW100',
-    heroImage: '/images/products/mw100/hero-scene.png',
+    heroImage: '/images/products/mw100/hero-scene.jpg',
     whyImage: '/images/products/mw100/bedroom.webp',
     heroDescription:
       'Designed for pet-loving families with cleaner air, quieter comfort, and smarter control.',
@@ -91,8 +91,8 @@ const productContent = {
   mw200: {
     name: 'Meower 200',
     model: 'MW200',
-    heroImage: '/images/products/mw200/mw200-detail-hero.png',
-    whyImage: '/images/products/mw200/mw200-why-image.png',
+    heroImage: '/images/products/mw200/mw200-detail-hero.jpg',
+    whyImage: '/images/products/mw200/mw200-why-image.jpg',
     heroDescription:
       'Designed for cat-and-dog-loving families with cleaner air, quieter comfort, and all-around purification.',
     heroFeatures: [
@@ -319,7 +319,7 @@ const specs = computed(() => [
       aria-labelledby="self-grooming-title"
     >
       <img
-        src="/images/products/mw100/04-mw100-with-cat.png"
+        src="/images/products/mw100/04-mw100-with-cat.jpg"
         alt="MW100 smart air purifier with a cat"
       />
       <div>
