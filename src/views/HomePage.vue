@@ -222,11 +222,11 @@ onBeforeUnmount(() => {
 
         <div class="hero-card">
           <h1 id="hero-title">
-            Pet-Friendly Air Purifiers &amp; Dehumidifiers for Homes and Businesses
+            Meower Air Purifiers &amp; Dehumidifiers for Homes and Businesses
           </h1>
           <p class="hero-card-subline">
-            HEPA H13 air purification and humidity control for distributors, retailers and
-            OEM/ODM buyers worldwide.
+            Pet-friendly HEPA H13 air purification and humidity control for distributors,
+            retailers and OEM/ODM buyers worldwide.
           </p>
           <div class="hero-card-actions">
             <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
