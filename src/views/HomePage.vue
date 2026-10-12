@@ -23,21 +23,21 @@ const contactEmail =
 
 const slides = [
   {
-    image: '/images/carousel/hero-air-purifier-pets.jpg',
+    image: '/images/carousel/hero-air-purifier-pets.webp',
     alt: 'Meower air purifier in a sunlit living room while a Bengal cat and a schnauzer play with a toy',
     title: 'Meower Air Purifier',
     subtitle: 'Cleaner Air. Happier Pet Homes.',
     to: mw200Route,
   },
   {
-    image: '/images/carousel/hero-dehumidifier-home.jpg',
+    image: '/images/carousel/hero-dehumidifier-home.webp',
     alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
     title: 'Meower Dehumidifier',
     subtitle: 'Cleaner Air. Happier Pet Homes.',
     to: md001Route,
   },
   {
-    image: '/images/carousel/hero-dehumidifier-plants.jpg',
+    image: '/images/carousel/hero-dehumidifier-plants.webp',
     alt: 'Meower dehumidifier in a bright living room filled with plants beside floor-to-ceiling windows',
     title: 'Meower Dehumidifier',
     subtitle: 'Cleaner Air. Happier Pet Homes.',
@@ -47,17 +47,17 @@ const slides = [
 const categories = [
   {
     title: 'Home Use Air Purifier',
-    image: '/images/categories/home-use-air-purifier.jpg',
+    image: '/images/categories/home-use-air-purifier.webp',
     to: { name: 'products', hash: '#home-air-purifiers' },
   },
   {
     title: 'Home Use Dehumidifier',
-    image: '/images/categories/home-use-dehumidifier.jpg',
+    image: '/images/categories/home-use-dehumidifier.webp',
     to: { name: 'products', hash: '#home-dehumidifiers' },
   },
   {
     title: 'Commercial Dehumidifier',
-    image: '/images/categories/commercial-dehumidifier.jpg',
+    image: '/images/categories/commercial-dehumidifier.webp',
     to: { name: 'products', hash: '#commercial-dehumidifiers' },
   },
 ];

@@ -4,8 +4,8 @@ export const blogArticles = [
     title: 'Air Purifier for Pet Dander in Bedroom: A Pet Parent\'s Guide to a Cleaner Home',
     date: '2026-10-12',
     sortDate: '2026-10-12',
-    coverImage: '/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.jpg',
-    heroImage: '/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.jpg',
+    coverImage: '/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.webp',
+    heroImage: '/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.webp',
     imageFit: 'natural',
     cardCrop: 'right',
     contentMarkdown: `# Air Purifier for Pet Dander in Bedroom: A Pet Parent's Guide to a Cleaner Home
@@ -16,7 +16,7 @@ The bedroom deserves particular attention. It is where children and adults spend
 
 This guide explains what pet dander actually is, why bedrooms collect it, what HEPA filtration can and cannot do, and how to build a practical routine around it.
 
-![A Bengal cat sitting beside a Meower air purifier and a litter box in a bright, sunlit home](/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.jpg)
+![A Bengal cat sitting beside a Meower air purifier and a litter box in a bright, sunlit home](/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.webp)
 
 ## Life with Kids and Cats: Pet Hair Is Only Part of the Story
 
@@ -77,7 +77,7 @@ This is where an air purifier for pet dander in the bedroom can be genuinely use
 
 A properly sized air purifier fitted with a high-efficiency particulate air (HEPA) filter draws room air through the filter and captures airborne particles as it passes. HEPA filtration is designed to capture particles such as dust, pollen and pet dander.
 
-![Illustration of a cat and dog resting while a Meower air purifier draws airborne particles in and releases filtered air](/images/blogs/new/pet-indoor-air-quality.jpg)
+![Illustration of a cat and dog resting while a Meower air purifier draws airborne particles in and releases filtered air](/images/blogs/new/pet-indoor-air-quality.webp)
 
 The U.S. Environmental Protection Agency explains that portable air cleaners can help reduce airborne particles indoors, although their effectiveness depends on factors such as the filtration system, airflow and room size.
 
@@ -152,8 +152,8 @@ At Meower, the aim is to make cleaner indoor air part of everyday family life �
     title: 'Pollen Season in New Zealand: A Family Guide to Cleaner Indoor Air',
     date: '2026-09-29',
     sortDate: '2026-09-29',
-    coverImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg',
-    heroImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg',
+    coverImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.webp',
+    heroImage: '/images/blogs/pollen-season/pollen-season-indoor-air-quality.webp',
     // Body keeps the artwork's own 4:3 ratio (no crop, no letterboxing);
     // cards crop the right side only so the left-hand Meower lock-up stays intact.
     imageFit: 'natural',
@@ -170,7 +170,7 @@ Instead, consider a simple approach:
 - **Clean** what is already inside.
 - **Filter** the air your family breathes.
 
-![A cat sleeping in a sunlit living room while a Meower air purifier filters pollen, dust and pet dander from the indoor air](/images/blogs/pollen-season/pollen-season-indoor-air-quality.jpg)
+![A cat sleeping in a sunlit living room while a Meower air purifier filters pollen, dust and pet dander from the indoor air](/images/blogs/pollen-season/pollen-season-indoor-air-quality.webp)
 
 ## Pollen Season in New Zealand Lasts Longer Than You Might Think
 
@@ -240,8 +240,8 @@ Keep pollen outdoors. Clean the air indoors. Breathe better with [Meower](/produ
     slug: 'beyond-comfort-humidity-control-indoor-air-quality',
     title: 'Beyond Comfort: Why Humidity Control Is the Missing Link in Indoor Air Quality',
     date: '2026-08-05',
-    coverImage: '/images/blogs/beyond-comfort/humidity-control-preview.jpg',
-    heroImage: '/images/blogs/beyond-comfort/humidity-control-preview.jpg',
+    coverImage: '/images/blogs/beyond-comfort/humidity-control-preview.webp',
+    heroImage: '/images/blogs/beyond-comfort/humidity-control-preview.webp',
     contentMarkdown: `# Beyond Comfort: Why Humidity Control Is the Missing Link in Indoor Air Quality
 
 ## Preview
@@ -252,7 +252,7 @@ Moisture is more than a matter of feeling "sticky" or "dry." **Excess moisture i
 
 This article deconstructs the scientific link between moisture and mold, explaining how **effective humidity management-combined with source control, ventilation, air filtration, and proper remediation-can reduce a major indoor air quality risk and support a healthier indoor environment.**
 
-![Humidity control indoor air quality](/images/blogs/beyond-comfort/humidity-control-preview.jpg)
+![Humidity control indoor air quality](/images/blogs/beyond-comfort/humidity-control-preview.webp)
 
 ## The Mold Growth Equation-and the Variable We Can Control
 
@@ -282,7 +282,7 @@ Within this target range:
 
 ## How to Handle Existing Mold Safely and Effectively
 
-![Mold cleanup guide](/images/blogs/beyond-comfort/mold-cleanup-guide.jpg)
+![Mold cleanup guide](/images/blogs/beyond-comfort/mold-cleanup-guide.webp)
 
 While humidity control helps prevent mold growth, **existing mold requires direct action. Ignoring visible mold or persistent musty odors can allow contamination to spread and worsen indoor air quality.**
 
@@ -438,8 +438,8 @@ A consistent routine matters more than a complicated one. Pair regular cleaning 
     slug: 'overcoming-the-ac-misconception',
     title: 'Overcoming the AC Misconception',
     sortDate: '2026-08-26',
-    coverImage: '/images/blogs/new/ac-dry-mode-dehumidifier.png',
-    heroImage: '/images/blogs/new/ac-dry-mode-dehumidifier.png',
+    coverImage: '/images/blogs/new/ac-dry-mode-dehumidifier.webp',
+    heroImage: '/images/blogs/new/ac-dry-mode-dehumidifier.webp',
     contentMarkdown: `# Overcoming the AC Misconception
 
 ## Why a Dry Mode Is Not the Same as Dedicated Dehumidification
@@ -450,7 +450,7 @@ The key difference is control. Air conditioners are primarily driven by **temper
 
 During humid seasons and rainy nights, a room can feel cool while relative humidity stays above 60%. That is the range where damp surfaces are more likely to support mold growth and where indoor air quality can become harder to manage.
 
-![Meower dehumidifier moisture-control cycle](/images/blogs/new/ac-dry-mode-dehumidifier.png)
+![Meower dehumidifier moisture-control cycle](/images/blogs/new/ac-dry-mode-dehumidifier.webp)
 
 ## Control Humidity Independently of Temperature
 
@@ -462,8 +462,8 @@ For a resilient indoor air strategy, use air conditioning for temperature contro
     slug: 'property-management-asset-protection',
     title: 'Property Management & Asset Protection',
     sortDate: '2026-08-19',
-    coverImage: '/images/blogs/new/property-asset-protection.jpg',
-    heroImage: '/images/blogs/new/property-asset-protection.jpg',
+    coverImage: '/images/blogs/new/property-asset-protection.webp',
+    heroImage: '/images/blogs/new/property-asset-protection.webp',
     contentMarkdown: `# Property Management & Asset Protection
 
 ## A Dehumidifier Is More Than a Comfort Appliance
@@ -472,7 +472,7 @@ From a property management perspective, a dehumidifier is an asset protection to
 
 Moisture-related structural damage can lead to costly repairs and mold remediation. The good news is that many of these risks can be reduced before they become visible.
 
-![Meower dehumidifier protecting a storage space](/images/blogs/new/property-asset-protection.jpg)
+![Meower dehumidifier protecting a storage space](/images/blogs/new/property-asset-protection.webp)
 
 ## Match Equipment to the Building
 
@@ -484,8 +484,8 @@ High-efficiency dehumidification is not simply a comfort expense. It is a practi
     slug: 'humidity-science-mold-control',
     title: 'Data-Driven Science for Mold Control',
     sortDate: '2026-08-19',
-    coverImage: '/images/blogs/new/humidity-science.jpg',
-    heroImage: '/images/blogs/new/humidity-science.jpg',
+    coverImage: '/images/blogs/new/humidity-science.webp',
+    heroImage: '/images/blogs/new/humidity-science.webp',
     contentMarkdown: `# Data-Driven Science for Mold Control
 
 ## The Humidity Threshold That Matters
@@ -494,7 +494,7 @@ Mold spores exist in many indoor environments, but moisture is the condition tha
 
 As humidity remains above 60%, damp surfaces and stagnant spaces can create a more supportive environment for spores, allergens and musty odors.
 
-![Indoor humidity control and mold prevention](/images/blogs/new/humidity-science.jpg)
+![Indoor humidity control and mold prevention](/images/blogs/new/humidity-science.webp)
 
 ## Keep Indoor Air in a Healthier Range
 
@@ -506,8 +506,8 @@ Capacity is usually measured in liters or pints per day, while airflow determine
     slug: 'how-humid-air-affects-pets',
     title: 'How Humid Air Affects Pets',
     sortDate: '2026-07-14',
-    coverImage: '/images/blogs/new/pet-humidity-air-quality.jpg',
-    heroImage: '/images/blogs/new/pet-humidity-air-quality.jpg',
+    coverImage: '/images/blogs/new/pet-humidity-air-quality.webp',
+    heroImage: '/images/blogs/new/pet-humidity-air-quality.webp',
     contentMarkdown: `# How Humid Air Affects Pets
 
 ## A Healthier Home for Pets Starts With Humidity Control
@@ -516,7 +516,7 @@ Cats and dogs breathe the same indoor air we do, but they also spend more time c
 
 High humidity creates conditions that encourage mold, dust mites, bacteria and unpleasant odors. It may not act like a single toxic pollutant, but it can make other indoor triggers more persistent.
 
-![Meower air care appliances in a pet-friendly home](/images/blogs/new/pet-humidity-air-quality.jpg)
+![Meower air care appliances in a pet-friendly home](/images/blogs/new/pet-humidity-air-quality.webp)
 
 ## A Combined Air-Care Approach
 
@@ -526,8 +526,8 @@ A dehumidifier helps reduce excess moisture, while an air purifier helps capture
     slug: 'how-indoor-air-quality-affects-your-pets',
     title: 'How Indoor Air Quality Affects Your Pets',
     sortDate: '2026-08-26',
-    coverImage: '/images/blogs/new/pet-indoor-air-quality.jpg',
-    heroImage: '/images/blogs/new/pet-indoor-air-quality.jpg',
+    coverImage: '/images/blogs/new/pet-indoor-air-quality.webp',
+    heroImage: '/images/blogs/new/pet-indoor-air-quality.webp',
     contentMarkdown: `# How Indoor Air Quality Affects Your Pets
 
 ## Your Pet Spends the Most Time at Home
@@ -542,7 +542,7 @@ Humid air can feel heavy and uncomfortable, especially in warm weather. When moi
 
 Dust mites and mold thrive more easily in damp environments. They can gather in carpets, fabric furniture, pet beds and corners with limited ventilation. For sensitive pets, these indoor triggers may contribute to coughing, sneezing, watery eyes, skin discomfort or irritation.
 
-![Meower air purifier and dehumidifier supporting pet air quality](/images/blogs/new/pet-indoor-air-quality.jpg)
+![Meower air purifier and dehumidifier supporting pet air quality](/images/blogs/new/pet-indoor-air-quality.webp)
 
 ## Simple Steps for Cleaner Pet Air
 
@@ -552,11 +552,11 @@ Use a dehumidifier to manage excess moisture, choose an air purifier that can ci
     slug: 'the-air-our-children-breathe',
     title: 'The Air Our Children Breathe: Why Indoor Air Quality Should Be a Parenting Priority',
     sortDate: '2026-09-08',
-    coverImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.jpg',
-    heroImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.jpg',
+    coverImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.webp',
+    heroImage: '/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.webp',
     contentMarkdown: `# The Air Our Children Breathe: Why Indoor Air Quality Should Be a Parenting Priority
 
-![A mother and her teenage son working together at the kitchen table](/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.jpg)
+![A mother and her teenage son working together at the kitchen table](/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.webp)
 
 As the mother of a 14-year-old boy, I spend a lot of time thinking about my son's health.
 
@@ -570,7 +570,7 @@ They cannot choose the ventilation system in their classroom. They cannot decide
 
 **As parents, perhaps we should be paying much more attention.**
 
-![Students in a bright classroom with an air purifier running](/images/blogs/children-air-quality/classroom-air-purifier.jpg)
+![Students in a bright classroom with an air purifier running](/images/blogs/children-air-quality/classroom-air-purifier.webp)
 
 ## When One Child Gets Sick, the Whole Classroom Can Change
 
@@ -600,7 +600,7 @@ That does not mean that CO₂ itself is necessarily the only — or even the mai
 
 This is why measuring indoor air matters. Instead of simply saying, "The classroom feels stuffy," we can ask: **what is actually happening in the air?**
 
-![A classroom with open windows and a portable air cleaner in front](/images/blogs/children-air-quality/classroom-ventilation-air-cleaner.jpg)
+![A classroom with open windows and a portable air cleaner in front](/images/blogs/children-air-quality/classroom-ventilation-air-cleaner.webp)
 
 ## A Classroom Is Also a Learning Environment
 

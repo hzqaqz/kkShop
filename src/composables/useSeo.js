@@ -1,7 +1,11 @@
 import { useHead, useSeoMeta } from '@unhead/vue';
 
 const SITE_URL = 'https://meowerair.com';
-const DEFAULT_IMAGE = `${SITE_URL}/images/hero-lifestyle.jpg`;
+// 1200x630 (1.905:1) branded card — the ratio social platforms expect for
+// summary_large_image. Do not swap in a portrait image here: it gets cropped.
+const DEFAULT_IMAGE = `${SITE_URL}/images/og-image.jpg`;
+const DEFAULT_IMAGE_WIDTH = 1200;
+const DEFAULT_IMAGE_HEIGHT = 630;
 const SITE_NAME = 'Meower';
 const DEFAULT_TITLE = 'Meower | Pet-Friendly Air Purifiers & Dehumidifiers';
 const DEFAULT_DESCRIPTION =
@@ -16,12 +20,31 @@ const DEFAULT_DESCRIPTION =
  * @param {string} [options.description]  Meta description.
  * @param {string} [options.path]         Canonical path, defaults to '/'.
  * @param {string} [options.image]        og:image / twitter:image absolute URL.
+ *                                        Defaults to the 1200x630 branded card.
+ * @param {number} [options.imageWidth]   Only pass this when it matches the
+ *                                        image exactly — a wrong value makes
+ *                                        scrapers mis-render or skip the card.
+ * @param {number} [options.imageHeight]
  * @param {'website'|'article'} [options.type]
  */
-export function useSeo({ title, description, path = '/', image = DEFAULT_IMAGE, type = 'website' }) {
+export function useSeo({
+  title,
+  description,
+  path = '/',
+  image,
+  imageWidth,
+  imageHeight,
+  type = 'website',
+}) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
   const fullTitle = title ? `${title} | Meower` : DEFAULT_TITLE;
   const metaDescription = description || DEFAULT_DESCRIPTION;
+
+  // Only the branded card has known, guaranteed dimensions. Per-page images
+  // vary (4:3 covers, portrait product shots), so we omit the size hints there
+  // rather than declare something wrong.
+  const usesDefaultCard = !image;
+  const ogImage = image || DEFAULT_IMAGE;
 
   useSeoMeta({
     title: fullTitle,
@@ -30,13 +53,17 @@ export function useSeo({ title, description, path = '/', image = DEFAULT_IMAGE, 
     ogDescription: metaDescription,
     ogType: type,
     ogUrl: url,
-    ogImage: image,
+    ogImage,
+    ogImageWidth: usesDefaultCard ? DEFAULT_IMAGE_WIDTH : imageWidth,
+    ogImageHeight: usesDefaultCard ? DEFAULT_IMAGE_HEIGHT : imageHeight,
+    ogImageAlt: 'Meower pet-friendly air purifiers and dehumidifiers',
     ogSiteName: SITE_NAME,
     ogLocale: 'en_US',
     twitterCard: 'summary_large_image',
     twitterTitle: fullTitle,
     twitterDescription: metaDescription,
-    twitterImage: image,
+    twitterImage: ogImage,
+    twitterImageAlt: 'Meower pet-friendly air purifiers and dehumidifiers',
   });
 
   useHead({

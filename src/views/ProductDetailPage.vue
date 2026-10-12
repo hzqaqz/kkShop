@@ -51,7 +51,7 @@ const currentMeta = computed(() => {
     title: product.title,
     description: product.description,
     path: route.path,
-    image: `https://meowerair.com${product.image}`,
+    image: `https://meowerair.com${product.ogImage ?? product.image}`,
     type: 'website',
   };
 });

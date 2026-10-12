@@ -25,6 +25,11 @@ const breadcrumbs = computed(() => [
   { label: article.value?.title ?? 'Article', to: route.path },
 ]);
 
+// Facebook, LinkedIn, X and WhatsApp do not render SVG link previews, so a
+// vector cover must fall back to the raster branded card rather than leaving
+// the shared link with no image at all.
+const RASTER_IMAGE = /\.(jpe?g|png|webp|avif)$/i;
+
 const currentMeta = computed(() => {
   const item = article.value;
   if (!item) {
@@ -34,11 +39,14 @@ const currentMeta = computed(() => {
       path: route.path,
     };
   }
+  const cover = item.coverImage;
+  const ogImage = cover && RASTER_IMAGE.test(cover) ? `https://meowerair.com${cover}` : undefined;
+
   return {
     title: item.title,
     description: excerptFromMarkdown(item.contentMarkdown),
     path: route.path,
-    image: item.coverImage ? `https://meowerair.com${item.coverImage}` : undefined,
+    image: ogImage,
     type: 'article',
   };
 });

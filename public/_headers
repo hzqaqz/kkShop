@@ -1,0 +1,37 @@
+# Cloudflare Pages custom response headers
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+#
+# NOTE: Do NOT add a Cache-Control rule for HTML here. Cloudflare Pages documents
+# that custom caching on HTML can serve stale pages after a deploy and can break
+# Pages redirects/Functions. HTML intentionally ships as
+# "public, max-age=0, must-revalidate" + ETag so every deploy is visible at once.
+
+# Build output with a content hash in the filename.
+# The URL changes whenever the file changes, so it is safe to cache forever.
+/assets/*
+  Cache-Control: public, max-age=31556952, immutable
+
+# Image filenames are NOT content-hashed. A 1-year TTL here would keep serving a
+# stale image to returning visitors after a replacement, so keep it moderate.
+# If you need a longer TTL, rename the file whenever you change its contents.
+/images/*
+  Cache-Control: public, max-age=604800
+
+# The variable font filename is not hashed either.
+/fonts/*
+  Cache-Control: public, max-age=604800
+
+# Security headers for every response (no Cache-Control here).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Keep the *.pages.dev preview URLs out of Google, so they never compete with
+# meowerair.com as a duplicate copy.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

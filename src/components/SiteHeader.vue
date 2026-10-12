@@ -20,12 +20,12 @@ const menuPanels = {
         links: [
           {
             label: 'MW100',
-            image: '/images/products/navigation/mw100-transparent.png',
+            image: '/images/products/navigation/mw100-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'mw100' } },
           },
           {
             label: 'MW200',
-            image: '/images/products/navigation/mw200-transparent.png',
+            image: '/images/products/navigation/mw200-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'mw200' } },
           },
         ],
@@ -44,7 +44,7 @@ const menuPanels = {
         links: [
           {
             label: 'MD001 Dehumidifier',
-            image: '/images/products/md001/product-transparent.png',
+            image: '/images/products/md001/product-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'md001' } },
           },
         ],
@@ -55,12 +55,12 @@ const menuPanels = {
         links: [
           {
             label: 'Commercial Dehumidifier',
-            image: '/images/products/navigation/md0001-transparent.png',
+            image: '/images/products/navigation/md0001-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'commercial-dehumidifier' } },
           },
           {
             label: 'Ceiling-Mounted Dehumidifier',
-            image: '/images/products/navigation/md0002-transparent.png',
+            image: '/images/products/navigation/md0002-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'ceiling-mounted-dehumidifier' } },
           },
         ],
@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
     @mouseleave="closeMenu"
   >
     <RouterLink class="brand" to="/" aria-label="kkShop home">
-      <img class="brand-logo" src="/images/logo-meower.png" alt="Meower" />
+      <img class="brand-logo" src="/images/logo-meower.webp" alt="Meower" />
     </RouterLink>
 
     <nav class="nav-links" aria-label="Primary navigation">

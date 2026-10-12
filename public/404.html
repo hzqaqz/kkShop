@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#334c51" />
+    <title>Page Not Found | Meower</title>
+    <meta
+      name="description"
+      content="The page you were looking for could not be found. Browse Meower air purifiers, dehumidifiers, and guides instead."
+    />
+    <!-- A 404 response must never be indexed. -->
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <style>
+      @font-face {
+        font-family: "Google Sans Flex";
+        src: url("/fonts/GoogleSansFlex-Variable.woff2") format("woff2");
+        font-weight: 100 1000;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --ink: #334c51;
+        --muted: #5a7c85;
+        --body: #46646c;
+        --surface: rgba(212, 235, 229, 0.32);
+        --surface-strong: rgba(212, 235, 229, 0.58);
+        --border: rgba(51, 76, 81, 0.14);
+        --cream: #fef5ed;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+        font-family:
+          "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 18px max(16px, calc((100vw - 1180px) / 2));
+      }
+
+      .brand {
+        display: inline-flex;
+        flex: 0 0 auto;
+        width: 172px;
+        height: 52px;
+      }
+
+      .brand img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .nav-links a {
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 180ms ease, color 180ms ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--muted);
+        border-bottom-color: currentColor;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 250px);
+        padding: 48px 16px 72px;
+      }
+
+      .panel {
+        width: min(680px, 100%);
+        padding: 56px 48px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+
+      .code {
+        margin: 0;
+        font-size: clamp(64px, 14vw, 104px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+
+      h1 {
+        margin: 18px 0 0;
+        font-size: clamp(22px, 3vw, 32px);
+        font-weight: 800;
+        line-height: 1.25;
+      }
+
+      p {
+        margin: 16px 0 0;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--body);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 22px;
+        font-size: 15px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .button--primary {
+        background: var(--ink);
+        color: var(--cream);
+      }
+
+      .button--primary:hover,
+      .button--primary:focus-visible {
+        background: var(--muted);
+      }
+
+      .button--ghost {
+        background: var(--surface-strong);
+        border-color: var(--border);
+        color: var(--ink);
+      }
+
+      .button--ghost:hover,
+      .button--ghost:focus-visible {
+        background: #fff;
+        border-color: var(--ink);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+        margin-top: 28px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .links a:hover,
+      .links a:focus-visible {
+        color: var(--ink);
+        text-decoration: underline;
+      }
+
+      footer {
+        padding: 0 16px 40px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      footer a:hover {
+        color: var(--ink);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+
+        .panel {
+          padding: 40px 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Meower home">
+        <img src="/images/logo-meower.webp" alt="Meower" width="172" height="52" />
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/products#home-air-purifiers">Air Purifiers</a>
+        <a href="/products#home-dehumidifiers">Dehumidifiers</a>
+        <a href="/blogs">Blogs</a>
+        <a href="/about">About Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="panel">
+        <p class="code">404</p>
+        <h1>We couldn&rsquo;t find that page</h1>
+        <p>
+          The link may be broken, or the page may have moved. Everything else is still here &mdash;
+          air purifiers, dehumidifiers, and our indoor air quality guides.
+        </p>
+
+        <div class="actions">
+          <a class="button button--primary" href="/">Back to homepage</a>
+          <a class="button button--ghost" href="/products">Browse products</a>
+        </div>
+
+        <div class="links">
+          <a href="/blogs">Read the blog</a>
+          <a href="/about">About Meower</a>
+          <a href="mailto:info@meowerair.com">info@meowerair.com</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2026 Meower &middot; Air purifiers &amp; dehumidifiers for homes and businesses
+    </footer>
+  </body>
+</html>

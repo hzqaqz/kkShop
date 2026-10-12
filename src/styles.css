@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Google Sans Flex";
-  src: url("/fonts/GoogleSansFlex-Variable.ttf") format("truetype");
+  src: url("/fonts/GoogleSansFlex-Variable.woff2") format("woff2");
   font-weight: 100 1000;
   font-style: normal;
   font-display: swap;
