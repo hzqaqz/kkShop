@@ -19,7 +19,7 @@ export const articleTopics = {
   },
   'beyond-comfort-humidity-control-indoor-air-quality': {
     tags: ['humidity', 'dehumidifier', 'air-quality'],
-    products: ['md001', 'commercial-dehumidifier'],
+    products: ['md001', 'commercial-dehumidifier', 'md002'],
   },
   'focus-on-asset-protection-technical-equipment-selection': {
     tags: ['commercial', 'humidity', 'dehumidifier'],
@@ -35,7 +35,7 @@ export const articleTopics = {
   },
   'overcoming-the-ac-misconception': {
     tags: ['humidity', 'dehumidifier'],
-    products: ['md001'],
+    products: ['md001', 'md002'],
   },
   'property-management-asset-protection': {
     tags: ['commercial', 'humidity', 'mold'],
@@ -43,11 +43,11 @@ export const articleTopics = {
   },
   'humidity-science-mold-control': {
     tags: ['humidity', 'mold', 'dehumidifier'],
-    products: ['md001', 'commercial-dehumidifier'],
+    products: ['md001', 'commercial-dehumidifier', 'md002'],
   },
   'how-humid-air-affects-pets': {
     tags: ['pets', 'humidity'],
-    products: ['md001', 'mw100'],
+    products: ['md001', 'mw100', 'md002'],
   },
   'how-indoor-air-quality-affects-your-pets': {
     tags: ['pets', 'air-purifier'],

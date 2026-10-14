@@ -44,6 +44,21 @@ export const products = {
     image: '/images/products/md001/product-white.webp',
     ogImage: '/images/products/md001/hero-living-room.webp',
   },
+  // NOTE: asset folder is `md002` (this product). The existing `md0002` folder
+  // holds the unrelated MD0002 ceiling-mounted unit — one character apart.
+  md002: {
+    id: 'md002',
+    label: 'MD002 Dehumidifier',
+    cardLabel: 'MD002',
+    category: 'Home Dehumidifier',
+    page: 'md002',
+    title: 'MD002 Home Dehumidifier with Clothes Drying',
+    cardSubtitle: 'Dry Laundry, Dry Rooms',
+    description:
+      'The Meower MD002 home dehumidifier removes up to 20 L/day at high temperature and includes a clothes-drying function for bathrooms, laundry rooms and bedrooms.',
+    image: '/images/products/md002/product-white.webp',
+    ogImage: '/images/products/md002/og-card.jpg',
+  },
   'commercial-dehumidifier': {
     id: 'commercial-dehumidifier',
     label: 'Commercial Dehumidifier',
@@ -77,6 +92,7 @@ export const productOrder = [
   'mw100',
   'mw200',
   'md001',
+  'md002',
   'commercial-dehumidifier',
   'ceiling-mounted-dehumidifier',
 ];

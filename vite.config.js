@@ -6,6 +6,7 @@ const PRODUCT_IDS = [
   'mw100',
   'mw200',
   'md001',
+  'md002',
   'commercial-dehumidifier',
   'ceiling-mounted-dehumidifier',
 ];

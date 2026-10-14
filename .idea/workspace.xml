@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="SEO优化，主页、产品页内容优化">
+      <change afterPath="$PROJECT_DIR$/public/images/products/md002/hero-living-room.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/md002/og-card.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/md002/product-transparent.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/md002/product-white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Md002DehumidifierPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SiteHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/contentLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/contentLinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productFaqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productFaqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ProductListPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductListPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

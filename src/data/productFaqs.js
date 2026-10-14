@@ -72,6 +72,28 @@ export const productFaqs = {
         'The MD001 is rated at 223W with a maximum current of 1.6 A, and weighs 7.3 kg, so it can be moved between rooms on its casters.',
     },
   ],
+  md002: [
+    {
+      question: 'How much moisture does the Meower MD002 remove per day?',
+      answer:
+        'The MD002 removes up to 20 L/day at high temperature, with a maximum dehumidification capacity of 25 L/day. Its nominal dehumidification capacity is 0.48 kg/h.',
+    },
+    {
+      question: 'Can the Meower MD002 dry laundry indoors?',
+      answer:
+        'Yes. The MD002 has a clothes-drying function. Its 190 m³/h airflow moves dehumidified air across a drying rack or an indoor line, so washing dries indoors without releasing that moisture back into the room.',
+    },
+    {
+      question: 'How big is the water tank on the Meower MD002?',
+      answer:
+        'The MD002 has a 4.0 L water tank, which is roughly two and a half times the 1.6 L tank on the compact MD001, so it can run longer between empties.',
+    },
+    {
+      question: 'How much power does the Meower MD002 use, and how heavy is it?',
+      answer:
+        'The MD002 is rated at 295 W with a maximum current of 2.3 A on 220 V~50 Hz. It weighs 13 kg and measures 300 × 200 × 490 mm.',
+    },
+  ],
   'commercial-dehumidifier': [
     {
       question: 'How much moisture can a Meower commercial dehumidifier remove?',

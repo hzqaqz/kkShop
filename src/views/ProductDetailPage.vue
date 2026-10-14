@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
 import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
+import Md002DehumidifierPage from '../components/Md002DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import ProductFaq from '../components/ProductFaq.vue';
 import ProductOverview from '../components/ProductOverview.vue';
@@ -22,6 +23,7 @@ const THEME_CLASSES = {
   mw100: 'post-theme-cream',
   mw200: 'post-theme-cream',
   md001: 'post-theme-warm',
+  md002: 'post-theme-warm',
   'commercial-dehumidifier': 'post-theme-teal',
   'ceiling-mounted-dehumidifier': 'post-theme-green',
 };
@@ -71,6 +73,8 @@ useSeo(currentMeta.value);
     <CeilingMountedDehumidifierPage v-else-if="currentProduct?.page === 'ceiling-mounted'" />
 
     <Md001DehumidifierPage v-else-if="currentProduct?.page === 'md001'" />
+
+    <Md002DehumidifierPage v-else-if="currentProduct?.page === 'md002'" />
 
     <Mw100ProductPage
       v-else-if="currentProduct"

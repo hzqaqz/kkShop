@@ -84,6 +84,35 @@ export const productOverviews = {
     ],
   },
 
+  md002: {
+    heading: 'The MD002 Home Dehumidifier with a Dedicated Clothes-Drying Function',
+    paragraphs: [
+      'Damp air does two jobs in a home: it leaves rooms feeling cold and clammy, and it keeps laundry hanging on the airer for days. The Meower MD002 is a home dehumidifier built for both. It removes 0.48 kg/h at nominal conditions, reaches 20 L/day at high temperature and peaks at 25 L/day, which is a step up from a compact room unit without moving into commercial equipment.',
+      'A 190 m³/h fan draws moist air across the cooling coils and pushes drier air back into the room. That airflow is what makes the clothes-drying function practical: run the unit beside a drying rack or an indoor line and the washing dries in moving, dehumidified air instead of slowly releasing its moisture into the room.',
+      'The 4.0 L water tank holds roughly two and a half times the tank of the compact MD001, so the MD002 runs longer between empties — useful when it is working on a laundry load as well as everyday humidity. At 13 kg and 300 × 200 × 490 mm it stays easy to position in a bathroom, laundry room, bedroom or storage area, and the front display gives a live readout of conditions. Rated at 295 W on 220 V~50 Hz with a maximum current of 2.3 A, it is sized for household use.',
+    ],
+    bestFor: [
+      'Laundry rooms and drying racks that need help in wet weather',
+      'Bathrooms, bedrooms and closets that stay damp or clammy',
+      'Small apartments and rental homes without built-in ventilation',
+      'Households wanting more daily capacity than a compact unit offers',
+    ],
+    specs: [
+      ['Model', 'MD002'],
+      ['Nominal dehumidification capacity', '0.48 kg/h'],
+      ['High-temperature capacity', '20 L/day'],
+      ['Maximum capacity', '25 L/day'],
+      ['Airflow', '190 m³/h'],
+      ['Rated power', '295 W'],
+      ['Max. current', '2.3 A'],
+      ['Water tank', '4.0 L'],
+      ['Voltage / frequency', '220 V~50 Hz'],
+      ['Dimensions', '300 × 200 × 490 mm'],
+      ['Net weight', '13 kg'],
+      ['Features', 'Clothes-drying function, digital display'],
+    ],
+  },
+
   'commercial-dehumidifier': {
     heading: 'Commercial Dehumidifiers for Warehouses, Basements and Projects',
     paragraphs: [

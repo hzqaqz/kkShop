@@ -47,6 +47,11 @@ const menuPanels = {
             image: '/images/products/md001/product-transparent.webp',
             to: { name: 'product-detail', params: { productId: 'md001' } },
           },
+          {
+            label: 'MD002 Dehumidifier',
+            image: '/images/products/md002/product-transparent.webp',
+            to: { name: 'product-detail', params: { productId: 'md002' } },
+          },
         ],
       },
       {

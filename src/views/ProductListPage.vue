@@ -44,6 +44,11 @@ const productGroups = [
         image: '/images/products/md001/product-white.webp',
         to: { name: 'product-detail', params: { productId: 'md001' } },
       },
+      {
+        name: 'MD002 Dehumidifier',
+        image: '/images/products/md002/product-white.webp',
+        to: { name: 'product-detail', params: { productId: 'md002' } },
+      },
     ],
   },
   {
