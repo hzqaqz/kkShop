@@ -3,6 +3,10 @@ import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { X } from 'lucide-vue-next';
 
 /**
+ * Distributor offer, shown ONLY on the Business page (`/business` mounts this
+ * component; no other view does). It is a B2B pitch, so it must never interrupt
+ * someone browsing the shop.
+ *
  * Exit intent: the offer appears when a visitor looks like they are leaving,
  * not while they are reading.
  *

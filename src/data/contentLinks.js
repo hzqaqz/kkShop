@@ -15,7 +15,7 @@ export const articleTopics = {
   },
   'pollen-season-new-zealand-indoor-air': {
     tags: ['allergies', 'air-purifier', 'family'],
-    products: ['mw200', 'mw100'],
+    products: ['mw200'],
   },
   'beyond-comfort-humidity-control-indoor-air-quality': {
     tags: ['humidity', 'dehumidifier', 'air-quality'],
@@ -27,11 +27,11 @@ export const articleTopics = {
   },
   'filter-care-everyday-performance': {
     tags: ['air-purifier', 'maintenance'],
-    products: ['mw100', 'mw200'],
+    products: ['mw200'],
   },
   'fresher-family-living-room': {
     tags: ['air-purifier', 'family', 'air-quality'],
-    products: ['mw200', 'mw100'],
+    products: ['mw200'],
   },
   'overcoming-the-ac-misconception': {
     tags: ['humidity', 'dehumidifier'],
@@ -47,15 +47,15 @@ export const articleTopics = {
   },
   'how-humid-air-affects-pets': {
     tags: ['pets', 'humidity'],
-    products: ['md001', 'mw100', 'md002'],
+    products: ['md001', 'md002'],
   },
   'how-indoor-air-quality-affects-your-pets': {
     tags: ['pets', 'air-purifier'],
-    products: ['mw100', 'mw200'],
+    products: ['mw200'],
   },
   'the-air-our-children-breathe': {
     tags: ['family', 'air-purifier', 'air-quality'],
-    products: ['mw200', 'mw100'],
+    products: ['mw200', 'commercial-air-purifier'],
   },
 };
 
@@ -100,12 +100,12 @@ export function getRelatedArticles(slug, limit = 3) {
   return scored.slice(0, limit).map((entry) => entry.article);
 }
 
-/** Product objects recommended at the end of an article. */
+/** Product objects recommended at the end of an article (hidden products excluded). */
 export function getArticleProducts(slug, limit = 2) {
   const topics = getArticleTopics(slug);
   return topics.products
     .map((id) => getProduct(id))
-    .filter(Boolean)
+    .filter((product) => product && !product.hidden)
     .slice(0, limit);
 }
 

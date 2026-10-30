@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="724" height="1072" viewBox="0 0 724 1072" font-family="PingFang SC, Helvetica Neue, Arial, sans-serif">
+<rect width="724" height="1072" fill="#ffffff"/>
+<text x="24" y="34" font-size="22" font-weight="700" fill="#111">新西兰 C 端市场启动甘特图（空气净化器 · 国内仓直邮）</text>
+<text x="24" y="56" font-size="13" fill="#666">项目起点 2026-10-19（周一）· 共 12 周 · 仅空气净化器 · 国内仓单件直邮（空运专线小包）</text>
+<rect x="24" y="63" width="12" height="12" rx="2" fill="#8E8E93"/>
+<text x="40" y="74" font-size="12" fill="#333">调研与合规</text>
+<rect x="131" y="63" width="12" height="12" rx="2" fill="#007AFF"/>
+<text x="147" y="74" font-size="12" fill="#333">产品与认证</text>
+<rect x="238" y="63" width="12" height="12" rx="2" fill="#34C759"/>
+<text x="254" y="74" font-size="12" fill="#333">物流与直邮</text>
+<rect x="345" y="63" width="12" height="12" rx="2" fill="#AF52DE"/>
+<text x="361" y="74" font-size="12" fill="#333">主体与财税</text>
+<rect x="452" y="63" width="12" height="12" rx="2" fill="#FF9500"/>
+<text x="468" y="74" font-size="12" fill="#333">平台与网站</text>
+<rect x="559" y="63" width="12" height="12" rx="2" fill="#FF3B30"/>
+<text x="575" y="74" font-size="12" fill="#333">备货与上线</text>
+<rect x="666" y="63" width="12" height="12" rx="2" fill="#0A84FF"/>
+<text x="682" y="74" font-size="12" fill="#333">营销与上线</text>
+<rect x="773" y="63" width="12" height="12" rx="2" fill="#FFCC00"/>
+<text x="789" y="74" font-size="12" fill="#333">运营优化</text>
+<line x1="300" y1="108" x2="300" y2="1000" stroke="#d0d0d0" stroke-width="1"/>
+<text x="315" y="102" font-size="11" fill="#999" text-anchor="middle">W1</text>
+<text x="315" y="118" font-size="9" fill="#bbb" text-anchor="middle">10-19</text>
+<line x1="330" y1="108" x2="330" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="345" y="102" font-size="11" fill="#999" text-anchor="middle">W2</text>
+<line x1="360" y1="108" x2="360" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="375" y="102" font-size="11" fill="#999" text-anchor="middle">W3</text>
+<line x1="390" y1="108" x2="390" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="405" y="102" font-size="11" fill="#999" text-anchor="middle">W4</text>
+<line x1="420" y1="108" x2="420" y2="1000" stroke="#d0d0d0" stroke-width="1"/>
+<text x="435" y="102" font-size="11" fill="#999" text-anchor="middle">W5</text>
+<text x="435" y="118" font-size="9" fill="#bbb" text-anchor="middle">11-16</text>
+<line x1="450" y1="108" x2="450" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="465" y="102" font-size="11" fill="#999" text-anchor="middle">W6</text>
+<line x1="480" y1="108" x2="480" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="495" y="102" font-size="11" fill="#999" text-anchor="middle">W7</text>
+<line x1="510" y1="108" x2="510" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="525" y="102" font-size="11" fill="#999" text-anchor="middle">W8</text>
+<line x1="540" y1="108" x2="540" y2="1000" stroke="#d0d0d0" stroke-width="1"/>
+<text x="555" y="102" font-size="11" fill="#999" text-anchor="middle">W9</text>
+<text x="555" y="118" font-size="9" fill="#bbb" text-anchor="middle">12-14</text>
+<line x1="570" y1="108" x2="570" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="585" y="102" font-size="11" fill="#999" text-anchor="middle">W10</text>
+<line x1="600" y1="108" x2="600" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="615" y="102" font-size="11" fill="#999" text-anchor="middle">W11</text>
+<line x1="630" y1="108" x2="630" y2="1000" stroke="#ededed" stroke-width="1"/>
+<text x="645" y="102" font-size="11" fill="#999" text-anchor="middle">W12</text>
+<text x="645" y="118" font-size="9" fill="#bbb" text-anchor="middle">01-04</text>
+<line x1="300" y1="108" x2="300" y2="1000" stroke="#bbb" stroke-width="1"/>
+<rect x="300" y="122" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="141" font-size="13" font-weight="600" fill="#333">调研与合规</text>
+<rect x="300" y="157" width="56" height="16" rx="3" fill="#8E8E93" stroke="#8E8E93" stroke-width="0"/>
+<text x="362" y="169" font-size="11" fill="#666">W1–W2</text>
+<text x="24" y="169" font-size="12.5" fill="#222">市场/竞品/季节调研</text>
+<rect x="300" y="183" width="26" height="16" rx="3" fill="#8E8E93" stroke="#8E8E93" stroke-width="0"/>
+<text x="332" y="195" font-size="11" fill="#666">W1–W1</text>
+<text x="24" y="195" font-size="12.5" fill="#222">电气安全/SDoC要求确认</text>
+<rect x="300" y="209" width="26" height="16" rx="3" fill="#8E8E93" stroke="#8E8E93" stroke-width="0"/>
+<text x="332" y="221" font-size="11" fill="#666">W1–W1</text>
+<text x="24" y="221" font-size="12.5" fill="#222">GST低值商品注册要求确认</text>
+<rect x="300" y="230" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="249" font-size="13" font-weight="600" fill="#333">产品与认证</text>
+<rect x="330" y="265" width="26" height="16" rx="3" fill="#007AFF" stroke="#007AFF" stroke-width="0"/>
+<text x="362" y="277" font-size="11" fill="#666">W2–W2</text>
+<text x="24" y="277" font-size="12.5" fill="#222">确定净化器SKU与选型</text>
+<rect x="330" y="291" width="116" height="16" rx="3" fill="#007AFF" stroke="#000" stroke-width="1.4"/>
+<text x="452" y="303" font-size="11" fill="#666">W2–W5</text>
+<text x="24" y="303" font-size="12.5" fill="#222">电气安全认证/SDoC办理(长周期)  ★</text>
+<rect x="330" y="317" width="56" height="16" rx="3" fill="#007AFF" stroke="#000" stroke-width="1.4"/>
+<text x="392" y="329" font-size="11" fill="#666">W2–W3</text>
+<text x="24" y="329" font-size="12.5" fill="#222">活性炭滤网MSDS+非危鉴定  ★</text>
+<rect x="360" y="343" width="86" height="16" rx="3" fill="#007AFF" stroke="#007AFF" stroke-width="0"/>
+<text x="452" y="355" font-size="11" fill="#666">W3–W5</text>
+<text x="24" y="355" font-size="12.5" fill="#222">包装优化+体积重压缩+英文标贴</text>
+<rect x="300" y="364" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="383" font-size="13" font-weight="600" fill="#333">物流与直邮</text>
+<rect x="360" y="399" width="56" height="16" rx="3" fill="#34C759" stroke="#34C759" stroke-width="0"/>
+<text x="422" y="411" font-size="11" fill="#666">W3–W4</text>
+<text x="24" y="411" font-size="12.5" fill="#222">空运专线小包比价(NZ)</text>
+<rect x="390" y="425" width="56" height="16" rx="3" fill="#34C759" stroke="#34C759" stroke-width="0"/>
+<text x="452" y="437" font-size="11" fill="#666">W4–W5</text>
+<text x="24" y="437" font-size="12.5" fill="#222">跨境退货/售后政策设计</text>
+<rect x="390" y="451" width="56" height="16" rx="3" fill="#34C759" stroke="#34C759" stroke-width="0"/>
+<text x="452" y="463" font-size="11" fill="#666">W4–W5</text>
+<text x="24" y="463" font-size="12.5" fill="#222">尾程/清关/GST代收确认</text>
+<rect x="300" y="472" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="491" font-size="13" font-weight="600" fill="#333">主体与财税</text>
+<rect x="330" y="507" width="86" height="16" rx="3" fill="#AF52DE" stroke="#AF52DE" stroke-width="0"/>
+<text x="422" y="519" font-size="11" fill="#666">W2–W4</text>
+<text x="24" y="519" font-size="12.5" fill="#222">公司架构+IRD GST注册</text>
+<rect x="360" y="533" width="56" height="16" rx="3" fill="#AF52DE" stroke="#AF52DE" stroke-width="0"/>
+<text x="422" y="545" font-size="11" fill="#666">W3–W4</text>
+<text x="24" y="545" font-size="12.5" fill="#222">收款账户与支付开通</text>
+<rect x="300" y="554" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="573" font-size="13" font-weight="600" fill="#333">平台与网站</text>
+<rect x="360" y="589" width="26" height="16" rx="3" fill="#FF9500" stroke="#FF9500" stroke-width="0"/>
+<text x="392" y="601" font-size="11" fill="#666">W3–W3</text>
+<text x="24" y="601" font-size="12.5" fill="#222">渠道选型(独立站+本地渠道)</text>
+<rect x="390" y="615" width="86" height="16" rx="3" fill="#FF9500" stroke="#FF9500" stroke-width="0"/>
+<text x="482" y="627" font-size="11" fill="#666">W4–W6</text>
+<text x="24" y="627" font-size="12.5" fill="#222">独立站搭建(英文站)</text>
+<rect x="420" y="641" width="56" height="16" rx="3" fill="#FF9500" stroke="#FF9500" stroke-width="0"/>
+<text x="482" y="653" font-size="11" fill="#666">W5–W6</text>
+<text x="24" y="653" font-size="12.5" fill="#222">定价/运费/GST计税配置</text>
+<rect x="300" y="662" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="681" font-size="13" font-weight="600" fill="#333">备货与上线</text>
+<rect x="420" y="697" width="86" height="16" rx="3" fill="#FF3B30" stroke="#000" stroke-width="1.4"/>
+<text x="512" y="709" font-size="11" fill="#666">W5–W7</text>
+<text x="24" y="709" font-size="12.5" fill="#222">首批下单生产  ★</text>
+<rect x="510" y="723" width="26" height="16" rx="3" fill="#FF3B30" stroke="#000" stroke-width="1.4"/>
+<text x="542" y="735" font-size="11" fill="#666">W8–W8</text>
+<text x="24" y="735" font-size="12.5" fill="#222">首批入国内仓+质检  ★</text>
+<rect x="540" y="749" width="26" height="16" rx="3" fill="#FF3B30" stroke="#000" stroke-width="1.4"/>
+<text x="572" y="761" font-size="11" fill="#666">W9–W9</text>
+<text x="24" y="761" font-size="12.5" fill="#222">直邮测试单(空运专线)  ★</text>
+<rect x="300" y="770" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="789" font-size="13" font-weight="600" fill="#333">营销与上线</text>
+<rect x="450" y="805" width="86" height="16" rx="3" fill="#0A84FF" stroke="#0A84FF" stroke-width="0"/>
+<text x="542" y="817" font-size="11" fill="#666">W6–W8</text>
+<text x="24" y="817" font-size="12.5" fill="#222">本地化内容(英文页/图片/视频)</text>
+<rect x="480" y="831" width="86" height="16" rx="3" fill="#0A84FF" stroke="#0A84FF" stroke-width="0"/>
+<text x="572" y="843" font-size="11" fill="#666">W7–W9</text>
+<text x="24" y="843" font-size="12.5" fill="#222">广告预热(Google/Meta/Trade Me)</text>
+<rect x="570" y="857" width="26" height="16" rx="3" fill="#0A84FF" stroke="#000" stroke-width="1.4"/>
+<text x="602" y="869" font-size="11" fill="#666">W10–W10</text>
+<text x="24" y="869" font-size="12.5" fill="#222">正式上线销售  ★</text>
+<rect x="540" y="883" width="56" height="16" rx="3" fill="#0A84FF" stroke="#0A84FF" stroke-width="0"/>
+<text x="602" y="895" font-size="11" fill="#666">W9–W10</text>
+<text x="24" y="895" font-size="12.5" fill="#222">客服/售后体系</text>
+<rect x="300" y="904" width="400" height="30" fill="#f5f5f7"/>
+<text x="24" y="923" font-size="13" font-weight="600" fill="#333">运营优化</text>
+<rect x="570" y="939" width="86" height="16" rx="3" fill="#FFCC00" stroke="#FFCC00" stroke-width="0"/>
+<text x="662" y="951" font-size="11" fill="#666">W10–W12</text>
+<text x="24" y="951" font-size="12.5" fill="#222">数据复盘+补货计划</text>
+<rect x="570" y="965" width="86" height="16" rx="3" fill="#FFCC00" stroke="#FFCC00" stroke-width="0"/>
+<text x="662" y="977" font-size="11" fill="#666">W10–W12</text>
+<text x="24" y="977" font-size="12.5" fill="#222">评价管理+复购营销</text>
+<rect x="300" y="1000" width="400" height="52" fill="#fffbe6"/>
+<text x="24" y="1020" font-size="13" font-weight="600" fill="#b58900">里程碑</text>
+<path d="M 375 1015 L 382 1022 L 375 1029 L 368 1022 Z" fill="#b58900"/>
+<text x="375" y="1042" font-size="10" fill="#8a6d00" text-anchor="middle">非危鉴定通过</text>
+<path d="M 435 1015 L 442 1022 L 435 1029 L 428 1022 Z" fill="#b58900"/>
+<text x="435" y="1042" font-size="10" fill="#8a6d00" text-anchor="middle">认证完成</text>
+<path d="M 525 1015 L 532 1022 L 525 1029 L 518 1022 Z" fill="#b58900"/>
+<text x="525" y="1042" font-size="10" fill="#8a6d00" text-anchor="middle">首批入仓</text>
+<path d="M 555 1015 L 562 1022 L 555 1029 L 548 1022 Z" fill="#b58900"/>
+<text x="555" y="1042" font-size="10" fill="#8a6d00" text-anchor="middle">直邮测试</text>
+<path d="M 585 1015 L 592 1022 L 585 1029 L 578 1022 Z" fill="#b58900"/>
+<text x="585" y="1042" font-size="10" fill="#8a6d00" text-anchor="middle">正式上线</text>
+<text x="24" y="1064" font-size="11" fill="#999">★ = 关键路径：非危鉴定 + SDoC 认证（两条硬门槛）→ 生产 → 入仓 → 直邮测试 → 上线，约 10 周 ≈ 2.5 个月</text>
+</svg>

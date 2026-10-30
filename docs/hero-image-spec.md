@@ -45,7 +45,7 @@
 │        主体（产品 + 场景）      │
 │                              │
 └──────────────────────────────┘
-   Pet-Friendly Air Purifiers...   [Explore] [Get a Quote]
+   Pet Supplies & Pet-Friendly Air Purifiers...   [Shop Now] [Get a Quote]
 ```
 
 - 主体居中或偏右

@@ -7,9 +7,11 @@ const DEFAULT_IMAGE = `${SITE_URL}/images/og-image.jpg`;
 const DEFAULT_IMAGE_WIDTH = 1200;
 const DEFAULT_IMAGE_HEIGHT = 630;
 const SITE_NAME = 'Meower';
-const DEFAULT_TITLE = 'Meower | Pet-Friendly Air Purifiers & Dehumidifiers';
+const DEFAULT_TITLE = 'Meower | Pet Supplies & Pet-Friendly Air Purifiers';
 const DEFAULT_DESCRIPTION =
-  'Meower air purifiers and dehumidifiers for pet-friendly homes and businesses. HEPA H13 air purification and humidity control for distributors, retailers, and OEM/ODM buyers worldwide.';
+  'Meower pet supplies — strollers, carriers, beds, scratching posts and toys — plus pet-friendly HEPA H13 air purifiers and dehumidifiers for homes and businesses.';
+/** Shared social-card alt text; describes the branded default card. */
+const IMAGE_ALT = 'Meower pet supplies and pet-friendly air purifiers';
 
 /**
  * Central SEO helper: sets <title>, meta description, canonical URL,
@@ -56,14 +58,14 @@ export function useSeo({
     ogImage,
     ogImageWidth: usesDefaultCard ? DEFAULT_IMAGE_WIDTH : imageWidth,
     ogImageHeight: usesDefaultCard ? DEFAULT_IMAGE_HEIGHT : imageHeight,
-    ogImageAlt: 'Meower pet-friendly air purifiers and dehumidifiers',
+    ogImageAlt: IMAGE_ALT,
     ogSiteName: SITE_NAME,
     ogLocale: 'en_US',
     twitterCard: 'summary_large_image',
     twitterTitle: fullTitle,
     twitterDescription: metaDescription,
     twitterImage: ogImage,
-    twitterImageAlt: 'Meower pet-friendly air purifiers and dehumidifiers',
+    twitterImageAlt: IMAGE_ALT,
   });
 
   useHead({

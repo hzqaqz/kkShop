@@ -49,6 +49,11 @@ export const productFaqs = {
       answer:
         'The MW200 is rated at 38W and runs at 36–50 dB(A) depending on fan speed.',
     },
+    {
+      question: 'How often do I need to replace the filter?',
+      answer:
+        'It depends on how you use the purifier: how polluted the air is around it, how many hours it runs each day and which fan speed you keep it on all affect filter life. As a rule we suggest replacing the filter every 8–12 months. Judge it by the filter itself as well — once it has turned from white to grey, replace it as soon as you can so the purifier keeps its cleaning performance.',
+    },
   ],
   md001: [
     {
@@ -92,6 +97,28 @@ export const productFaqs = {
       question: 'How much power does the Meower MD002 use, and how heavy is it?',
       answer:
         'The MD002 is rated at 295 W with a maximum current of 2.3 A on 220 V~50 Hz. It weighs 13 kg and measures 300 × 200 × 490 mm.',
+    },
+  ],
+  'commercial-air-purifier': [
+    {
+      question: 'What filter grade does the Meower MW1000 use?',
+      answer:
+        'The MW1000 commercial air purifier uses an H13 filter grade, combined with an 877 m³/h particle CADR for air purification in commercial spaces.',
+    },
+    {
+      question: 'What size space is the Meower MW1000 suitable for?',
+      answer:
+        'The MW1000 is rated for a recommended usable area of up to 105 m², with an 877 m³/h particle CADR. That covers large rooms such as gyms, open-plan offices and classrooms.',
+    },
+    {
+      question: 'How loud is the Meower MW1000?',
+      answer:
+        'The MW1000 runs at a noise level of no more than 69 dB(A) and has three fan speeds, so it can be matched to the room rather than always running at full output.',
+    },
+    {
+      question: 'What are the Meower MW1000 dimensions and power requirements?',
+      answer:
+        'The unit measures 390 × 390 × 760 mm and is rated at 105 W. Gross weight is 20 kg, and the packing size is 480 × 480 × 880 mm.',
     },
   ],
   'commercial-dehumidifier': [

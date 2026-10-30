@@ -19,8 +19,12 @@ function toPath(to) {
   if (to.path) return to.path;
   if (to.name === 'home') return '/';
   if (to.name === 'products') return '/products';
+  if (to.name === 'business') return '/business';
   if (to.name === 'blogs') return '/blogs';
-  if (to.name === 'about') return '/about';
+  if (to.name === 'support') return '/support';
+  if (to.name === 'privacy') return '/privacy';
+  if (to.name === 'refunds') return '/refunds';
+  if (to.name === 'terms') return '/terms';
   if (to.name === 'product-detail') return `/products/${to.params?.productId ?? ''}`;
   if (to.name === 'blog-detail') return `/blogs/${to.params?.slug ?? ''}`;
   return null;

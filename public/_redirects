@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# `/about` was folded into the Business page: the brand story, cooperation
+# options and contact panel all live at /business now. A 301 keeps the old
+# inbound links and the search ranking pointing at the merged page.
+
+/about /business 301
+/about/ /business 301

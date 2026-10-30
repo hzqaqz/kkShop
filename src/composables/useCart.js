@@ -1,0 +1,156 @@
+/**
+ * Shared, reactive Shopify cart store (module-level singleton).
+ *
+ * The cart lives on Shopify's side; we only keep its `id` in localStorage so it
+ * survives reloads. Every component calling `useCart()` reads/writes the same
+ * state, so the header badge and the drawer always stay in sync.
+ */
+import { computed, ref } from 'vue';
+import {
+  addCartLines as shopifyAddLines,
+  createCart,
+  getCart,
+  isShopifyConfigured,
+  removeCartLines as shopifyRemoveLines,
+  updateCartLines as shopifyUpdateLines,
+} from './useShopify';
+
+const CART_STORAGE_KEY = 'kkshop:shopify-cart-id';
+
+const cart = ref(null); // Shopify `Cart` object, or null when there is no cart yet.
+const loading = ref(false);
+const error = ref(null);
+const isOpen = ref(false); // cart drawer visibility
+
+const count = computed(() => cart.value?.totalQuantity ?? 0);
+const subtotal = computed(() => cart.value?.cost?.subtotalAmount ?? null);
+const checkoutUrl = computed(() => cart.value?.checkoutUrl ?? null);
+
+function readStoredCartId() {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  return window.localStorage.getItem(CART_STORAGE_KEY);
+}
+
+function persistCartId(id) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  if (id) {
+    window.localStorage.setItem(CART_STORAGE_KEY, id);
+  } else {
+    window.localStorage.removeItem(CART_STORAGE_KEY);
+  }
+}
+
+/** Restore any previously saved cart on app start. Safe to call in any setup(). */
+async function initCart() {
+  if (!isShopifyConfigured() || typeof window === 'undefined') {
+    return;
+  }
+
+  const existing = readStoredCartId();
+  if (!existing) {
+    cart.value = null;
+    return;
+  }
+
+  loading.value = true;
+  try {
+    cart.value = await getCart(existing);
+  } catch {
+    // Stale or expired cart id — drop it and start fresh.
+    persistCartId(null);
+    cart.value = null;
+  } finally {
+    loading.value = false;
+  }
+}
+
+async function addToCart(merchandiseId, quantity = 1) {
+  if (!isShopifyConfigured() || !merchandiseId) {
+    return;
+  }
+
+  loading.value = true;
+  error.value = null;
+  try {
+    const lines = [{ merchandiseId, quantity }];
+    if (cart.value?.id) {
+      cart.value = await shopifyAddLines(cart.value.id, lines);
+    } else {
+      const fresh = await createCart(lines);
+      cart.value = fresh;
+      persistCartId(fresh.id);
+    }
+    isOpen.value = true;
+  } catch (err) {
+    error.value = err.message || 'Could not add to cart.';
+  } finally {
+    loading.value = false;
+  }
+}
+
+async function updateQuantity(lineId, quantity) {
+  if (!cart.value?.id) {
+    return;
+  }
+  loading.value = true;
+  error.value = null;
+  try {
+    if (quantity <= 0) {
+      cart.value = await shopifyRemoveLines(cart.value.id, [lineId]);
+    } else {
+      cart.value = await shopifyUpdateLines(cart.value.id, [{ id: lineId, quantity }]);
+    }
+  } catch (err) {
+    error.value = err.message || 'Could not update cart.';
+  } finally {
+    loading.value = false;
+  }
+}
+
+async function removeLine(lineId) {
+  if (!cart.value?.id) {
+    return;
+  }
+  loading.value = true;
+  error.value = null;
+  try {
+    cart.value = await shopifyRemoveLines(cart.value.id, [lineId]);
+  } catch (err) {
+    error.value = err.message || 'Could not remove item.';
+  } finally {
+    loading.value = false;
+  }
+}
+
+function openCart() {
+  isOpen.value = true;
+}
+function closeCart() {
+  isOpen.value = false;
+}
+function toggleCart() {
+  isOpen.value = !isOpen.value;
+}
+
+export function useCart() {
+  return {
+    cart,
+    count,
+    subtotal,
+    checkoutUrl,
+    loading,
+    error,
+    isOpen,
+    initCart,
+    addToCart,
+    updateQuantity,
+    removeLine,
+    openCart,
+    closeCart,
+    toggleCart,
+  };
+}

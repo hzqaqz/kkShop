@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue';
 import { blogArticles } from './src/data/blogArticles.js';
 
 const PRODUCT_IDS = [
-  'mw100',
   'mw200',
+  'commercial-air-purifier',
   'md001',
   'md002',
   'commercial-dehumidifier',

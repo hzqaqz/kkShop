@@ -1,3 +1,8 @@
 node_modules/
 dist/
 .DS_Store
+
+# Local env (contains the Shopify storefront token)
+.env
+.env.local
+.env.*.local

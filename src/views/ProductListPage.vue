@@ -3,72 +3,36 @@ import { RouterLink } from 'vue-router';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
+import { contactEmailHref } from '../data/siteInfo';
+import { getShopProducts, shopCategories } from '../data/catalog';
 
 useSeo({
-  title: 'Air Purifiers & Dehumidifiers',
+  title: 'Shop Pet Supplies & Air Purifiers',
   description:
-    'Explore Meower air purifiers and dehumidifiers: pet-friendly HEPA H13 air purifiers, home dehumidifiers, and commercial dehumidifiers for homes and businesses.',
+    'Shop Meower pet supplies and air care: pet strollers, carriers and bags, pet beds, cat scratching posts, toys and pet-friendly HEPA H13 air purifiers.',
   path: '/products',
 });
 
 const breadcrumbs = [
   { label: 'Home', to: '/' },
-  { label: 'Products', to: '/products' },
+  { label: 'Shop', to: '/products' },
 ];
 
-const productGroups = [
-  {
-    id: 'home-air-purifiers',
-    title: 'Home Use Air Purifier',
-    description: 'Cleaner, quieter air care for everyday homes and pet-friendly spaces.',
-    products: [
-      {
-        name: 'MW100',
-        image: '/images/products/list/mw100.webp',
-        to: { name: 'product-detail', params: { productId: 'mw100' } },
-      },
-      {
-        name: 'MW200',
-        image: '/images/products/list/mw200.webp',
-        to: { name: 'product-detail', params: { productId: 'mw200' } },
-      },
-    ],
-  },
-  {
-    id: 'home-dehumidifiers',
-    title: 'Home Use Dehumidifier',
-    description: 'Comfortable humidity control for everyday indoor living.',
-    products: [
-      {
-        name: 'MD001 Dehumidifier',
-        image: '/images/products/md001/product-white.webp',
-        to: { name: 'product-detail', params: { productId: 'md001' } },
-      },
-      {
-        name: 'MD002 Dehumidifier',
-        image: '/images/products/md002/product-white.webp',
-        to: { name: 'product-detail', params: { productId: 'md002' } },
-      },
-    ],
-  },
-  {
-    id: 'commercial-dehumidifiers',
-    title: 'Commercial Dehumidifier',
-    description: 'Reliable moisture management for larger spaces and professional projects.',
-    products: [
-      {
-        name: 'Commercial Dehumidifier',
-        image: '/images/products/list/commercial-dehumidifier.webp',
-        to: { name: 'product-detail', params: { productId: 'commercial-dehumidifier' } },
-      },
-      {
-        name: 'Ceiling-Mounted Dehumidifier',
-        image: '/images/products/md0002/ceiling-mounted-dehumidifier-white.webp',
-        to: { name: 'product-detail', params: { productId: 'ceiling-mounted-dehumidifier' } },
-      },
-    ],
-  },
-];
+/**
+ * Sections follow the order of `shopCategories` in `src/data/catalog.js`;
+ * a category with nothing listed yet renders a "Coming soon" panel instead of
+ * an empty grid.
+ */
+const categories = shopCategories.map((category) => ({
+  id: category.id,
+  label: category.label,
+  description: category.description,
+  products: getShopProducts(category.id).map((product) => ({
+    name: product.label,
+    image: product.image,
+    to: { name: 'product-detail', params: { productId: product.id } },
+  })),
+}));
 </script>
 
 <template>
@@ -77,37 +41,47 @@ const productGroups = [
 
     <header class="product-list-hero">
       <SiteBreadcrumbs :items="breadcrumbs" />
-      <p class="eyebrow">Products</p>
-      <h1>Find The Right Air Care Fit</h1>
-      <p>Explore air purification and dehumidification solutions for homes and commercial spaces.</p>
+      <p class="eyebrow">Shop</p>
+      <h1>Shop Everyday Pet Essentials</h1>
+      <p>
+        Pet strollers, carriers, beds, scratching posts and toys for cats and dogs — plus the
+        pet-friendly air purifiers we started with.
+      </p>
     </header>
 
     <div class="product-list-groups">
       <section
-        v-for="group in productGroups"
-        :id="group.id"
-        :key="group.id"
+        v-for="category in categories"
+        :id="category.id"
+        :key="category.id"
         class="product-list-group"
-        :aria-labelledby="`${group.id}-title`"
+        :aria-labelledby="`${category.id}-title`"
       >
         <div class="product-list-group-heading">
-          <h2 :id="`${group.id}-title`">{{ group.title }}</h2>
-          <p>{{ group.description }}</p>
+          <h2 :id="`${category.id}-title`">{{ category.label }}</h2>
+          <p>{{ category.description }}</p>
         </div>
 
-        <div class="product-list-grid">
-          <template v-for="product in group.products" :key="product.name">
-            <RouterLink v-if="product.to" class="product-list-card" :to="product.to">
-              <img :src="product.image" :alt="product.name" />
-              <h3>{{ product.name }}</h3>
-              <span>View product</span>
-            </RouterLink>
-            <article v-else class="product-list-card">
-              <img :src="product.image" :alt="product.name" />
-              <h3>{{ product.name }}</h3>
-            </article>
-          </template>
+        <div v-if="category.products.length" class="product-list-grid">
+          <RouterLink
+            v-for="product in category.products"
+            :key="product.name"
+            class="product-list-card"
+            :to="product.to"
+          >
+            <img :src="product.image" :alt="product.name" loading="lazy" decoding="async" />
+            <h3>{{ product.name }}</h3>
+            <span>View product</span>
+          </RouterLink>
         </div>
+
+        <p v-else class="product-list-empty">
+          <strong>Coming soon</strong>
+          <span>
+            We are still putting this range together. Tell us what you are looking for at
+            <a :href="contactEmailHref">info@meowerair.com</a> and we will come back with options.
+          </span>
+        </p>
       </section>
     </div>
   </main>

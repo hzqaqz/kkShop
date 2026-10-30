@@ -1,25 +1,24 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { ChevronLeft, ChevronRight, House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
 import SiteHeader from '../components/SiteHeader.vue';
-import PromoAdModal from '../components/PromoAdModal.vue';
 import { blogArticles } from '../data/blogArticles';
+import { shopCategories } from '../data/catalog';
 import { getProduct } from '../data/products';
+import { contactEmailHref } from '../data/siteInfo';
 import { useSeo } from '../composables/useSeo';
 
 useSeo({
-  title: 'Pet-Friendly Air Purifiers & Dehumidifiers',
+  title: 'Pet Supplies & Pet-Friendly Air Purifiers',
   description:
-    'Meower air purifiers and dehumidifiers for pet-friendly homes and businesses. HEPA H13 air purification and humidity control for distributors, retailers, and OEM/ODM buyers worldwide.',
+    'Meower pet supplies — strollers, carriers, beds, scratching posts and toys — plus pet-friendly HEPA H13 air purifiers and dehumidifiers for homes and businesses.',
   path: '/',
 });
 
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
 const md001Route = { name: 'product-detail', params: { productId: 'md001' } };
 
-const contactEmail =
-  'mailto:info@meowerair.com?subject=Product%20enquiry%20from%20meowerair.com';
 
 const slides = [
   {
@@ -44,26 +43,16 @@ const slides = [
   },
 ];
 
-const categories = [
-  {
-    title: 'Home Use Air Purifier',
-    image: '/images/categories/home-use-air-purifier.webp',
-    to: { name: 'products', hash: '#home-air-purifiers' },
-  },
-  {
-    title: 'Home Use Dehumidifier',
-    image: '/images/categories/home-use-dehumidifier.webp',
-    to: { name: 'products', hash: '#home-dehumidifiers' },
-  },
-  {
-    title: 'Commercial Dehumidifier',
-    image: '/images/categories/commercial-dehumidifier.webp',
-    to: { name: 'products', hash: '#commercial-dehumidifiers' },
-  },
-];
+// Shop categories, in the order defined in `src/data/catalog.js`.
+const categories = shopCategories.map((category) => ({
+  title: category.label,
+  image: category.image,
+  icon: category.icon,
+  to: { name: 'products', hash: `#${category.id}` },
+}));
 
 const featuredProducts = computed(() =>
-  ['mw100', 'mw200', 'md001'].map((id) => getProduct(id)).filter(Boolean),
+  ['mw200', 'md001'].map((id) => getProduct(id)).filter(Boolean),
 );
 
 const featuredBlogs = computed(() =>
@@ -73,33 +62,6 @@ const featuredBlogs = computed(() =>
     )
     .slice(0, 4),
 );
-
-const brandPoints = [
-  {
-    title: 'H13 HEPA filtration',
-    text: 'Pet-friendly air purifiers that capture dander, dust and pollen.',
-  },
-  {
-    title: '200–400 m³/h CADR',
-    text: 'Across the MW100 and MW200, sized for rooms of roughly 20–40 m².',
-  },
-  {
-    title: 'Home to commercial dehumidifiers',
-    text: 'Including ceiling-mounted units for factories and facilities.',
-  },
-  {
-    title: 'OEM & ODM services',
-    text: 'Custom specification, branding and packaging support.',
-  },
-  {
-    title: 'Wholesale and bulk orders',
-    text: 'For distributors, retailers and project buyers worldwide.',
-  },
-  {
-    title: 'Project support',
-    text: 'From initial specification through to repeat orders.',
-  },
-];
 
 /** Slower than before: 4s was too fast to read, and it hurt perceived stability. */
 const SLIDE_INTERVAL_MS = 7000;
@@ -222,17 +184,17 @@ onBeforeUnmount(() => {
 
         <div class="hero-card">
           <h1 id="hero-title">
-            Meower Air Purifiers &amp; Dehumidifiers for Homes and Businesses
+            Pet Supplies &amp; Pet-Friendly Air Purifiers for Homes and Businesses
           </h1>
           <p class="hero-card-subline">
-            Pet-friendly HEPA H13 air purification and humidity control for distributors,
-            retailers and OEM/ODM buyers worldwide.
+            Strollers, carriers, beds, scratching posts and toys for everyday pet homes — plus
+            HEPA H13 air purification and humidity control for buyers worldwide.
           </p>
           <div class="hero-card-actions">
             <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
-              Explore Products
+              Shop Now
             </RouterLink>
-            <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmail">Get a Quote</a>
+            <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmailHref">Get a Quote</a>
           </div>
         </div>
 
@@ -287,56 +249,29 @@ onBeforeUnmount(() => {
     <section id="air-purifiers" class="section category-section" aria-labelledby="category-title">
       <div class="section-heading centered">
         <p class="eyebrow">Shop by category</p>
-        <h2 id="category-title">Find The Right Air Care Fit</h2>
+        <h2 id="category-title">Shop Pet Supplies &amp; Air Care</h2>
       </div>
 
       <div class="category-grid">
-        <RouterLink v-for="item in categories" :key="item.title" class="category-button" :to="item.to">
-          <img :src="item.image" :alt="item.title" loading="lazy" decoding="async" />
+        <RouterLink
+          v-for="item in categories"
+          :key="item.title"
+          class="category-button"
+          :class="{ 'category-button--icon': !item.image }"
+          :to="item.to"
+        >
+          <img
+            v-if="item.image"
+            :src="item.image"
+            :alt="item.title"
+            loading="lazy"
+            decoding="async"
+          />
+          <div v-if="!item.image" class="category-button-icon">
+            <component :is="item.icon" aria-hidden="true" />
+          </div>
           <span>{{ item.title }}</span>
         </RouterLink>
-      </div>
-    </section>
-
-    <section id="why-meower" class="section brand-section" aria-labelledby="brand-title">
-      <div class="brand-heading">
-        <p class="eyebrow">Why Meower</p>
-        <h2 id="brand-title">Air Care Built Around Pets, Made for Business</h2>
-      </div>
-
-      <div class="brand-layout">
-        <div class="brand-copy">
-          <p>
-            Meower designs air purifiers and dehumidifiers for households where cats and dogs
-            share the living space. Fur, dander and the fine particles that carry odour settle
-            into carpets, bedding and soft furniture, then get lifted back into the air through
-            everyday movement. Our air purifiers combine three-stage composite filtration with
-            H13 HEPA media to capture those particles continuously, while the carbon stage helps
-            reduce the everyday odours that build up in pet homes.
-          </p>
-
-          <p>
-            Humidity is the other half of indoor air quality. Excess moisture shows up as fogged
-            windows, a musty smell in a closet, or mould that keeps returning to the same corner
-            of a bathroom. Meower dehumidifiers range from compact home units for bedrooms and
-            closets through to commercial and ceiling-mounted models for warehouses, basements
-            and factories, so the same moisture problem can be solved at any scale.
-          </p>
-
-          <p>
-            We supply distributors, retailers, contractors and project buyers worldwide. Alongside
-            our standard range we offer OEM and ODM services, residential and commercial product
-            solutions, long-term distribution partnerships and project-based product support —
-            from initial specification through to repeat orders.
-          </p>
-        </div>
-
-        <ul class="brand-points" aria-label="Meower capabilities">
-          <li v-for="point in brandPoints" :key="point.title">
-            <strong>{{ point.title }}</strong>
-            <span>{{ point.text }}</span>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -371,56 +306,5 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section id="dehumidifier" class="section partner-section" aria-labelledby="contact-title">
-      <span id="about" class="contact-anchor" aria-hidden="true"></span>
-      <div class="section-heading centered">
-        <p class="eyebrow">Partner with Meower</p>
-        <h2 id="contact-title">Contact Us</h2>
-      </div>
-
-      <div class="about-band">
-        <div class="contact-copy">
-          <p class="contact-lead">
-            Looking for reliable air purifiers and dehumidifiers for your market?
-          </p>
-          <p>
-            We provide residential and commercial air purification and humidity control solutions
-            for distributors, retailers, contractors, and project buyers worldwide.
-          </p>
-          <p class="cooperation-intro">Our cooperation options include:</p>
-          <ul class="cooperation-list" aria-label="Cooperation options">
-            <li>Wholesale and bulk orders</li>
-            <li>OEM and ODM services</li>
-            <li>Residential and commercial product solutions</li>
-            <li>Long-term distribution partnerships</li>
-            <li>Project-based product support</li>
-          </ul>
-        </div>
-
-        <div class="contact-panel">
-          <h3>Contact us to start your business inquiry today.</h3>
-          <ul class="contact-list" aria-label="Contact information">
-            <li>
-              <Mail :size="34" stroke-width="1.8" aria-hidden="true" />
-              <span>Email: info@meowerair.com</span>
-            </li>
-            <li>
-              <PhoneCall :size="34" stroke-width="2" aria-hidden="true" />
-              <span>Mobile: +86 1337 049 7731</span>
-            </li>
-            <li>
-              <MessageCircle :size="34" stroke-width="2" aria-hidden="true" />
-              <span>Whatsapp: 18902169202</span>
-            </li>
-            <li>
-              <House :size="34" stroke-width="2" aria-hidden="true" />
-              <span>Address: Beijing, China</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <PromoAdModal />
   </main>
 </template>

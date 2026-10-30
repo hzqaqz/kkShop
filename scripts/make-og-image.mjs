@@ -41,7 +41,7 @@ const INK = '#334c51'; // site --ink
 const CREAM = '#fef5ed'; // site --cream
 const MUTED = '#c8d6d3';
 
-const HEADLINE = ['Pet-Friendly Air', 'Purifiers &', 'Dehumidifiers'];
+const HEADLINE = ['Pet Supplies &', 'Pet-Friendly', 'Air Purifiers'];
 
 const sourceFont = resolveSourceFont(ROOT);
 

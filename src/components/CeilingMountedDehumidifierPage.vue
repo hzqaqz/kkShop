@@ -1,11 +1,23 @@
 <script setup>
-import { ArrowDownToLine, Droplets, Gauge, Snowflake } from 'lucide-vue-next';
+import { Droplets, Gauge, Wind } from 'lucide-vue-next';
 
-const features = [
-  { label: 'Water leak alarm', icon: Droplets },
-  { label: 'High performance compressor', icon: Gauge },
-  { label: 'Gravity drainage', icon: ArrowDownToLine },
-  { label: 'Auto defrost', icon: Snowflake },
+/** Selling points, in the same shape as MD001 / MD002: icon + short title + one line. */
+const sellingPoints = [
+  {
+    title: 'Off the floor entirely.',
+    text: 'Installed overhead, so no floor space is lost to equipment, storage or people moving through.',
+    icon: Wind,
+  },
+  {
+    title: 'High-capacity drying.',
+    text: 'A rated 3.3 kg/h, 4.0 kg/h at high temperature and 7.0 kg/h maximum, with 800 m³/h airflow.',
+    icon: Droplets,
+  },
+  {
+    title: 'Fitted once, low fuss.',
+    text: 'High-performance compressor, auto defrost, gravity drainage and a water-leak alarm.',
+    icon: Gauge,
+  },
 ];
 </script>
 
@@ -24,11 +36,14 @@ const features = [
         alt="White and black MD0002 ceiling-mounted dehumidifiers in a factory"
       />
 
-      <div class="ceiling-feature-grid" aria-label="Key product features">
-        <article v-for="feature in features" :key="feature.label" class="ceiling-feature">
-          <component :is="feature.icon" aria-hidden="true" />
-          <strong>{{ feature.label }}</strong>
-        </article>
+      <div class="ceiling-selling-bar" aria-label="Key selling points">
+        <div v-for="point in sellingPoints" :key="point.title" class="ceiling-selling-point">
+          <component :is="point.icon" aria-hidden="true" />
+          <div>
+            <h2>{{ point.title }}</h2>
+            <p>{{ point.text }}</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -55,6 +70,7 @@ const features = [
   --ink: #324f54;
   --accent: #5f858d;
   --tint: #bfd8dc;
+  --band: #eef4f5;
   color: #101213;
   background: #fff;
 }
@@ -65,7 +81,8 @@ const features = [
   gap: clamp(30px, 5vw, 90px);
   align-items: center;
   min-height: clamp(610px, 54vw, 780px);
-  padding: clamp(130px, 12vw, 190px) max(7vw, calc((100vw - 1440px) / 2)) clamp(130px, 10vw, 160px);
+  /* No bottom padding: the selling-points bar closes the hero. */
+  padding: clamp(130px, 12vw, 190px) max(7vw, calc((100vw - 1440px) / 2)) 0;
   background: linear-gradient(112deg, #d5e8ea 0%, #eff6f6 56%, #fff 100%);
 }
 
@@ -107,32 +124,47 @@ const features = [
   object-fit: cover;
 }
 
-.ceiling-feature-grid {
+/* Selling points, styled like MD001/MD002's benefits band: three columns of
+   icon + title + one line, sitting flush along the bottom of the hero image. */
+.ceiling-selling-bar {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-  gap: clamp(20px, 4vw, 54px);
-  width: min(900px, 100%);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 44px);
+  margin: 0 calc(-1 * max(7vw, calc((100vw - 1440px) / 2)));
+  padding: clamp(30px, 3.4vw, 46px) max(7vw, calc((100vw - 1440px) / 2));
+  background: var(--band, #eef4f5);
 }
 
-.ceiling-feature {
+.ceiling-selling-point {
   display: grid;
-  justify-items: center;
-  gap: 13px;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.ceiling-selling-point svg {
+  width: 45px;
+  height: 45px;
+  color: var(--accent);
+  stroke-width: 1.55;
+}
+
+.ceiling-selling-point h2 {
+  margin: 0 0 8px;
   color: var(--ink);
-  text-align: center;
+  font-size: clamp(18px, 1.5vw, 23px);
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
-.ceiling-feature svg {
-  width: clamp(48px, 5vw, 76px);
-  height: clamp(48px, 5vw, 76px);
-  stroke-width: 1.7;
-}
-
-.ceiling-feature strong {
-  max-width: 160px;
-  font-size: clamp(15px, 1.25vw, 20px);
-  line-height: 1.15;
+.ceiling-selling-point p {
+  max-width: 300px;
+  margin: 0;
+  color: #3f6159;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .ceiling-engineered {
@@ -177,7 +209,7 @@ const features = [
   .ceiling-hero {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding: 184px 28px 64px;
+    padding: 184px 28px 0;
   }
 
   .ceiling-hero-scene {
@@ -185,10 +217,11 @@ const features = [
     justify-self: center;
   }
 
-  .ceiling-feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-self: center;
-    max-width: 600px;
+  .ceiling-selling-bar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin: 0 -28px;
+    padding: 32px 28px;
   }
 
   .ceiling-engineered {
@@ -205,7 +238,7 @@ const features = [
 
 @media (max-width: 560px) {
   .ceiling-hero {
-    padding: 160px 20px 52px;
+    padding: 160px 20px 0;
   }
 
   .ceiling-hero h1 {
@@ -217,8 +250,10 @@ const features = [
     font-size: 17px;
   }
 
-  .ceiling-feature-grid {
-    gap: 26px 12px;
+  .ceiling-selling-bar {
+    gap: 22px;
+    margin: 0 -20px;
+    padding: 30px 20px;
   }
 
   .ceiling-engineered {

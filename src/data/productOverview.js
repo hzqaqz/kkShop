@@ -44,6 +44,9 @@ export const productOverviews = {
       'Homes where the purifier runs all day rather than in bursts',
       'Anyone wanting automatic fan adjustment and real-time air quality readout',
     ],
+    // Illustration shown beside this block on the page.
+    image: '/images/products/mw200/scene-cat-corner.webp',
+    imageAlt: 'MW200 air purifier beside a cat tree and litter tray with a Bengal cat',
     specs: [
       ['Model', 'MW200'],
       ['Filtration', '3-stage composite with H13 HEPA media'],
@@ -110,6 +113,33 @@ export const productOverviews = {
       ['Dimensions', '300 × 200 × 490 mm'],
       ['Net weight', '13 kg'],
       ['Features', 'Clothes-drying function, digital display'],
+    ],
+  },
+
+  'commercial-air-purifier': {
+    heading: 'An H13 Commercial Air Purifier for Large, Shared Spaces',
+    paragraphs: [
+      'Gyms, offices and classrooms have a problem that a domestic purifier is not built for: a lot of people, a lot of air volume, and particles that keep being stirred back up. Equipment, foot traffic, soft furnishings and simply breathing all add to the load, and in a large room that load spreads through the whole space rather than staying near one seat.',
+      'The Meower MW1000 is sized for that job. An H13 filter grade is paired with an 877 m³/h particle CADR, which is roughly twice the airflow of a large home unit, and the recommended usable area reaches up to 105 m². Turning over that much air is what lets the unit actually clear a shared space instead of only the metres around it.',
+      'It is a floor-standing tower: 390 × 390 mm on the floor and 760 mm tall, rated at 105 W with three fan speeds and a noise level of no more than 69 dB(A) at full speed. That combination suits rooms used for long stretches where the unit needs to keep running while people work, train or study.',
+    ],
+    bestFor: [
+      'Gyms, studios and other spaces where activity keeps dust airborne',
+      'Open-plan offices and meeting floors',
+      'Classrooms and training rooms',
+      'Other large commercial rooms of up to 105 m²',
+    ],
+    specs: [
+      ['Model', 'MW1000'],
+      ['Filter grade', 'H13'],
+      ['Particle CADR', '877 m³/h'],
+      ['Recommended room size', 'Up to 105 m²'],
+      ['Noise level', '≤ 69 dB(A)'],
+      ['Fan speeds', '3'],
+      ['Rated power', '105 W'],
+      ['Gross weight', '20 kg'],
+      ['Product size', '390 × 390 × 760 mm'],
+      ['Packing size', '480 × 480 × 880 mm'],
     ],
   },
 

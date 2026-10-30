@@ -2,10 +2,14 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
+import CommercialAirPurifierPage from '../components/CommercialAirPurifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
 import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
 import Md002DehumidifierPage from '../components/Md002DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
+import Mw200AirPurifierPage from '../components/Mw200AirPurifierPage.vue';
+import InquiryBar from '../components/InquiryBar.vue';
+import ProductBuyBar from '../components/ProductBuyBar.vue';
 import ProductFaq from '../components/ProductFaq.vue';
 import ProductOverview from '../components/ProductOverview.vue';
 import RelatedArticles from '../components/RelatedArticles.vue';
@@ -20,10 +24,13 @@ const route = useRoute();
 
 /** Each product page supplies its own palette to the SEO content zone. */
 const THEME_CLASSES = {
-  mw100: 'post-theme-cream',
-  mw200: 'post-theme-cream',
+  // The MW pages share MD001's palette, so the SEO zone (overview, FAQ, related
+  // cards) uses the same warm theme instead of the old cream/brown one.
+  mw100: 'post-theme-warm',
+  mw200: 'post-theme-warm',
   md001: 'post-theme-warm',
   md002: 'post-theme-warm',
+  'commercial-air-purifier': 'post-theme-teal',
   'commercial-dehumidifier': 'post-theme-teal',
   'ceiling-mounted-dehumidifier': 'post-theme-green',
 };
@@ -36,7 +43,11 @@ const relatedArticles = computed(() => getArticlesForProduct(route.params.produc
 
 const breadcrumbs = computed(() => [
   { label: 'Home', to: '/' },
-  { label: 'Products', to: '/products' },
+  // Products listed in the Shop sit under /products; the dehumidifier range is
+  // presented on the Business page, so its breadcrumb points there instead.
+  currentProduct.value?.shopCategoryId
+    ? { label: 'Shop', to: '/products' }
+    : { label: 'Business', to: { name: 'business', hash: '#products' } },
   { label: currentProduct.value?.label ?? 'Product', to: route.path },
 ]);
 
@@ -68,13 +79,17 @@ useSeo(currentMeta.value);
   >
     <SiteHeader />
 
-    <CommercialDehumidifierPage v-if="currentProduct?.page === 'commercial'" />
+    <CommercialAirPurifierPage v-if="currentProduct?.page === 'commercial-air-purifier'" />
+
+    <CommercialDehumidifierPage v-else-if="currentProduct?.page === 'commercial'" />
 
     <CeilingMountedDehumidifierPage v-else-if="currentProduct?.page === 'ceiling-mounted'" />
 
     <Md001DehumidifierPage v-else-if="currentProduct?.page === 'md001'" />
 
     <Md002DehumidifierPage v-else-if="currentProduct?.page === 'md002'" />
+
+    <Mw200AirPurifierPage v-else-if="currentProduct?.page === 'mw200'" />
 
     <Mw100ProductPage
       v-else-if="currentProduct"
@@ -101,5 +116,21 @@ useSeo(currentMeta.value);
 
       <RelatedProducts :products="relatedProducts" />
     </div>
+
+    <ProductBuyBar v-if="currentProduct?.purchasable" :handle="currentProduct.shopifyHandle" />
+    <InquiryBar v-else-if="currentProduct" :label="currentProduct.label" />
   </main>
 </template>
+
+<style scoped>
+/* Keep the last content clear of the fixed bottom action bar (buy / inquiry). */
+.product-page {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 640px) {
+  .product-page {
+    padding-bottom: calc(184px + env(safe-area-inset-bottom, 0px));
+  }
+}
+</style>

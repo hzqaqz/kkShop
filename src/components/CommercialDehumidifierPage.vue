@@ -1,11 +1,23 @@
 <script setup>
-import { ArrowDownToLine, Droplets, Gauge, Snowflake } from 'lucide-vue-next';
+import { Droplets, Gauge, Wind } from 'lucide-vue-next';
 
-const features = [
-  { label: 'Water leak alarm', icon: Droplets },
-  { label: 'High performance compressor', icon: Gauge },
-  { label: 'Gravity drainage', icon: ArrowDownToLine },
-  { label: 'Auto defrost', icon: Snowflake },
+/** Selling points, in the same shape as MD001 / MD002: icon + short title + one line. */
+const sellingPoints = [
+  {
+    title: 'Commercial-scale extraction.',
+    text: 'A rated 1.25 kg/h, up to 50 L/day at high temperature and a maximum capacity of 60 L/day.',
+    icon: Droplets,
+  },
+  {
+    title: 'Air that keeps moving.',
+    text: '320 m³/h of airflow carries dried air through warehouses, basements and garages rather than one corner.',
+    icon: Wind,
+  },
+  {
+    title: 'Built to run unattended.',
+    text: 'High-performance compressor, auto defrost, gravity drainage and a water-leak alarm.',
+    icon: Gauge,
+  },
 ];
 
 const spaces = [
@@ -26,18 +38,25 @@ const spaces = [
   <article class="commercial-dehumidifier">
     <section class="commercial-hero" aria-labelledby="commercial-title">
       <div class="commercial-hero-copy">
-        <h1 id="commercial-title">
-          <span>Commercial</span>
-          Dehumidifier
-        </h1>
-        <p>Powerful moisture control for<br />demanding commercial environments.</p>
+        <p class="commercial-eyebrow">Commercial Dehumidifier · MD0001</p>
+        <h1 id="commercial-title">Commercial<br />Dehumidifier</h1>
+        <p>Powerful moisture control for demanding commercial environments.</p>
       </div>
 
-      <div class="commercial-feature-grid" aria-label="Key product features">
-        <article v-for="feature in features" :key="feature.label" class="commercial-feature">
-          <component :is="feature.icon" aria-hidden="true" />
-          <strong>{{ feature.label }}</strong>
-        </article>
+      <img
+        class="commercial-hero-scene"
+        src="/images/products/md0001/warehouse-hero.webp"
+        alt="White MD0001 commercial dehumidifier standing in a warehouse aisle"
+      />
+
+      <div class="commercial-selling-bar" aria-label="Key selling points">
+        <div v-for="point in sellingPoints" :key="point.title" class="commercial-selling-point">
+          <component :is="point.icon" aria-hidden="true" />
+          <div>
+            <h2>{{ point.title }}</h2>
+            <p>{{ point.text }}</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -78,6 +97,7 @@ const spaces = [
   --commercial-ink: #324f54;
   --commercial-accent: #5f858d;
   --commercial-tint: #bfd8dc;
+  --band: #eef4f5;
   color: #0b0b0b;
   background: #fff;
   font-family:
@@ -92,72 +112,102 @@ const spaces = [
 }
 
 .commercial-hero {
-  position: relative;
-  min-height: clamp(560px, 48vw, 720px);
-  padding: clamp(120px, 11vw, 170px) 9vw clamp(32px, 3vw, 48px);
-  background: url("/images/products/md0001/warehouse-hero.webp") center / cover no-repeat;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+  gap: clamp(30px, 5vw, 90px);
+  align-items: center;
+  min-height: clamp(610px, 54vw, 780px);
+  /* No bottom padding: the selling-points bar closes the hero. */
+  padding: clamp(130px, 12vw, 190px) max(7vw, calc((100vw - 1440px) / 2)) 0;
+  background: linear-gradient(112deg, #d5e8ea 0%, #eff6f6 56%, #fff 100%);
 }
 
 .commercial-hero-copy {
-  width: min(560px, 44vw);
-  padding: clamp(18px, 2.2vw, 30px) clamp(24px, 3vw, 42px);
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 18px 48px rgba(18, 33, 36, 0.16);
-  backdrop-filter: blur(8px);
+  max-width: 560px;
+}
+
+/* Scene photo on the right, framed like the other product heroes. */
+.commercial-hero-scene {
+  width: 100%;
+  aspect-ratio: 1800 / 1013;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.commercial-eyebrow {
+  margin: 0 0 20px;
+  color: var(--commercial-accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Headings mirror CeilingMountedDehumidifierPage.vue: one ink colour, weight 900,
+   -0.045em tracking, 1.02 line-height. */
+.commercial-hero h1,
+.performance-section h2,
+.commercial-section-heading h2 {
+  margin: 0;
+  color: var(--commercial-ink);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
 }
 
 .commercial-hero h1 {
-  margin-bottom: 12px;
-  color: var(--commercial-ink);
-  font-size: clamp(48px, 4.8vw, 82px);
-  font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.98;
+  font-size: clamp(48px, 5.5vw, 84px);
+  letter-spacing: -0.015em;
 }
 
-.commercial-hero h1 span {
-  display: block;
-  color: #5f858d;
+/* :not(...) so the subtitle rule does not also size the eyebrow above the H1. */
+.commercial-hero-copy p:not(.commercial-eyebrow) {
+  margin: 24px 0 0;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: 1.42;
 }
 
-.commercial-hero-copy p {
-  color: #241915;
-  font-size: clamp(18px, 1.6vw, 26px);
-  line-height: 1.35;
-  margin-bottom: 0;
-}
-
-.commercial-feature-grid {
-  position: absolute;
-  bottom: clamp(24px, 3vw, 44px);
-  left: 4vw;
+/* Selling points, styled like MD001/MD002's benefits band: three columns of
+   icon + title + one line, sitting flush along the bottom of the hero image. */
+.commercial-selling-bar {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-  gap: clamp(18px, 2.4vw, 46px);
-  width: min(850px, 57vw);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 44px);
+  margin: 0 calc(-1 * max(7vw, calc((100vw - 1440px) / 2)));
+  padding: clamp(30px, 3.4vw, 46px) max(7vw, calc((100vw - 1440px) / 2));
+  background: var(--band, #eef4f5);
 }
 
-.commercial-feature {
+.commercial-selling-point {
   display: grid;
-  justify-items: center;
-  gap: 16px;
-  text-align: center;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
 }
 
-.commercial-feature svg {
-  width: clamp(64px, 6vw, 104px);
-  height: clamp(64px, 6vw, 104px);
+.commercial-selling-point svg {
+  width: 45px;
+  height: 45px;
+  color: var(--commercial-accent);
+  stroke-width: 1.55;
+}
+
+.commercial-selling-point h2 {
+  margin: 0 0 8px;
   color: var(--commercial-ink);
-  stroke-width: 1.7;
+  font-size: clamp(18px, 1.5vw, 23px);
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
-.commercial-feature strong {
-  max-width: 190px;
-  font-size: clamp(16px, 1.25vw, 22px);
-  line-height: 1.15;
+.commercial-selling-point p {
+  max-width: 300px;
+  margin: 0;
+  color: #3f6167;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .performance-section {
@@ -176,24 +226,21 @@ const spaces = [
 
 .section-rule {
   display: block;
-  width: clamp(120px, 12vw, 205px);
-  height: 14px;
+  width: clamp(110px, 10vw, 170px);
+  height: 12px;
   margin-bottom: 24px;
   background: var(--commercial-accent);
 }
 
 .performance-section h2,
 .commercial-section-heading h2 {
-  font-size: clamp(36px, 3.6vw, 58px);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  font-size: clamp(38px, 4vw, 62px);
 }
 
 .performance-copy p {
   max-width: 650px;
-  margin-top: clamp(24px, 2.5vw, 38px);
-  font-size: clamp(17px, 1.35vw, 23px);
+  margin: 28px 0 0;
+  font-size: clamp(18px, 1.5vw, 24px);
   line-height: 1.6;
 }
 
@@ -259,44 +306,25 @@ const spaces = [
 
 @media (max-width: 900px) {
   .commercial-hero {
-    min-height: 600px;
-    padding: 184px 28px 24px;
-    background-position: 58% center;
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 184px 28px 0;
   }
 
-  .commercial-hero::before {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.1));
-    content: "";
-  }
-
-  .commercial-hero-copy,
-  .commercial-feature-grid {
-    position: relative;
-    z-index: 1;
-  }
-
-  .commercial-hero-copy {
-    width: min(580px, 100%);
-    padding: 18px 22px;
+  .commercial-hero-scene {
+    max-width: 620px;
+    justify-self: center;
   }
 
   .commercial-hero h1 {
     font-size: clamp(44px, 9vw, 66px);
   }
 
-  .commercial-feature-grid {
-    bottom: auto;
-    left: auto;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: min(560px, 100%);
-    margin-top: 30px;
-  }
-
-  .commercial-feature svg {
-    width: 62px;
-    height: 62px;
+  .commercial-selling-bar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin: 0 -28px;
+    padding: 32px 28px;
   }
 
   .performance-section {
@@ -338,43 +366,30 @@ const spaces = [
 
 @media (max-width: 560px) {
   .commercial-hero {
-    min-height: 580px;
-    padding: 184px 20px 22px;
+    padding: 160px 20px 0;
   }
 
   .commercial-hero h1 {
-    font-size: clamp(40px, 12vw, 54px);
+    font-size: clamp(42px, 12vw, 58px);
   }
 
-  .commercial-hero-copy p {
+  .commercial-hero-copy p:not(.commercial-eyebrow) {
     font-size: 17px;
   }
 
-  .commercial-feature-grid {
-    gap: 28px 12px;
-    margin-top: 26px;
-  }
-
-  .commercial-feature {
-    gap: 10px;
-  }
-
-  .commercial-feature svg {
-    width: 52px;
-    height: 52px;
-  }
-
-  .commercial-feature strong {
-    font-size: 15px;
+  .commercial-selling-bar {
+    gap: 22px;
+    margin: 0 -20px;
+    padding: 30px 20px;
   }
 
   .performance-section h2,
   .commercial-section-heading h2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .performance-copy p {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .section-rule,

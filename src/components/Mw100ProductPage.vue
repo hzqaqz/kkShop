@@ -333,17 +333,21 @@ const specs = computed(() => [
 </template>
 
 <style scoped>
+/* Palette matched to Md001DehumidifierPage.vue (--ink #314e53, --accent #75949a,
+   #f5eee5 / #f8f4ee bands) so the air purifier and dehumidifier pages read as
+   one family. Body copy stays near-black, exactly as on MD001. */
 .mw100 {
-  --ink: #21150f;
-  --cream: #fff8ee;
-  --card: rgba(255, 252, 247, 0.88);
+  --ink: #314e53;
+  --accent: #75949a;
+  --body: #202222;
+  --card: #fdfaf6;
+  --card-border: #ebe0d4;
+  --card-shadow: 0 12px 32px rgba(49, 78, 83, 0.07);
   --section-title-size: clamp(38px, 4.4vw, 64px);
   --section-subtitle-size: clamp(22px, 2.2vw, 32px);
   --section-content-size: clamp(15px, 1.2vw, 18px);
-  color: var(--ink);
-  background:
-    radial-gradient(circle at 42% 46%, rgba(238, 218, 189, 0.34), transparent 32%),
-    var(--cream);
+  color: var(--body);
+  background: #fff;
   font-family:
     "Google Sans Flex", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -353,6 +357,7 @@ const specs = computed(() => [
 .mw100 h2,
 .mw100 h3 {
   margin-top: 0;
+  color: var(--ink);
   font-family: inherit;
   font-weight: 800;
 }
@@ -370,7 +375,7 @@ const specs = computed(() => [
   min-height: min(920px, 70vw);
   padding: clamp(130px, 11vw, 175px) max(5vw, calc((100vw - 1180px) / 2)) 64px;
   background:
-    linear-gradient(90deg, rgba(255, 246, 232, 0.2), transparent 58%), 
+    linear-gradient(90deg, rgba(255, 250, 244, 0.28), transparent 58%),
     var(--hero-image) center / cover no-repeat;
   overflow: hidden;
 }
@@ -413,6 +418,7 @@ const specs = computed(() => [
 
 .hero-subtitle {
   margin-bottom: 14px;
+  color: #403a35;
 }
 
 .hero-description,
@@ -434,7 +440,7 @@ const specs = computed(() => [
   margin: clamp(70px, 9vw, 140px) 0 0 23%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 18px 55px rgba(95, 68, 43, 0.12);
+  box-shadow: 0 18px 55px rgba(49, 78, 83, 0.12);
 }
 
 .hero-feature {
@@ -444,7 +450,7 @@ const specs = computed(() => [
   align-items: center;
   min-height: 96px;
   padding: 14px 22px;
-  background: rgba(255, 250, 243, 0.55);
+  background: rgba(255, 250, 244, 0.62);
   backdrop-filter: blur(10px);
 }
 
@@ -469,7 +475,7 @@ const specs = computed(() => [
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #f4e6d2;
+  background: rgba(117, 148, 154, 0.14);
 }
 
 .round-icon {
@@ -482,6 +488,7 @@ const specs = computed(() => [
 .space-icon svg {
   width: 29px;
   height: 29px;
+  color: var(--accent);
   stroke-width: 1.8;
 }
 
@@ -532,16 +539,16 @@ const specs = computed(() => [
 }
 
 .space-card {
-  border: 1px solid rgba(111, 77, 50, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 22px;
-  background: rgba(255, 252, 247, 0.82);
-  box-shadow: 0 16px 38px rgba(112, 78, 48, 0.1);
+  background: var(--card);
+  box-shadow: 0 16px 38px rgba(49, 78, 83, 0.1);
   overflow: hidden;
 }
 
 .bedroom-card,
 .bedroom-image-shadow {
-  box-shadow: 0 18px 42px rgba(112, 78, 48, 0.2);
+  box-shadow: 0 18px 42px rgba(49, 78, 83, 0.16);
 }
 
 .space-card img {
@@ -577,9 +584,7 @@ const specs = computed(() => [
 
 .why-section {
   padding: clamp(42px, 3vw, 60px) max(4vw, calc((100vw - 1180px) / 2));
-  background:
-    radial-gradient(circle at 50% 25%, rgba(232, 201, 166, 0.25), transparent 42%),
-    #fff7ec;
+  background: #f8f4ee;
 }
 
 .why-heading {
@@ -630,9 +635,9 @@ const specs = computed(() => [
 .filter-card,
 .spec-card,
 .coverage-card {
-  border: 1px solid rgba(111, 77, 50, 0.08);
+  border: 1px solid var(--card-border);
   background: var(--card);
-  box-shadow: 0 12px 32px rgba(112, 78, 48, 0.07);
+  box-shadow: var(--card-shadow);
 }
 
 .benefit-card {
@@ -729,7 +734,7 @@ const specs = computed(() => [
   margin: 0 auto clamp(12px, 0.8vw, 16px);
   flex: 0 0 auto;
   border-radius: 3px;
-  box-shadow: 4px 5px 8px rgba(64, 48, 40, 0.16);
+  box-shadow: 4px 5px 8px rgba(49, 78, 83, 0.14);
 }
 
 .pre-filter {
@@ -821,6 +826,7 @@ const specs = computed(() => [
 .spec-card > svg {
   width: clamp(42px, 3.2vw, 50px);
   height: clamp(42px, 3.2vw, 50px);
+  color: var(--accent);
   stroke-width: 1.7;
 }
 
@@ -857,6 +863,7 @@ const specs = computed(() => [
 
 .coverage-label {
   display: block;
+  color: var(--accent);
   font-family: inherit;
   font-size: clamp(22px, 1.8vw, 30px);
   font-weight: 800;
@@ -998,7 +1005,7 @@ const specs = computed(() => [
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    background: rgba(255, 248, 238, 0.78);
+    background: rgba(255, 250, 244, 0.9);
     backdrop-filter: blur(8px);
   }
 
