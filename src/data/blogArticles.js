@@ -1,5 +1,92 @@
 export const blogArticles = [
   {
+    slug: 'how-to-choose-an-air-purifier-for-pets',
+    title: 'How to Choose an Air Purifier for You and Your Pet',
+    // Renders the hero eyebrow as "Guide" rather than the generic blog label.
+    guide: true,
+    date: '2026-10-31',
+    sortDate: '2026-10-31',
+    coverImage: '/images/products/mw200/hero-armchair.webp',
+    heroImage: '/images/products/mw200/hero-armchair.webp',
+    imageFit: 'natural',
+    contentMarkdown: `# How to Choose an Air Purifier for You and Your Pet
+
+Scroll through any shop page and the specifications start to blur together: CADR, HEPA, H13, dB(A), square metres. Most of those numbers matter, but only a few of them decide whether a purifier genuinely suits a home with a cat or a dog.
+
+Here is how to read them, in the order we would check them ourselves.
+
+![A Meower air purifier beside a linen armchair and houseplants in a sunlit living room](/images/products/mw200/hero-armchair.webp)
+
+[[block:calculator]]
+
+## 1. Start with CADR: does it move enough air?
+
+CADR — Clean Air Delivery Rate — is the volume of filtered air a purifier delivers per hour. The Meower MW200, for example, is rated at 400 m³/h.
+
+The reason to check it first is simple: **the higher the CADR, the faster a room is actually cleaned.** A unit with a low CADR can be left running all afternoon and still not turn over the air in a living room, while a higher-CADR unit does the same job in a fraction of the time. That difference matters in a pet home, where fur and dander are being added to the air continuously.
+
+CADR is also how you work out the room size. Manufacturers publish a recommended room area derived from it, so the practical step is straightforward: measure the floor area of the room where the purifier will stand, and choose a unit whose recommended area covers it with a little headroom. The MW200, at 400 m³/h, is sized for rooms of roughly 20–40 m² — most bedrooms and living areas.
+
+If the room is open-plan, or connects to a hallway through an open door, size for the space the air can actually reach rather than for the sofa it sits beside.
+
+## 2. Check the filter grade: H13 is what "HEPA" actually means
+
+"HEPA" is used loosely in marketing, so look for the grade. **H13 is the grade that can properly be called HEPA**, and it is the one worth insisting on in a pet household.
+
+Why it matters: what pets release into a room is not only hair. Dander, the microscopic flakes of skin that cats and dogs shed constantly, is small enough to stay airborne for hours and to settle into bedding, rugs and soft furniture — then get lifted back up when somebody walks through the room. H13 filtration captures those fine particles rather than letting them circulate.
+
+The same media also captures mould spores and other fine airborne particles, which helps in homes where damp corners or seasonal humidity already put pressure on indoor air quality. For a pet household, a pre-filter that catches the visible hair keeps the H13 stage working on the particles you cannot see.
+
+So the grade is the first question. The second is what happens to everything in the air that is not a particle at all — which is where the next section starts.
+
+[[block:grade]]
+
+## 3. Know what each stage does: HEPA traps particles, carbon traps gases
+
+Most purifiers put more than one filter in the same housing, and the stages do different jobs. Buying on the HEPA grade alone is how people end up with a unit that cleans the air but leaves the room still smelling of the litter tray.
+
+**HEPA media (the H13 stage) — particles.** This is a mechanical filter. Dense glass-fibre media physically traps particles as the air passes through it: pet dander, fragments of fur, dust mite debris, pollen, mould spores, smoke particles. It is extremely good at that job, and it does nothing at all for smell. A gas molecule passes straight through it.
+
+**Activated carbon — gases and odours.** Carbon is porous, and gas molecules stick to the surface of those pores rather than passing through: that is adsorption. It is the stage that takes on odours, volatile organic compounds and cooking smells. It is not a particle filter, so it cannot stand in for the HEPA stage — and the HEPA stage cannot stand in for it.
+
+### Why the carbon stage matters in a pet home
+
+Most of what a pet household smells is gas, not dust. Cat urine releases ammonia as it breaks down, litter trays and damp bedding keep feeding it into the room, and wet fur and the cleaning products used around them add to the mix. A HEPA-only purifier will genuinely clean the air in that room and leave the smell behind, because the smell was never made of particles.
+
+Three practical points:
+
+- **Check that there is real carbon, and how much of it.** A thin "carbon cloth" layer mostly sells the word rather than the performance; actual carbon pellets hold far more capacity for their size.
+- **Expect the carbon to be spent first.** Carbon has a finite capacity. Once its pores are full, odour removal fades long before the HEPA media has reached the end of its life — which is why a combined filter is replaced when the carbon is done, not when the HEPA looks grey.
+- **Change the litter tray first, filter second.** Carbon adsorbs what reaches it; it cannot out-run a tray that needs cleaning. No filter stage replaces the basics, it only buys you time between them.
+
+[[block:stack]]
+
+In the MW200 these jobs are split across a three-stage composite filter: a pre-filter for hair and larger dust, H13 HEPA media for fine particles, and an activated carbon stage for everyday household odours.
+
+## 4. Listen to the noise figure: your pet hears more than you do
+
+Cats and dogs hear higher frequencies, and hear them at lower volumes, than people do. A purifier that seems acceptable to us can be genuinely uncomfortable for an animal that has to live in the same room — and an uncomfortable pet often shows it by avoiding the room entirely, which defeats the purpose.
+
+So check the dB(A) figure rather than trusting the marketing about "quiet operation". The MW200 runs at 36–50 dB(A): the low end is bedroom-friendly, the top end belongs to a room where nobody is trying to sleep.
+
+Fan speeds matter just as much. Three or four speeds let the unit idle quietly overnight and work harder while everyone is out. Auto mode, which follows the air quality it detects, is a useful extra in a pet home where the particle load rises and falls through the day.
+
+[[block:noise]]
+
+## The short version
+
+- **CADR** tells you how fast the air is cleaned, and roughly how large a room the unit suits.
+- **Filter grade** tells you what is actually being captured — look for H13 for pet dander and fine particles.
+- **Filter types** tell you what each stage is for — HEPA for particles, activated carbon for gases and odours.
+- **dB(A) and fan speeds** tell you whether it can run while you and your pet are in the room.
+
+## Where the MW200 fits
+
+We built the MW200 around exactly these points: a three-stage composite filter with H13 HEPA media and an activated carbon stage, 360° air intake, a 400 m³/h particle CADR for rooms of roughly 20–40 m², and 36–50 dB(A) across four fan speeds with auto mode and a timer, all at a rated 38 W.
+
+[See the Meower MW200 air purifier](/products/mw200)`,
+  },
+  {
     slug: 'air-purifier-pet-dander-bedroom',
     title: 'Air Purifier for Pet Dander in Bedroom: A Pet Parent\'s Guide to a Cleaner Home',
     date: '2026-10-12',

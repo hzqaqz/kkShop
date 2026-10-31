@@ -11,6 +11,14 @@ const STOREFRONT_TOKEN = (import.meta.env.VITE_SHOPIFY_STOREFRONT_TOKEN || '').t
 
 const API_VERSION = '2026-10';
 
+/**
+ * Storefront market context (`@inContext`). Product availability and cart
+ * prices are resolved per market, so without a context Shopify falls back to
+ * the shop's default market — where a variant can read as in stock but be
+ * refused at add-to-cart time. Override with VITE_SHOPIFY_COUNTRY.
+ */
+const SHOPIFY_COUNTRY = (import.meta.env.VITE_SHOPIFY_COUNTRY || 'NZ').trim().toUpperCase();
+
 const ENDPOINT = STORE_DOMAIN
   ? `https://${STORE_DOMAIN.replace(/^https?:\/\//, '').replace(/\/$/, '')}/api/${API_VERSION}/graphql.json`
   : null;
@@ -35,7 +43,7 @@ async function storefrontFetch(query, variables = {}) {
         'Content-Type': 'application/json',
         'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN,
       },
-      body: JSON.stringify({ query, variables }),
+      body: JSON.stringify({ query, variables: withCountry(variables) }),
     });
   } catch (err) {
     throw new Error('Could not reach Shopify. Check your store domain and network.');
@@ -52,6 +60,11 @@ async function storefrontFetch(query, variables = {}) {
   }
 
   return json.data;
+}
+
+/** `@inContext` needs the country passed as a variable on every operation. */
+function withCountry(variables) {
+  return { country: SHOPIFY_COUNTRY, ...variables };
 }
 
 /** Format a price amount + ISO currency code, e.g. 129.5 + "NZD" → "NZ$129.50". */
@@ -78,7 +91,7 @@ export function formatMoney(amount, currencyCode) {
 // ─────────────────────────────────────────────────────────────
 
 const PRODUCT_BY_HANDLE_QUERY = `
-  query ProductByHandle($handle: String!) {
+  query ProductByHandle($handle: String!, $country: CountryCode) @inContext(country: $country) {
     product(handle: $handle) {
       id
       title
@@ -140,7 +153,7 @@ const CART_FRAGMENT = `
 
 const CART_CREATE_QUERY = `
   ${CART_FRAGMENT}
-  mutation CartCreate($lines: [CartLineInput!]) {
+  mutation CartCreate($lines: [CartLineInput!], $country: CountryCode) @inContext(country: $country) {
     cartCreate(input: { lines: $lines }) {
       cart { ...CartFragment }
     }
@@ -149,14 +162,14 @@ const CART_CREATE_QUERY = `
 
 const CART_QUERY = `
   ${CART_FRAGMENT}
-  query GetCart($cartId: ID!) {
+  query GetCart($cartId: ID!, $country: CountryCode) @inContext(country: $country) {
     cart(id: $cartId) { ...CartFragment }
   }
 `;
 
 const CART_LINES_ADD_QUERY = `
   ${CART_FRAGMENT}
-  mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+  mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!, $country: CountryCode) @inContext(country: $country) {
     cartLinesAdd(cartId: $cartId, lines: $lines) {
       cart { ...CartFragment }
     }
@@ -165,7 +178,7 @@ const CART_LINES_ADD_QUERY = `
 
 const CART_LINES_UPDATE_QUERY = `
   ${CART_FRAGMENT}
-  mutation CartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+  mutation CartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!, $country: CountryCode) @inContext(country: $country) {
     cartLinesUpdate(cartId: $cartId, lines: $lines) {
       cart { ...CartFragment }
     }
@@ -174,7 +187,7 @@ const CART_LINES_UPDATE_QUERY = `
 
 const CART_LINES_REMOVE_QUERY = `
   ${CART_FRAGMENT}
-  mutation CartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
+  mutation CartLinesRemove($cartId: ID!, $lineIds: [ID!]!, $country: CountryCode) @inContext(country: $country) {
     cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
       cart { ...CartFragment }
     }

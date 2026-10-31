@@ -2,10 +2,11 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
+import ProductFromPrice from '../components/ProductFromPrice.vue';
 import SiteHeader from '../components/SiteHeader.vue';
-import { blogArticles } from '../data/blogArticles';
+import { blogArticles, getBlogArticle } from '../data/blogArticles';
 import { shopCategories } from '../data/catalog';
-import { getProduct } from '../data/products';
+import { getProduct, productOrder } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 import { useSeo } from '../composables/useSeo';
 
@@ -22,24 +23,20 @@ const md001Route = { name: 'product-detail', params: { productId: 'md001' } };
 
 const slides = [
   {
-    image: '/images/carousel/hero-air-purifier-pets.webp',
-    alt: 'Meower air purifier in a sunlit living room while a Bengal cat and a schnauzer play with a toy',
-    title: 'Meower Air Purifier',
-    subtitle: 'Cleaner Air. Happier Pet Homes.',
+    // Same artwork as the "How to Choose an Air Purifier for You and Your Pet"
+    // guide, so the first thing visitors see matches the guide they are led to.
+    image: '/images/products/mw200/hero-armchair.webp',
+    alt: 'Meower air purifier beside a linen armchair and houseplants in a sunlit living room',
     to: mw200Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-home.webp',
     alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
-    title: 'Meower Dehumidifier',
-    subtitle: 'Cleaner Air. Happier Pet Homes.',
     to: md001Route,
   },
   {
     image: '/images/carousel/hero-dehumidifier-plants.webp',
     alt: 'Meower dehumidifier in a bright living room filled with plants beside floor-to-ceiling windows',
-    title: 'Meower Dehumidifier',
-    subtitle: 'Cleaner Air. Happier Pet Homes.',
   },
 ];
 
@@ -51,9 +48,21 @@ const categories = shopCategories.map((category) => ({
   to: { name: 'products', hash: `#${category.id}` },
 }));
 
+/**
+ * Best sellers are the products listed in the Shop (`shopCategoryId`), so the
+ * business range never appears here. Pet products join automatically once they
+ * are added to `products.js`.
+ */
 const featuredProducts = computed(() =>
-  ['mw200', 'md001'].map((id) => getProduct(id)).filter(Boolean),
+  productOrder
+    .map((id) => getProduct(id))
+    .filter((product) => product?.shopCategoryId)
+    .slice(0, 4),
 );
+
+/** Buying guide teased under the best sellers. */
+const GUIDE_SLUG = 'how-to-choose-an-air-purifier-for-pets';
+const guide = getBlogArticle(GUIDE_SLUG);
 
 const featuredBlogs = computed(() =>
   [...blogArticles]
@@ -117,6 +126,71 @@ function restartAutoSlideAfterManual() {
   }, 1600);
 }
 
+/* Swipe left/right on the artwork (touch and mouse drag). A drag must not
+   also follow the slide link, so the gesture is tracked and the click that
+   follows it is swallowed in `handleSwipeClick`. */
+const SWIPE_THRESHOLD_PX = 40;
+let swipeStartX = null;
+let swipeStartY = null;
+let swiped = false;
+
+function handlePointerDown(event) {
+  if (event.pointerType === 'mouse' && event.button !== 0) {
+    return;
+  }
+
+  swipeStartX = event.clientX;
+  swipeStartY = event.clientY;
+  swiped = false;
+  stopAutoSlide();
+}
+
+function handlePointerUp(event) {
+  if (swipeStartX === null) {
+    return;
+  }
+
+  const dx = event.clientX - swipeStartX;
+  const dy = event.clientY - swipeStartY;
+  swipeStartX = null;
+  swipeStartY = null;
+
+  if (Math.abs(dx) >= SWIPE_THRESHOLD_PX && Math.abs(dx) > Math.abs(dy)) {
+    swiped = true;
+    clearSwipeFlagSoon();
+    if (dx < 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
+  }
+
+  restartAutoSlideAfterManual();
+}
+
+function handlePointerCancel() {
+  swipeStartX = null;
+  swipeStartY = null;
+}
+
+function handleSwipeClick(event) {
+  if (!swiped) {
+    return;
+  }
+
+  swiped = false;
+  event.preventDefault();
+  event.stopPropagation();
+}
+
+/* Some browsers (and synthetic events) never send the follow-up click, so the
+   flag is also cleared on a timer. */
+function clearSwipeFlagSoon() {
+  window.setTimeout(() => {
+    swiped = false;
+  }, 350);
+}
+
 function handleManualSlide(index) {
   stopAutoSlide();
   goToSlide(index);
@@ -146,7 +220,7 @@ onBeforeUnmount(() => {
 
 <template>
   <main class="site-shell">
-    <SiteHeader />
+    <SiteHeader halo-hero />
 
     <section
       id="home"
@@ -156,6 +230,10 @@ onBeforeUnmount(() => {
       @mouseleave="startAutoSlide"
       @focusin="stopAutoSlide"
       @focusout="startAutoSlide"
+      @pointerdown="handlePointerDown"
+      @pointerup="handlePointerUp"
+      @pointercancel="handlePointerCancel"
+      @click.capture="handleSwipeClick"
     >
         <div class="carousel-track" :style="{ transform: `translate3d(-${currentSlide * 100}%, 0, 0)` }">
           <component
@@ -175,49 +253,47 @@ onBeforeUnmount(() => {
                 decoding="async"
               />
             </div>
-            <div class="slide-caption">
-              <h2>{{ slide.title }}</h2>
-              <p>{{ slide.subtitle }}</p>
-            </div>
           </component>
         </div>
 
-        <div class="hero-card">
-          <h1 id="hero-title">
-            Pet Supplies &amp; Pet-Friendly Air Purifiers for Homes and Businesses
-          </h1>
-          <p class="hero-card-subline">
-            Strollers, carriers, beds, scratching posts and toys for everyday pet homes — plus
-            HEPA H13 air purification and humidity control for buyers worldwide.
-          </p>
-          <div class="hero-card-actions">
-            <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
-              Shop Now
-            </RouterLink>
-            <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmailHref">Get a Quote</a>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <h1 id="hero-title">Cleaner Air. Happier Pets.</h1>
+            <p class="hero-card-subline">
+              Pet supplies and pet-friendly H13 air purifiers, chosen for the homes where cats and
+              dogs actually live.
+            </p>
+            <div class="hero-card-actions">
+              <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
+                Shop Now
+              </RouterLink>
+              <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmailHref">Get a Quote</a>
+            </div>
           </div>
-        </div>
 
-        <div class="carousel-controls" aria-label="Carousel controls">
-          <button class="control-button" type="button" aria-label="Previous slide" @click="handlePreviousSlide">
-            <ChevronLeft :size="22" aria-hidden="true" />
-          </button>
-          <button class="control-button" type="button" aria-label="Next slide" @click="handleNextSlide">
-            <ChevronRight :size="22" aria-hidden="true" />
-          </button>
-        </div>
+          <div class="hero-controls">
+            <div class="carousel-dots" aria-label="Choose slide">
+              <button
+                v-for="(slide, index) in slides"
+                :key="`dot-${index}`"
+                class="dot"
+                :class="{ active: currentSlide === index }"
+                type="button"
+                :aria-label="`Show slide ${index + 1}`"
+                :aria-pressed="currentSlide === index"
+                @click="handleManualSlide(index)"
+              />
+            </div>
 
-        <div class="carousel-dots" aria-label="Choose slide">
-          <button
-            v-for="(slide, index) in slides"
-            :key="`dot-${index}`"
-            class="dot"
-            :class="{ active: currentSlide === index }"
-            type="button"
-            :aria-label="`Show slide ${index + 1}`"
-            :aria-pressed="currentSlide === index"
-            @click="handleManualSlide(index)"
-          />
+            <div class="carousel-controls" aria-label="Carousel controls">
+              <button class="control-button" type="button" aria-label="Previous slide" @click="handlePreviousSlide">
+                <ChevronLeft :size="22" aria-hidden="true" />
+              </button>
+              <button class="control-button" type="button" aria-label="Next slide" @click="handleNextSlide">
+                <ChevronRight :size="22" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
         </div>
     </section>
 
@@ -236,6 +312,7 @@ onBeforeUnmount(() => {
         >
           <img :src="product.image" :alt="product.title" loading="lazy" decoding="async" />
           <h3>{{ product.cardLabel }}</h3>
+          <ProductFromPrice :handle="product.shopifyHandle" />
           <p class="featured-subtitle">{{ product.cardSubtitle }}</p>
           <span>{{ product.category }}</span>
         </RouterLink>
@@ -243,6 +320,38 @@ onBeforeUnmount(() => {
 
       <div class="more-row">
         <RouterLink class="more-button" :to="{ name: 'products' }">View all</RouterLink>
+      </div>
+    </section>
+
+    <section
+      v-if="guide"
+      id="air-purifier-guide"
+      class="section guide-section"
+      aria-labelledby="guide-title"
+    >
+      <div class="guide-card">
+        <img
+          class="guide-card-media"
+          :src="guide.coverImage"
+          :alt="guide.title"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="guide-card-copy">
+          <p class="eyebrow">Buying guide</p>
+          <h2 id="guide-title">{{ guide.title }}</h2>
+          <p>
+            CADR, filter grade and noise level — the three figures that decide whether a purifier
+            really suits a home with a cat or a dog.
+          </p>
+          <RouterLink
+            class="guide-card-cta"
+            :to="{ name: 'blog-detail', params: { slug: GUIDE_SLUG } }"
+          >
+            Read the guide
+          </RouterLink>
+        </div>
       </div>
     </section>
 

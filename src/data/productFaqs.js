@@ -99,6 +99,65 @@ export const productFaqs = {
         'The MD002 is rated at 295 W with a maximum current of 2.3 A on 220 V~50 Hz. It weighs 13 kg and measures 300 × 200 × 490 mm.',
     },
   ],
+  'pom-pom-cat-toy': [
+    {
+      question: 'How does the toy launch and retract the pom-pom?',
+      answer:
+        'It is a battery-powered handle with a cord inside and two buttons. One button sends the pom-pom out along the cord, the other winds it back in, so the ball returns to the handle instead of being left on the floor.',
+    },
+    {
+      question: 'How many balls come with it, and can they be replaced?',
+      answer:
+        'Every toy includes two pom-poms, plus two AAA batteries and a small screwdriver for the battery compartment. The pom-poms clip on and off the cord, so a spare can be swapped in whenever one is worn out, lost or being washed.',
+    },
+    {
+      question: 'Is it suitable for kittens?',
+      answer:
+        'Yes — the pom-pom is soft and light, which suits kittens as well as adult cats. Play should be supervised, and the cord should be kept away from cats that like to chew.',
+    },
+    {
+      question: 'Does it need batteries?',
+      answer:
+        'Yes — it takes two AAA batteries, and a pair is included in the box. They drive the cord motor, so the launch and retract buttons work without any charging.',
+    },
+    {
+      question: 'Where is the bell?',
+      answer:
+        'A small bell sits on top of each pom-pom, beside the cord clip, so it rings as the ball moves. It is not inside the fluffy ball.',
+    },
+    {
+      question: 'How should I look after it?',
+      answer:
+        'Wipe the handle with a damp cloth. The pom-poms can be hand washed and air dried. Check the cord now and then, and stop using the toy if it frays or the pom-pom comes loose.',
+    },
+  ],
+  'christmas-pet-bed': [
+    {
+      question: 'What sizes does the festive plaid pet bed come in?',
+      answer:
+        'It comes in three sizes: small at 40 × 30 × 20 cm, medium at 50 × 40 × 25 cm and large at 60 × 50 × 30 cm. The small bed suits cats and small pets, the medium suits medium dogs such as a beagle, and the large suits larger dogs such as a labrador.',
+    },
+    {
+      question: 'How do I choose the right size for my pet?',
+      answer:
+        'Measure your pet from nose to the base of the tail while it is lying down, then choose a bed at least that long so it can stretch out. Cats and small dogs usually curl up, so the small size is enough for them; medium and large dogs need the extra length and the deeper bolster.',
+    },
+    {
+      question: 'What is the bed made of?',
+      answer:
+        'The surface is a short plush fabric over a PP cotton fill; the outer is red-and-cream plaid with green piping and red pom-pom trim, built around raised bolsters and an oval padded base.',
+    },
+    {
+      question: 'Is it warm enough for winter, and can it be used all year?',
+      answer:
+        'Both. The short plush surface and PP cotton fill make it a warm bed for winter months, and the same fill stays comfortable in spring and autumn, so the bed can stay in the room all year — the plaid and pom-poms are a look, not a season limit.',
+    },
+    {
+      question: 'How should I clean the bed?',
+      answer:
+        'Spot clean with a damp cloth and mild soap, then air dry fully before the bed goes back down. Brush out loose hair regularly — in a pet home the lining collects hair long before it looks dirty.',
+    },
+  ],
   'commercial-air-purifier': [
     {
       question: 'What filter grade does the Meower MW1000 use?',

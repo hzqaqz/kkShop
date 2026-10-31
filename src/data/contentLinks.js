@@ -9,6 +9,10 @@ import { getProduct } from './products';
  * matching stays meaningful.
  */
 export const articleTopics = {
+  'how-to-choose-an-air-purifier-for-pets': {
+    tags: ['pets', 'air-purifier', 'buying-guide', 'filters'],
+    products: ['mw200'],
+  },
   'air-purifier-pet-dander-bedroom': {
     tags: ['pets', 'air-purifier', 'allergies'],
     products: ['mw200'],

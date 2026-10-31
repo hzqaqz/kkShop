@@ -184,30 +184,25 @@ const spaces = [
 <style scoped>
 /* Same palette and rhythm as Md001DehumidifierPage.vue. */
 .mw200-purifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; color: #202222; background: #fff; }
-.mw200-hero { position: relative; min-height: clamp(680px, 60vw, 920px); overflow: hidden; background: var(--warm); }
-.mw200-hero-image {
+/* Hero matched to the MD001 page: the photo fills the band (contain, anchored
+   right/bottom) and a warm left-to-right wash keeps the copy readable. */
+.mw200-hero { position: relative; min-height: clamp(570px, 48vw, 760px); overflow: hidden; background: var(--warm); }
+.mw200-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: right bottom; }
+.mw200-hero::after {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: right bottom;
+  content: '';
+  background: linear-gradient(90deg, rgba(255, 250, 244, 0.93) 0%, rgba(255, 250, 244, 0.7) 28%, rgba(255, 250, 244, 0) 57%);
 }
-.mw200-hero-copy {
-  position: relative;
-  z-index: 1;
-  width: min(760px, calc(100% - 12vw));
-  margin-left: max(6vw, calc((100vw - 1440px) / 2));
-  padding: clamp(150px, 13vw, 205px) 0 56px;
-}
+.mw200-hero-copy { position: relative; z-index: 1; width: min(600px, 48vw); padding: clamp(150px, 13vw, 205px) 8vw 48px; }
 .mw200-eyebrow, .mw200-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .mw200-hero h1, .mw200-section-heading h2, .mw200-overview h2 { margin: 0; color: var(--ink); font-weight: 850; letter-spacing: -.045em; line-height: .98; }
 /* Long headline: 34–52px keeps both lines inside the copy column, and the
    nowrap line keeps "Air Purifier" together. */
-.mw200-hero h1 { font-size: clamp(44px, 5.6vw, 84px); letter-spacing: -.04em; line-height: 1.02; }
+.mw200-hero h1 { font-size: clamp(52px, 6vw, 94px); letter-spacing: -.045em; line-height: 0.98; }
 /* Smaller lead, larger product name — the second line is the one that should
    read as the headline. */
-.mw200-title-lead { display: block; color: #1e2625; font-size: .58em; letter-spacing: -.02em; line-height: 1.3; }
+.mw200-title-lead { display: block; color: #1e2625; font-size: .58em; letter-spacing: -.02em; line-height: 1.3; white-space: nowrap; }
 .mw200-title-keep { display: block; color: var(--ink); font-size: 1em; white-space: nowrap; }
 .mw200-hero-copy > p:last-child { margin: 24px 0 0; color: #403a35; font-size: clamp(19px, 1.7vw, 28px); font-weight: 600; }
 .mw200-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: clamp(42px, 5vw, 78px) max(7vw, calc((100vw - 1440px) / 2)); background: var(--warm); }
@@ -243,28 +238,23 @@ const spaces = [
 .mw200-space-card img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .mw200-space-card h3 { margin: 0; padding: 16px; color: var(--ink); font-size: 18px; text-align: center; }
 @media (max-width: 900px) {
-  /* Stacked hero (same approach as MD002): copy first, then the photo, so no
-     text ends up sitting across the artwork on a narrow screen. */
-  .mw200-hero { display: flex; flex-direction: column; min-height: 0; }
-  .mw200-hero-copy { order: 1; width: 100%; max-width: 620px; margin-left: 0; padding: 158px 28px 30px; }
-  .mw200-hero-image {
-    order: 2;
-    position: static;
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+  /* Same hero treatment as MD001 on small screens. */
+  .mw200-hero { min-height: 590px; }
+  .mw200-hero::after { background: linear-gradient(90deg, rgba(255, 250, 244, 0.93), rgba(255, 250, 244, 0.22)); }
+  .mw200-hero-copy { width: min(620px, 100%); padding: 176px 28px 48px; }
   .mw200-benefits { grid-template-columns: 1fr; padding: 48px 28px; }
   .mw200-features, .mw200-spaces { padding: 64px 28px; }
   .mw200-feature-grid { grid-template-columns: repeat(2, 1fr); }
   .mw200-overview { grid-template-columns: 1fr; min-height: 0; padding: 64px 28px; }
   .mw200-overview > img { max-width: 320px; }
   .mw200-space-grid { grid-template-columns: repeat(2, 1fr); }
-  /* Small enough that the lead line holds together on a phone. */
-  .mw200-hero h1 { font-size: clamp(34px, 8.8vw, 50px); }
+  /* Same size as MD001 on phones; the lead line wraps here instead of running
+     past the copy column. */
+  .mw200-title-lead { white-space: normal; }
 }
 @media (max-width: 520px) {
-  .mw200-hero-copy { padding-top: 150px; }
+  .mw200-hero { min-height: 640px; }
+  .mw200-hero-copy { padding-top: 170px; }
   .mw200-feature { min-height: 126px; }
   .mw200-space-grid { grid-template-columns: 1fr; }
 }

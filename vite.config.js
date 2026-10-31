@@ -4,6 +4,8 @@ import { blogArticles } from './src/data/blogArticles.js';
 
 const PRODUCT_IDS = [
   'mw200',
+  'christmas-pet-bed',
+  'pom-pom-cat-toy',
   'commercial-air-purifier',
   'md001',
   'md002',

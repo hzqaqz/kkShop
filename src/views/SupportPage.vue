@@ -64,23 +64,9 @@ useHead(() => ({
       </div>
     </section>
 
-    <section id="contact" class="support-section" aria-labelledby="support-contact-title">
-      <div class="support-heading">
-        <p class="support-eyebrow">Talk to us</p>
-        <h2 id="support-contact-title">Contact</h2>
-      </div>
-
-      <ul class="support-contact-list">
-        <li v-for="contact in contacts" :key="contact.label">
-          <component :is="contact.icon" aria-hidden="true" />
-          <span><strong>{{ contact.label }}:</strong> {{ contact.value }}</span>
-        </li>
-      </ul>
-    </section>
-
     <section id="faqs" class="support-section" aria-labelledby="support-faq-title">
       <div class="support-heading">
-        <p class="support-eyebrow">Good to know</p>
+        <p class="support-eyebrow">Air purifier basics</p>
         <h2 id="support-faq-title">Frequently asked questions</h2>
       </div>
 
@@ -104,6 +90,20 @@ useHead(() => ({
           </RouterLink>
         </details>
       </div>
+    </section>
+
+    <section id="contact" class="support-section" aria-labelledby="support-contact-title">
+      <div class="support-heading">
+        <p class="support-eyebrow">Talk to us</p>
+        <h2 id="support-contact-title">Contact</h2>
+      </div>
+
+      <ul class="support-contact-list">
+        <li v-for="contact in contacts" :key="contact.label">
+          <component :is="contact.icon" aria-hidden="true" />
+          <span><strong>{{ contact.label }}:</strong> {{ contact.value }}</span>
+        </li>
+      </ul>
     </section>
 
     <section class="support-section" aria-labelledby="support-topics-title">

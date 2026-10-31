@@ -1,6 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { computed, nextTick, ref, watch } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
+import ProductFromPrice from '../components/ProductFromPrice.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 import { contactEmailHref } from '../data/siteInfo';
@@ -18,6 +20,8 @@ const breadcrumbs = [
   { label: 'Shop', to: '/products' },
 ];
 
+const route = useRoute();
+
 /**
  * Sections follow the order of `shopCategories` in `src/data/catalog.js`;
  * a category with nothing listed yet renders a "Coming soon" panel instead of
@@ -30,9 +34,51 @@ const categories = shopCategories.map((category) => ({
   products: getShopProducts(category.id).map((product) => ({
     name: product.label,
     image: product.image,
+    shopifyHandle: product.shopifyHandle ?? '',
     to: { name: 'product-detail', params: { productId: product.id } },
   })),
 }));
+
+/**
+ * The sidebar drives the listing through the URL hash (`/products#pet-beds`),
+ * which is the same link shape the Shop mega menu and the home page category
+ * tiles already use — so those keep working, and a filtered view is shareable.
+ */
+const ACTIVE_ALL = 'all';
+const activeId = computed(() => {
+  const hash = route.hash.replace('#', '');
+  return categories.some((category) => category.id === hash) ? hash : ACTIVE_ALL;
+});
+
+const visibleCategories = computed(() =>
+  activeId.value === ACTIVE_ALL
+    ? categories
+    : categories.filter((category) => category.id === activeId.value),
+);
+
+const totalProducts = computed(() =>
+  categories.reduce((total, category) => total + category.products.length, 0),
+);
+
+/**
+ * On phones the category list is a horizontal scroller: keep the selected
+ * category in view without scrolling the page itself.
+ */
+const navRef = ref(null);
+
+const centreActiveCategory = () => {
+  const nav = navRef.value;
+  const active = nav?.querySelector('.shop-sidebar-link.is-active');
+  if (!nav || !active) {
+    return;
+  }
+  nav.scrollTo({
+    left: active.offsetLeft - nav.clientWidth / 2 + active.clientWidth / 2,
+    behavior: 'smooth',
+  });
+};
+
+watch(activeId, () => nextTick(centreActiveCategory));
 </script>
 
 <template>
@@ -49,9 +95,37 @@ const categories = shopCategories.map((category) => ({
       </p>
     </header>
 
-    <div class="product-list-groups">
+    <div class="shop-layout">
+      <aside class="shop-sidebar" aria-label="Product categories">
+        <p class="shop-sidebar-title">Categories</p>
+
+        <nav ref="navRef" class="shop-sidebar-nav">
+          <RouterLink
+            class="shop-sidebar-link"
+            :class="{ 'is-active': activeId === ACTIVE_ALL }"
+            :to="{ name: 'products' }"
+          >
+            <span>All products</span>
+            <em>{{ totalProducts }}</em>
+          </RouterLink>
+
+          <RouterLink
+            v-for="category in categories"
+            :key="`nav-${category.id}`"
+            class="shop-sidebar-link"
+            :class="{ 'is-active': activeId === category.id }"
+            :to="{ name: 'products', hash: `#${category.id}` }"
+          >
+            <span>{{ category.label }}</span>
+            <em v-if="category.products.length">{{ category.products.length }}</em>
+            <em v-else class="shop-sidebar-soon">Soon</em>
+          </RouterLink>
+        </nav>
+      </aside>
+
+      <div class="product-list-groups">
       <section
-        v-for="category in categories"
+        v-for="category in visibleCategories"
         :id="category.id"
         :key="category.id"
         class="product-list-group"
@@ -71,6 +145,7 @@ const categories = shopCategories.map((category) => ({
           >
             <img :src="product.image" :alt="product.name" loading="lazy" decoding="async" />
             <h3>{{ product.name }}</h3>
+            <ProductFromPrice :handle="product.shopifyHandle" />
             <span>View product</span>
           </RouterLink>
         </div>
@@ -83,6 +158,7 @@ const categories = shopCategories.map((category) => ({
           </span>
         </p>
       </section>
+      </div>
     </div>
   </main>
 </template>

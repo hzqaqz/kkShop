@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import ProductFromPrice from './ProductFromPrice.vue';
 
 defineProps({
   products: {
@@ -33,6 +34,7 @@ defineProps({
       >
         <img :src="product.image" :alt="product.title" />
         <h3>{{ product.cardLabel }}</h3>
+        <ProductFromPrice :handle="product.shopifyHandle" />
         <p class="related-product-subtitle">{{ product.cardSubtitle }}</p>
         <span>{{ product.category }}</span>
       </RouterLink>

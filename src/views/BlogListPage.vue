@@ -18,6 +18,9 @@ const breadcrumbs = [
   { label: 'Blogs', to: '/blogs' },
 ];
 
+/** Editorial artwork for the index hero (the newest guide cover). */
+const heroImage = '/images/carousel/hero-dehumidifier-plants.webp';
+
 const sortedBlogArticles = computed(() =>
   [...blogArticles].sort((first, second) =>
     (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''),
@@ -27,12 +30,27 @@ const sortedBlogArticles = computed(() =>
 
 <template>
   <main class="site-shell blog-page">
-    <SiteHeader />
+    <SiteHeader overlay-hero />
 
-    <section class="blog-list-hero" aria-labelledby="blog-list-title">
-      <SiteBreadcrumbs :items="breadcrumbs" />
-      <p class="eyebrow">Guides and inspiration</p>
-      <h1 id="blog-list-title">Explore Our Blogs</h1>
+    <section class="blog-hero blog-hero--index" aria-labelledby="blog-list-title">
+      <img
+        class="blog-hero-bg"
+        :src="heroImage"
+        alt="A bright living room filled with plants beside floor-to-ceiling windows"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="blog-hero-scrim" aria-hidden="true"></span>
+
+      <div class="blog-hero-copy">
+        <SiteBreadcrumbs :items="breadcrumbs" />
+        <p class="blog-hero-eyebrow">Guides and inspiration</p>
+        <h1 id="blog-list-title">Explore Our Blogs</h1>
+        <p class="blog-hero-lead">
+          Practical guides on indoor air quality, pet-friendly purification, humidity and the
+          everyday choices that keep a home comfortable.
+        </p>
+      </div>
     </section>
 
     <section class="section blog-list-section" aria-label="Blog articles">

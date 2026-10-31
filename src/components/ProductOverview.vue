@@ -21,7 +21,11 @@ const overview = computed(() => getProductOverview(props.productId));
         <p v-for="paragraph in overview.paragraphs" :key="paragraph">{{ paragraph }}</p>
       </div>
 
-      <figure v-if="overview.image" class="product-overview-figure">
+      <figure
+        v-if="overview.image"
+        class="product-overview-figure"
+        :class="{ 'product-overview-figure--contain': overview.imageFit === 'contain' }"
+      >
         <img
           :src="overview.image"
           :alt="overview.imageAlt ?? ''"

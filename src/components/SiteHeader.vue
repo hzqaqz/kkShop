@@ -19,6 +19,11 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /** Dark bar sitting on an un-dimmed photo: keeps ink text, adds a white halo. */
+  haloHero: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const { count: cartCount, openCart } = useCart();
@@ -130,7 +135,7 @@ onBeforeUnmount(() => {
 <template>
   <header
     class="topbar"
-    :class="{ 'topbar--overlay': overlayMode }"
+    :class="{ 'topbar--overlay': overlayMode, 'topbar--halo': props.haloHero }"
     aria-label="kkShop navigation"
     :style="{ '--topbar-bg-alpha': overlayMode ? 0 : scrollProgress }"
     @mouseleave="closeMenu"
@@ -291,6 +296,42 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/* Ink-on-photo variant: the hero has no scrim, so every dark element carries a
+   white halo instead of relying on a dimmed background. */
+.topbar--halo {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.topbar--halo:not(.topbar--overlay) .nav-label,
+.topbar--halo:not(.topbar--overlay) .nav-trigger {
+  color: #1b2f33;
+  /* Layered tight white edges so the links read on any photo without a scrim. */
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.98),
+    0 0 2px rgba(255, 255, 255, 0.98),
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.topbar--halo:not(.topbar--overlay) .nav-label:hover,
+.topbar--halo:not(.topbar--overlay) .nav-trigger:hover,
+.topbar--halo:not(.topbar--overlay) .nav-trigger:focus-visible {
+  color: #0f2226;
+}
+
+.topbar--halo:not(.topbar--overlay) .cart-button {
+  color: #1b2f33;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.98))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+}
+
+.topbar--halo:not(.topbar--overlay) .brand-logo {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.98))
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.98))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+}
+
 /* Light-on-dark variant used while the bar sits on a hero photo. */
 .topbar--overlay,
 .topbar--overlay:hover,

@@ -3,6 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { Loader2, ShoppingBag } from 'lucide-vue-next';
 import { fetchProductByHandle, formatMoney, isShopifyConfigured } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
+import { useVariantSelection } from '../composables/useVariantSelection';
 
 const props = defineProps({
   handle: {
@@ -11,15 +12,26 @@ const props = defineProps({
   },
 });
 
+/** Raised when this handle cannot be bought here, so the page can fall back
+ *  to the enquiry bar instead of leaving the page without an action bar. */
+const emit = defineEmits(['unavailable']);
+
 const configured = isShopifyConfigured();
 
-const { addToCart, loading: cartLoading } = useCart();
+const { addToCart, loading: cartLoading, error: cartError } = useCart();
 
 const product = ref(null);
 const loading = ref(false);
 const error = ref(null);
 const quantity = ref(1);
-const selectedVariantId = ref(null);
+
+/** Selection is shared so in-page size pickers can drive the bar too. */
+const { selection, setVariant } = useVariantSelection();
+
+const selectedVariantId = computed({
+  get: () => selection.value[props.handle] ?? null,
+  set: (variantId) => setVariant(props.handle, variantId),
+});
 
 const variants = computed(() => product.value?.variants?.nodes ?? []);
 const hasVariants = computed(() => variants.value.length > 1);
@@ -47,15 +59,20 @@ async function load() {
   try {
     const fetched = await fetchProductByHandle(props.handle);
     product.value = fetched;
-    if (fetched?.variants?.nodes?.length) {
+    if (fetched?.variants?.nodes?.length && !selectedVariantId.value) {
       // Prefer the first purchasable variant.
       const firstAvailable = fetched.variants.nodes.find((v) => v.availableForSale);
       selectedVariantId.value = (firstAvailable ?? fetched.variants.nodes[0]).id;
     }
   } catch (err) {
     error.value = err.message || 'Could not load product.';
+    emit('unavailable');
   } finally {
     loading.value = false;
+  }
+
+  if (!product.value) {
+    emit('unavailable');
   }
 }
 
@@ -92,6 +109,7 @@ watch(() => props.handle, load);
             </s>
           </template>
           <span v-else-if="error" class="buy-bar-error">{{ error }}</span>
+          <span v-else-if="cartError" class="buy-bar-error">{{ cartError }}</span>
           <span v-else class="buy-bar-loading">Unavailable</span>
         </div>
       </div>

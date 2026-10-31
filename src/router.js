@@ -72,6 +72,22 @@ export const routes = [
 
 export function scrollBehavior(to) {
   if (to.hash) {
+    // A Shop category hash filters the listing instead of jumping to a section,
+    // so land on the top of the listing (sidebar + products) rather than deep
+    // inside the page.
+    if (to.name === 'products') {
+      // Offset by the live header height: it is ~88px on desktop and ~134px
+      // on phones, where the navigation wraps onto a second row.
+      const header = document.querySelector('.topbar');
+      const headerHeight = header ? header.getBoundingClientRect().height : 88;
+
+      return {
+        el: '.shop-layout',
+        top: headerHeight + 16,
+        behavior: 'smooth',
+      };
+    }
+
     return {
       el: to.hash,
       behavior: 'smooth',

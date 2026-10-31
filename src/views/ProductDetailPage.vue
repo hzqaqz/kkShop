@@ -1,6 +1,7 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import CatToyProductPage from '../components/CatToyProductPage.vue';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialAirPurifierPage from '../components/CommercialAirPurifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
@@ -8,6 +9,7 @@ import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
 import Md002DehumidifierPage from '../components/Md002DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import Mw200AirPurifierPage from '../components/Mw200AirPurifierPage.vue';
+import PetBedProductPage from '../components/PetBedProductPage.vue';
 import InquiryBar from '../components/InquiryBar.vue';
 import ProductBuyBar from '../components/ProductBuyBar.vue';
 import ProductFaq from '../components/ProductFaq.vue';
@@ -19,6 +21,7 @@ import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 import { getArticlesForProduct } from '../data/contentLinks';
 import { getProduct, getRelatedProducts } from '../data/products';
+import { isShopifyConfigured } from '../composables/useShopify';
 
 const route = useRoute();
 
@@ -33,6 +36,8 @@ const THEME_CLASSES = {
   'commercial-air-purifier': 'post-theme-teal',
   'commercial-dehumidifier': 'post-theme-teal',
   'ceiling-mounted-dehumidifier': 'post-theme-green',
+  'christmas-pet-bed': 'post-theme-warm',
+  'pom-pom-cat-toy': 'post-theme-warm',
 };
 
 const themeClass = computed(() => THEME_CLASSES[route.params.productId] ?? '');
@@ -50,6 +55,24 @@ const breadcrumbs = computed(() => [
     : { label: 'Business', to: { name: 'business', hash: '#products' } },
   { label: currentProduct.value?.label ?? 'Product', to: route.path },
 ]);
+
+/** A purchasable product only gets the buy bar when Shopify is set up and the
+ *  handle actually resolves; otherwise the enquiry bar takes over. */
+const shopifyReady = isShopifyConfigured();
+const buyBarUnavailable = ref(false);
+
+/** Shop items that are not on Shopify are sold by enquiry, not by quote. */
+const inquiryCopy = computed(() => {
+  const product = currentProduct.value;
+  if (!product?.shopCategoryId) {
+    return {};
+  }
+  return {
+    note: product.inquiryNote ?? 'Sizes, stock and delivery — ask us and we will confirm.',
+    cta: 'Ask about this item',
+    subjectPrefix: 'Product enquiry',
+  };
+});
 
 const currentMeta = computed(() => {
   const product = currentProduct.value;
@@ -91,6 +114,10 @@ useSeo(currentMeta.value);
 
     <Mw200AirPurifierPage v-else-if="currentProduct?.page === 'mw200'" />
 
+    <PetBedProductPage v-else-if="currentProduct?.page === 'pet-bed'" />
+
+    <CatToyProductPage v-else-if="currentProduct?.page === 'cat-toy'" />
+
     <Mw100ProductPage
       v-else-if="currentProduct"
       :product-id="route.params.productId"
@@ -117,8 +144,12 @@ useSeo(currentMeta.value);
       <RelatedProducts :products="relatedProducts" />
     </div>
 
-    <ProductBuyBar v-if="currentProduct?.purchasable" :handle="currentProduct.shopifyHandle" />
-    <InquiryBar v-else-if="currentProduct" :label="currentProduct.label" />
+    <ProductBuyBar
+      v-if="currentProduct?.purchasable && shopifyReady && !buyBarUnavailable"
+      :handle="currentProduct.shopifyHandle"
+      @unavailable="buyBarUnavailable = true"
+    />
+    <InquiryBar v-else-if="currentProduct" :label="currentProduct.label" v-bind="inquiryCopy" />
   </main>
 </template>
 

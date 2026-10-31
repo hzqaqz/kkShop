@@ -116,6 +116,64 @@ export const productOverviews = {
     ],
   },
 
+  'pom-pom-cat-toy': {
+    heading: 'A Pom-Pom Toy That Comes Back to You',
+    paragraphs: [
+      'Cats play in short bursts. The moment the toy stops moving, most of them walk away — and the usual result is a person crawling under the sofa to retrieve a ball so the game can restart. This toy is built around that one annoyance: the pom-pom stays on a cord that reels in and out of the handle, driven by two buttons.',
+      'One button launches the ball out across the floor or into the air; a second button winds the cord back in, bringing the pom-pom with it. The cat gets the chase, and you keep the toy in your hand without kneeling down to fetch it. The cord runs on two AAA batteries, which are included.',
+      'Every toy ships with two pom-poms, and they clip on and off the cord, so a tired or lost ball can be swapped in seconds. A small bell sits on top of each pom-pom, next to the clip — a sound cue that helps a cat follow the ball when it is moving quickly or is out of sight.',
+    ],
+    bestFor: [
+      'Kittens and adult cats that chase and pounce',
+      'Indoor play in flats and smaller rooms',
+      'Households where play sessions are short and frequent',
+      'Anyone who is tired of retrieving toys from under furniture',
+    ],
+    image: '/images/products/cat-toy/hero.webp',
+    imageAlt: 'A ragdoll kitten reaching for the pink pom-pom of the push-button cat toy',
+    // Portrait artwork: show it whole instead of cropping it to 4:3.
+    imageFit: 'contain',
+    specs: [
+      ['Type', 'Battery-powered launcher with a launch button and a retract button'],
+      ['Power', '2 × AAA batteries, a pair included'],
+      ['In the box', '1 handle + 2 replaceable pom-poms + 2 batteries + a screwdriver'],
+      ['Ball', 'Soft pom-pom with a small bell on top'],
+      ['Material', 'ABS handle'],
+      ['Best for', 'Kittens and adult cats'],
+      ['Play notes', 'Supervise play; keep the cord away from chewing'],
+    ],
+  },
+
+  'christmas-pet-bed': {
+    heading: 'A Festive Plaid Bed for Cats and Dogs',
+    paragraphs: [
+      'Cats and dogs spend most of the day asleep, and they choose the same spot every time. A bed gives them somewhere of their own — a place with a little height around the edge that feels sheltered rather than exposed, and a warm surface to curl up on when the heating is off.',
+      'This festive plaid bed pairs a red-and-cream check outer with a short plush surface, raised bolsters on every side and a row of red pom-poms along the rim. Inside, a PP cotton fill gives it the height and give a sleeping pet needs. The plaid and the trim are what make it read as a festive bed, while the construction underneath is the same as any good everyday bed: a padded base that sits flat on the floor and a bolster tall enough to lean a chin against.',
+      'It comes in three sizes so the bed can be matched to the animal rather than the room. The small bed (40 × 30 × 20 cm) suits cats and small pets, the medium (50 × 40 × 25 cm) suits medium dogs such as a beagle, and the large (60 × 50 × 30 cm) suits larger dogs such as a labrador.',
+    ],
+    bestFor: [
+      'Cats and dogs that like to sleep against a raised edge',
+      'Winter months, when pets look for the warmest spot in the room — and the rest of the year, since the fill stays comfortable in any season',
+      'Living rooms, bedrooms and beside the sofa',
+      'Gifting a pet-friendly home over the festive season',
+    ],
+    image: '/images/products/christmas-pet-bed/hero-sizes.webp',
+    imageAlt: 'The festive plaid pet bed in three sizes, with a cat, a beagle and a labrador',
+    // The three-panel artwork must be shown whole rather than cropped.
+    imageFit: 'contain',
+    specs: [
+      ['Small', '40 × 30 × 20 cm'],
+      ['Medium', '50 × 40 × 25 cm'],
+      ['Large', '60 × 50 × 30 cm'],
+      ['Outer', 'Red-and-cream plaid fabric with green piping'],
+      ['Surface', 'Short plush fabric'],
+      ['Filling', 'PP cotton'],
+      ['Season', 'All seasons; warm enough for winter'],
+      ['Shape', 'Oval with raised bolsters and pom-pom trim'],
+      ['Care', 'Spot clean with a damp cloth and mild soap; air dry'],
+    ],
+  },
+
   'commercial-air-purifier': {
     heading: 'An H13 Commercial Air Purifier for Large, Shared Spaces',
     paragraphs: [

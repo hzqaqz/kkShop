@@ -49,6 +49,47 @@ export const products = {
     // Transparent cut-out for the navigation mega menu.
     navImage: '/images/products/navigation/mw200-transparent.webp',
   },
+  'pom-pom-cat-toy': {
+    id: 'pom-pom-cat-toy',
+    // 通过 Shopify Storefront 在线下单（单变体，US$59.00）。
+    purchasable: true,
+    shopifyHandle: 'push-button-pom-pom-cat-toy',
+    label: 'Pom-Pom Cat Toy',
+    cardLabel: 'Push-Button Pom-Pom Toy',
+    category: 'Pet Toy',
+    // Shop 分类归属：Pet Toys（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-toys',
+    page: 'cat-toy',
+    title: 'Push-Button Pom-Pom Cat Toy',
+    cardSubtitle: 'Launch and Retract the Ball',
+    description:
+      'A battery-powered cat toy with one button to fire a pom-pom across the room and another to reel it back in, so play carries on without anyone bending down. Two replaceable pom-poms included.',
+    // Product cards use the cut-out (transparent background); the social card
+    // keeps the lifestyle artwork.
+    image: '/images/products/cat-toy/card-cutout.webp',
+    ogImage: '/images/products/cat-toy/lifestyle-wide.webp',
+  },
+  'christmas-pet-bed': {
+    id: 'christmas-pet-bed',
+    // 通过 Shopify Storefront 在线下单（三个尺码为三个 variant）。
+    purchasable: true,
+    shopifyHandle: 'christmas-plaid-cat-dog-bed',
+    label: 'Christmas Pet Bed',
+    cardLabel: 'Festive Plaid Pet Bed',
+    category: 'Pet Bed',
+    // Shop 分类归属：Pet Beds（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-beds',
+    page: 'pet-bed',
+    title: 'Christmas Plaid Cat & Dog Bed',
+    cardSubtitle: 'Festive Plaid, Plush Comfort',
+    description:
+      'A festive plaid cat and dog bed with a short plush surface and PP cotton fill, raised bolsters and red pom-pom trim — warm all year, in three sizes from 40 × 30 × 20 cm to 60 × 50 × 30 cm.',
+    // Product cards use the cut-out (transparent background) so the wide bed
+    // reads at a similar weight to the tall purifier cut-outs; the category tile
+    // and the social card keep their own framings.
+    image: '/images/products/christmas-pet-bed/card-cutout.webp',
+    ogImage: '/images/products/christmas-pet-bed/hero-sizes.webp',
+  },
   'commercial-air-purifier': {
     id: 'commercial-air-purifier',
     label: 'Commercial Air Purifier',
@@ -132,6 +173,8 @@ export const products = {
 export const productOrder = [
   'mw100',
   'mw200',
+  'christmas-pet-bed',
+  'pom-pom-cat-toy',
   'commercial-air-purifier',
   'md001',
   'md002',

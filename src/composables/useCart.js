@@ -73,20 +73,42 @@ async function addToCart(merchandiseId, quantity = 1) {
     return;
   }
 
+  if (quantity < 1) {
+    return false;
+  }
+
   loading.value = true;
   error.value = null;
   try {
     const lines = [{ merchandiseId, quantity }];
-    if (cart.value?.id) {
-      cart.value = await shopifyAddLines(cart.value.id, lines);
-    } else {
-      const fresh = await createCart(lines);
-      cart.value = fresh;
-      persistCartId(fresh.id);
+    const nextCart =
+      cart.value?.id !== undefined && cart.value?.id !== null
+        ? await shopifyAddLines(cart.value.id, lines)
+        : await createCart(lines);
+
+    cart.value = nextCart;
+    if (nextCart?.id) {
+      persistCartId(nextCart.id);
     }
+
+    // Shopify still returns a cart when a line could not be added (for example
+    // an item that is out of stock), so check that something was really added
+    // before opening the drawer — otherwise the shopper just sees an empty cart.
+    const addedQuantity = (nextCart?.lines?.nodes ?? []).reduce(
+      (total, line) => total + (line.quantity ?? 0),
+      0,
+    );
+
+    if (addedQuantity < 1) {
+      error.value = 'This item is out of stock right now. Email us and we will confirm availability.';
+      return false;
+    }
+
     isOpen.value = true;
+    return true;
   } catch (err) {
     error.value = err.message || 'Could not add to cart.';
+    return false;
   } finally {
     loading.value = false;
   }

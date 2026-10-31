@@ -8,23 +8,37 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  /** Sub-line under the product name. Shop items phrase it differently. */
+  note: {
+    type: String,
+    default: 'Wholesale & project pricing available',
+  },
+  cta: {
+    type: String,
+    default: 'Request a quote',
+  },
+  /** Mail subject prefix — shop items are an enquiry, not a quote. */
+  subjectPrefix: {
+    type: String,
+    default: 'Quote request',
+  },
 });
 
 // The address lives in `siteInfo.js` (QUOTE_EMAIL) so every quote link on the
 // site points at the same inbox.
-const mailtoHref = computed(() => quoteHref(props.label));
+const mailtoHref = computed(() => quoteHref(props.label, props.subjectPrefix));
 </script>
 
 <template>
-  <div class="inquiry-bar" role="region" aria-label="Business inquiry">
+  <div class="inquiry-bar" role="region" aria-label="Product enquiry">
     <div class="inquiry-bar-inner">
       <div class="inquiry-bar-copy">
         <strong>{{ label || 'Meower' }}</strong>
-        <span>Wholesale &amp; project pricing available</span>
+        <span>{{ note }}</span>
       </div>
       <a class="inquiry-bar-cta" :href="mailtoHref">
         <Mail aria-hidden="true" />
-        Request a quote
+        {{ cta }}
       </a>
     </div>
   </div>

@@ -42,7 +42,7 @@ export const socialLinks = [
 ];
 
 /** `mailto:` link for a quote request about a specific product (or the range in general). */
-export function quoteHref(label) {
-  const subject = label ? `Quote request: ${label}` : 'Quote request';
+export function quoteHref(label, prefix = 'Quote request') {
+  const subject = label ? `${prefix}: ${label}` : prefix;
   return `mailto:${QUOTE_EMAIL}?subject=${encodeURIComponent(subject)}`;
 }

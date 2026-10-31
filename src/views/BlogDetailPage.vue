@@ -3,6 +3,10 @@ import { computed } from 'vue';
 import MarkdownIt from 'markdown-it';
 import { RouterLink, useRoute } from 'vue-router';
 import { useHead } from '@unhead/vue';
+import AirPurifierCalculator from '../components/guide/AirPurifierCalculator.vue';
+import FilterGradeCompare from '../components/guide/FilterGradeCompare.vue';
+import FilterStack from '../components/guide/FilterStack.vue';
+import NoiseScale from '../components/guide/NoiseScale.vue';
 import RelatedArticles from '../components/RelatedArticles.vue';
 import RelatedProducts from '../components/RelatedProducts.vue';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
@@ -14,7 +18,50 @@ import { excerptFromMarkdown, useSeo } from '../composables/useSeo';
 const route = useRoute();
 const markdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
 const article = computed(() => getBlogArticle(route.params.slug));
-const renderedContent = computed(() => (article.value ? markdown.render(article.value.contentMarkdown) : ''));
+const heroImage = computed(
+  () => article.value?.heroImage ?? article.value?.coverImage ?? null,
+);
+
+/**
+ * The hero renders the title and the cover artwork, so the body starts after
+ * them: the leading `# heading` and an inline image that repeats the hero are
+ * stripped before rendering.
+ */
+const bodyMarkdown = computed(() => {
+  const item = article.value;
+  if (!item) {
+    return '';
+  }
+
+  let md = item.contentMarkdown.replace(/^\s*#\s+.*(\r?\n)+/, '');
+
+  const cover = heroImage.value;
+  if (cover) {
+    const escaped = cover.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    md = md.replace(new RegExp(`!\\[[^\\]]*\\]\\(${escaped}\\)\\s*\\n?`), '');
+  }
+
+  return md;
+});
+
+const BLOCK_PATTERN = /\[\[block:(calculator|grade|noise|stack)\]\]/g;
+const BLOCK_TOKEN = /(@@guide-block:(?:calculator|grade|noise|stack)@@)/;
+
+const renderedContent = computed(() =>
+  bodyMarkdown.value
+    ? markdown.render(bodyMarkdown.value.replace(BLOCK_PATTERN, '@@guide-block:$1@@'))
+    : '',
+);
+
+const segments = computed(() =>
+  renderedContent.value
+    .split(BLOCK_TOKEN)
+    .filter(Boolean)
+    .map((chunk) => {
+      const block = chunk.match(/^@@guide-block:(calculator|grade|noise|stack)@@$/);
+      return block ? { type: 'block', name: block[1] } : { type: 'html', html: chunk };
+    }),
+);
 
 const relatedArticles = computed(() => getRelatedArticles(route.params.slug, 3));
 const articleProducts = computed(() => getArticleProducts(route.params.slug, 2));
@@ -85,17 +132,42 @@ useHead(() => ({
 
 <template>
   <main class="site-shell blog-page">
-    <SiteHeader />
+    <SiteHeader overlay-hero />
+
+    <section v-if="article" class="blog-hero" aria-labelledby="blog-detail-title">
+      <img
+        v-if="heroImage"
+        class="blog-hero-bg"
+        :src="heroImage"
+        :alt="article.title"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="blog-hero-scrim" aria-hidden="true"></span>
+
+      <div class="blog-hero-copy">
+        <SiteBreadcrumbs :items="breadcrumbs" />
+        <p class="blog-hero-eyebrow">{{ article.guide ? 'Guide' : 'Guides and inspiration' }}</p>
+        <h1 id="blog-detail-title">{{ article.title }}</h1>
+        <p v-if="article.date" class="blog-hero-meta">
+          <time :datetime="article.date">{{ article.date }}</time>
+        </p>
+      </div>
+    </section>
 
     <article v-if="article" class="blog-detail" :aria-label="article.title">
-      <SiteBreadcrumbs :items="breadcrumbs" />
-
-      <time v-if="article.date" class="blog-detail-date" :datetime="article.date">{{ article.date }}</time>
       <div
         class="blog-detail-body"
         :class="{ 'blog-detail-body--natural': article.imageFit === 'natural' }"
-        v-html="renderedContent"
-      />
+      >
+        <template v-for="(segment, index) in segments" :key="index">
+          <div v-if="segment.type === 'html'" class="blog-detail-segment" v-html="segment.html" />
+          <AirPurifierCalculator v-else-if="segment.name === 'calculator'" />
+          <FilterGradeCompare v-else-if="segment.name === 'grade'" />
+          <NoiseScale v-else-if="segment.name === 'noise'" />
+          <FilterStack v-else-if="segment.name === 'stack'" />
+        </template>
+      </div>
     </article>
 
     <section v-else class="blog-empty" aria-label="Blog article not found">

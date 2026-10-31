@@ -47,6 +47,9 @@ export const shopCategories = [
     title: 'Pet Beds',
     description:
       'Beds and cosy spots that give cats and dogs somewhere of their own to rest.',
+    // White-background product shot framed with margin, so the wide bed sits
+    // at a similar weight to the tall air-purifier cut-out beside it.
+    image: '/images/products/christmas-pet-bed/white-tile.webp',
     icon: BedDouble,
   },
   {
@@ -63,6 +66,8 @@ export const shopCategories = [
     title: 'Pet Toys',
     description:
       'Toys for playtime, enrichment and keeping indoor pets active.',
+    // White-background product shot, framed like the other photo tiles.
+    image: '/images/products/cat-toy/white-tile.webp',
     icon: Bone,
   },
 ];
