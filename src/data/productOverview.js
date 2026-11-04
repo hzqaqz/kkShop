@@ -116,6 +116,60 @@ export const productOverviews = {
     ],
   },
 
+  'cat-scratcher-frame': {
+    heading: 'A Cat Scratcher That Looks Like a Painting',
+    paragraphs: [
+      'Cats scratch to stretch, to mark territory and to shed the outer layer of their claws. Because the instinct is strongest near the spots the household already uses, a scratcher put up at the door or beside the sofa gets used far more than one hidden in a corner. Two problems usually follow: most scratchers look like cat furniture, and the ones meant to be mounted leave screws or glue in the wall.',
+      'This board is a frame first and a scratcher second. Printed with one of four cat-themed paintings — Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — and finished with wood-look moulding, it hangs at eye level like wall art on a hallway wall, the side of a sofa or a cabinet door, and the sisal face is what the cat actually touches.',
+      'It mounts with four pairs of velcro pads, one side on the frame and one on the surface, so no drill or glue is needed and nothing is left behind when the board moves to another room. The sisal face sits over an EPS core: light enough (650 g) to stay on small pads, firm enough for a full stretch.',
+    ],
+    bestFor: [
+      'Cat households that have run out of floor space for a scratcher',
+      'Renters who cannot drill into walls',
+      'Hallways, sofa sides and cabinet doors the cat already scratches',
+      'Anyone who would rather not look at a carpet-covered post',
+    ],
+    image: '/images/products/cat-scratcher-frame/hero.webp',
+    imageAlt: 'A Bengal cat scratching the framed Starry Night board on a wall',
+    imageFit: 'contain',
+    specs: [
+      ['Type', 'Framed wall-mounted cat scratching board'],
+      ['Size', '42 × 33 × 3 cm'],
+      ['Weight', '650 g'],
+      ['Material', 'Sisal surface over an EPS core'],
+      ['Mounting', '4 pairs of velcro pads, no drilling or glue'],
+      ['Designs', 'Starry Night, Sunflowers, Meow with a Pearl Earring, Cypress Field'],
+    ],
+  },
+
+  'car-pet-seat': {
+    heading: 'A Car Seat That Keeps Working Once You Park',
+    paragraphs: [
+      'A pet that travels in the car needs somewhere that stays put, and a pet that arrives somewhere needs somewhere to lie down. Most products solve one of those problems. This one is a padded bed with webbing straps and metal clips: the straps run behind the headrest so the bed is anchored to the seat and cannot slide on the drive, lifted out by its handles it becomes a carrier, and unzipped at the front it folds out flat as a mat.',
+      'The cover is waterproof faux leather rather than fabric. Wet paws, spilled water and accidents stay on the surface instead of soaking in, so a wipe with a damp cloth is usually the whole clean-up. The same smooth surface means hair does not weave into it the way it does with woven upholstery — it lifts off with a hand or a lint roller.',
+      'Inside the bed there is also a short clip strap for the pet’s harness. Fastened before setting off, it keeps the animal anchored to the bed itself, so a hard stop does not throw it out of the seat.',
+      'At 60 × 50 × 32 cm it sits within a normal passenger seat, with raised bolsters on all four sides so a pet has something to lean against on the corners. It is sized for cats and small dogs up to about 10 kg, which covers most cats and breeds such as a corgi or a beagle.',
+    ],
+    bestFor: [
+      'Cats and small dogs that travel regularly by car',
+      'Trips that end somewhere the pet needs to settle — the vet, a café, a friend’s floor',
+      'Owners who are tired of washing fabric travel beds',
+      'Pets that like to lean against a raised edge',
+    ],
+    image: '/images/products/car-pet-seat/flat-bed.webp',
+    imageAlt: 'The car seat bed unzipped flat on the grass with a corgi asleep on it',
+    imageFit: 'contain',
+    specs: [
+      ['Type', 'Car seat bed, carrier and flat bed in one'],
+      ['Size', '60 × 50 × 32 cm'],
+      ['Material', 'Waterproof faux leather'],
+      ['Colours', 'Camel & cream, or grey & cream'],
+      ['Fixing', 'Headrest straps with metal clips, plus an internal harness tether'],
+      ['Care', 'Wipe with a damp cloth; air dry'],
+      ['Suits', 'Cats and small dogs up to about 10 kg'],
+    ],
+  },
+
   'pom-pom-cat-toy': {
     heading: 'A Pom-Pom Toy That Comes Back to You',
     paragraphs: [

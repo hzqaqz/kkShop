@@ -49,6 +49,55 @@ export const products = {
     // Transparent cut-out for the navigation mega menu.
     navImage: '/images/products/navigation/mw200-transparent.webp',
   },
+  'cat-scratcher-frame': {
+    id: 'cat-scratcher-frame',
+    // 通过 Shopify Storefront 在线下单（四种画面为四个变体，US$38.00）。
+    purchasable: true,
+    shopifyHandle: 'framed-cat-scratching-board',
+    // Shopify 里的变体值是中文，前台统一显示英文。
+    variantLabels: {
+      '星月夜': 'Starry Night',
+      '向日葵': 'Sunflowers',
+      '带珍珠耳环的少女': 'Meow with a Pearl Earring',
+      '森林': 'Cypress Field',
+    },
+    label: 'Framed Cat Scratcher',
+    cardLabel: 'Framed Cat Scratcher',
+    category: 'Cat Scratcher',
+    // Shop 分类归属：Cat Scratching Posts（见 src/data/catalog.js）。
+    shopCategoryId: 'cat-scratchers',
+    page: 'cat-scratcher-frame',
+    title: 'Framed Cat Scratching Board',
+    cardSubtitle: 'Wall Art the Cat Can Scratch',
+    description:
+      'A framed cat scratching board in sisal over an EPS core — 42 × 33 × 3 cm and 650 g, mounted on walls, sofas or cabinets with four velcro pads that leave no residue.',
+    image: '/images/products/cat-scratcher-frame/card-cutout.webp',
+    ogImage: '/images/products/cat-scratcher-frame/hero.webp',
+    inquiryNote: 'Stock, designs and delivery — ask us and we will confirm.',
+  },
+
+  'car-pet-seat': {
+    id: 'car-pet-seat',
+    // 通过 Shopify Storefront 在线下单（两个颜色变体，US$100.00）。
+    purchasable: true,
+    shopifyHandle: 'car-seat-pet-bed-travel-carrier',
+    // Shopify 里的变体值目前是中文，前台统一显示英文。
+    variantLabels: { '卡其色': 'Camel', '灰蓝色': 'Grey-blue' },
+    label: 'Car Pet Seat',
+    cardLabel: 'Car Seat Travel Bed',
+    category: 'Pet Carrier',
+    // Shop 分类归属：Pet Carriers & Bags（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-carriers',
+    page: 'car-pet-seat',
+    title: 'Car Seat Pet Bed & Travel Carrier',
+    cardSubtitle: 'Seat, Carrier and Flat Bed',
+    description:
+      'A waterproof faux-leather car seat bed that straps into the car, carries like a bag and unzips into a flat bed — 60 × 50 × 32 cm, for cats and small dogs up to about 10 kg.',
+    image: '/images/products/car-pet-seat/card-cutout.webp',
+    ogImage: '/images/products/car-pet-seat/car-dog.webp',
+    inquiryNote: 'Stock, colours and delivery — ask us and we will confirm.',
+  },
+
   'pom-pom-cat-toy': {
     id: 'pom-pom-cat-toy',
     // 通过 Shopify Storefront 在线下单（单变体，US$59.00）。
@@ -175,6 +224,8 @@ export const productOrder = [
   'mw200',
   'christmas-pet-bed',
   'pom-pom-cat-toy',
+  'car-pet-seat',
+  'cat-scratcher-frame',
   'commercial-air-purifier',
   'md001',
   'md002',

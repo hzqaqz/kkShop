@@ -6,6 +6,8 @@ const PRODUCT_IDS = [
   'mw200',
   'christmas-pet-bed',
   'pom-pom-cat-toy',
+  'car-pet-seat',
+  'cat-scratcher-frame',
   'commercial-air-purifier',
   'md001',
   'md002',

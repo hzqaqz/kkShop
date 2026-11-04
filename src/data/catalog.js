@@ -18,12 +18,15 @@ import { products, productOrder } from './products';
  */
 export const shopCategories = [
   {
-    id: 'air-purifiers',
-    label: 'Air Purifiers',
-    title: 'Air Purifiers',
+    id: 'pet-beds',
+    label: 'Pet Beds',
+    title: 'Pet Beds',
     description:
-      'Pet-friendly HEPA H13 air purifiers that capture fur, dander, dust and everyday odours.',
-    image: '/images/categories/home-use-air-purifier.webp',
+      'Beds and cosy spots that give cats and dogs somewhere of their own to rest.',
+    // White-background product shot framed with margin, so the wide bed sits
+    // at a similar weight to the tall air-purifier cut-out beside it.
+    image: '/images/products/christmas-pet-bed/white-tile.webp',
+    icon: BedDouble,
   },
   {
     id: 'pet-strollers',
@@ -39,26 +42,9 @@ export const shopCategories = [
     title: 'Pet Carriers & Bags',
     description:
       'Carriers and bags for vet visits, travel and everyday trips out of the house.',
+    // White-background product shot, framed like the other photo tiles.
+    image: '/images/products/car-pet-seat/white-tile.webp',
     icon: Backpack,
-  },
-  {
-    id: 'pet-beds',
-    label: 'Pet Beds',
-    title: 'Pet Beds',
-    description:
-      'Beds and cosy spots that give cats and dogs somewhere of their own to rest.',
-    // White-background product shot framed with margin, so the wide bed sits
-    // at a similar weight to the tall air-purifier cut-out beside it.
-    image: '/images/products/christmas-pet-bed/white-tile.webp',
-    icon: BedDouble,
-  },
-  {
-    id: 'cat-scratchers',
-    label: 'Cat Scratching Posts',
-    title: 'Cat Scratching Posts',
-    description:
-      'Scratching posts and boards that redirect claws away from sofas and carpets.',
-    icon: Cat,
   },
   {
     id: 'pet-toys',
@@ -69,6 +55,24 @@ export const shopCategories = [
     // White-background product shot, framed like the other photo tiles.
     image: '/images/products/cat-toy/white-tile.webp',
     icon: Bone,
+  },
+  {
+    id: 'cat-scratchers',
+    label: 'Cat Scratching Posts',
+    title: 'Cat Scratching Posts',
+    description:
+      'Scratching posts and boards that redirect claws away from sofas and carpets.',
+    // White-background product shot, framed like the other photo tiles.
+    image: '/images/products/cat-scratcher-frame/white-tile.webp',
+    icon: Cat,
+  },
+  {
+    id: 'air-purifiers',
+    label: 'Air Purifiers',
+    title: 'Air Purifiers',
+    description:
+      'Pet-friendly HEPA H13 air purifiers that capture fur, dander, dust and everyday odours.',
+    image: '/images/categories/home-use-air-purifier.webp',
   },
 ];
 

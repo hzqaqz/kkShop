@@ -11,32 +11,34 @@ import { contactEmailHref } from '../data/siteInfo';
 import { useSeo } from '../composables/useSeo';
 
 useSeo({
-  title: 'Pet Supplies & Pet-Friendly Air Purifiers',
+  title: 'Pet Beds, Toys, Carriers & Pet-Friendly Air Purifiers',
   description:
-    'Meower pet supplies — strollers, carriers, beds, scratching posts and toys — plus pet-friendly HEPA H13 air purifiers and dehumidifiers for homes and businesses.',
+    'Meower pet supplies — beds, strollers, carriers, scratching posts and toys for cats and dogs — plus the pet-friendly HEPA H13 air purifiers we started with.',
   path: '/',
 });
 
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
-const md001Route = { name: 'product-detail', params: { productId: 'md001' } };
+const petBedRoute = { name: 'product-detail', params: { productId: 'christmas-pet-bed' } };
 
 
 const slides = [
   {
+    image: '/images/carousel/hero-festive-bed.webp',
+    alt: 'A cream Ragdoll cat lying in the red and cream plaid Christmas pet bed in a sunlit living room',
+    to: petBedRoute,
+  },
+  {
+    image: '/images/carousel/hero-pet-stroller.webp',
+    alt: 'A corgi sitting in a sage green pet stroller beside a lake at sunset',
+    // Dark photo: white copy reads here where ink would disappear.
+    theme: 'light',
+  },
+  {
     // Same artwork as the "How to Choose an Air Purifier for You and Your Pet"
-    // guide, so the first thing visitors see matches the guide they are led to.
+    // guide, so the last slide still leads into the guide's subject.
     image: '/images/products/mw200/hero-armchair.webp',
     alt: 'Meower air purifier beside a linen armchair and houseplants in a sunlit living room',
     to: mw200Route,
-  },
-  {
-    image: '/images/carousel/hero-dehumidifier-home.webp',
-    alt: 'Meower home dehumidifier on a rug in a cream living room with a linen armchair and large windows',
-    to: md001Route,
-  },
-  {
-    image: '/images/carousel/hero-dehumidifier-plants.webp',
-    alt: 'Meower dehumidifier in a bright living room filled with plants beside floor-to-ceiling windows',
   },
 ];
 
@@ -225,6 +227,7 @@ onBeforeUnmount(() => {
     <section
       id="home"
       class="hero-carousel"
+      :class="{ 'hero-carousel--light': slides[currentSlide]?.theme === 'light' }"
       aria-labelledby="hero-title"
       @mouseenter="stopAutoSlide"
       @mouseleave="startAutoSlide"
@@ -258,10 +261,10 @@ onBeforeUnmount(() => {
 
         <div class="hero-content">
           <div class="hero-copy">
-            <h1 id="hero-title">Cleaner Air. Happier Pets.</h1>
+            <h1 id="hero-title">Good Days for Pets and Their People</h1>
             <p class="hero-card-subline">
-              Pet supplies and pet-friendly H13 air purifiers, chosen for the homes where cats and
-              dogs actually live.
+              Beds, toys, carriers and scratchers — plus the pet-friendly purifiers we started
+              with.
             </p>
             <div class="hero-card-actions">
               <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
@@ -300,7 +303,7 @@ onBeforeUnmount(() => {
     <section id="featured" class="section featured-section" aria-labelledby="featured-title">
       <div class="section-heading centered">
         <p class="eyebrow">Best sellers</p>
-        <h2 id="featured-title">Air Care That Fits Your Space</h2>
+        <h2 id="featured-title">Favourites for Pets and Their Homes</h2>
       </div>
 
       <div class="product-list-grid featured-grid">

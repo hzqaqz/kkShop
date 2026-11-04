@@ -489,10 +489,12 @@ img {
   padding: 0 max(7vw, calc((100vw - 1240px) / 2)) clamp(26px, 3.4vw, 44px);
 }
 
+/* Narrow enough that the headline breaks into two lines beside the artwork
+   instead of running across it. */
 .hero-copy {
   display: grid;
   gap: 14px;
-  max-width: 920px;
+  max-width: 560px;
 }
 
 .carousel-track {
@@ -781,6 +783,10 @@ img {
   font-size: 22px;
 }
 
+.blog-section {
+  padding-bottom: clamp(64px, 7vw, 104px);
+}
+
 .blog-section .blog-card {
   position: relative;
   min-height: 280px;
@@ -836,7 +842,7 @@ img {
 .more-row {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: clamp(30px, 3.4vw, 44px);
 }
 
 .more-button {
@@ -1004,15 +1010,6 @@ img {
   line-height: 1.02;
 }
 
-.product-list-hero > p:not(.eyebrow),
-.product-list-group-heading p {
-  max-width: 700px;
-  margin: 18px 0 0;
-  color: #5a7c85;
-  font-size: clamp(16px, 1.5vw, 21px);
-  line-height: 1.55;
-}
-
 /* Sidebar + listing: the sidebar sticks while the products scroll past it. */
 .shop-layout {
   /* Keeps the listing clear of the fixed header when a category is selected. */
@@ -1088,7 +1085,7 @@ img {
 
 .product-list-groups {
   display: grid;
-  gap: 76px;
+  gap: 62px;
 }
 
 .product-list-group {
@@ -1096,15 +1093,18 @@ img {
 }
 
 .product-list-group h2 {
-  font-size: clamp(29px, 4vw, 48px);
-  line-height: 1.1;
+  color: #4d666b;
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
 }
 
 .product-list-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 28px;
+  margin-top: 16px;
 }
 
 .product-list-card {
@@ -2355,8 +2355,9 @@ main.product-page + .site-footer .footer-to-top {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* Kept narrow enough to sit clear of the product in the artwork. */
 .hero-card-subline {
-  max-width: 700px;
+  max-width: 420px;
   margin: 0;
   color: #2f4a4f;
   font-size: clamp(13.5px, 1.05vw, 17px);
@@ -2397,6 +2398,64 @@ main.product-page + .site-footer .footer-to-top {
 .hero-card-cta--primary:focus-visible {
   background: #314e53;
   transform: translateY(-2px);
+}
+
+/* A slide whose artwork is dark flips the copy to light ink — no scrim needed. */
+.hero-carousel--light .hero-copy h1 {
+  color: #fffdf7;
+  text-shadow:
+    0 1px 3px rgba(12, 26, 29, 0.7),
+    0 8px 28px rgba(12, 26, 29, 0.45);
+}
+
+/* The small line still crosses sunlit ground, so it carries a light glass
+   chip — far smaller than a page-wide scrim. */
+@media (max-width: 720px) {
+  .hero-card-subline {
+    max-width: 100%;
+  }
+}
+
+.hero-carousel--light .hero-card-subline {
+  display: inline-block;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: rgba(12, 26, 29, 0.34);
+  backdrop-filter: blur(3px);
+  color: rgba(255, 253, 247, 0.96);
+  text-shadow: 0 1px 2px rgba(12, 26, 29, 0.6);
+}
+
+.hero-carousel--light .hero-card-cta--primary {
+  background: #fdf7ee;
+  color: #22383c;
+}
+
+.hero-carousel--light .hero-card-cta--primary:hover,
+.hero-carousel--light .hero-card-cta--primary:focus-visible {
+  background: #fff;
+  color: #22383c;
+}
+
+.hero-carousel--light .hero-card-cta--ghost {
+  border-color: rgba(255, 253, 247, 0.75);
+  color: #fffdf7;
+  background: rgba(12, 26, 29, 0.28);
+}
+
+.hero-carousel--light .hero-card-cta--ghost:hover,
+.hero-carousel--light .hero-card-cta--ghost:focus-visible {
+  border-color: #fffdf7;
+  background: rgba(12, 26, 29, 0.5);
+}
+
+.hero-carousel--light .dot {
+  background: rgba(255, 253, 247, 0.45);
+}
+
+.hero-carousel--light .dot.active {
+  background: #fffdf7;
 }
 
 .hero-card-cta--ghost {
@@ -2482,8 +2541,9 @@ main.product-page + .site-footer .footer-to-top {
 }
 
 /* Featured products */
+/* Four best sellers fit across the 1180px column at desktop width. */
 .featured-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
   justify-content: center;
   margin-top: 34px;
 }

@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://meowerair.com/</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://meowerair.com/products</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://meowerair.com/products/cat-scratcher-frame</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://meowerair.com/products/car-pet-seat</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://meowerair.com/products/pom-pom-cat-toy</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://meowerair.com/products/christmas-pet-bed</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://meowerair.com/products/mw200</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>

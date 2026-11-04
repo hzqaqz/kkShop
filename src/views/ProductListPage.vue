@@ -89,10 +89,6 @@ watch(activeId, () => nextTick(centreActiveCategory));
       <SiteBreadcrumbs :items="breadcrumbs" />
       <p class="eyebrow">Shop</p>
       <h1>Shop Everyday Pet Essentials</h1>
-      <p>
-        Pet strollers, carriers, beds, scratching posts and toys for cats and dogs — plus the
-        pet-friendly air purifiers we started with.
-      </p>
     </header>
 
     <div class="shop-layout">
@@ -133,7 +129,6 @@ watch(activeId, () => nextTick(centreActiveCategory));
       >
         <div class="product-list-group-heading">
           <h2 :id="`${category.id}-title`">{{ category.label }}</h2>
-          <p>{{ category.description }}</p>
         </div>
 
         <div v-if="category.products.length" class="product-list-grid">

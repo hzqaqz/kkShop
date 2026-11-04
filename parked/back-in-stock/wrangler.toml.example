@@ -1,0 +1,10 @@
+# Cloudflare Pages + Functions 配置
+# 建库后把 <DATABASE_ID> 换成 `npx wrangler d1 create meower-restock` 输出的 id。
+name = "meowerair"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "meower-restock"
+database_id = "<DATABASE_ID>"

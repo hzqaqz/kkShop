@@ -4,6 +4,7 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-vue-next';
 import { RouterLink } from 'vue-router';
 import { formatMoney } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
+import { products } from '../data/products';
 
 const { cart, count, subtotal, checkoutUrl, loading, error, isOpen, closeCart, updateQuantity, removeLine } =
   useCart();
@@ -21,10 +22,20 @@ function lineTitle(line) {
   return line.merchandise?.product?.title ?? 'Item';
 }
 
+/** Display labels for Shopify variant values (e.g. non-English colour names). */
+const VARIANT_LABELS = {};
+for (const product of Object.values(products)) {
+  for (const [value, label] of Object.entries(product.variantLabels ?? {})) {
+    VARIANT_LABELS[value] = label;
+  }
+}
+
 function lineVariant(line) {
-  return line.merchandise?.title && line.merchandise.title !== 'Default Title'
-    ? line.merchandise.title
-    : '';
+  const title = line.merchandise?.title;
+  if (!title || title === 'Default Title') {
+    return '';
+  }
+  return VARIANT_LABELS[title] ?? title;
 }
 
 function lineTotal(line) {

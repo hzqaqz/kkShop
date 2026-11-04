@@ -10,6 +10,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  /** Optional map for Shopify option values that need a display label. */
+  labels: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 
 /** Raised when this handle cannot be bought here, so the page can fall back
@@ -85,8 +90,10 @@ async function add() {
 }
 
 function variantLabel(variant) {
-  const options = (variant.selectedOptions ?? []).map((option) => option.value);
-  return options.length ? options.join(' / ') : variant.title;
+  const options = (variant.selectedOptions ?? []).map(
+    (option) => props.labels[option.value] ?? option.value,
+  );
+  return options.length ? options.join(' / ') : (props.labels[variant.title] ?? variant.title);
 }
 
 onMounted(load);

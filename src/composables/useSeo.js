@@ -37,6 +37,7 @@ export function useSeo({
   imageWidth,
   imageHeight,
   type = 'website',
+  noindex = false,
 }) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
   const fullTitle = title ? `${title} | Meower` : DEFAULT_TITLE;
@@ -69,7 +70,8 @@ export function useSeo({
   });
 
   useHead({
-    link: [{ rel: 'canonical', href: url }],
+    meta: noindex ? [{ name: 'robots', content: 'noindex, nofollow' }] : [],
+    link: noindex ? [] : [{ rel: 'canonical', href: url }],
   });
 }
 

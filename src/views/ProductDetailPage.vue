@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import CarPetSeatPage from '../components/CarPetSeatPage.vue';
+import CatScratcherFramePage from '../components/CatScratcherFramePage.vue';
 import CatToyProductPage from '../components/CatToyProductPage.vue';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialAirPurifierPage from '../components/CommercialAirPurifierPage.vue';
@@ -38,6 +40,8 @@ const THEME_CLASSES = {
   'ceiling-mounted-dehumidifier': 'post-theme-green',
   'christmas-pet-bed': 'post-theme-warm',
   'pom-pom-cat-toy': 'post-theme-warm',
+  'car-pet-seat': 'post-theme-warm',
+  'cat-scratcher-frame': 'post-theme-warm',
 };
 
 const themeClass = computed(() => THEME_CLASSES[route.params.productId] ?? '');
@@ -118,6 +122,10 @@ useSeo(currentMeta.value);
 
     <CatToyProductPage v-else-if="currentProduct?.page === 'cat-toy'" />
 
+    <CarPetSeatPage v-else-if="currentProduct?.page === 'car-pet-seat'" />
+
+    <CatScratcherFramePage v-else-if="currentProduct?.page === 'cat-scratcher-frame'" />
+
     <Mw100ProductPage
       v-else-if="currentProduct"
       :product-id="route.params.productId"
@@ -147,6 +155,7 @@ useSeo(currentMeta.value);
     <ProductBuyBar
       v-if="currentProduct?.purchasable && shopifyReady && !buyBarUnavailable"
       :handle="currentProduct.shopifyHandle"
+      :labels="currentProduct.variantLabels ?? {}"
       @unavailable="buyBarUnavailable = true"
     />
     <InquiryBar v-else-if="currentProduct" :label="currentProduct.label" v-bind="inquiryCopy" />

@@ -99,6 +99,72 @@ export const productFaqs = {
         'The MD002 is rated at 295 W with a maximum current of 2.3 A on 220 V~50 Hz. It weighs 13 kg and measures 300 × 200 × 490 mm.',
     },
   ],
+  'cat-scratcher-frame': [
+    {
+      question: 'How does the board attach to a wall or piece of furniture?',
+      answer:
+        'It uses four pairs of velcro pads: one side sticks to the corners on the back of the frame, the other side sticks to the wall, sofa or cabinet. No drill, screws or glue are involved.',
+    },
+    {
+      question: 'Will the pads damage the wall or my furniture?',
+      answer:
+        'The pads are designed to come away without leaving adhesive behind, so the board can be moved between rooms. They need a clean, flat surface — dust, grease or rough texture stops them holding.',
+    },
+    {
+      question: 'What is it made of?',
+      answer:
+        'A sisal scratching surface over an EPS core, in a wood-look frame with a white mount. The whole board weighs 650 g.',
+    },
+    {
+      question: 'What size is it, and how does it suit a cat?',
+      answer:
+        'It measures 42 × 33 × 3 cm, which covers roughly the width of a cat stretching upward, so the cat can pull down on it without stepping off the surface.',
+    },
+    {
+      question: 'How do I fit it?',
+      answer:
+        'Clean the surface, press the four velcro pairs together, peel one backing and stick a pad to each back corner of the frame, peel the other backing and press the frame onto the surface, then hold it for about 10 seconds.',
+    },
+    {
+      question: 'Which designs are available?',
+      answer:
+        'Four: Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — each framed in wood-look moulding with a white mount.',
+    },
+  ],
+
+  'car-pet-seat': [
+    {
+      question: 'How does the bed attach to a car seat?',
+      answer:
+        'Webbing straps run behind the headrest and clip back onto the bed, so it is anchored to the seat itself and cannot slide or tip while the car is moving.',
+    },
+    {
+      question: 'How is the pet kept in the seat?',
+      answer:
+        'There is a short clip strap inside the bed. Fasten it to the pet’s harness before setting off, and a hard stop will not throw the animal out of the seat. Use it with a properly fitted harness rather than a collar.',
+    },
+    {
+      question: 'Can it be used outside the car?',
+      answer:
+        'Yes. Unclip it and lift it out by the handles and it works as a carrier, and the front panel unzips so the whole bed folds out flat as a padded mat for the floor or the park.',
+    },
+    {
+      question: 'What is it made of, and how do I clean it?',
+      answer:
+        'The cover is waterproof faux leather over padded bolsters. Wipe it with a damp cloth and let it air dry. Because the surface is smooth, hair lifts off easily instead of weaving into the fabric.',
+    },
+    {
+      question: 'What size pet does it suit?',
+      answer:
+        'It measures 60 × 50 × 32 cm and is sized for cats and small dogs up to about 10 kg — most cats, and breeds such as a corgi or a beagle.',
+    },
+    {
+      question: 'Will it fit my car seat?',
+      answer:
+        'It is built for a standard passenger seat. Measure the seat width and depth before ordering if your car has deep bucket seats or armrests between the seats.',
+    },
+  ],
+
   'pom-pom-cat-toy': [
     {
       question: 'How does the toy launch and retract the pom-pom?',
