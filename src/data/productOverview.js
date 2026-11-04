@@ -142,6 +142,97 @@ export const productOverviews = {
     ],
   },
 
+  'sisal-cat-scratcher': {
+    heading: 'A Cat Scratcher That Doubles as Somewhere to Sleep',
+    paragraphs: [
+      'Cats scratch to stretch the shoulders and back, to leave a mark on the things they consider theirs, and to work the old outer layer off their claws. The behaviour is concentrated where the household already spends its time, which is why a board that sits in the middle of the room gets used far more than a post tucked out of sight. Cats also sleep where they scratch, so a scratcher that doubles as a sleeping spot fits the way they actually use a room.',
+      'The surface is the part that decides how long a scratcher lasts. Pressed-cardboard boards work, but they break down under claws and leave a drift of flakes on the floor around them. This board is wrapped sisal rope instead: the fibres are bound into a surface that holds its shape under repeated scratching, so the cat keeps the same reliable surface instead of one that softens in the middle.',
+      'At 60 × 40 cm the flat area is roughly the length of a cat from chest to hind leg — long enough to stretch out on and wide enough to turn around — while the board stands 8 cm tall in total, so its raised edge gives the cat something to brace against mid-stretch and turns the whole thing into a shallow bed afterwards. It weighs 600 g, so it can be carried from the living room to the bedroom with one hand when the cat changes favourite spot. A sisal ball on a cord sits at the edge for batting at.',
+    ],
+    bestFor: [
+      'Cats that scratch and sleep in the same corner of the room',
+      'Households that are tired of cardboard flakes on the floor',
+      'Living rooms and bedrooms where the scratcher is also the bed',
+      'Anyone who wants one piece of cat furniture instead of two',
+    ],
+    image: '/images/products/sisal-cat-scratcher/hero.webp',
+    imageAlt: 'A Bengal cat stretching forward to scratch the sisal rope cat scratcher in a sunlit living room',
+    // Portrait photo: show it whole instead of cropping it to 4:3.
+    imageFit: 'contain',
+    specs: [
+      ['Type', 'Sisal rope cat scratcher and lounger'],
+      ['Size', '60 × 40 × 8 cm'],
+      ['Weight', '600 g'],
+      ['Surface', 'Wrapped sisal rope'],
+      ['Shape', 'Oval, with a raised rim and a sisal ball on a cord'],
+      ['Suits', 'Cats that would rather scratch and sleep in the same spot'],
+      ['Care', 'Vacuum the surface; trim loose strands rather than pulling them'],
+    ],
+  },
+
+  'triangle-cat-bed': {
+    heading: 'A Waffle-Weave Cat Bed That Folds Three Ways for Winter',
+    paragraphs: [
+      'Cats choose where to sleep by temperature and by cover. In winter they look for the warmest enclosed spot in the room — a pile of blankets, an open wardrobe, the space behind a sofa cushion — and in summer they want to be out in the open. A bed fixed in one shape can only answer one of those, which is why so many winter beds end up unused by March.',
+      'This bed answers both. Its two padded sides are buttoned rather than sewn shut: stood up together they make a triangle cave with a fleece floor, opened at the back they make a small sofa with a backrest, and folded flat they become a sleeping mat with both fleece cushions side by side. The shape changes in a moment, with nothing to unzip and no loose parts to store.',
+      'Three materials make it work. The outer surface is a waffle weave, a textured grid that holds whatever shape it is folded into and lets loose hair brush off instead of gripping it — the practical reason a bed in a pet home stays looking the way it did in the first week. Inside is white sherpa fleece, the surface a cat can work its paws into. And between them, a PP cotton fill gives the sides and the cushions enough body to stand up on their own, so the triangle keeps its shape instead of collapsing. At 58 × 50 × 40 cm it suits cats and small dogs up to about 7.5 kg — animals that curl up in a bed rather than stretch out across one.',
+    ],
+    bestFor: [
+      'Cats that look for the warmest enclosed spot in winter',
+      'Households that want one bed instead of a cave, a sofa and a mat',
+      'Bedrooms, living rooms and any room that stays cold',
+      'Cats and small dogs up to about 7.5 kg',
+    ],
+    image: '/images/products/triangle-cat-bed/overview.webp',
+    imageAlt:
+      'A Bengal cat standing beside the cat bed opened into its sofa shape, with a yellow sofa behind',
+    specs: [
+      ['Type', '3-in-1 cat bed: triangle cave, sofa and sleeping mat'],
+      ['Size', '58 × 50 × 40 cm'],
+      ['Suits', 'Cats and small dogs up to about 7.5 kg'],
+      ['Outer', 'Waffle-weave fabric; loose hair brushes off'],
+      ['Lining', 'White sherpa fleece'],
+      ['Filling', 'PP cotton, so the sides and cushions keep their shape'],
+      ['Fastening', 'Buttoned sides, so the shape can be changed without unzipping'],
+      ['Best season', 'Winter; opened out for spring and autumn'],
+      ['Care', 'Brush or vacuum loose hair off; spot clean and air dry'],
+    ],
+  },
+
+  'pet-stroller': {
+    heading: 'A Pet Stroller That Comes Apart for the Car',
+    paragraphs: [
+      'Getting a cat out of the house usually means a carrier in one hand and everything else wherever it fits. A stroller changes the shape of that trip: the pet stays in the carrycot at hip height, with a hood over it and a basket underneath for the shopping, and the walk carries on at your pace instead of at the pace of a nervous animal in a bag.',
+      'What separates this one from a fixed-frame stroller is that the two halves come apart with one click. Lift the carrycot off and the frame folds down into the boot of a car; the carrycot then rides on the back seat with the pet still inside it. Nothing has to be transferred from one carrier to another, which is what makes a long drive practical rather than something the animal has to be talked through.',
+      'The frame is aluminium tube in a matte black powder coat, with a stitched leather grip on the push handle and a height range of 95–105 cm. The carrycot is 69 × 36 × 64 cm inside with a 35 cm base — flat to lie down in and wide enough to turn around — and the six-panel 600D Oxford canopy adjusts from closed to opened into mesh, so the cat can be shut away from the wind or given a view and some air. Folded, the frame measures 72 × 59 × 28.5 cm and the carrycot 42.5 × 22 × 76 cm. Maximum load is 25 kg, and the 8 in and 12 in ETPU wheels are quick-release.',
+    ],
+    bestFor: [
+      'Cats and small dogs that go out with you regularly',
+      'Long drives, where the pet stays in the same bed it walked in',
+      'Senior or recovering pets that tire on a walk',
+      'Anyone who would rather push than carry a carrier',
+    ],
+    image: '/images/products/pet-stroller/card-cutout.webp',
+    imageAlt: 'The travel pet stroller in sage green with its carrycot and canopy',
+    imageFit: 'contain',
+    specs: [
+      ['Type', 'Pet stroller with click-off carrycot and six-panel canopy'],
+      ['Carrycot release', 'Lifts off the frame with one click'],
+      ['In the car', 'Frame folds into the boot; carrycot rides on the back seat'],
+      ['Open size', '82 × 59 × 95–105 cm (adjustable push handle)'],
+      ['Frame folded', '72 × 59 × 28.5 cm'],
+      ['Carrycot folded', '42.5 × 22 × 76 cm'],
+      ['Carrycot inside', '69 × 36 × 64 cm, 35 cm across the base'],
+      ['Maximum load', '25 kg'],
+      ['Basket weight', '3.8 kg'],
+      ['Frame', 'Aluminium tube, matte black powder-coated finish'],
+      ['Push handle', 'Stitched leather grip'],
+      ['Fabric', 'Single-layer 600D Oxford; six-panel canopy; one shopping basket'],
+      ['Wheels', '8 in and 12 in ETPU wheels, quick-release'],
+      ['Functions', 'Adjustable canopy, frame brake, quick-release wheels'],
+    ],
+  },
+
   'car-pet-seat': {
     heading: 'A Car Seat That Keeps Working Once You Park',
     paragraphs: [

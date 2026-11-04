@@ -34,6 +34,8 @@ export const shopCategories = [
     title: 'Pet Strollers',
     description:
       'Strollers that let small pets, senior cats and dogs travel with you comfortably.',
+    // White-background product shot, framed like the other photo tiles.
+    image: '/images/products/pet-stroller/white-tile.webp',
     icon: Baby,
   },
   {
@@ -61,7 +63,7 @@ export const shopCategories = [
     label: 'Cat Scratching Posts',
     title: 'Cat Scratching Posts',
     description:
-      'Scratching posts and boards that redirect claws away from sofas and carpets.',
+      'Scratching posts, boards and loungers that redirect claws away from sofas and carpets.',
     // White-background product shot, framed like the other photo tiles.
     image: '/images/products/cat-scratcher-frame/white-tile.webp',
     icon: Cat,

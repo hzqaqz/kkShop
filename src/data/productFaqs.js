@@ -132,6 +132,120 @@ export const productFaqs = {
     },
   ],
 
+  'sisal-cat-scratcher': [
+    {
+      question: 'What size is the sisal cat scratcher, and how heavy is it?',
+      answer:
+        'It measures 60 × 40 × 8 cm and weighs 600 g. The flat scratching area is roughly the length of a cat from chest to hind leg, and the board stands 8 cm tall in total, with the edge raised all the way round.',
+    },
+    {
+      question: 'What is it made of?',
+      answer:
+        'The scratching surface is wrapped sisal rope — the same rope runs around the rim, with a sisal ball on a cord at the edge.',
+    },
+    {
+      question: 'Will it leave flakes on the floor like a cardboard scratcher?',
+      answer:
+        'No. A cardboard board is pressed paper, which breaks down under claws and ends up as flakes around the board. A wrapped sisal rope surface holds together under scratching, so there is nothing to sweep up after the cat has finished.',
+    },
+    {
+      question: 'Can my cat sleep on it?',
+      answer:
+        'Yes — that is what the rim is for. The 8 cm edge turns the board into a shallow tray shape with a raised side to lean against, so a cat can stretch, scratch and then curl up in the same spot.',
+    },
+    {
+      question: 'How do I keep it clean?',
+      answer:
+        'Vacuum the surface, or brush it with a soft hand brush, every week or so. Trim any loose strands at the base with scissors rather than pulling them. Keep it dry: sisal is a plant fibre, so wipe it with a dry or barely damp cloth instead of soaking it.',
+    },
+    {
+      question: 'Is it suitable for kittens and adult cats?',
+      answer:
+        'Yes. The flat 60 × 40 cm surface suits a kitten as easily as an adult cat, and the rope surface takes the very sharp claws of a kitten the same way it takes an adult cat scratching daily.',
+    },
+  ],
+
+  'triangle-cat-bed': [
+    {
+      question: 'What are the three shapes of this cat bed?',
+      answer:
+        'A triangle cave with both sides stood up and buttoned together, a sofa with the sides propped open and a backrest behind the seat, and a flat sleeping mat with both fleece cushions side by side.',
+    },
+    {
+      question: 'How do you change it from one shape to another?',
+      answer:
+        'The two padded sides are held with buttons. Button them together and the bed stands up as a triangle; open them out and the bed becomes a sofa or lies flat as a mat. Nothing has to be unzipped and there are no loose parts to store.',
+    },
+    {
+      question: 'What size is the bed, and what size pet does it suit?',
+      answer:
+        'It measures 58 × 50 × 40 cm and is sized for cats and small dogs up to about 7.5 kg — animals that curl up in a bed rather than stretch out across one.',
+    },
+    {
+      question: 'What is it made of?',
+      answer:
+        'Three layers: a waffle-weave outer fabric, white sherpa fleece inside, and a PP cotton fill between them. The waffle weave is the outer surface that loose hair brushes off, the fleece is what the cat lies on, and the PP cotton is what keeps the sides and cushions in shape.',
+    },
+    {
+      question: 'Does the waffle fabric hold onto cat hair?',
+      answer:
+        'No. The outer surface is a waffle weave rather than a fleece or plush, so hair sits on the texture instead of weaving into it — a brush or a hand run over it lifts most of what the cat leaves behind.',
+    },
+    {
+      question: 'Will the sides sag or the cushions flatten?',
+      answer:
+        'The sides and cushions are filled with PP cotton, which is what gives them enough body to stand up on their own. That is why the bed can hold the triangle shape rather than folding in on itself, and why the cushions keep their depth as a sleeping surface.',
+    },
+    {
+      question: 'Is it warm enough for winter?',
+      answer:
+        'That is what it is built for. The sherpa fleece lining holds warmth, the PP cotton fill adds another insulating layer, and in the triangle shape the sides close in around the cat so the fleece floor keeps the warmth in. Opened out into a sofa or a mat it still works in spring and autumn.',
+    },
+    {
+      question: 'How should I clean it?',
+      answer:
+        'Brush or vacuum loose hair off the waffle weave regularly — it lifts off easily rather than clinging. For marks, spot clean with a damp cloth and mild soap, then let it air dry fully before it goes back down.',
+    },
+  ],
+
+  'pet-stroller': [
+    {
+      question: 'Can the carrycot be taken off the frame?',
+      answer:
+        'Yes. The carrycot releases from the frame with one click — no tools — so the frame can be folded away while the carrycot is carried or set down on its own.',
+    },
+    {
+      question: 'Can I use it in the car?',
+      answer:
+        'That is the point of the click-off carrycot. Fold the frame into the boot, put the carrycot on the back seat with the pet still inside it, and the animal never has to be moved into a different carrier — which is what makes longer drives practical.',
+    },
+    {
+      question: 'What size pet does this stroller suit?',
+      answer:
+        'It is rated for up to 25 kg, which covers cats and small dogs, plus whatever goes in the shopping basket. The carrycot measures 69 × 36 × 64 cm inside, with a 35 cm base.',
+    },
+    {
+      question: 'How small does it fold?',
+      answer:
+        'The frame folds to 72 × 59 × 28.5 cm and the carrycot folds separately to 42.5 × 22 × 76 cm, so the two parts pack down for a car boot or a hallway.',
+    },
+    {
+      question: 'Does it have brakes?',
+      answer:
+        'Yes. There is a brake on the frame to hold the stroller still while you lift the carrycot on or off, and all four ETPU wheels are quick-release for cleaning or storage.',
+    },
+    {
+      question: 'Can the canopy be adjusted?',
+      answer:
+        'Yes. The six-panel canopy runs from fully closed, for shade and wind, to opened into mesh panels at the back so the cat can see out and the carrycot still gets air.',
+    },
+    {
+      question: 'What is it made of?',
+      answer:
+        'An aluminium tube frame in a matte black powder-coated finish, a stitched leather grip on the push handle, single-layer 600D Oxford fabric on the carrycot and canopy, and black plastic fittings including the fold hook.',
+    },
+  ],
+
   'car-pet-seat': [
     {
       question: 'How does the bed attach to a car seat?',

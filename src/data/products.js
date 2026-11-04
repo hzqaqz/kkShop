@@ -76,6 +76,28 @@ export const products = {
     inquiryNote: 'Stock, designs and delivery — ask us and we will confirm.',
   },
 
+  'sisal-cat-scratcher': {
+    id: 'sisal-cat-scratcher',
+    // 通过 Shopify Storefront 在线下单（单变体，US$40.00）。
+    // Shopify 里的 handle 是 sisal-cat-scratcher-lounger，与站内路由解耦，
+    // 和 cat-scratcher-frame ↔ framed-cat-scratching-board 的做法一致。
+    purchasable: true,
+    shopifyHandle: 'sisal-cat-scratcher-lounger',
+    label: 'Sisal Cat Scratcher',
+    cardLabel: 'Sisal Scratcher & Lounger',
+    category: 'Cat Scratcher',
+    // Shop 分类归属：Cat Scratching Posts（见 src/data/catalog.js）。
+    shopCategoryId: 'cat-scratchers',
+    page: 'sisal-cat-scratcher',
+    title: 'Sisal Cat Scratcher & Lounger',
+    cardSubtitle: 'A Scratcher It Can Sleep In',
+    description:
+      'A sisal rope cat scratcher and lounger — 60 × 40 × 8 cm and 600 g, with a raised rim so a cat can stretch, scratch and then curl up on it. The rope wrap does not crumble into flakes the way a cardboard board does.',
+    image: '/images/products/sisal-cat-scratcher/card-cutout.webp',
+    ogImage: '/images/products/sisal-cat-scratcher/hero.webp',
+    inquiryNote: 'Stock, sizes and delivery — ask us and we will confirm.',
+  },
+
   'car-pet-seat': {
     id: 'car-pet-seat',
     // 通过 Shopify Storefront 在线下单（两个颜色变体，US$100.00）。
@@ -96,6 +118,46 @@ export const products = {
     image: '/images/products/car-pet-seat/card-cutout.webp',
     ogImage: '/images/products/car-pet-seat/car-dog.webp',
     inquiryNote: 'Stock, colours and delivery — ask us and we will confirm.',
+  },
+
+  'pet-stroller': {
+    id: 'pet-stroller',
+    // 通过 Shopify Storefront 在线下单（单变体，US$399.00）。
+    purchasable: true,
+    shopifyHandle: 'travel-pet-stroller',
+    label: 'Pet Stroller',
+    cardLabel: 'Travel Pet Stroller',
+    category: 'Pet Stroller',
+    // Shop 分类归属：Pet Strollers（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-strollers',
+    page: 'pet-stroller',
+    title: 'Travel Pet Stroller with Carrycot',
+    cardSubtitle: 'Click-Off Carrycot, Folding Frame',
+    description:
+      'An aluminium pet stroller whose carrycot lifts off the frame in one click — the carrycot rides on the back seat for a long drive while the frame folds into the boot. 82 × 59 × 95–105 cm open, 25 kg load, six-panel canopy, brake and quick-release ETPU wheels.',
+    image: '/images/products/pet-stroller/card-cutout.webp',
+    ogImage: '/images/products/pet-stroller/white-tile.webp',
+    inquiryNote: 'Stock, colours and delivery — ask us and we will confirm.',
+  },
+
+  'triangle-cat-bed': {
+    id: 'triangle-cat-bed',
+    // 通过 Shopify Storefront 在线下单（单变体，US$57.00）。
+    purchasable: true,
+    shopifyHandle: '3-in-1-triangle-cat-bed',
+    label: 'Triangle Cat Bed',
+    cardLabel: '3-in-1 Triangle Cat Bed',
+    category: 'Pet Bed',
+    // Shop 分类归属：Pet Beds（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-beds',
+    page: 'triangle-cat-bed',
+    title: '3-in-1 Triangle Cat Bed',
+    cardSubtitle: 'Triangle, Sofa and Sleeping Mat',
+    description:
+      'A waffle-weave cat bed that works three ways — stood up as a triangle cave, propped open as a sofa or laid flat as a sleeping mat. 58 × 50 × 40 cm, with a sherpa fleece lining over a PP cotton fill that keeps its shape, for cats and small dogs up to about 7.5 kg.',
+    image: '/images/products/triangle-cat-bed/card-cutout.webp',
+    ogImage: '/images/products/triangle-cat-bed/hero.webp',
+    inquiryNote: 'Stock, sizes and delivery — ask us and we will confirm.',
   },
 
   'pom-pom-cat-toy': {
@@ -225,7 +287,10 @@ export const productOrder = [
   'christmas-pet-bed',
   'pom-pom-cat-toy',
   'car-pet-seat',
+  'pet-stroller',
+  'triangle-cat-bed',
   'cat-scratcher-frame',
+  'sisal-cat-scratcher',
   'commercial-air-purifier',
   'md001',
   'md002',

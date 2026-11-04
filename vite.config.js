@@ -5,9 +5,12 @@ import { blogArticles } from './src/data/blogArticles.js';
 const PRODUCT_IDS = [
   'mw200',
   'christmas-pet-bed',
+  'triangle-cat-bed',
   'pom-pom-cat-toy',
   'car-pet-seat',
+  'pet-stroller',
   'cat-scratcher-frame',
+  'sisal-cat-scratcher',
   'commercial-air-purifier',
   'md001',
   'md002',

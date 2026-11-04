@@ -4,63 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="新增宠物玩具产品页，更新MW200首图和字体比例。">
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/RESTORE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/_lib/http.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/_lib/mailer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/_lib/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/api/admin/notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/api/admin/requests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/functions/api/back-in-stock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/migrations/0001_back_in_stock.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/scripts/devApiPlugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/src/components/BackInStockForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/src/composables/useBackInStock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/src/views/AdminRestockPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/parked/back-in-stock/wrangler.toml.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/carousel/hero-festive-bed.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/carousel/hero-pet-stroller.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-cat.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-dog.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-cutout.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-stage.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/flat-bed.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-grey.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-white.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/tile-stage.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/white-tile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/card-cutout.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/design-hood.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/design-landscape.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/design-starry.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/design-sunflowers.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/hero.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/velcro-apply.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/velcro-strip.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/cat-scratcher-frame/white-tile.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CatScratcherFramePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-card.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-card.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-tile.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-tile.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CartDrawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartDrawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composables/useSeo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/composables/useSeo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/catalog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/productFaqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productFaqs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="新增猫抓板、猫窝产品页，更新首页轮播图">
+      <change beforePath="$PROJECT_DIR$/src/components/SiteHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductListPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductListPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1793476266842</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新增猫抓板、猫窝产品页，更新首页轮播图">
+      <created>1793788298924</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1793788298924</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +148,7 @@
     <MESSAGE value="SEO优化，主页、产品页内容优化" />
     <MESSAGE value="连接shopify。分区Shop/Business，重做导航栏，优化business section。新增Commercial Air Purifier页面。" />
     <MESSAGE value="新增宠物玩具产品页，更新MW200首图和字体比例。" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增宠物玩具产品页，更新MW200首图和字体比例。" />
+    <MESSAGE value="新增猫抓板、猫窝产品页，更新首页轮播图" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增猫抓板、猫窝产品页，更新首页轮播图" />
   </component>
 </project>

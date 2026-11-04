@@ -12,6 +12,9 @@ import Md002DehumidifierPage from '../components/Md002DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
 import Mw200AirPurifierPage from '../components/Mw200AirPurifierPage.vue';
 import PetBedProductPage from '../components/PetBedProductPage.vue';
+import PetStrollerPage from '../components/PetStrollerPage.vue';
+import SisalCatScratcherPage from '../components/SisalCatScratcherPage.vue';
+import TriangleCatBedPage from '../components/TriangleCatBedPage.vue';
 import InquiryBar from '../components/InquiryBar.vue';
 import ProductBuyBar from '../components/ProductBuyBar.vue';
 import ProductFaq from '../components/ProductFaq.vue';
@@ -42,6 +45,9 @@ const THEME_CLASSES = {
   'pom-pom-cat-toy': 'post-theme-warm',
   'car-pet-seat': 'post-theme-warm',
   'cat-scratcher-frame': 'post-theme-warm',
+  'sisal-cat-scratcher': 'post-theme-warm',
+  'triangle-cat-bed': 'post-theme-warm',
+  'pet-stroller': 'post-theme-warm',
 };
 
 const themeClass = computed(() => THEME_CLASSES[route.params.productId] ?? '');
@@ -120,11 +126,17 @@ useSeo(currentMeta.value);
 
     <PetBedProductPage v-else-if="currentProduct?.page === 'pet-bed'" />
 
+    <TriangleCatBedPage v-else-if="currentProduct?.page === 'triangle-cat-bed'" />
+
+    <PetStrollerPage v-else-if="currentProduct?.page === 'pet-stroller'" />
+
     <CatToyProductPage v-else-if="currentProduct?.page === 'cat-toy'" />
 
     <CarPetSeatPage v-else-if="currentProduct?.page === 'car-pet-seat'" />
 
     <CatScratcherFramePage v-else-if="currentProduct?.page === 'cat-scratcher-frame'" />
+
+    <SisalCatScratcherPage v-else-if="currentProduct?.page === 'sisal-cat-scratcher'" />
 
     <Mw100ProductPage
       v-else-if="currentProduct"

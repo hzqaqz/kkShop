@@ -12,14 +12,14 @@ import {
 import { isShopifyConfigured } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
 
-/** `overlayHero`: the page starts with a full-bleed photo behind the bar, so the
- *  bar switches to light-on-dark until the visitor scrolls off the image. */
+/** The bar is a solid white strip pinned to the top of every page, so the
+ *  hero-photo variants that used to make it transparent are no longer applied.
+ *  The props stay accepted for compatibility with existing page templates. */
 const props = defineProps({
   overlayHero: {
     type: Boolean,
     default: false,
   },
-  /** Dark bar sitting on an un-dimmed photo: keeps ink text, adds a white halo. */
   haloHero: {
     type: Boolean,
     default: false,
@@ -29,11 +29,9 @@ const props = defineProps({
 const { count: cartCount, openCart } = useCart();
 const shopifyConfigured = isShopifyConfigured();
 
-const SCROLL_FADE_DISTANCE = 120;
-
 const activeMenu = ref(null);
 const activeCategory = ref(null);
-const scrollProgress = ref(0);
+
 
 /** Turn a product record into a mega-menu card. */
 function toMenuCard(product) {
@@ -77,7 +75,6 @@ const navItems = [
 ];
 
 /** Light bar only while it is sitting on the hero photo (first ~100px of scroll). */
-const overlayMode = computed(() => props.overlayHero && scrollProgress.value < 0.85);
 
 const activeShopCategory = computed(() => {
   if (activeMenu.value !== 'shop') {
@@ -97,21 +94,30 @@ const recentBlogs = computed(() =>
 );
 
 function openMenu(menu) {
+  clearTimeout(closeTimer);
   activeMenu.value = menu ?? null;
   activeCategory.value = menu === 'shop' ? (shopPanel.categories[0]?.id ?? null) : null;
 }
+
+let closeTimer = null;
 
 function closeMenu() {
   activeMenu.value = null;
   activeCategory.value = null;
 }
 
-function selectCategory(categoryId) {
-  activeCategory.value = categoryId;
+/** Crossing the 1px seam between bar and panel must not close it. */
+function closeMenuSoon() {
+  clearTimeout(closeTimer);
+  closeTimer = setTimeout(closeMenu, 140);
 }
 
-function updateScrollProgress() {
-  scrollProgress.value = Math.min(window.scrollY / SCROLL_FADE_DISTANCE, 1);
+function keepMenuOpen() {
+  clearTimeout(closeTimer);
+}
+
+function selectCategory(categoryId) {
+  activeCategory.value = categoryId;
 }
 
 function handleKeydown(event) {
@@ -121,13 +127,10 @@ function handleKeydown(event) {
 }
 
 onMounted(() => {
-  updateScrollProgress();
-  window.addEventListener('scroll', updateScrollProgress, { passive: true });
   window.addEventListener('keydown', handleKeydown);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', updateScrollProgress);
   window.removeEventListener('keydown', handleKeydown);
 });
 </script>
@@ -135,10 +138,9 @@ onBeforeUnmount(() => {
 <template>
   <header
     class="topbar"
-    :class="{ 'topbar--overlay': overlayMode, 'topbar--halo': props.haloHero }"
     aria-label="kkShop navigation"
-    :style="{ '--topbar-bg-alpha': overlayMode ? 0 : scrollProgress }"
-    @mouseleave="closeMenu"
+    @mouseenter="keepMenuOpen"
+    @mouseleave="closeMenuSoon"
   >
     <RouterLink class="brand" to="/" aria-label="kkShop home">
       <img class="brand-logo" src="/images/logo-meower.webp" alt="Meower" />
@@ -188,6 +190,7 @@ onBeforeUnmount(() => {
       <div
         v-if="activeMenu === 'blogs'"
         class="mega-menu mega-menu--blogs"
+        @mouseenter="keepMenuOpen"
         role="region"
         aria-label="Recent blogs"
       >
@@ -212,7 +215,13 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div v-else-if="activeMenu === 'shop'" class="mega-menu" role="region" aria-label="Shop categories">
+      <div
+        v-else-if="activeMenu === 'shop'"
+        class="mega-menu"
+        role="region"
+        aria-label="Shop categories"
+        @mouseenter="keepMenuOpen"
+      >
         <div class="mega-menu-inner">
           <p class="mega-menu-eyebrow">{{ shopPanel.eyebrow }}</p>
           <div class="mega-menu-content">
@@ -253,6 +262,7 @@ onBeforeUnmount(() => {
         class="mega-menu mega-menu--business"
         role="region"
         aria-label="Business product ranges"
+        @mouseenter="keepMenuOpen"
       >
         <div class="mega-menu-inner">
           <p class="mega-menu-eyebrow">{{ businessPanel.eyebrow }}</p>
