@@ -5,8 +5,7 @@
  * the homepage and the About page. Business and Support now reuse this file so
  * there is a single place to update a phone number.
  */
-import { House, Linkedin, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
-import TikTokIcon from '../components/icons/TikTokIcon.vue';
+import { House, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
 
 export const CONTACT_EMAIL = 'info@meowerair.com';
 
@@ -44,12 +43,27 @@ export const paymentMethods = [
  *
  * `href` is intentionally empty until an account exists: the footer renders only
  * the entries that have a URL, so we never publish an icon that goes nowhere.
- * TikTok and LinkedIn accounts exist; paste their URLs below and the
- * "Follow us" column appears automatically.
+ * Instagram, LinkedIn and TikTok are all live.
  */
 export const socialLinks = [
-  { id: 'tiktok', label: 'TikTok', icon: TikTokIcon, href: '' },
-  { id: 'linkedin', label: 'LinkedIn', icon: Linkedin, href: '' },
+  {
+    id: 'instagram',
+    label: 'Instagram',
+    image: '/images/social/instagram.svg',
+    href: 'https://www.instagram.com/meowerpet/',
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    image: '/images/social/linkedin.svg',
+    href: 'https://www.linkedin.com/company/meower-air',
+  },
+  {
+    id: 'tiktok',
+    label: 'TikTok',
+    image: '/images/social/tiktok.svg',
+    href: 'https://vt.tiktok.com/ZSp6wbb8M/',
+  },
 ];
 
 /** `mailto:` link for a quote request about a specific product (or the range in general). */

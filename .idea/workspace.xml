@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="新增猫窝、宠物推车产品页" />
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="更新了stroller图片，加了C端弹窗广告 置顶广告，更新了底部social media按钮 和订阅按钮。">
+      <change afterPath="$PROJECT_DIR$/public/images/products/pet-stroller/studio-portrait.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/pet-stroller/studio.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/promo/offer-lifestyle.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/linkedin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/tiktok.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OfferModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/canopy-closed.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/canopy-open.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/card-cutout.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/white-tile.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CatToyProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CatToyProductPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SiteFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/icons/TikTokIcon.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/catalog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productFaqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productFaqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/siteInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/siteInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomePage.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1793804272190</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="修改了猫抓板页面图片 更新了库存和推荐顺序">
+      <created>1793949925222</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1793949925222</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +185,8 @@
     <MESSAGE value="新增宠物玩具产品页，更新MW200首图和字体比例。" />
     <MESSAGE value="新增猫抓板、猫窝产品页，更新首页轮播图" />
     <MESSAGE value="新增猫窝、宠物推车产品页" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增猫窝、宠物推车产品页" />
+    <MESSAGE value="修改了猫抓板页面图片 更新了库存和推荐顺序" />
+    <MESSAGE value="更新了stroller图片，加了C端弹窗广告 置顶广告，更新了底部social media按钮 和订阅按钮。" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了stroller图片，加了C端弹窗广告 置顶广告，更新了底部social media按钮 和订阅按钮。" />
   </component>
 </project>

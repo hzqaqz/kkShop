@@ -14,10 +14,10 @@ import {
 /**
  * Site-wide footer: brand, navigation, policies, newsletter and back-to-top.
  *
- * Links point only at pages that exist. The newsletter form has no backend yet,
- * so it never pretends to have subscribed anyone — it tells the visitor to email
- * us instead. `socialLinks` in `src/data/siteInfo.js` has no URLs yet, so the
- * "Follow us" column stays hidden until the TikTok / LinkedIn links are pasted in.
+ * Links point only at pages that exist. The newsletter form has no backend: it
+ * validates the address and opens a pre-filled email to info@meowerair.com, so
+ * the visitor knows exactly what happens to their address. `socialLinks` in `src/data/siteInfo.js` renders under the brand
+ * block; entries without a URL stay hidden (TikTok is still to come).
  */
 
 const shopLinks = [
@@ -60,7 +60,8 @@ const address = contacts.find((contact) => contact.label === 'Address')?.value ?
 const year = new Date().getFullYear();
 
 const newsletterEmail = ref('');
-const newsletterMessage = ref('');
+const newsletterStatus = ref('');
+const newsletterError = ref('');
 const showBackToTop = ref(false);
 const footerRef = ref(null);
 
@@ -71,9 +72,28 @@ const SCROLL_THRESHOLD = 600;
 let footerInView = false;
 let footerObserver;
 
+/**
+ * No mailing-list backend: hand the address to the visitor's email app with the
+ * message already written, and say so on screen. Never fakes a subscription.
+ */
 function subscribe() {
-  // No mailing-list backend yet: be explicit rather than faking a success state.
-  newsletterMessage.value = `Newsletter sign-up isn't live yet. Email ${CONTACT_EMAIL} and we will add you to the list.`;
+  const email = newsletterEmail.value.trim();
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    newsletterError.value = 'Enter your email address so we know where to send the newsletter.';
+    newsletterStatus.value = '';
+    return;
+  }
+
+  newsletterError.value = '';
+  newsletterStatus.value = '';
+
+  const subject = 'Newsletter sign-up';
+  const body = `Hi Meower,\n\nPlease add me to the newsletter.\n\nEmail: ${email}\n`;
+
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  newsletterStatus.value = `Opening your email app — send the message to finish signing up. If nothing opens, email ${CONTACT_EMAIL}.`;
 }
 
 function updateBackToTop() {
@@ -120,6 +140,23 @@ onBeforeUnmount(() => {
           </RouterLink>
           <p class="footer-tagline">Pet supplies and pet-friendly air care, made for homes with cats and dogs.</p>
           <a class="footer-mail" :href="contactEmailHref">{{ CONTACT_EMAIL }}</a>
+
+          <div v-if="liveSocialLinks.length" class="footer-social-block">
+            <p class="footer-social-label">Follow us</p>
+            <ul class="footer-social">
+              <li v-for="link in liveSocialLinks" :key="link.id">
+                <a
+                  :href="link.href"
+                  :aria-label="link.label"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <img v-if="link.image" :src="link.image" :alt="link.label" />
+                  <component :is="link.icon" v-else aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <nav class="footer-columns" aria-label="Footer navigation">
@@ -132,16 +169,6 @@ onBeforeUnmount(() => {
             </ul>
           </div>
 
-          <div v-if="liveSocialLinks.length" class="footer-column footer-column--social">
-            <h2>Follow us</h2>
-            <ul class="footer-social">
-              <li v-for="link in liveSocialLinks" :key="link.id">
-                <a :href="link.href" :aria-label="link.label" rel="noopener">
-                  <component :is="link.icon" aria-hidden="true" />
-                </a>
-              </li>
-            </ul>
-          </div>
         </nav>
       </div>
 
@@ -169,10 +196,19 @@ onBeforeUnmount(() => {
             name="email"
             autocomplete="email"
             placeholder="Email (no spam, once a month)"
+            :aria-invalid="newsletterError ? 'true' : 'false'"
+            aria-describedby="footer-newsletter-note"
+            @input="newsletterError = ''"
           />
           <button type="submit">Join our Newsletter</button>
-          <p v-if="newsletterMessage" class="footer-newsletter-note" role="status">
-            {{ newsletterMessage }}
+          <p
+            v-if="newsletterError || newsletterStatus"
+            id="footer-newsletter-note"
+            class="footer-newsletter-note"
+            :class="{ 'footer-newsletter-note--error': newsletterError }"
+            role="status"
+          >
+            {{ newsletterError || newsletterStatus }}
           </p>
         </form>
       </div>
@@ -278,24 +314,54 @@ onBeforeUnmount(() => {
   text-underline-offset: 4px;
 }
 
+.footer-social-block {
+  margin-top: 20px;
+}
+
+.footer-social-label {
+  margin: 0 0 10px;
+  color: #274b52;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
 .footer-social {
-  display: flex !important;
-  gap: 12px;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #334c51;
-  color: #fef5ed;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  color: #334c51;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
-.footer-social a:hover {
-  background: #5a7c85;
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.footer-social img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
 }
 
 .footer-social svg {
@@ -422,6 +488,10 @@ onBeforeUnmount(() => {
   color: #4f6b70;
   font-size: 13.5px;
   line-height: 1.5;
+}
+
+.footer-newsletter-note--error {
+  color: #a33a33;
 }
 
 .footer-to-top {

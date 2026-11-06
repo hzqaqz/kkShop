@@ -6,8 +6,9 @@ import { contactEmailHref } from '../data/siteInfo';
  * Push-button pom-pom launcher for cats.
  *
  * Facts come from the seller: a button launches the pom-pom on a tether and
- * another press reels it back, so nobody has to bend down and pick it up; two
- * pom-poms are included and they are replaceable.
+ * another press reels it back, so nobody has to bend down and pick it up; the
+ * pom-pom is rabbit fur; two are included and they are replaceable. Batteries
+ * are not included — the handle takes two AAA cells.
  */
 const steps = [
   {
@@ -40,14 +41,14 @@ const features = [
     icon: RefreshCcw,
   },
   {
-    title: 'Two pom-poms included',
-    text: 'A spare ball in every box, so a game can continue while one is being washed or has gone missing.',
-    icon: Sparkles,
+    title: 'Rabbit-fur pom-pom',
+    text: 'Natural rabbit fur gives the ball the texture and movement of small prey, which is what brings out the cat’s hunting instinct.',
+    icon: PawPrint,
   },
   {
-    title: 'Replaceable balls',
-    text: 'The pom-pom clips on and off the cord, so the toy can be refreshed without replacing the whole handle.',
-    icon: PawPrint,
+    title: 'Two pom-poms included',
+    text: 'A spare ball in every box, and both clip on and off the cord, so a worn or lost ball can be swapped in seconds.',
+    icon: Sparkles,
   },
   {
     title: 'Bell on the ball',
@@ -65,14 +66,16 @@ const features = [
         <h1 id="cattoy-title">Push-Button Pom-Pom Cat Toy</h1>
         <p class="cattoy-lead">
           A battery-powered play wand with a reeling cord: one button shoots the pom-pom across the
-          room, the other winds it back. Two pom-poms are included, and they clip on and off — so
-          you can keep the game going without bending down to pick the ball up.
+          room, the other winds it back. The ball is real rabbit fur, which is what sets off a cat's
+          hunting instinct, and two are included — so the game keeps moving without you bending down.
         </p>
 
         <ul class="cattoy-highlights">
           <li>One button to launch, one to retract</li>
+          <li>Rabbit-fur pom-pom</li>
           <li>2 replaceable pom-poms included</li>
           <li>Bell on top of the ball</li>
+          <li>2 AAA batteries not included</li>
         </ul>
 
         <div class="cattoy-hero-actions">
@@ -134,29 +137,29 @@ const features = [
         <p class="cattoy-eyebrow">Gift ready</p>
         <h2 id="cattoy-gift-title">Comes as a complete gift box</h2>
         <p>
-          The toy arrives in a printed gift box rather than a plain bag: the handle, two pom-poms,
-          two spare pom-poms, the batteries and the little screwdriver you need to fit them are all
-          inside, with a colour illustrated user manual on top.
+          The toy arrives in a printed gift box rather than a plain bag: the handle, two rabbit-fur
+          pom-poms, two spare pom-poms, a small screwdriver for the battery cover and a colour
+          illustrated user manual are all inside.
         </p>
         <p>
-          That makes it an easy present for a cat-owning friend — there is nothing else to buy, and
-          the box is sturdy enough to keep the toy in afterwards.
+          Batteries are not included — the handle takes two AAA batteries, so add a pair before
+          wrapping it as a gift. The box is sturdy enough to keep the toy in afterwards.
         </p>
 
         <ul class="cattoy-gift-list">
           <li>Printed gift box</li>
           <li>Illustrated user manual</li>
-          <li>Toy handle + 2 pom-poms</li>
+          <li>Toy handle + 2 rabbit-fur pom-poms</li>
           <li>2 spare pom-poms</li>
-          <li>2 AAA batteries</li>
           <li>Screwdriver for the battery cover</li>
+          <li>2 AAA batteries required — not included</li>
         </ul>
       </div>
 
       <img
         class="cattoy-gift-media"
         src="/images/products/cat-toy/gift-box.webp"
-        alt="The cat toy gift box with its user manual, spare pom-poms, batteries, screwdriver and handle"
+        alt="The cat toy gift box with its user manual, spare pom-poms, screwdriver and handle"
         loading="lazy"
         decoding="async"
       />
@@ -180,8 +183,8 @@ const features = [
           short session ends with the toy in your hand rather than under the furniture.
         </p>
         <p>
-          Two AAA batteries power the cord, and a pair is included. Each toy also comes with a spare
-          pom-pom, so a worn ball can be swapped in seconds.
+          Two AAA batteries power the cord; they are not included, so keep a pair ready. Each toy
+          also comes with a spare rabbit-fur pom-pom, so a worn ball can be swapped in seconds.
         </p>
       </div>
     </section>

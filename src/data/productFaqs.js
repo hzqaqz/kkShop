@@ -288,7 +288,7 @@ export const productFaqs = {
     {
       question: 'How many balls come with it, and can they be replaced?',
       answer:
-        'Every toy includes two pom-poms, plus two AAA batteries and a small screwdriver for the battery compartment. The pom-poms clip on and off the cord, so a spare can be swapped in whenever one is worn out, lost or being washed.',
+        'Every toy includes two rabbit-fur pom-poms, plus a small screwdriver for the battery compartment. Batteries are not included. The pom-poms clip on and off the cord, so a spare can be swapped in whenever one is worn out, lost or being washed.',
     },
     {
       question: 'Is it suitable for kittens?',
@@ -296,9 +296,14 @@ export const productFaqs = {
         'Yes — the pom-pom is soft and light, which suits kittens as well as adult cats. Play should be supervised, and the cord should be kept away from cats that like to chew.',
     },
     {
+      question: 'Are the pom-poms really rabbit fur?',
+      answer:
+        'Yes. The ball is natural rabbit fur, and that is the point: the texture and the way it moves read as small prey, which is what brings out a cat’s hunting instinct. Two are included, and spares clip straight onto the cord.',
+    },
+    {
       question: 'Does it need batteries?',
       answer:
-        'Yes — it takes two AAA batteries, and a pair is included in the box. They drive the cord motor, so the launch and retract buttons work without any charging.',
+        'Yes — it takes two AAA batteries, which are not included in the box. They drive the cord motor, so the launch and retract buttons work without any charging.',
     },
     {
       question: 'Where is the bell?',

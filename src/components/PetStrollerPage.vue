@@ -56,26 +56,6 @@ function addToCartFromPage() {
   addToCart(entry.id, 1);
 }
 
-/** Two canopy positions, taken from the two product photos. */
-const canopy = [
-  {
-    key: 'closed',
-    tag: 'Closed',
-    title: 'Closed in',
-    note: 'The hood pulled forward over the carrycot: shade, and less of the street to look at.',
-    image: '/images/products/pet-stroller/canopy-closed.webp',
-    alt: 'The pet stroller with the canopy closed and the cream carrycot buttoned up',
-  },
-  {
-    key: 'open',
-    tag: 'Opened',
-    title: 'Open for air',
-    note: 'The same canopy opened back into mesh panels, so the cat can see out and the carrycot still breathes.',
-    image: '/images/products/pet-stroller/canopy-open.webp',
-    alt: 'The same stroller with the canopy opened into black mesh panels at the back',
-  },
-];
-
 /** Walking with it, then driving with it — the two halves come apart. */
 const travel = [
   {
@@ -194,18 +174,18 @@ const features = [
         </p>
       </div>
 
-      <div class="ps-view-grid">
-        <article v-for="item in canopy" :key="item.key" class="ps-view-card">
-          <div class="ps-view-media">
-            <img :src="item.image" :alt="item.alt" loading="lazy" decoding="async" />
-          </div>
-          <div class="ps-view-copy">
-            <p class="ps-card-tag">{{ item.tag }}</p>
-            <h3>{{ item.title }}</h3>
-            <p class="ps-card-text">{{ item.note }}</p>
-          </div>
-        </article>
-      </div>
+      <figure class="ps-view-single">
+        <img
+          src="/images/products/pet-stroller/studio-portrait.webp"
+          alt="The travel pet stroller in cream, seen from the side with its canopy folded back"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          The six-panel canopy folds back over the carrycot; opened, the rear panels turn into mesh so
+          the cat can see out.
+        </figcaption>
+      </figure>
     </section>
 
     <section id="ps-travel" class="ps-section" aria-labelledby="ps-travel-title">
@@ -413,40 +393,29 @@ const features = [
 }
 
 /* ── Canopy cards ────────────────────────────────────────────────────────── */
-.ps-view-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 30px;
-}
-
-.ps-view-card {
-  display: flex;
-  flex-direction: column;
+/* Portrait inset: small enough to sit under the copy without taking the whole
+   width of the section. */
+.ps-view-single {
+  width: min(360px, 100%);
+  margin: 30px 0 0;
   overflow: hidden;
   border: 1px solid rgba(49, 78, 83, 0.14);
   border-radius: 12px;
   background: #fff;
 }
 
-.ps-view-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-  padding: 12px;
+.ps-view-single img {
+  display: block;
+  width: 100%;
+  height: auto;
   background: #fff;
 }
 
-.ps-view-media img {
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.ps-view-copy {
-  padding: 16px 18px 20px;
+.ps-view-single figcaption {
+  padding: 14px 18px 18px;
+  color: #4d666b;
+  font-size: 13.5px;
+  line-height: 1.55;
 }
 
 /* ── Buy strip ───────────────────────────────────────────────────────────── */

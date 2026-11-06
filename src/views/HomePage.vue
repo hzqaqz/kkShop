@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import FeaturedProductCard from '../components/FeaturedProductCard.vue';
+import OfferModal from '../components/OfferModal.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { blogArticles } from '../data/blogArticles';
 import { shopCategories } from '../data/catalog';
@@ -226,17 +227,46 @@ function handleManualSlide(index) {
   restartAutoSlideAfterManual();
 }
 
+/* Store offers: a slim bar above the header, rotating between the two messages. */
+const offers = [
+  'Free shipping on orders over $99.',
+  'New Customers: Get $10 off your first order.',
+];
+const activeOffer = ref(0);
+const OFFER_INTERVAL_MS = 4000;
+let offerTimer;
+
+function startOffers() {
+  offerTimer = window.setInterval(() => {
+    activeOffer.value = (activeOffer.value + 1) % offers.length;
+  }, OFFER_INTERVAL_MS);
+}
+
 onMounted(() => {
   startAutoSlide();
+  startOffers();
 });
 
 onBeforeUnmount(() => {
   stopAutoSlide();
+  if (offerTimer) {
+    window.clearInterval(offerTimer);
+  }
 });
 </script>
 
 <template>
   <main class="site-shell home-page">
+    <div class="home-announcement" aria-label="Store offers">
+      <Transition name="offer-slide" mode="out-in">
+        <p :key="activeOffer">
+          <span class="home-announcement-spark" aria-hidden="true">✨</span>
+          {{ offers[activeOffer] }}
+          <span class="home-announcement-spark" aria-hidden="true">✨</span>
+        </p>
+      </Transition>
+    </div>
+
     <SiteHeader halo-hero />
 
     <section
@@ -378,6 +408,8 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </section>
+
+    <OfferModal />
 
     <section id="blogs" class="section blog-section" aria-labelledby="blog-title">
       <div class="section-heading centered section-heading--compact">

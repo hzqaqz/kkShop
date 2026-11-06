@@ -135,8 +135,8 @@ export const products = {
     cardSubtitle: 'Click-Off Carrycot, Folding Frame',
     description:
       'An aluminium pet stroller whose carrycot lifts off the frame in one click — the carrycot rides on the back seat for a long drive while the frame folds into the boot. 82 × 59 × 95–105 cm open, 25 kg load, six-panel canopy, brake and quick-release ETPU wheels.',
-    image: '/images/products/pet-stroller/card-cutout.webp',
-    ogImage: '/images/products/pet-stroller/white-tile.webp',
+    image: '/images/products/pet-stroller/studio.webp',
+    ogImage: '/images/products/pet-stroller/hero-sunset.jpg',
     inquiryNote: 'Stock, colours and delivery — ask us and we will confirm.',
   },
 
@@ -174,7 +174,7 @@ export const products = {
     title: 'Push-Button Pom-Pom Cat Toy',
     cardSubtitle: 'Launch and Retract the Ball',
     description:
-      'A battery-powered cat toy with one button to fire a pom-pom across the room and another to reel it back in, so play carries on without anyone bending down. Two replaceable pom-poms included.',
+      'A battery-powered cat toy with one button to fire a rabbit-fur pom-pom across the room and another to reel it back in, so play carries on without anyone bending down. Two replaceable pom-poms included; takes 2 AAA batteries, not included.',
     // Product cards use the cut-out (transparent background); the social card
     // keeps the lifestyle artwork.
     image: '/images/products/cat-toy/card-cutout.webp',

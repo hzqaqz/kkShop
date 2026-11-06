@@ -212,9 +212,8 @@ export const productOverviews = {
       'Senior or recovering pets that tire on a walk',
       'Anyone who would rather push than carry a carrier',
     ],
-    image: '/images/products/pet-stroller/card-cutout.webp',
-    imageAlt: 'The travel pet stroller in cream grey with its carrycot and canopy',
-    imageFit: 'contain',
+    image: '/images/products/pet-stroller/hero-sunset.jpg',
+    imageAlt: 'A corgi sitting in the cream travel pet stroller beside a lake at sunset',
     specs: [
       ['Type', 'Pet stroller with click-off carrycot and six-panel canopy'],
       ['Carrycot release', 'Lifts off the frame with one click'],
@@ -265,8 +264,8 @@ export const productOverviews = {
     heading: 'A Pom-Pom Toy That Comes Back to You',
     paragraphs: [
       'Cats play in short bursts. The moment the toy stops moving, most of them walk away — and the usual result is a person crawling under the sofa to retrieve a ball so the game can restart. This toy is built around that one annoyance: the pom-pom stays on a cord that reels in and out of the handle, driven by two buttons.',
-      'One button launches the ball out across the floor or into the air; a second button winds the cord back in, bringing the pom-pom with it. The cat gets the chase, and you keep the toy in your hand without kneeling down to fetch it. The cord runs on two AAA batteries, which are included.',
-      'Every toy ships with two pom-poms, and they clip on and off the cord, so a tired or lost ball can be swapped in seconds. A small bell sits on top of each pom-pom, next to the clip — a sound cue that helps a cat follow the ball when it is moving quickly or is out of sight.',
+      'One button launches the ball out across the floor or into the air; a second button winds the cord back in, bringing the pom-pom with it. The cat gets the chase, and you keep the toy in your hand without kneeling down to fetch it. The cord runs on two AAA batteries, which are not included.',
+      'Every toy ships with two rabbit-fur pom-poms, and they clip on and off the cord, so a tired or lost ball can be swapped in seconds. The rabbit fur is the part that matters: its texture and the way it moves read as small prey, which is what brings out a cat’s hunting instinct. A small bell sits on top of each pom-pom, next to the clip — a sound cue that helps a cat follow the ball when it is moving quickly or is out of sight.',
     ],
     bestFor: [
       'Kittens and adult cats that chase and pounce',
@@ -280,9 +279,9 @@ export const productOverviews = {
     imageFit: 'contain',
     specs: [
       ['Type', 'Battery-powered launcher with a launch button and a retract button'],
-      ['Power', '2 × AAA batteries, a pair included'],
-      ['In the box', '1 handle + 2 replaceable pom-poms + 2 batteries + a screwdriver'],
-      ['Ball', 'Soft pom-pom with a small bell on top'],
+      ['Power', '2 × AAA batteries, not included'],
+      ['In the box', '1 handle + 2 replaceable rabbit-fur pom-poms + a screwdriver'],
+      ['Ball', 'Rabbit-fur pom-pom with a small bell on top'],
       ['Material', 'ABS handle'],
       ['Best for', 'Kittens and adult cats'],
       ['Play notes', 'Supervise play; keep the cord away from chewing'],

@@ -35,7 +35,7 @@ export const shopCategories = [
     description:
       'Strollers that let small pets, senior cats and dogs travel with you comfortably.',
     // White-background product shot, framed like the other photo tiles.
-    image: '/images/products/pet-stroller/white-tile.webp',
+    image: '/images/products/pet-stroller/studio.webp',
     icon: Baby,
   },
   {

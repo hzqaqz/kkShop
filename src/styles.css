@@ -2403,8 +2403,81 @@ main.product-page + .site-footer .footer-to-top {
 }
 
 /* ------------------------------------------------------------------
-   Homepage: hero overlay, featured products, brand copy
+   Homepage: offer bar, hero overlay, featured products, brand copy
    ------------------------------------------------------------------ */
+
+/* Slim rotating offer bar pinned to the very top of the homepage; the fixed
+   header sits underneath it. */
+.home-announcement {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  background: #22383c;
+  color: #fef5ed;
+  overflow: hidden;
+}
+
+.home-announcement p {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.home-announcement-spark {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.home-page .topbar {
+  top: 36px;
+}
+
+.offer-slide-enter-active,
+.offer-slide-leave-active {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.offer-slide-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.offer-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-slide-enter-active,
+  .offer-slide-leave-active {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-announcement {
+    height: 34px;
+  }
+
+  .home-announcement p {
+    font-size: 12px;
+  }
+
+  .home-page .topbar {
+    top: 34px;
+  }
+}
 
 .hero-copy h1 {
   margin: 0;
