@@ -79,6 +79,10 @@ export function useSeo({
 export function excerptFromMarkdown(markdown, length = 160) {
   if (!markdown) return '';
   const plain = markdown
+    // The leading `# Heading` repeats the page <h1>. Left in, it eats the first
+    // ~60 characters of every article's meta description, so the snippet reads
+    // as a truncated title with a sentence glued on the end.
+    .replace(/^\s*#{1,6}\s+[^\n]*(?:\n+|$)/, ' ')
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')

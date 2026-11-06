@@ -87,7 +87,14 @@ const currentMeta = computed(() => {
     };
   }
   const cover = item.coverImage;
-  const ogImage = cover && RASTER_IMAGE.test(cover) ? `https://meowerair.com${cover}` : undefined;
+  // `ogImage` is the 1.91:1 crop (what social platforms actually display).
+  // Without one, a portrait or tall cover gets cropped through the middle of
+  // the subject by every scraper that renders the card.
+  const socialImage = item.ogImage ?? cover;
+  const ogImage =
+    socialImage && RASTER_IMAGE.test(socialImage)
+      ? `https://meowerair.com${socialImage}`
+      : undefined;
 
   return {
     title: item.title,
@@ -108,7 +115,9 @@ const articleJsonLd = computed(() => {
     '@type': 'BlogPosting',
     headline: item.title,
     description: excerptFromMarkdown(item.contentMarkdown),
-    image: item.coverImage ? `https://meowerair.com${item.coverImage}` : undefined,
+    image: (item.ogImage ?? item.coverImage)
+      ? `https://meowerair.com${item.ogImage ?? item.coverImage}`
+      : undefined,
     datePublished: item.date,
     dateModified: item.date,
     author: { '@type': 'Organization', name: 'Meower', url: 'https://meowerair.com/' },
