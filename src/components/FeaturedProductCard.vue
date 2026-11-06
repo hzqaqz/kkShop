@@ -5,6 +5,7 @@ import { Loader2, ShoppingBag } from 'lucide-vue-next';
 import ProductFromPrice from './ProductFromPrice.vue';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
+import { isShopifyConfigured } from '../composables/useShopify';
 import { getProduct } from '../data/products';
 
 /**
@@ -61,6 +62,10 @@ const route = computed(() => ({
 const { product: shopifyProduct } = useShopifyProduct(handle);
 const { addToCart, loading: cartLoading, error: cartError } = useCart();
 
+/* Quick add can only work when the built site actually has credentials.
+   Rendering the button without them left a control that did nothing. */
+const shopifyReady = isShopifyConfigured();
+
 /**
  * Quick add takes the first purchasable variant — the same default the product
  * page's buy bar picks. Sizes and finishes are chosen on the product page.
@@ -110,6 +115,7 @@ function addToCartFromCard() {
         <ProductFromPrice class="feature-card-price" :handle="handle" />
 
         <button
+          v-if="shopifyReady"
           class="feature-card-add"
           type="button"
           :disabled="!variant || cartLoading"

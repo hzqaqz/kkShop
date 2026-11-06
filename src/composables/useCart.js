@@ -69,8 +69,17 @@ async function initCart() {
 }
 
 async function addToCart(merchandiseId, quantity = 1) {
-  if (!isShopifyConfigured() || !merchandiseId) {
-    return;
+  // No credentials means nothing can ever be added. Report it instead of
+  // returning silently: a missing build-time env var used to make every
+  // "Add to cart" button on the live site look like a dead button.
+  if (!isShopifyConfigured()) {
+    error.value =
+      'Online checkout is unavailable right now. Please email us and we will take your order.';
+    return false;
+  }
+
+  if (!merchandiseId) {
+    return false;
   }
 
   if (quantity < 1) {
