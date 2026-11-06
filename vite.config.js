@@ -9,7 +9,7 @@ const PRODUCT_IDS = [
   'pom-pom-cat-toy',
   'car-pet-seat',
   'pet-stroller',
-  'cat-scratcher-frame',
+  'woven-sisal-cat-scratcher',
   'sisal-cat-scratcher',
   'commercial-air-purifier',
   'md001',

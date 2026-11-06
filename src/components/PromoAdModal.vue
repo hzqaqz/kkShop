@@ -404,7 +404,7 @@ onBeforeUnmount(() => {
   margin: 0;
   color: #fff;
   font-size: clamp(20px, 2vw, 30px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.16;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -436,7 +436,7 @@ onBeforeUnmount(() => {
   list-style: none;
   color: #274b52;
   font-size: clamp(20px, 1.9vw, 27px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.28;
 }
 
@@ -463,7 +463,7 @@ onBeforeUnmount(() => {
   background: #334c51;
   color: #fef5ed;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   text-align: center;
   transition: background-color 160ms ease;
 }
@@ -479,7 +479,7 @@ onBeforeUnmount(() => {
 
 .promo-ad-cta-email {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
   white-space: nowrap;
 }

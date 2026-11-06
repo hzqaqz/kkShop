@@ -210,7 +210,7 @@ const features = [
   margin: 0 0 12px;
   color: var(--cattoy-pink);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -219,7 +219,7 @@ const features = [
   margin: 0;
   color: var(--cattoy-ink);
   font-size: clamp(31px, 4.2vw, 58px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
@@ -248,7 +248,7 @@ const features = [
   background: #fff;
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cattoy-hero-actions {
@@ -266,7 +266,7 @@ const features = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -324,7 +324,7 @@ const features = [
   margin: 0;
   color: var(--cattoy-ink);
   font-size: clamp(25px, 3vw, 40px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -367,7 +367,7 @@ const features = [
   margin: 0;
   color: var(--cattoy-blue);
   font-size: 11.5px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.12em;
 }
 
@@ -375,7 +375,7 @@ const features = [
   margin: 6px 0 0;
   color: var(--cattoy-ink);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .cattoy-step-copy p:not(.cattoy-step-number) {
@@ -414,7 +414,7 @@ const features = [
   margin: 12px 0 0;
   color: var(--cattoy-ink);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -437,7 +437,7 @@ const features = [
   margin: 0;
   color: var(--cattoy-ink);
   font-size: clamp(25px, 3vw, 40px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -463,7 +463,7 @@ const features = [
   padding-left: 20px;
   color: #3f5c62;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 

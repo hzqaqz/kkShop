@@ -162,7 +162,7 @@ const spaces = [
 .commercial-purifier h2 {
   margin: 0;
   color: var(--ink);
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.02;
 }
@@ -182,7 +182,7 @@ const spaces = [
   margin: 0 0 20px;
   color: var(--accent);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -236,7 +236,7 @@ const spaces = [
   margin: 0 0 8px;
   color: var(--ink);
   font-size: clamp(18px, 1.5vw, 23px);
-  font-weight: 850;
+  font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
@@ -330,7 +330,7 @@ const spaces = [
 .purifier-spec-row dt {
   color: var(--ink);
   font-size: clamp(14px, 1.15vw, 17px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.35;
 }
 
@@ -338,7 +338,7 @@ const spaces = [
   margin: 0;
   color: #101213;
   font-size: clamp(14px, 1.15vw, 17px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
 }
 
@@ -384,7 +384,7 @@ const spaces = [
   background: rgba(50, 79, 84, 0.82);
   color: #fff;
   font-size: clamp(15px, 1.3vw, 20px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.2;
 }
 

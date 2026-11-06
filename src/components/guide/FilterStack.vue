@@ -121,7 +121,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   margin: 8px 0 0;
   color: #2c464c;
   font-size: clamp(20px, 2.1vw, 27px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -129,7 +129,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   margin: 0;
   color: #5a7c85;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -161,7 +161,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   margin: 0 !important;
   color: #6c8a90 !important;
   font-size: 11.5px !important;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -243,7 +243,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
 .stack-layer-step {
   color: #7d969b;
   font-size: 10.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -251,14 +251,14 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
 .stack-layer-name {
   color: #2c464c;
   font-size: 15px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.2;
 }
 
 .stack-layer-role {
   color: #5a7c85;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .stack-detail {
@@ -271,7 +271,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   margin: 0 !important;
   color: #2c464c !important;
   font-size: 17px !important;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -280,7 +280,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   margin-top: 2px;
   color: #6c8a90;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -300,7 +300,7 @@ const active = computed(() => stages.find((stage) => stage.id === activeId.value
   background: rgba(212, 235, 229, 0.8);
   color: #33555b;
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .stack-detail-passes {

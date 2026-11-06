@@ -7,3 +7,7 @@
 
 /about /business 301
 /about/ /business 301
+
+# The framed scratching board became the woven sisal board; keep old links live.
+/products/cat-scratcher-frame /products/woven-sisal-cat-scratcher 301
+/products/cat-scratcher-frame/ /products/woven-sisal-cat-scratcher 301

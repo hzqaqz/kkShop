@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import CarPetSeatPage from '../components/CarPetSeatPage.vue';
-import CatScratcherFramePage from '../components/CatScratcherFramePage.vue';
+import WovenCatScratcherPage from '../components/WovenCatScratcherPage.vue';
 import CatToyProductPage from '../components/CatToyProductPage.vue';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialAirPurifierPage from '../components/CommercialAirPurifierPage.vue';
@@ -44,7 +44,7 @@ const THEME_CLASSES = {
   'christmas-pet-bed': 'post-theme-warm',
   'pom-pom-cat-toy': 'post-theme-warm',
   'car-pet-seat': 'post-theme-warm',
-  'cat-scratcher-frame': 'post-theme-warm',
+  'woven-sisal-cat-scratcher': 'post-theme-warm',
   'sisal-cat-scratcher': 'post-theme-warm',
   'triangle-cat-bed': 'post-theme-warm',
   'pet-stroller': 'post-theme-warm',
@@ -53,7 +53,8 @@ const THEME_CLASSES = {
 const themeClass = computed(() => THEME_CLASSES[route.params.productId] ?? '');
 
 const currentProduct = computed(() => getProduct(route.params.productId));
-const relatedProducts = computed(() => getRelatedProducts(route.params.productId, 3));
+/* Ask for a bigger pool: `RelatedProducts` keeps only the ones in stock. */
+const relatedProducts = computed(() => getRelatedProducts(route.params.productId, 8));
 const relatedArticles = computed(() => getArticlesForProduct(route.params.productId, 3));
 
 const breadcrumbs = computed(() => [
@@ -134,7 +135,7 @@ useSeo(currentMeta.value);
 
     <CarPetSeatPage v-else-if="currentProduct?.page === 'car-pet-seat'" />
 
-    <CatScratcherFramePage v-else-if="currentProduct?.page === 'cat-scratcher-frame'" />
+    <WovenCatScratcherPage v-else-if="currentProduct?.page === 'woven-sisal-cat-scratcher'" />
 
     <SisalCatScratcherPage v-else-if="currentProduct?.page === 'sisal-cat-scratcher'" />
 
@@ -161,12 +162,13 @@ useSeo(currentMeta.value);
         title="Related reading"
       />
 
-      <RelatedProducts :products="relatedProducts" />
+      <RelatedProducts :products="relatedProducts" in-stock-only />
     </div>
 
     <ProductBuyBar
       v-if="currentProduct?.purchasable && shopifyReady && !buyBarUnavailable"
       :handle="currentProduct.shopifyHandle"
+      :title="currentProduct.title"
       :labels="currentProduct.variantLabels ?? {}"
       @unavailable="buyBarUnavailable = true"
     />

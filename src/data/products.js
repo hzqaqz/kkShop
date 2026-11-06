@@ -49,8 +49,8 @@ export const products = {
     // Transparent cut-out for the navigation mega menu.
     navImage: '/images/products/navigation/mw200-transparent.webp',
   },
-  'cat-scratcher-frame': {
-    id: 'cat-scratcher-frame',
+  'woven-sisal-cat-scratcher': {
+    id: 'woven-sisal-cat-scratcher',
     // 通过 Shopify Storefront 在线下单（四种画面为四个变体，US$38.00）。
     purchasable: true,
     shopifyHandle: 'framed-cat-scratching-board',
@@ -61,18 +61,18 @@ export const products = {
       '带珍珠耳环的少女': 'Meow with a Pearl Earring',
       '森林': 'Cypress Field',
     },
-    label: 'Framed Cat Scratcher',
-    cardLabel: 'Framed Cat Scratcher',
+    label: 'Woven Cat Scratcher',
+    cardLabel: 'Woven Sisal Cat Scratcher',
     category: 'Cat Scratcher',
     // Shop 分类归属：Cat Scratching Posts（见 src/data/catalog.js）。
     shopCategoryId: 'cat-scratchers',
-    page: 'cat-scratcher-frame',
-    title: 'Framed Cat Scratching Board',
-    cardSubtitle: 'Wall Art the Cat Can Scratch',
+    page: 'woven-sisal-cat-scratcher',
+    title: 'Woven Sisal Cat Scratching Board',
+    cardSubtitle: 'Woven Sisal, Wall-Hung Art',
     description:
-      'A framed cat scratching board in sisal over an EPS core — 42 × 33 × 3 cm and 650 g, mounted on walls, sofas or cabinets with four velcro pads that leave no residue.',
-    image: '/images/products/cat-scratcher-frame/card-cutout.webp',
-    ogImage: '/images/products/cat-scratcher-frame/hero.webp',
+      'A wall-hung cat scratching board with a woven sisal face and a colour-matched woven border, made in four cat-themed artworks — 38 × 30 × 0.5 cm and 210 g, mounted on walls, sofas or cabinets with four velcro pads that leave no residue.',
+    image: '/images/products/woven-sisal-cat-scratcher/design-starry.jpg',
+    ogImage: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
     inquiryNote: 'Stock, designs and delivery — ask us and we will confirm.',
   },
 
@@ -80,7 +80,7 @@ export const products = {
     id: 'sisal-cat-scratcher',
     // 通过 Shopify Storefront 在线下单（单变体，US$40.00）。
     // Shopify 里的 handle 是 sisal-cat-scratcher-lounger，与站内路由解耦，
-    // 和 cat-scratcher-frame ↔ framed-cat-scratching-board 的做法一致。
+    // 和 woven-sisal-cat-scratcher ↔ framed-cat-scratching-board 的做法一致。
     purchasable: true,
     shopifyHandle: 'sisal-cat-scratcher-lounger',
     label: 'Sisal Cat Scratcher',
@@ -289,7 +289,7 @@ export const productOrder = [
   'car-pet-seat',
   'pet-stroller',
   'triangle-cat-bed',
-  'cat-scratcher-frame',
+  'woven-sisal-cat-scratcher',
   'sisal-cat-scratcher',
   'commercial-air-purifier',
   'md001',

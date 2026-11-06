@@ -116,12 +116,12 @@ export const productOverviews = {
     ],
   },
 
-  'cat-scratcher-frame': {
-    heading: 'A Cat Scratcher That Looks Like a Painting',
+  'woven-sisal-cat-scratcher': {
+    heading: 'A Woven Cat Scratcher That Hangs Like Wall Art',
     paragraphs: [
       'Cats scratch to stretch, to mark territory and to shed the outer layer of their claws. Because the instinct is strongest near the spots the household already uses, a scratcher put up at the door or beside the sofa gets used far more than one hidden in a corner. Two problems usually follow: most scratchers look like cat furniture, and the ones meant to be mounted leave screws or glue in the wall.',
-      'This board is a frame first and a scratcher second. Printed with one of four cat-themed paintings — Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — and finished with wood-look moulding, it hangs at eye level like wall art on a hallway wall, the side of a sofa or a cabinet door, and the sisal face is what the cat actually touches.',
-      'It mounts with four pairs of velcro pads, one side on the frame and one on the surface, so no drill or glue is needed and nothing is left behind when the board moves to another room. The sisal face sits over an EPS core: light enough (650 g) to stay on small pads, firm enough for a full stretch.',
+      'This board is wall art first and a scratcher second. Each mat carries one of four cat-themed artworks — Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — across a woven sisal face, finished with a colour-matched woven border. It hangs at eye level like a small wall hanging on a hallway wall, the side of a sofa or a cabinet door, and the sisal face is what the cat actually touches.',
+      'It mounts with four pairs of velcro pads, one side on the back of the mat and one on the surface, so no drill or glue is needed and nothing is left behind when it moves to another room. At 210 g it stays on four small pads, and the woven surface is firm enough for a full stretch.',
     ],
     bestFor: [
       'Cat households that have run out of floor space for a scratcher',
@@ -129,14 +129,14 @@ export const productOverviews = {
       'Hallways, sofa sides and cabinet doors the cat already scratches',
       'Anyone who would rather not look at a carpet-covered post',
     ],
-    image: '/images/products/cat-scratcher-frame/hero.webp',
-    imageAlt: 'A Bengal cat scratching the framed Starry Night board on a wall',
+    image: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
+    imageAlt: 'A Bengal cat scratching the woven Starry Night sisal board on a wall',
     imageFit: 'contain',
     specs: [
-      ['Type', 'Framed wall-mounted cat scratching board'],
-      ['Size', '42 × 33 × 3 cm'],
-      ['Weight', '650 g'],
-      ['Material', 'Sisal surface over an EPS core'],
+      ['Type', 'Woven sisal wall-mounted cat scratching board'],
+      ['Size', '38 × 30 × 0.5 cm'],
+      ['Weight', '210 g'],
+      ['Material', 'Woven sisal face'],
       ['Mounting', '4 pairs of velcro pads, no drilling or glue'],
       ['Designs', 'Starry Night, Sunflowers, Meow with a Pearl Earring, Cypress Field'],
     ],
@@ -213,7 +213,7 @@ export const productOverviews = {
       'Anyone who would rather push than carry a carrier',
     ],
     image: '/images/products/pet-stroller/card-cutout.webp',
-    imageAlt: 'The travel pet stroller in sage green with its carrycot and canopy',
+    imageAlt: 'The travel pet stroller in cream grey with its carrycot and canopy',
     imageFit: 'contain',
     specs: [
       ['Type', 'Pet stroller with click-off carrycot and six-panel canopy'],

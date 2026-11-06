@@ -73,6 +73,19 @@ img {
   max-width: 100%;
 }
 
+/* Bold type across the site matches the hero slogan's 600 — headings, strong
+   and any element relying on the browser's default bold get the same weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: 600;
+}
+
 .site-shell {
   min-height: 100vh;
   overflow: hidden;
@@ -101,8 +114,7 @@ img {
 .nav-trigger,
 .nav-label,
 .category-button,
-.more-button,
-.control-button {
+.more-button {
   display: inline-flex;
   align-items: center;
 }
@@ -144,7 +156,7 @@ img {
   background: transparent;
   color: #334c51;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -195,7 +207,7 @@ img {
   margin: 0 0 14px;
   color: #6e6e73;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -223,7 +235,7 @@ img {
   background: transparent;
   color: #6e6e73;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   text-align: left;
   cursor: default;
 }
@@ -254,7 +266,7 @@ img {
   margin: 0 0 6px;
   color: #6e6e73;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
 }
 
@@ -295,7 +307,7 @@ img {
   padding: 9px 12px;
   color: #334c51;
   font-size: 14px;
-  font-weight: 780;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -311,7 +323,7 @@ img {
   margin: 6px 0 0;
   color: #6e6e73;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Announced-but-not-listed product: rendered as a card without a link. */
@@ -367,7 +379,7 @@ img {
   margin-bottom: 14px;
   color: #334c51;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -409,7 +421,7 @@ img {
   background: rgba(212, 235, 229, 0.25);
   color: #334c51;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.3;
   transition:
     background-color 180ms ease,
@@ -474,16 +486,76 @@ img {
   touch-action: pan-y;
 }
 
-/* Copy + slide controls, bottom-aligned over the photo. */
+/* Slogan + Shop Now centred over the photo, with the slide indicator pinned to
+   the bottom-left. The layer itself is click-through so the artwork's own
+   product link stays reachable; the button and the dots take pointer events. */
 .hero-content {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: clamp(22px, 3vw, 36px);
-  padding: 0 max(7vw, calc((100vw - 1240px) / 2)) clamp(26px, 3.4vw, 44px);
+  align-items: center;
+  justify-content: center;
+  padding: 0 max(7vw, calc((100vw - 1240px) / 2));
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Slogan + button, nudged below the optical centre like the reference banner. */
+.hero-card-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(22px, 2.8vw, 36px);
+  transform: translateY(clamp(20px, 5vh, 56px));
+}
+
+/* The line of copy on the carousel, laid over the artwork like the reference:
+   large, white, centred, with a soft shadow for contrast. The box reserves two
+   lines so the Shop Now button keeps its place when a longer slogan wraps. */
+.hero-card-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  max-width: min(1020px, 100%);
+  min-height: 2.2em;
+  margin: 0;
+  color: #fffdf7;
+  font-size: clamp(34px, 3.7vw, 54px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 2px 6px rgba(10, 24, 28, 0.32),
+    0 16px 44px rgba(10, 24, 28, 0.5);
+}
+
+/* Each slide eases its own slogan in as it takes over. */
+.hero-card-title span {
+  display: block;
+  max-width: 100%;
+  text-wrap: balance;
+  animation: hero-slogan-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-slogan-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card-title span {
+    animation: none;
+  }
 }
 
 /* Narrow enough that the headline breaks into two lines beside the artwork
@@ -531,10 +603,18 @@ img {
   object-fit: cover;
 }
 
+/* A soft centre vignette: the white slogan needs a floor of contrast on the
+   sunlit artwork, but the photo should still read as a photo. */
 .slide-media::after {
   position: absolute;
   inset: 0;
   content: "";
+  background: radial-gradient(
+    ellipse 62% 56% at 50% 48%,
+    rgba(10, 24, 28, 0.5) 0%,
+    rgba(10, 24, 28, 0.26) 55%,
+    rgba(10, 24, 28, 0) 100%
+  );
 }
 
 /* Slides that lead to a product get a click affordance. */
@@ -555,7 +635,7 @@ img {
   margin: 0 0 14px;
   color: #b8d4d8;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -563,57 +643,54 @@ img {
 .section-heading h2,
 .about-band h2 {
   margin: 0;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
-.hero-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.carousel-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.control-button {
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(34, 56, 60, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.76);
-  color: #22383c;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-}
-
-.control-button:hover,
-.control-button:focus-visible {
-  background: #d4ebe5;
-  color: #334c51;
-}
-
+/* Slide indicator: a dark glass pill with wide bars, so it reads clearly on
+   both light and dark artwork. The active bar also grows. It stays pinned to
+   the bottom-left while the slogan is centred. */
 .carousel-dots {
+  position: absolute;
+  bottom: clamp(26px, 3.4vw, 44px);
+  left: max(7vw, calc((100vw - 1240px) / 2));
   display: flex;
-  gap: 9px;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(12, 26, 29, 0.36);
+  box-shadow: 0 10px 24px rgba(12, 26, 29, 0.22);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
 }
 
 .dot {
-  width: 34px;
-  height: 4px;
+  position: relative;
+  width: 40px;
+  height: 6px;
   padding: 0;
   border: 0;
   border-radius: 99px;
-  background: rgba(34, 56, 60, 0.28);
+  background: rgba(255, 253, 247, 0.42);
   cursor: pointer;
+  transition: background-color 180ms ease, width 220ms ease;
+}
+
+/* A comfortable tap target around the thin bar. */
+.dot::after {
+  position: absolute;
+  inset: -10px -3px;
+  content: "";
+}
+
+.dot:hover,
+.dot:focus-visible {
+  background: rgba(255, 253, 247, 0.72);
 }
 
 .dot.active {
-  background: #22383c;
+  width: 56px;
+  background: #fffdf7;
 }
 
 .section {
@@ -680,7 +757,7 @@ img {
   border-radius: 8px;
   background: rgba(51, 76, 81, 0.76);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -772,7 +849,7 @@ img {
   margin: 0;
   color: #334c51;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -833,7 +910,7 @@ img {
   margin: 0 0 10px;
   color: #5a7c85;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .more-row {
@@ -850,7 +927,7 @@ img {
   background: #334c51;
   color: #fef5ed;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .more-button:hover,
@@ -921,7 +998,7 @@ img {
   margin: 18px 0 10px;
   color: #d9eee8;
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -930,7 +1007,7 @@ img {
   margin: 0;
   color: #fff;
   font-size: clamp(28px, 3.9vw, 54px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.34);
@@ -953,7 +1030,7 @@ img {
   margin: 18px 0 0;
   color: rgba(255, 255, 255, 0.88);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
@@ -983,28 +1060,17 @@ img {
   background: #fff;
 }
 
-.product-list-hero,
 .shop-layout {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
+  padding-top: clamp(36px, 4.5vw, 64px);
 }
 
-.product-list-hero {
-  padding: 160px 0 56px;
-  color: #334c51;
-}
-
-.product-list-hero h1,
 .product-list-group h2 {
   margin: 0;
   color: #334c51;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0;
-}
-
-.product-list-hero h1 {
-  font-size: clamp(38px, 6vw, 72px);
-  line-height: 1.02;
 }
 
 /* Sidebar + listing: the sidebar sticks while the products scroll past it. */
@@ -1028,7 +1094,7 @@ img {
   margin: 0 0 10px;
   color: #8aa3a8;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
@@ -1048,7 +1114,7 @@ img {
   border-radius: 9px;
   color: #4d666b;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: background-color 160ms ease, color 160ms ease;
 }
@@ -1057,7 +1123,7 @@ img {
   color: #93a9ad;
   font-size: 12px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .shop-sidebar-link:hover,
@@ -1092,7 +1158,7 @@ img {
 .product-list-group h2 {
   color: #4d666b;
   font-size: clamp(17px, 1.5vw, 20px);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.005em;
   line-height: 1.3;
 }
@@ -1138,11 +1204,6 @@ img {
   line-height: 1.15;
 }
 
-/* Price line under the card title (`ProductFromPrice.vue`). */
-.product-list-card .product-card-price + .featured-subtitle {
-  margin-top: 2px;
-}
-
 /* In list cards the title sits at the bottom, so a price line has to follow it
    without pushing the caption apart. */
 .product-list-card .product-card-price {
@@ -1157,7 +1218,7 @@ img {
   margin-top: 10px;
   color: #5a7c85;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* A category that exists but has nothing listed in it yet. */
@@ -1183,7 +1244,7 @@ img {
 }
 
 .product-list-empty a {
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -1225,7 +1286,7 @@ img {
   margin-bottom: 32px;
   color: #5a7c85;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .blog-back-link:hover,
@@ -1240,7 +1301,7 @@ img {
   margin-bottom: 22px;
   color: #5a7c85;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .blog-detail-body {
@@ -1253,7 +1314,7 @@ img {
 .blog-detail-body h3 {
   margin: 0;
   color: #334c51;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -1293,7 +1354,7 @@ img {
 
 .blog-detail-body strong {
   color: #253b40;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .blog-detail-body ul {
@@ -1312,7 +1373,7 @@ img {
 
 .blog-detail-body a {
   color: #334c51;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
@@ -1452,7 +1513,7 @@ img {
   margin: 0 0 26px;
   color: #050505;
   font-size: clamp(24px, 2.05vw, 30px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.18;
   letter-spacing: 0;
 }
@@ -1655,10 +1716,6 @@ img {
     border-color: #334c51;
   }
 
-  .product-list-hero {
-    padding-top: 184px;
-  }
-
   .product-list-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1801,21 +1858,31 @@ img {
   }
 
   .hero-content {
+    padding: 0 22px;
+  }
+
+  .hero-card-copy {
     gap: 20px;
-    padding: 0 22px 22px;
+    transform: translateY(clamp(18px, 4.6vh, 40px));
+  }
+
+  .hero-card-title {
+    font-size: clamp(28px, 7.6vw, 36px);
+  }
+
+  /* Phones honour the hard break written into a slogan (e.g. after a comma)
+     instead of re-wrapping it. */
+  .hero-card-title span {
+    white-space: pre-line;
+  }
+
+  .carousel-dots {
+    bottom: 22px;
+    left: 22px;
   }
 
   .hero-copy h1 {
     font-size: clamp(24px, 7vw, 32px);
-  }
-
-  .hero-card-subline {
-    font-size: 13px;
-  }
-
-  .control-button {
-    width: 40px;
-    height: 40px;
   }
 
   .section {
@@ -1841,16 +1908,10 @@ img {
     min-height: 250px;
   }
 
-  .product-list-hero,
   .shop-layout,
   .blog-detail,
   .blog-empty {
     width: min(100% - 24px, 1180px);
-  }
-
-  .product-list-hero {
-    padding-top: 168px;
-    padding-bottom: 44px;
   }
 
   .product-list-groups {
@@ -1940,7 +2001,7 @@ img {
 .site-breadcrumbs {
   margin: 0 0 24px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -1981,7 +2042,7 @@ img {
 
 .site-breadcrumbs [aria-current='page'] {
   color: var(--seo-ink);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* Post-content zone shared by the product and blog detail pages.
@@ -2071,7 +2132,7 @@ img {
   margin: 0;
   color: var(--seo-ink);
   font-size: clamp(17px, 1.6vw, 21px);
-  font-weight: 850;
+  font-weight: 600;
   line-height: 1.35;
 }
 
@@ -2080,7 +2141,7 @@ img {
   flex: 0 0 auto;
   color: var(--seo-accent);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -2101,7 +2162,7 @@ img {
   margin: 0 auto;
   color: var(--seo-ink);
   font-size: clamp(28px, 3.6vw, 44px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.12;
   text-align: center;
 }
@@ -2177,6 +2238,11 @@ img {
   margin: 52px auto 0;
 }
 
+/* Anchor target for "View product specs" buttons. */
+#product-specs {
+  scroll-margin-top: 110px;
+}
+
 .product-overview-block {
   padding: 28px 30px;
   border: 1px solid var(--seo-border);
@@ -2188,7 +2254,7 @@ img {
   margin: 0 0 18px;
   color: var(--seo-ink);
   font-size: clamp(18px, 1.7vw, 22px);
-  font-weight: 850;
+  font-weight: 600;
 }
 
 .product-overview-block ul {
@@ -2221,7 +2287,7 @@ img {
 .product-spec-row dt {
   color: var(--seo-muted);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -2229,7 +2295,7 @@ img {
   margin: 0;
   color: var(--seo-ink);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -2344,7 +2410,7 @@ main.product-page + .site-footer .footer-to-top {
   margin: 0;
   color: #22383c;
   font-size: clamp(30px, 3.9vw, 58px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;
   /* No overlay on the artwork, so the copy carries its own contrast against
@@ -2352,37 +2418,25 @@ main.product-page + .site-footer .footer-to-top {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* Kept narrow enough to sit clear of the product in the artwork. */
-.hero-card-subline {
-  max-width: 420px;
-  margin: 0;
-  color: #2f4a4f;
-  font-size: clamp(13.5px, 1.05vw, 17px);
-  line-height: 1.55;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
-}
-
-.hero-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 2px;
-}
-
+/* Centred call to action under the slogan. */
 .hero-card-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 0 22px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 800;
+  min-height: clamp(52px, 4.6vw, 60px);
+  padding: 0 clamp(32px, 3.4vw, 46px);
+  border-radius: 999px;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-decoration: none;
+  text-transform: uppercase;
+  pointer-events: auto;
+  box-shadow: 0 18px 40px rgba(12, 26, 29, 0.3);
   transition:
     background-color 180ms ease,
-    border-color 180ms ease,
     color 180ms ease,
+    box-shadow 180ms ease,
     transform 180ms ease;
 }
 
@@ -2394,36 +2448,11 @@ main.product-page + .site-footer .footer-to-top {
 .hero-card-cta--primary:hover,
 .hero-card-cta--primary:focus-visible {
   background: #314e53;
+  box-shadow: 0 22px 46px rgba(12, 26, 29, 0.36);
   transform: translateY(-2px);
 }
 
-/* A slide whose artwork is dark flips the copy to light ink — no scrim needed. */
-.hero-carousel--light .hero-copy h1 {
-  color: #fffdf7;
-  text-shadow:
-    0 1px 3px rgba(12, 26, 29, 0.7),
-    0 8px 28px rgba(12, 26, 29, 0.45);
-}
-
-/* The small line still crosses sunlit ground, so it carries a light glass
-   chip — far smaller than a page-wide scrim. */
-@media (max-width: 720px) {
-  .hero-card-subline {
-    max-width: 100%;
-  }
-}
-
-.hero-carousel--light .hero-card-subline {
-  display: inline-block;
-  width: fit-content;
-  padding: 7px 12px;
-  border-radius: 8px;
-  background: rgba(12, 26, 29, 0.34);
-  backdrop-filter: blur(3px);
-  color: rgba(255, 253, 247, 0.96);
-  text-shadow: 0 1px 2px rgba(12, 26, 29, 0.6);
-}
-
+/* A slide whose artwork is dark flips the button to light glass — no scrim. */
 .hero-carousel--light .hero-card-cta--primary {
   background: #fdf7ee;
   color: #22383c;
@@ -2433,39 +2462,6 @@ main.product-page + .site-footer .footer-to-top {
 .hero-carousel--light .hero-card-cta--primary:focus-visible {
   background: #fff;
   color: #22383c;
-}
-
-.hero-carousel--light .hero-card-cta--ghost {
-  border-color: rgba(255, 253, 247, 0.75);
-  color: #fffdf7;
-  background: rgba(12, 26, 29, 0.28);
-}
-
-.hero-carousel--light .hero-card-cta--ghost:hover,
-.hero-carousel--light .hero-card-cta--ghost:focus-visible {
-  border-color: #fffdf7;
-  background: rgba(12, 26, 29, 0.5);
-}
-
-.hero-carousel--light .dot {
-  background: rgba(255, 253, 247, 0.45);
-}
-
-.hero-carousel--light .dot.active {
-  background: #fffdf7;
-}
-
-.hero-card-cta--ghost {
-  border: 1.5px solid rgba(34, 56, 60, 0.45);
-  color: #22383c;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.hero-card-cta--ghost:hover,
-.hero-card-cta--ghost:focus-visible {
-  border-color: #22383c;
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
 }
 
 /* Buying-guide teaser */
@@ -2492,7 +2488,7 @@ main.product-page + .site-footer .footer-to-top {
   margin: 0;
   color: #334c51;
   font-size: clamp(24px, 2.6vw, 38px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -2516,7 +2512,7 @@ main.product-page + .site-footer .footer-to-top {
   background: #334c51;
   color: #fef5ed;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition: background-color 180ms ease, transform 180ms ease;
 }
@@ -2537,20 +2533,135 @@ main.product-page + .site-footer .footer-to-top {
   }
 }
 
-/* Featured products */
-/* Four best sellers fit across the 1180px column at desktop width. */
-.featured-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
-  justify-content: center;
-  margin-top: 34px;
+/* Homepage type: one ordinary bold weight (600) for every heading, label and
+   button. The 800–900 used elsewhere reads as shouting at homepage sizes. */
+.home-page .eyebrow,
+.home-page .section-heading h2,
+.home-page .category-button span,
+.home-page .hero-card-cta,
+.home-page .more-button,
+.home-page .blog-section .blog-card h3 {
+  font-weight: 600;
 }
 
-.featured-subtitle {
-  margin: 8px 0 0;
-  color: #5a7c85;
+/* The two closing homepage sections use a smaller title than the display
+   default, so the page ends quietly rather than with another hero-sized line. */
+.home-page .section-heading--compact h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.12;
+}
+
+/* Business & wholesale recruitment card. */
+.business-invite-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(20px, 2.4vw, 30px);
+  border-radius: 14px;
+  background: #22383c;
+  color: #fef5ed;
+}
+
+.business-invite-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.business-invite-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.1vw, 16px);
+}
+
+.business-invite-eyebrow {
+  margin: 0;
+  color: #a9c9c4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.business-invite-copy h2 {
+  margin: 0;
+  font-size: clamp(26px, 2.7vw, 42px);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.business-invite-lead {
+  max-width: 54ch;
+  margin: 0;
+  color: rgba(254, 245, 237, 0.84);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+
+.business-invite-note {
+  margin: 0;
+  color: rgba(254, 245, 237, 0.66);
+  font-size: clamp(14px, 1vw, 15px);
+  line-height: 1.5;
+}
+
+.business-invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(12px, 1.6vw, 22px);
+  margin-top: clamp(8px, 1.2vw, 16px);
+}
+
+.business-invite-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 clamp(22px, 2vw, 30px);
+  border-radius: 999px;
+  background: #fef5ed;
+  color: #22383c;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.business-invite-cta:hover,
+.business-invite-cta:focus-visible {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.business-invite-link {
+  color: rgba(254, 245, 237, 0.88);
   font-size: 14px;
   font-weight: 600;
-  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.business-invite-link:hover,
+.business-invite-link:focus-visible {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .business-invite-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .business-invite-media {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /* Brand copy */
@@ -2565,7 +2676,7 @@ main.product-page + .site-footer .footer-to-top {
   margin: 0;
   color: #334c51;
   font-size: clamp(30px, 4vw, 50px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
 }
 
@@ -2609,7 +2720,7 @@ main.product-page + .site-footer .footer-to-top {
 .brand-points strong {
   color: #334c51;
   font-size: 16px;
-  font-weight: 850;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -2633,15 +2744,6 @@ main.product-page + .site-footer .footer-to-top {
 @media (max-width: 560px) {
   .hero-copy h1 {
     font-size: clamp(23px, 6.6vw, 30px);
-  }
-
-  .hero-card-cta {
-    flex: 1 1 auto;
-    padding: 0 16px;
-  }
-
-  .featured-grid {
-    grid-template-columns: minmax(0, 1fr);
   }
 
   .brand-points {

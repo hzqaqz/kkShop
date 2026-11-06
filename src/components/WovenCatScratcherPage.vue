@@ -8,10 +8,10 @@ import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
 /**
- * Framed cat scratching board.
+ * Woven sisal cat scratching board.
  *
- * Facts from the seller: four artworks, sisal + EPS core, 42 × 33 × 3 cm,
- * 650 g, mounted with four pairs of velcro pads that leave no residue on walls
+ * Facts from the seller: four artworks, a woven sisal face, 38 × 30 × 0.5 cm,
+ * 210 g, mounted with four pairs of velcro pads that leave no residue on walls
  * or furniture. The five fitting steps are the manufacturer's.
  */
 const designs = [
@@ -19,31 +19,31 @@ const designs = [
     key: 'starry',
     name: 'Starry Night',
     note: 'Deep blue swirls with a black cat silhouette.',
-    image: '/images/products/cat-scratcher-frame/design-starry.webp',
+    image: '/images/products/woven-sisal-cat-scratcher/design-starry.jpg',
   },
   {
     key: 'sunflowers',
     name: 'Sunflowers',
     note: 'Van Gogh sunflowers with a black cat at the vase.',
-    image: '/images/products/cat-scratcher-frame/design-sunflowers.webp',
+    image: '/images/products/woven-sisal-cat-scratcher/design-sunflowers.jpg',
   },
   {
     key: 'pearl',
     name: 'Meow with a Pearl Earring',
     note: 'A cream cat in a yellow turban, pearl earrings and a lilac scarf.',
-    image: '/images/products/cat-scratcher-frame/design-hood.webp',
+    image: '/images/products/woven-sisal-cat-scratcher/design-hood.jpg',
   },
   {
     key: 'cypress',
     name: 'Cypress Field',
     note: 'Swirling sky, tall cypresses, one pair of yellow eyes.',
-    image: '/images/products/cat-scratcher-frame/design-landscape.webp',
+    image: '/images/products/woven-sisal-cat-scratcher/design-landscape.jpg',
   },
 ];
 
 /** Each design card can add its own Shopify variant straight to the cart. */
-const shopifyHandle = getProduct('cat-scratcher-frame')?.shopifyHandle;
-const variantLabels = getProduct('cat-scratcher-frame')?.variantLabels ?? {};
+const shopifyHandle = getProduct('woven-sisal-cat-scratcher')?.shopifyHandle;
+const variantLabels = getProduct('woven-sisal-cat-scratcher')?.variantLabels ?? {};
 const { product: shopifyProduct } = useShopifyProduct(shopifyHandle);
 
 const variantsByDesign = computed(() => {
@@ -81,15 +81,15 @@ function designVariant(design) {
 const steps = [
   'Clean the wall or furniture surface so there is no dust or grease on it.',
   'Take the velcro pads supplied. Each pair is one soft and one hook side — there are four pairs. Press each pair together first.',
-  'Peel the white backing off one side of a pad and stick it to one of the four corners on the back of the frame.',
-  'Peel the backing off the other side and press the frame onto the wall or furniture where you want it.',
-  'Hold the frame against the surface for about 10 seconds so the adhesive sets.',
+  'Peel the white backing off one side of a pad and stick it to one of the four corners on the back of the mat.',
+  'Peel the backing off the other side and press the mat onto the wall or furniture where you want it.',
+  'Hold the mat against the surface for about 10 seconds so the adhesive sets.',
 ];
 
 const features = [
   {
-    title: 'Hangs like a picture',
-    text: 'A wooden-look frame at 42 × 33 × 3 cm that reads as wall art rather than cat furniture.',
+    title: 'Hangs like wall art',
+    text: 'A woven sisal mat at 38 × 30 cm with a colour-matched border, so it reads as art rather than cat furniture.',
     icon: Ruler,
   },
   {
@@ -98,8 +98,8 @@ const features = [
     icon: Sticker,
   },
   {
-    title: 'Sisal + EPS core',
-    text: 'A sisal face for claws over an EPS core that keeps the board light at 650 g.',
+    title: 'Woven sisal',
+    text: 'A woven sisal face for claws that keeps the whole board light at 210 g.',
     icon: Layers,
   },
   {
@@ -115,16 +115,16 @@ const features = [
     <section class="cframe-hero" aria-labelledby="cframe-title">
       <div class="cframe-hero-copy">
         <p class="cframe-eyebrow">Cat scratching</p>
-        <h1 id="cframe-title">Framed Cat Scratching Board</h1>
+        <h1 id="cframe-title">Woven Sisal Cat Scratching Board</h1>
         <p class="cframe-lead">
-          A scratching board that hangs like a framed painting. Four velcro pads hold it to a wall, a
-          sofa side or a cabinet — and when it comes down it leaves no glue behind. Sisal over an EPS
-          core, 42 × 33 × 3 cm, 650 g.
+          A scratching board that hangs like a small woven wall hanging. Four velcro pads hold it to
+          a wall, a sofa side or a cabinet — and when it comes down it leaves no glue behind. Woven
+          sisal, 38 × 30 cm and 0.5 cm thin, 210 g.
         </p>
 
         <ul class="cframe-highlights">
-          <li>42 × 33 × 3 cm · 650 g</li>
-          <li>Sisal + EPS</li>
+          <li>38 × 30 × 0.5 cm · 210 g</li>
+          <li>Woven sisal</li>
           <li>No-residue velcro mounting</li>
           <li>Four artworks</li>
         </ul>
@@ -137,8 +137,8 @@ const features = [
 
       <img
         class="cframe-hero-media"
-        src="/images/products/cat-scratcher-frame/hero.webp"
-        alt="A Bengal cat stretching up to scratch the framed Starry Night board mounted on a wall"
+        src="/images/products/woven-sisal-cat-scratcher/hero.jpg"
+        alt="A Bengal cat stretching up to scratch the woven Starry Night sisal board mounted on a wall"
         loading="eager"
         decoding="async"
       />
@@ -149,14 +149,14 @@ const features = [
         <p class="cframe-eyebrow">Four designs</p>
         <h2 id="cframe-designs-title">Art the cat is allowed to scratch</h2>
         <p>
-          Each board is printed with one of four cat-themed paintings, framed in wood-look moulding
-          with a white mount.
+          Each board carries one of four cat-themed artworks across a woven sisal face, finished with
+          a colour-matched woven border.
         </p>
       </div>
 
       <div class="cframe-design-grid">
         <article v-for="design in designs" :key="design.name" class="cframe-design">
-          <img :src="design.image" :alt="`${design.name} framed cat scratching board`" loading="lazy" decoding="async" />
+          <img :src="design.image" :alt="`${design.name} woven sisal cat scratching board`" loading="lazy" decoding="async" />
           <div class="cframe-design-copy">
             <h3>{{ design.name }}</h3>
             <p>{{ design.note }}</p>
@@ -176,23 +176,27 @@ const features = [
     </section>
 
     <section class="cframe-section" aria-labelledby="cframe-mount-title">
-      <div class="cframe-heading">
-        <p class="cframe-eyebrow">Mounting</p>
-        <h2 id="cframe-mount-title">Sticks where you need it, lifts off clean</h2>
-        <p>
-          The kit uses velcro pads rather than screws or glue, so the board can move from one room to
-          another without marking the surface underneath.
-        </p>
-      </div>
+      <div class="cframe-mount-layout">
+        <div class="cframe-heading">
+          <p class="cframe-eyebrow">Mounting</p>
+          <h2 id="cframe-mount-title">Sticks where you need it, lifts off clean</h2>
+          <p>
+            The kit uses velcro pads rather than screws or glue, so the board can move from one room
+            to another without marking the surface underneath.
+          </p>
+        </div>
 
-      <div class="cframe-mount-grid">
-        <figure class="cframe-mount-card">
-          <img src="/images/products/cat-scratcher-frame/velcro-strip.webp" alt="Velcro pad being peeled apart, showing the hook and loop sides" loading="lazy" decoding="async" />
-          <figcaption>Four pairs: one soft side, one hook side.</figcaption>
-        </figure>
-        <figure class="cframe-mount-card">
-          <img src="/images/products/cat-scratcher-frame/velcro-apply.webp" alt="Pad being pressed onto the back corner of the frame" loading="lazy" decoding="async" />
-          <figcaption>One side on the frame, the other on the wall.</figcaption>
+        <figure class="cframe-tip">
+          <img
+            src="/images/products/woven-sisal-cat-scratcher/velcro-strip.webp"
+            alt="Velcro pad being peeled apart, showing the hook and loop sides"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <span class="cframe-tip-label">Tip</span>
+            Four pairs: one soft side on the back of the mat, one hook side on the wall.
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -217,19 +221,19 @@ const features = [
         <p class="cframe-eyebrow">Measurements</p>
         <h2 id="cframe-specs-title">A board that fits the wall it hangs on</h2>
         <p>
-          At 42 × 33 cm and 3 cm deep, it covers roughly the width of a cat’s stretch, so the cat can
-          reach up and pull down without stepping off the surface.
+          At 38 × 30 cm and 0.5 cm thick, it covers roughly the width of a cat’s stretch, so the cat
+          can reach up and pull down without stepping off the surface.
         </p>
         <p>
-          At 650 g it stays up on four small pads, and it can be moved between rooms without leaving
+          At 210 g it stays up on four small pads, and it can be moved between rooms without leaving
           a mark.
         </p>
       </div>
 
       <img
         class="cframe-specs-media"
-        src="/images/products/cat-scratcher-frame/design-hood.webp"
-        alt="The Little Hood framed cat scratching board"
+        src="/images/products/woven-sisal-cat-scratcher/design-hood.jpg"
+        alt="Meow with a Pearl Earring woven sisal cat scratching board"
         loading="lazy"
         decoding="async"
       />
@@ -275,7 +279,7 @@ const features = [
   margin: 0 0 12px;
   color: var(--cframe-accent);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -284,7 +288,7 @@ const features = [
   margin: 0;
   color: var(--cframe-ink);
   font-size: clamp(30px, 4vw, 56px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;
 }
@@ -313,7 +317,7 @@ const features = [
   background: #fff;
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cframe-hero-actions {
@@ -331,7 +335,7 @@ const features = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -388,7 +392,7 @@ const features = [
   margin: 0;
   color: var(--cframe-ink);
   font-size: clamp(25px, 3vw, 40px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -431,7 +435,7 @@ const features = [
   margin: 0;
   color: var(--cframe-ink);
   font-size: 16.5px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .cframe-design-copy p {
@@ -455,7 +459,7 @@ const features = [
   color: var(--cframe-ink);
   font: inherit;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
   transition:
     background-color 160ms ease,
@@ -478,33 +482,52 @@ const features = [
 }
 
 /* ── Mounting ────────────────────────────────────────────────────────────── */
-.cframe-mount-grid {
+/* Copy on the left, a small bordered tip on the right. */
+.cframe-mount-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
 }
 
-.cframe-mount-card {
+.cframe-tip {
   margin: 0;
-  overflow: hidden;
-  border-radius: 12px;
+  padding: 12px 12px 14px;
+  border: 1px solid rgba(49, 78, 83, 0.16);
+  border-radius: 14px;
   background: #fff;
-  border: 1px solid rgba(49, 78, 83, 0.12);
+  box-shadow: 0 16px 34px rgba(49, 78, 83, 0.07);
 }
 
-.cframe-mount-card img {
+.cframe-tip img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
   object-fit: cover;
 }
 
-.cframe-mount-card figcaption {
-  padding: 12px 16px 15px;
+.cframe-tip figcaption {
+  display: grid;
+  gap: 7px;
+  margin: 13px 3px 2px;
   color: #4d666b;
-  font-size: 13.5px;
-  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cframe-tip-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(138, 106, 74, 0.12);
+  color: #8a6a4a;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* ── Steps ───────────────────────────────────────────────────────────────── */
@@ -537,7 +560,7 @@ const features = [
   background: var(--cframe-ink);
   color: #fef5ed;
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .cframe-steps p {
@@ -590,7 +613,7 @@ const features = [
   margin: 12px 0 0;
   color: var(--cframe-ink);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -628,8 +651,12 @@ const features = [
 
   .cframe-design-grid,
   .cframe-feature-grid,
-  .cframe-mount-grid {
+  .cframe-mount-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cframe-tip {
+    max-width: 420px;
   }
 
   .cframe-steps li {

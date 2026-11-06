@@ -43,7 +43,7 @@ const overview = computed(() => getProductOverview(props.productId));
         </ul>
       </div>
 
-      <div class="product-overview-block">
+      <div id="product-specs" class="product-overview-block">
         <h3>Key specifications</h3>
         <dl class="product-spec-list">
           <div v-for="[label, value] in overview.specs" :key="label" class="product-spec-row">

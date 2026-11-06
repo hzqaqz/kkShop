@@ -139,7 +139,7 @@ const verdict = computed(() => {
   margin: 8px 0 0;
   color: #2c464c;
   font-size: clamp(20px, 2.1vw, 27px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -147,7 +147,7 @@ const verdict = computed(() => {
   margin: 0;
   color: #5a7c85;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -173,13 +173,13 @@ const verdict = computed(() => {
   justify-content: space-between;
   color: #334c51;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .calc-slider-label strong {
   color: #2c464c;
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .calc-slider input {
@@ -193,7 +193,7 @@ const verdict = computed(() => {
   justify-content: space-between;
   color: #6c8a90;
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .calc-heights {
@@ -208,7 +208,7 @@ const verdict = computed(() => {
   margin-right: 4px;
   color: #334c51;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .calc-height-button {
@@ -220,7 +220,7 @@ const verdict = computed(() => {
   color: #334c51;
   font: inherit;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -246,7 +246,7 @@ const verdict = computed(() => {
 .calc-results dt {
   color: #6c8a90;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -255,7 +255,7 @@ const verdict = computed(() => {
   margin: 4px 0 0;
   color: #2c464c;
   font-size: clamp(17px, 1.9vw, 22px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -315,7 +315,7 @@ const verdict = computed(() => {
   background: #334c51;
   color: #fef5ed !important;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
 }
 

@@ -1,13 +1,11 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
-import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
-import ProductFromPrice from '../components/ProductFromPrice.vue';
+import FeaturedProductCard from '../components/FeaturedProductCard.vue';
 import SiteHeader from '../components/SiteHeader.vue';
-import { blogArticles, getBlogArticle } from '../data/blogArticles';
+import { blogArticles } from '../data/blogArticles';
 import { shopCategories } from '../data/catalog';
-import { getProduct, productOrder } from '../data/products';
-import { contactEmailHref } from '../data/siteInfo';
+import { quoteHref } from '../data/siteInfo';
 import { useSeo } from '../composables/useSeo';
 
 useSeo({
@@ -19,25 +17,44 @@ useSeo({
 
 const mw200Route = { name: 'product-detail', params: { productId: 'mw200' } };
 const petBedRoute = { name: 'product-detail', params: { productId: 'christmas-pet-bed' } };
+const petStrollerRoute = { name: 'product-detail', params: { productId: 'pet-stroller' } };
+
+/** Trade enquiries from the homepage go to the shared business inbox. */
+const businessEnquiryHref = quoteHref('', 'Distribution and wholesale enquiry');
+
+/** Latest articles, newest first — same ordering as the blog index. */
+const featuredBlogs = computed(() =>
+  [...blogArticles]
+    .sort((first, second) =>
+      (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''),
+    )
+    .slice(0, 4),
+);
 
 
 const slides = [
   {
     image: '/images/carousel/hero-festive-bed.webp',
     alt: 'A cream Ragdoll cat lying in the red and cream plaid Christmas pet bed in a sunlit living room',
+    // The newline is a phone-only break after the comma (see the mobile
+    // `white-space: pre-line` rule); on wider screens it collapses to a space.
+    slogan: 'A Little Gift,\nA Lot of Comfort',
     to: petBedRoute,
   },
   {
-    image: '/images/carousel/hero-pet-stroller.webp',
-    alt: 'A corgi sitting in a sage green pet stroller beside a lake at sunset',
-    // Dark photo: white copy reads here where ink would disappear.
+    image: '/images/products/pet-stroller/hero-sunset.jpg',
+    alt: 'A corgi sitting in a cream pet stroller beside a lake at sunset',
+    slogan: 'Easy Travel, Together',
+    // A dark photo: the Shop Now button flips to light glass so it stays legible.
     theme: 'light',
+    to: petStrollerRoute,
   },
   {
     // Same artwork as the "How to Choose an Air Purifier for You and Your Pet"
     // guide, so the last slide still leads into the guide's subject.
     image: '/images/products/mw200/hero-armchair.webp',
     alt: 'Meower air purifier beside a linen armchair and houseplants in a sunlit living room',
+    slogan: 'Cleaner Air. Comfier Pets. Happier Homes.',
     to: mw200Route,
   },
 ];
@@ -51,28 +68,36 @@ const categories = shopCategories.map((category) => ({
 }));
 
 /**
- * Best sellers are the products listed in the Shop (`shopCategoryId`), so the
- * business range never appears here. Pet products join automatically once they
- * are added to `products.js`.
+ * Featured products under the carousel. The pitch lines are homepage copy, so
+ * they live here rather than in `products.js`; the artwork is the widest shot
+ * available for a card this size.
  */
-const featuredProducts = computed(() =>
-  productOrder
-    .map((id) => getProduct(id))
-    .filter((product) => product?.shopCategoryId)
-    .slice(0, 4),
-);
-
-/** Buying guide teased under the best sellers. */
-const GUIDE_SLUG = 'how-to-choose-an-air-purifier-for-pets';
-const guide = getBlogArticle(GUIDE_SLUG);
-
-const featuredBlogs = computed(() =>
-  [...blogArticles]
-    .sort((first, second) =>
-      (second.sortDate ?? second.date ?? '').localeCompare(first.sortDate ?? first.date ?? ''),
-    )
-    .slice(0, 4),
-);
+const featuredCards = [
+  {
+    id: 'christmas-pet-bed',
+    image: '/images/products/christmas-pet-bed/small.webp',
+    pitch: 'Short plush, raised bolsters and a fill that keeps its shape — warm all year.',
+  },
+  {
+    id: 'pom-pom-cat-toy',
+    image: '/images/products/cat-toy/lifestyle-hero.webp',
+    // Square lifestyle shot: show it whole rather than cropping the toy.
+    contain: true,
+    pitch: 'One button fires the pom-pom, the other reels it back in — play without bending down.',
+  },
+  {
+    id: 'car-pet-seat',
+    name: 'Car Seat Pet Bed & Travel Carrier',
+    image: '/images/products/car-pet-seat/car-dog.webp',
+    pitch: 'Straps into the car, carries like a bag and unzips into a flat bed.',
+  },
+  {
+    id: 'woven-sisal-cat-scratcher',
+    image: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
+    imagePosition: 'center 38%',
+    pitch: 'Woven sisal with a colour-matched border — a scratcher that saves the sofa without looking like one.',
+  },
+];
 
 /** Slower than before: 4s was too fast to read, and it hurt perceived stability. */
 const SLIDE_INTERVAL_MS = 7000;
@@ -101,6 +126,8 @@ function prefersReducedMotion() {
   );
 }
 
+/* Plays on its own and keeps playing while the pointer rests on the artwork;
+   only keyboard focus and a drag slow it down. */
 function startAutoSlide() {
   stopAutoSlide();
   if (prefersReducedMotion()) {
@@ -199,18 +226,6 @@ function handleManualSlide(index) {
   restartAutoSlideAfterManual();
 }
 
-function handleNextSlide() {
-  stopAutoSlide();
-  nextSlide();
-  restartAutoSlideAfterManual();
-}
-
-function handlePreviousSlide() {
-  stopAutoSlide();
-  previousSlide();
-  restartAutoSlideAfterManual();
-}
-
 onMounted(() => {
   startAutoSlide();
 });
@@ -221,7 +236,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="site-shell">
+  <main class="site-shell home-page">
     <SiteHeader halo-hero />
 
     <section
@@ -229,8 +244,6 @@ onBeforeUnmount(() => {
       class="hero-carousel"
       :class="{ 'hero-carousel--light': slides[currentSlide]?.theme === 'light' }"
       aria-labelledby="hero-title"
-      @mouseenter="stopAutoSlide"
-      @mouseleave="startAutoSlide"
       @focusin="stopAutoSlide"
       @focusout="startAutoSlide"
       @pointerdown="handlePointerDown"
@@ -260,108 +273,49 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="hero-content">
-          <div class="hero-copy">
-            <h1 id="hero-title">Good Days for Pets and Their People</h1>
-            <p class="hero-card-subline">
-              Beds, toys, carriers and scratchers — plus the pet-friendly purifiers we started
-              with.
-            </p>
-            <div class="hero-card-actions">
-              <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
-                Shop Now
-              </RouterLink>
-              <a class="hero-card-cta hero-card-cta--ghost" :href="contactEmailHref">Get a Quote</a>
-            </div>
+          <div class="hero-card-copy">
+            <h1 id="hero-title" class="hero-card-title">
+              <span :key="currentSlide">{{ slides[currentSlide]?.slogan }}</span>
+            </h1>
+
+            <RouterLink class="hero-card-cta hero-card-cta--primary" :to="{ name: 'products' }">
+              Shop Now
+            </RouterLink>
           </div>
 
-          <div class="hero-controls">
-            <div class="carousel-dots" aria-label="Choose slide">
-              <button
-                v-for="(slide, index) in slides"
-                :key="`dot-${index}`"
-                class="dot"
-                :class="{ active: currentSlide === index }"
-                type="button"
-                :aria-label="`Show slide ${index + 1}`"
-                :aria-pressed="currentSlide === index"
-                @click="handleManualSlide(index)"
-              />
-            </div>
-
-            <div class="carousel-controls" aria-label="Carousel controls">
-              <button class="control-button" type="button" aria-label="Previous slide" @click="handlePreviousSlide">
-                <ChevronLeft :size="22" aria-hidden="true" />
-              </button>
-              <button class="control-button" type="button" aria-label="Next slide" @click="handleNextSlide">
-                <ChevronRight :size="22" aria-hidden="true" />
-              </button>
-            </div>
+          <div class="carousel-dots" aria-label="Choose slide">
+            <button
+              v-for="(slide, index) in slides"
+              :key="`dot-${index}`"
+              class="dot"
+              :class="{ active: currentSlide === index }"
+              type="button"
+              :aria-label="`Show slide ${index + 1}`"
+              :aria-pressed="currentSlide === index"
+              @click="handleManualSlide(index)"
+            />
           </div>
         </div>
     </section>
 
-    <section id="featured" class="section featured-section" aria-labelledby="featured-title">
-      <div class="section-heading centered">
-        <p class="eyebrow">Best sellers</p>
-        <h2 id="featured-title">Favourites for Pets and Their Homes</h2>
-      </div>
-
-      <div class="product-list-grid featured-grid">
-        <RouterLink
-          v-for="product in featuredProducts"
-          :key="product.id"
-          class="product-list-card"
-          :to="{ name: 'product-detail', params: { productId: product.id } }"
-        >
-          <img :src="product.image" :alt="product.title" loading="lazy" decoding="async" />
-          <h3>{{ product.cardLabel }}</h3>
-          <ProductFromPrice :handle="product.shopifyHandle" />
-          <p class="featured-subtitle">{{ product.cardSubtitle }}</p>
-          <span>{{ product.category }}</span>
-        </RouterLink>
-      </div>
-
-      <div class="more-row">
-        <RouterLink class="more-button" :to="{ name: 'products' }">View all</RouterLink>
-      </div>
-    </section>
-
-    <section
-      v-if="guide"
-      id="air-purifier-guide"
-      class="section guide-section"
-      aria-labelledby="guide-title"
-    >
-      <div class="guide-card">
-        <img
-          class="guide-card-media"
-          :src="guide.coverImage"
-          :alt="guide.title"
-          loading="lazy"
-          decoding="async"
-        />
-
-        <div class="guide-card-copy">
-          <p class="eyebrow">Buying guide</p>
-          <h2 id="guide-title">{{ guide.title }}</h2>
-          <p>
-            CADR, filter grade and noise level — the three figures that decide whether a purifier
-            really suits a home with a cat or a dog.
-          </p>
-          <RouterLink
-            class="guide-card-cta"
-            :to="{ name: 'blog-detail', params: { slug: GUIDE_SLUG } }"
-          >
-            Read the guide
-          </RouterLink>
-        </div>
-      </div>
+    <section id="featured" class="section featured-section" aria-label="Featured products">
+      <FeaturedProductCard
+        v-for="(item, index) in featuredCards"
+        :key="item.id"
+        :product-id="item.id"
+        :image="item.image"
+        :image-position="item.imagePosition"
+        :contain="item.contain"
+        :name="item.name"
+        :pitch="item.pitch"
+        :reverse="index % 2 === 1"
+      />
     </section>
 
     <section id="air-purifiers" class="section category-section" aria-labelledby="category-title">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">Shop by category</p>
-        <h2 id="category-title">Shop Pet Supplies &amp; Air Care</h2>
+        <h2 id="category-title">Our Product Lines</h2>
       </div>
 
       <div class="category-grid">
@@ -387,10 +341,48 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
+    <section
+      id="business"
+      class="section business-invite"
+      aria-labelledby="business-invite-title"
+    >
+      <div class="business-invite-card">
+        <img
+          class="business-invite-media"
+          src="/images/business/partner-hero.webp"
+          alt="Meower MW1000 commercial air purifier standing in a gym"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <div class="business-invite-copy">
+          <p class="business-invite-eyebrow">For distributors &amp; commercial buyers</p>
+          <h2 id="business-invite-title">Become a Meower Partner</h2>
+          <p class="business-invite-lead">
+            We are recruiting distributors, retailers and commercial buyers for our air purifiers
+            and dehumidifiers — home, commercial and ceiling-mounted units, with OEM/ODM and project
+            supply available.
+          </p>
+          <p class="business-invite-note">
+            Tell us your market and we will come back with trade pricing and lead times.
+          </p>
+
+          <div class="business-invite-actions">
+            <a class="business-invite-cta" :href="businessEnquiryHref">
+              Enquire about distribution
+            </a>
+            <RouterLink class="business-invite-link" :to="{ name: 'business' }">
+              Business &amp; wholesale
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="blogs" class="section blog-section" aria-labelledby="blog-title">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">Guides and inspiration</p>
-        <h2 id="blog-title">Explore Our Blogs</h2>
+        <h2 id="blog-title">Our Blogs</h2>
       </div>
 
       <div class="blog-grid">

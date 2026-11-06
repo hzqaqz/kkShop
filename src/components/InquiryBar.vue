@@ -77,7 +77,7 @@ const mailtoHref = computed(() => quoteHref(props.label, props.subjectPrefix));
   margin-bottom: 2px;
   color: #21150f;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -100,7 +100,7 @@ const mailtoHref = computed(() => quoteHref(props.label, props.subjectPrefix));
   background: #1e2e32;
   color: #fff;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: transform 0.12s ease, background 0.12s ease;
 }

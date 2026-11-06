@@ -128,8 +128,8 @@ const spaces = [
 .md001-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: right bottom; }
 .md001-hero::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(255,250,244,.93) 0%, rgba(255,250,244,.7) 28%, rgba(255,250,244,0) 57%); }
 .md001-hero-copy { position: relative; z-index: 1; width: min(600px, 48vw); padding: clamp(150px, 13vw, 205px) 8vw 48px; }
-.md001-eyebrow, .md001-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.md001-hero h1, .md001-section-heading h2, .md001-overview h2 { margin: 0; color: var(--ink); font-weight: 850; letter-spacing: -.045em; line-height: .98; }
+.md001-eyebrow, .md001-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.md001-hero h1, .md001-section-heading h2, .md001-overview h2 { margin: 0; color: var(--ink); font-weight: 600; letter-spacing: -.045em; line-height: .98; }
 .md001-hero h1 { font-size: clamp(52px, 6vw, 94px); }
 .md001-hero h1 span { display: block; color: #1e2625; }
 .md001-hero-copy > p:last-child { margin: 24px 0 0; color: #403a35; font-size: clamp(19px, 1.7vw, 28px); font-weight: 600; }
@@ -154,8 +154,8 @@ const spaces = [
 .md001-overview > img { width: min(100%, 480px); max-height: 480px; justify-self: center; object-fit: contain; }
 .md001-dimensions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
 .md001-dimensions div { min-width: 112px; padding: 12px 16px; border-radius: 10px; background: #fff; }
-.md001-dimensions dt { color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.md001-dimensions dd { margin: 5px 0 0; color: var(--ink); font-size: 18px; font-weight: 800; }
+.md001-dimensions dt { color: var(--accent); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+.md001-dimensions dd { margin: 5px 0 0; color: var(--ink); font-size: 18px; font-weight: 600; }
 .md001-spaces { background: #fff; }
 .md001-space-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; width: min(1260px, 100%); margin: 0 auto; }
 .md001-space-card { overflow: hidden; border-radius: 14px; background: var(--warm); }

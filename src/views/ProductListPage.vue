@@ -85,10 +85,25 @@ watch(activeId, () => nextTick(centreActiveCategory));
   <main class="site-shell product-list-page">
     <SiteHeader />
 
-    <header class="product-list-hero">
-      <SiteBreadcrumbs :items="breadcrumbs" />
-      <p class="eyebrow">Shop</p>
-      <h1>Shop Everyday Pet Essentials</h1>
+    <header class="shop-hero" aria-labelledby="shop-title">
+      <img
+        class="shop-hero-bg"
+        src="/images/shop/shop-hero.jpg"
+        alt="A cream Ragdoll cat resting in a red and cream plaid pet bed in a sunlit living room"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="shop-hero-scrim" aria-hidden="true"></span>
+
+      <div class="shop-hero-copy">
+        <SiteBreadcrumbs :items="breadcrumbs" />
+        <p class="shop-eyebrow">Shop</p>
+        <h1 id="shop-title">Shop Everyday Pet Essentials</h1>
+        <p class="shop-tagline">
+          Beds, strollers, carriers, scratchers, toys and pet-friendly air purifiers — everything
+          for the home you share.
+        </p>
+      </div>
     </header>
 
     <div class="shop-layout">
@@ -157,3 +172,101 @@ watch(activeId, () => nextTick(centreActiveCategory));
     </div>
   </main>
 </template>
+
+<style scoped>
+/* Photo hero, matching the /business hero: the artwork starts at the very top
+   of the page, with the copy laid over a scrim at the bottom left. */
+.shop-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(560px, 86vh, 900px);
+  padding: 0 max(7vw, calc((100vw - 1240px) / 2)) clamp(46px, 6vw, 84px);
+  overflow: hidden;
+}
+
+.shop-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Heavier at the top so the navigation reads, heavier again at the bottom so
+   the headline reads. */
+.shop-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 28, 32, 0.66) 0%,
+    rgba(12, 28, 32, 0.2) 32%,
+    rgba(12, 28, 32, 0.4) 62%,
+    rgba(12, 28, 32, 0.82) 100%
+  );
+}
+
+.shop-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 1040px;
+}
+
+.shop-eyebrow {
+  margin: 0 0 12px;
+  color: #d9eee8;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.shop-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(46px, 6vw, 92px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.32);
+}
+
+.shop-tagline {
+  max-width: 820px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(18px, 1.9vw, 28px);
+  font-weight: 520;
+  line-height: 1.35;
+}
+
+.shop-hero-copy :deep(.site-breadcrumbs) {
+  --seo-muted: rgba(255, 255, 255, 0.72);
+  --seo-border: rgba(255, 255, 255, 0.45);
+  --seo-ink: #fff;
+}
+
+@media (max-width: 900px) {
+  .shop-hero {
+    min-height: clamp(520px, 78vh, 680px);
+    padding: 0 28px 44px;
+  }
+
+  .shop-hero-bg {
+    object-position: 58% 50%;
+  }
+}
+
+@media (max-width: 560px) {
+  .shop-hero h1 {
+    font-size: 46px;
+  }
+
+  .shop-tagline {
+    margin-top: 22px;
+    font-size: 17px;
+  }
+}
+</style>

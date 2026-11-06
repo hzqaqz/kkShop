@@ -50,14 +50,14 @@ watch(
   margin: 8px 0 0;
   color: #253b40;
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .product-card-price-from {
   color: #7a9499;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }

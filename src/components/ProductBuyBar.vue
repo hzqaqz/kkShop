@@ -10,6 +10,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  /** Site-side product name; Shopify's own title can lag behind a rename. */
+  title: {
+    type: String,
+    default: '',
+  },
   /** Optional map for Shopify option values that need a display label. */
   labels: {
     type: Object,
@@ -104,7 +109,7 @@ watch(() => props.handle, load);
   <div v-if="configured" class="buy-bar" role="region" aria-label="Purchase">
     <div class="buy-bar-inner">
       <div class="buy-bar-product">
-        <strong v-if="product?.title">{{ product.title }}</strong>
+        <strong v-if="title || product?.title">{{ title || product?.title }}</strong>
         <div class="buy-bar-price">
           <span v-if="loading || !product" class="buy-bar-loading">Loading price…</span>
           <template v-else-if="price">
@@ -198,7 +203,7 @@ watch(() => props.handle, load);
   display: block;
   margin-bottom: 2px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: #21150f;
   white-space: nowrap;
   overflow: hidden;
@@ -213,7 +218,7 @@ watch(() => props.handle, load);
 
 .buy-bar-price-now {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: #21150f;
 }
@@ -306,7 +311,7 @@ watch(() => props.handle, load);
   background: #1e2e32;
   color: #fff;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: transform 0.12s ease, background 0.12s ease;
 }

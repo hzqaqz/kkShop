@@ -64,7 +64,7 @@ const canopy = [
     title: 'Closed in',
     note: 'The hood pulled forward over the carrycot: shade, and less of the street to look at.',
     image: '/images/products/pet-stroller/canopy-closed.webp',
-    alt: 'The pet stroller with the canopy closed and the green carrycot buttoned up',
+    alt: 'The pet stroller with the canopy closed and the cream carrycot buttoned up',
   },
   {
     key: 'open',
@@ -151,8 +151,8 @@ const features = [
 
       <div class="ps-hero-media">
         <img
-          src="/images/products/pet-stroller/hero.webp"
-          alt="The travel pet stroller in sage green, seen from behind at an angle"
+          src="/images/products/pet-stroller/hero-sunset.jpg"
+          alt="A corgi sitting in the cream travel pet stroller beside a lake at sunset"
           loading="eager"
           decoding="async"
         />
@@ -164,7 +164,7 @@ const features = [
         <div class="ps-buy-copy">
           <p class="ps-card-tag">One size</p>
           <p class="ps-buy-details">
-            Sage green · 82 × 59 × 95–105 cm open · 25 kg load · carrycot and canopy included
+            Cream grey · 82 × 59 × 95–105 cm open · 25 kg load · carrycot and canopy included
           </p>
           <p v-if="priceLabel" class="ps-buy-price">{{ priceLabel }}</p>
         </div>
@@ -271,7 +271,7 @@ const features = [
   margin: 0 0 12px;
   color: var(--ps-red);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -280,7 +280,7 @@ const features = [
   margin: 0;
   color: var(--ps-ink);
   font-size: clamp(32px, 4.4vw, 62px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
@@ -309,13 +309,13 @@ const features = [
   background: rgba(255, 255, 255, 0.78);
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .ps-hero-facts strong {
   margin-right: 5px;
   color: var(--ps-ink);
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .ps-hero-actions {
@@ -333,7 +333,7 @@ const features = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -365,24 +365,19 @@ const features = [
   transform: translateY(-2px);
 }
 
-/* The only product artwork supplied is a cut-out on white, so the hero uses a
-   white panel rather than a full-bleed photo. Height is capped to keep the
-   small source pixels crisp. */
+/* Lifestyle hero, so the photo runs edge to edge in its rounded panel. */
 .ps-hero-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(14px, 2vw, 26px);
-  border-radius: 14px;
-  background: #fff;
+  overflow: hidden;
+  border-radius: 16px;
   box-shadow: 0 24px 48px rgba(49, 78, 83, 0.16);
 }
 
 .ps-hero-media img {
-  width: auto;
-  max-width: 100%;
-  max-height: 480px;
-  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 /* ── Shared sections ─────────────────────────────────────────────────────── */
@@ -405,7 +400,7 @@ const features = [
   margin: 0;
   color: var(--ps-ink);
   font-size: clamp(26px, 3.1vw, 42px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -475,14 +470,14 @@ const features = [
   margin: 6px 0 0;
   color: #4d666b;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .ps-buy-price {
   margin: 8px 0 0;
   color: var(--ps-ink);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -499,7 +494,7 @@ const features = [
   color: #fef5ed;
   font: inherit;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -542,7 +537,7 @@ const features = [
   margin: 0;
   color: var(--ps-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -552,7 +547,7 @@ const features = [
   margin: 6px 0 0;
   color: var(--ps-ink);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -592,7 +587,7 @@ const features = [
   margin: 12px 0 0;
   color: var(--ps-ink);
   font-size: 16.5px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .ps-feature-card p {

@@ -281,8 +281,8 @@ const ranges = businessGroups.map((group) => ({
 }
 
 .business-hero-copy { position: relative; z-index: 1; max-width: 1040px; }
-.business-eyebrow { margin: 0 0 12px; color: var(--ink); font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.business-hero h1, .business-heading h2 { margin: 0; color: var(--ink); font-size: clamp(52px, 6.6vw, 104px); font-weight: 850; letter-spacing: -.055em; line-height: .96; }
+.business-eyebrow { margin: 0 0 12px; color: var(--ink); font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.business-hero h1, .business-heading h2 { margin: 0; color: var(--ink); font-size: clamp(52px, 6.6vw, 104px); font-weight: 600; letter-spacing: -.055em; line-height: .96; }
 /* Copy sits on the photo, so it switches to light colours. */
 .business-hero h1 { color: #fff; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.32); }
 .business-hero .business-eyebrow { color: #d9eee8; }
@@ -296,12 +296,12 @@ const ranges = businessGroups.map((group) => ({
 .business-heading h2 { font-size: clamp(36px, 4.6vw, 68px); letter-spacing: -.04em; }
 .business-story { display: grid; gap: clamp(20px, 2.6vw, 34px); max-width: 1080px; font-size: clamp(18px, 1.6vw, 25px); line-height: 1.5; }
 .business-story p { margin: 0; }
-.business-signoff { margin: clamp(32px, 4vw, 56px) 0 0; color: var(--ink); font-size: clamp(21px, 1.9vw, 30px); font-weight: 680; }
+.business-signoff { margin: clamp(32px, 4vw, 56px) 0 0; color: var(--ink); font-size: clamp(21px, 1.9vw, 30px); font-weight: 600; }
 .business-ranges { display: grid; gap: clamp(44px, 5vw, 72px); }
 .business-range { scroll-margin-top: 118px; }
 /* Range titles ("Air Purifiers" / "Dehumidifiers") stay on one line; product
    card titles inside the range keep normal wrapping. */
-.business-range-heading h3 { margin: 0; color: var(--ink); font-size: clamp(27px, 3vw, 40px); font-weight: 820; letter-spacing: -.02em; white-space: nowrap; }
+.business-range-heading h3 { margin: 0; color: var(--ink); font-size: clamp(27px, 3vw, 40px); font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
 .business-range h3 { margin: 0; }
 .business-range-heading p { max-width: 720px; margin: 12px 0 0; color: #5a7c85; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.5; }
 .business-range :deep(.product-list-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); }

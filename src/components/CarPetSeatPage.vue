@@ -307,7 +307,7 @@ const safety = [
   margin: 0 0 12px;
   color: var(--carseat-tan);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -316,7 +316,7 @@ const safety = [
   margin: 0;
   color: var(--carseat-ink);
   font-size: clamp(30px, 4vw, 56px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;
 }
@@ -345,7 +345,7 @@ const safety = [
   background: #fff;
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .carseat-hero-actions {
@@ -363,7 +363,7 @@ const safety = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -418,7 +418,7 @@ const safety = [
   margin: 0;
   color: var(--carseat-ink);
   font-size: clamp(25px, 3vw, 40px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -461,7 +461,7 @@ const safety = [
   margin: 0;
   color: var(--carseat-tan);
   font-size: 11.5px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.12em;
 }
 
@@ -469,7 +469,7 @@ const safety = [
   margin: 6px 0 0;
   color: var(--carseat-ink);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .carseat-mode-copy p:not(.carseat-mode-tag) {
@@ -508,7 +508,7 @@ const safety = [
   margin: 12px 0 0;
   color: var(--carseat-ink);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -549,7 +549,7 @@ const safety = [
   margin: 14px 0 0;
   color: var(--carseat-ink);
   font-size: 19px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -598,7 +598,7 @@ const safety = [
   margin: 0;
   color: var(--carseat-ink);
   font-size: 17px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .carseat-colour-copy p {
@@ -622,7 +622,7 @@ const safety = [
   color: var(--carseat-ink);
   font: inherit;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
   transition:
     background-color 160ms ease,

@@ -264,6 +264,49 @@ const features = [
         </dl>
       </div>
     </section>
+
+    <section class="petbed-section" aria-labelledby="petbed-gallery-title">
+      <div class="petbed-heading">
+        <p class="petbed-eyebrow">In a real home</p>
+        <h2 id="petbed-gallery-title">The bed, in a sunlit corner</h2>
+        <p>
+          Studio shots show the shape; these show the scale. The large bed in a real room, next to a
+          cat tree and an MW200 air purifier.
+        </p>
+      </div>
+
+      <div class="petbed-gallery">
+        <figure class="petbed-gallery-item">
+          <img
+            src="/images/products/christmas-pet-bed/home-corner.jpg"
+            alt="The large festive plaid bed on a wooden floor beside a cat tree and a Meower air purifier"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Large bed, cat tree and an MW200 in one sunny corner.</figcaption>
+        </figure>
+
+        <figure class="petbed-gallery-item">
+          <img
+            src="/images/products/christmas-pet-bed/home-cat.jpg"
+            alt="A Bengal cat standing beside the festive plaid bed and air purifier"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>A Bengal checking out the new bed.</figcaption>
+        </figure>
+
+        <figure class="petbed-gallery-item">
+          <img
+            src="/images/products/christmas-pet-bed/home-climb.jpg"
+            alt="A Bengal cat climbing the cat tree with the festive plaid bed in front of it"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Scratching post, climbing frame and bed, all within reach.</figcaption>
+        </figure>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -289,7 +332,7 @@ const features = [
   margin: 0 0 12px;
   color: var(--petbed-red);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -298,7 +341,7 @@ const features = [
   margin: 0;
   color: var(--petbed-ink);
   font-size: clamp(32px, 4.4vw, 62px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
@@ -327,13 +370,13 @@ const features = [
   background: rgba(255, 255, 255, 0.78);
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .petbed-hero-sizes strong {
   margin-right: 5px;
   color: var(--petbed-ink);
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .petbed-hero-actions {
@@ -351,7 +394,7 @@ const features = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -406,7 +449,7 @@ const features = [
   margin: 0;
   color: var(--petbed-ink);
   font-size: clamp(26px, 3.1vw, 42px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -417,6 +460,34 @@ const features = [
   color: #4d666b;
   font-size: clamp(15px, 1.2vw, 17.5px);
   line-height: 1.62;
+}
+
+/* ── Real-home gallery ───────────────────────────────────────────────────── */
+.petbed-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-top: clamp(24px, 3vw, 34px);
+}
+
+.petbed-gallery-item {
+  margin: 0;
+}
+
+.petbed-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: var(--petbed-warm);
+  object-fit: cover;
+}
+
+.petbed-gallery-item figcaption {
+  margin-top: 10px;
+  color: #5f7a80;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 /* ── Sizes ───────────────────────────────────────────────────────────────── */
@@ -451,7 +522,7 @@ const features = [
   margin: 0;
   color: var(--petbed-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -460,14 +531,14 @@ const features = [
   margin: 6px 0 0;
   color: var(--petbed-ink);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .petbed-size-dimensions {
   margin: 4px 0 0;
   color: #4d666b;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .petbed-size-price {
@@ -477,14 +548,14 @@ const features = [
   margin: 10px 0 0;
   color: var(--petbed-ink);
   font-size: 17px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .petbed-size-soldout {
   color: #a03a33;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -510,7 +581,7 @@ const features = [
   color: var(--petbed-ink);
   font: inherit;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
   transition:
     background-color 160ms ease,
@@ -561,7 +632,7 @@ const features = [
   margin: 12px 0 0;
   color: var(--petbed-ink);
   font-size: 16.5px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .petbed-feature-card p {
@@ -602,7 +673,7 @@ const features = [
 .petbed-specs dt {
   color: #7a9499;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -611,7 +682,7 @@ const features = [
   margin: 0;
   color: var(--petbed-ink);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -637,6 +708,10 @@ const features = [
 
   .petbed-section {
     width: calc(100% - 32px);
+  }
+
+  .petbed-gallery {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .petbed-size-grid,

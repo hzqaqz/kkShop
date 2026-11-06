@@ -141,7 +141,7 @@ function lineTotal(line) {
           >
             {{ loading ? 'Updating…' : 'Checkout' }}
           </button>
-          <p class="cart-drawer-trust">Secure checkout · Credit card · Apple Pay · Shop Pay</p>
+          <p class="cart-drawer-trust">Secure checkout · PayPal</p>
         </footer>
       </aside>
     </Transition>
@@ -185,7 +185,7 @@ function lineTotal(line) {
   align-items: center;
   margin: 0;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -260,7 +260,7 @@ function lineTotal(line) {
 .cart-line-title {
   margin: 0 0 3px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -319,7 +319,7 @@ function lineTotal(line) {
 .cart-line-price {
   margin: 0;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -373,7 +373,7 @@ function lineTotal(line) {
 
 .cart-drawer-subtotal strong {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -391,7 +391,7 @@ function lineTotal(line) {
   background: #1e2e32;
   color: #fff;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: transform 0.12s ease, background 0.12s ease;
 }

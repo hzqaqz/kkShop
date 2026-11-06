@@ -99,11 +99,11 @@ export const productFaqs = {
         'The MD002 is rated at 295 W with a maximum current of 2.3 A on 220 V~50 Hz. It weighs 13 kg and measures 300 × 200 × 490 mm.',
     },
   ],
-  'cat-scratcher-frame': [
+  'woven-sisal-cat-scratcher': [
     {
       question: 'How does the board attach to a wall or piece of furniture?',
       answer:
-        'It uses four pairs of velcro pads: one side sticks to the corners on the back of the frame, the other side sticks to the wall, sofa or cabinet. No drill, screws or glue are involved.',
+        'It uses four pairs of velcro pads: one side sticks to the corners on the back of the woven mat, the other side sticks to the wall, sofa or cabinet. No drill, screws or glue are involved.',
     },
     {
       question: 'Will the pads damage the wall or my furniture?',
@@ -113,22 +113,22 @@ export const productFaqs = {
     {
       question: 'What is it made of?',
       answer:
-        'A sisal scratching surface over an EPS core, in a wood-look frame with a white mount. The whole board weighs 650 g.',
+        'A woven sisal scratching surface finished with a colour-matched woven border. The whole board weighs 210 g.',
     },
     {
       question: 'What size is it, and how does it suit a cat?',
       answer:
-        'It measures 42 × 33 × 3 cm, which covers roughly the width of a cat stretching upward, so the cat can pull down on it without stepping off the surface.',
+        'It measures 38 × 30 × 0.5 cm, which covers roughly the width of a cat stretching upward, so the cat can pull down on it without stepping off the surface.',
     },
     {
       question: 'How do I fit it?',
       answer:
-        'Clean the surface, press the four velcro pairs together, peel one backing and stick a pad to each back corner of the frame, peel the other backing and press the frame onto the surface, then hold it for about 10 seconds.',
+        'Clean the surface, press the four velcro pairs together, peel one backing and stick a pad to each back corner of the mat, peel the other backing and press the mat onto the surface, then hold it for about 10 seconds.',
     },
     {
       question: 'Which designs are available?',
       answer:
-        'Four: Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — each framed in wood-look moulding with a white mount.',
+        'Four: Starry Night, Sunflowers, Meow with a Pearl Earring and Cypress Field — each woven in sisal and finished with a border in a colour that matches the artwork.',
     },
   ],
 

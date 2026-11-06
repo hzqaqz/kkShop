@@ -90,7 +90,7 @@ const sellingPoints = [
   margin: 0 0 20px;
   color: var(--accent);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -100,7 +100,7 @@ const sellingPoints = [
 .ceiling-section-heading h2 {
   margin: 0;
   color: var(--ink);
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.02;
 }
@@ -154,7 +154,7 @@ const sellingPoints = [
   margin: 0 0 8px;
   color: var(--ink);
   font-size: clamp(18px, 1.5vw, 23px);
-  font-weight: 850;
+  font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }

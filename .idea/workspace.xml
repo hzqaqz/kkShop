@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="新增猫抓板、猫窝产品页，更新首页轮播图">
-      <change beforePath="$PROJECT_DIR$/src/components/SiteHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="新增猫窝、宠物推车产品页" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1793788298924</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="新增猫窝、宠物推车产品页">
+      <created>1793804272190</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1793804272190</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +153,7 @@
     <MESSAGE value="连接shopify。分区Shop/Business，重做导航栏，优化business section。新增Commercial Air Purifier页面。" />
     <MESSAGE value="新增宠物玩具产品页，更新MW200首图和字体比例。" />
     <MESSAGE value="新增猫抓板、猫窝产品页，更新首页轮播图" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增猫抓板、猫窝产品页，更新首页轮播图" />
+    <MESSAGE value="新增猫窝、宠物推车产品页" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增猫窝、宠物推车产品页" />
   </component>
 </project>

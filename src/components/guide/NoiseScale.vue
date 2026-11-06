@@ -104,7 +104,7 @@ const summary = computed(() => {
   margin: 8px 0 0;
   color: #2c464c;
   font-size: clamp(20px, 2.1vw, 27px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -112,7 +112,7 @@ const summary = computed(() => {
   margin: 0;
   color: #5a7c85;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -142,13 +142,13 @@ const summary = computed(() => {
   justify-content: space-between;
   color: #334c51;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .noise-slider-label strong {
   color: #2c464c;
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .noise-slider input {
@@ -213,7 +213,7 @@ const summary = computed(() => {
   margin-top: 26px;
   color: #55737a;
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
   text-align: center;
   white-space: nowrap;
@@ -223,7 +223,7 @@ const summary = computed(() => {
   display: block;
   color: #8aa3a8;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .noise-summary {
@@ -254,7 +254,7 @@ const summary = computed(() => {
   background: rgba(179, 55, 47, 0.12);
   color: #a03a33;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .noise-band-note.is-inside {

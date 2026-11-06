@@ -105,7 +105,7 @@ const barWidth = computed(() => `${((active.value.capture - 90) / 10) * 100}%`);
   margin: 8px 0 0;
   color: #2c464c;
   font-size: clamp(20px, 2.1vw, 27px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
 }
 
@@ -113,7 +113,7 @@ const barWidth = computed(() => `${((active.value.capture - 90) / 10) * 100}%`);
   margin: 0;
   color: #5a7c85;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -151,7 +151,7 @@ const barWidth = computed(() => `${((active.value.capture - 90) / 10) * 100}%`);
   color: #334c51;
   font: inherit;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -167,7 +167,7 @@ const barWidth = computed(() => `${((active.value.capture - 90) / 10) * 100}%`);
   background: rgba(95, 156, 134, 0.18);
   color: #3f7d68;
   font-size: 10px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.04em;
 }
 

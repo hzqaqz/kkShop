@@ -15,6 +15,7 @@ import {
   Wind,
   Zap,
 } from 'lucide-vue-next';
+import { contactEmailHref } from '../data/siteInfo';
 
 /**
  * MW200 air purifier — laid out like Md001DehumidifierPage.vue (split hero with
@@ -70,6 +71,23 @@ const specs = [
   ['Rated power', '38 W'],
 ];
 
+/**
+ * Jump to the long-form "Key specifications" table. Native fragment scrolling
+ * ignores the block's `scroll-margin-top`, which would tuck the heading under
+ * the fixed header, so scroll it manually.
+ */
+function scrollToSpecs(event) {
+  const target = document.getElementById('product-specs');
+  if (!target) {
+    return;
+  }
+  event.preventDefault();
+  const reducedMotion =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+}
+
 const spaces = [
   {
     label: 'Living room',
@@ -103,7 +121,18 @@ const spaces = [
           <span class="mw200-title-lead">Pet-friendly MW200 H13</span>
           <span class="mw200-title-keep">Air Purifier</span>
         </h1>
-        <p>360° Purification, Built for Pet Homes</p>
+        <p class="mw200-hero-lead">360° Purification, Built for Pet Homes</p>
+
+        <div class="mw200-hero-actions">
+          <a
+            class="mw200-cta mw200-cta--primary"
+            href="#product-specs"
+            @click="scrollToSpecs"
+          >
+            View product specs
+          </a>
+          <a class="mw200-cta mw200-cta--ghost" :href="contactEmailHref">Ask about this purifier</a>
+        </div>
       </div>
     </section>
 
@@ -195,8 +224,8 @@ const spaces = [
   background: linear-gradient(90deg, rgba(255, 250, 244, 0.93) 0%, rgba(255, 250, 244, 0.7) 28%, rgba(255, 250, 244, 0) 57%);
 }
 .mw200-hero-copy { position: relative; z-index: 1; width: min(600px, 48vw); padding: clamp(150px, 13vw, 205px) 8vw 48px; }
-.mw200-eyebrow, .mw200-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.mw200-hero h1, .mw200-section-heading h2, .mw200-overview h2 { margin: 0; color: var(--ink); font-weight: 850; letter-spacing: -.045em; line-height: .98; }
+.mw200-eyebrow, .mw200-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.mw200-hero h1, .mw200-section-heading h2, .mw200-overview h2 { margin: 0; color: var(--ink); font-weight: 600; letter-spacing: -.045em; line-height: .98; }
 /* Long headline: 34–52px keeps both lines inside the copy column, and the
    nowrap line keeps "Air Purifier" together. */
 .mw200-hero h1 { font-size: clamp(52px, 6vw, 94px); letter-spacing: -.045em; line-height: 0.98; }
@@ -204,7 +233,18 @@ const spaces = [
    read as the headline. */
 .mw200-title-lead { display: block; color: #1e2625; font-size: .58em; letter-spacing: -.02em; line-height: 1.3; white-space: nowrap; }
 .mw200-title-keep { display: block; color: var(--ink); font-size: 1em; white-space: nowrap; }
-.mw200-hero-copy > p:last-child { margin: 24px 0 0; color: #403a35; font-size: clamp(19px, 1.7vw, 28px); font-weight: 600; }
+.mw200-hero-lead { margin: 24px 0 0; color: #403a35; font-size: clamp(19px, 1.7vw, 28px); font-weight: 600; }
+.mw200-hero-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.mw200-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 18px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 600; text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.mw200-cta--primary { background: var(--ink); color: #fef5ed; }
+.mw200-cta--primary:hover, .mw200-cta--primary:focus-visible { background: #24444a; }
+.mw200-cta--ghost { border: 1px solid rgba(49, 78, 83, 0.28); background: rgba(255, 255, 255, 0.72); color: var(--ink); }
+.mw200-cta--ghost:hover, .mw200-cta--ghost:focus-visible { border-color: var(--ink); background: #fff; }
 .mw200-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: clamp(42px, 5vw, 78px) max(7vw, calc((100vw - 1440px) / 2)); background: var(--warm); }
 .mw200-benefit { display: grid; grid-template-columns: 54px 1fr; gap: 18px; align-items: start; }
 .mw200-benefit svg { width: 45px; height: 45px; color: var(--accent); stroke-width: 1.55; }
@@ -226,10 +266,10 @@ const spaces = [
 /* Four chips: two tidy columns instead of orphaning the fourth. */
 .mw200-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 430px; margin: 0; padding: 0; list-style: none; }
 .mw200-chips li { min-width: 128px; padding: 12px 16px; border-radius: 10px; background: #fff; }
-.mw200-chip-label { display: block; color: var(--accent); font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.mw200-chip-value { display: block; margin-top: 5px; color: var(--ink); font-size: 18px; font-weight: 800; }
+.mw200-chip-label { display: block; color: var(--accent); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+.mw200-chip-value { display: block; margin-top: 5px; color: var(--ink); font-size: 18px; font-weight: 600; }
 .mw200-stages { display: flex; flex-wrap: wrap; gap: 18px; margin: 22px 0 0; padding: 0; list-style: none; }
-.mw200-stages li { display: inline-flex; gap: 8px; align-items: center; color: #40595e; font-size: 14px; font-weight: 700; }
+.mw200-stages li { display: inline-flex; gap: 8px; align-items: center; color: #40595e; font-size: 14px; font-weight: 600; }
 .mw200-stages svg { width: 20px; height: 20px; color: var(--accent); stroke-width: 1.7; }
 .mw200-overview > img { width: min(100%, 420px); max-height: 520px; justify-self: center; object-fit: contain; }
 .mw200-spaces { background: #fff; }

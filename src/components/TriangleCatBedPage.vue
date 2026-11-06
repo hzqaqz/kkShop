@@ -261,7 +261,7 @@ const features = [
   margin: 0 0 12px;
   color: var(--tbed-red);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -270,7 +270,7 @@ const features = [
   margin: 0;
   color: var(--tbed-ink);
   font-size: clamp(32px, 4.4vw, 62px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
@@ -299,13 +299,13 @@ const features = [
   background: rgba(255, 255, 255, 0.78);
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .tbed-hero-facts strong {
   margin-right: 5px;
   color: var(--tbed-ink);
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .tbed-hero-actions {
@@ -323,7 +323,7 @@ const features = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -378,7 +378,7 @@ const features = [
   margin: 0;
   color: var(--tbed-ink);
   font-size: clamp(26px, 3.1vw, 42px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -429,7 +429,7 @@ const features = [
   margin: 0;
   color: var(--tbed-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -438,7 +438,7 @@ const features = [
   margin: 6px 0 0;
   color: var(--tbed-ink);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .tbed-form-note {
@@ -470,7 +470,7 @@ const features = [
   margin: 0;
   color: var(--tbed-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -479,14 +479,14 @@ const features = [
   margin: 6px 0 0;
   color: #4d666b;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .tbed-buy-price {
   margin: 8px 0 0;
   color: var(--tbed-ink);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -503,7 +503,7 @@ const features = [
   color: #fef5ed;
   font: inherit;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -554,7 +554,7 @@ const features = [
   margin: 12px 0 0;
   color: var(--tbed-ink);
   font-size: 16.5px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .tbed-feature-card p {

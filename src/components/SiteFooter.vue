@@ -3,15 +3,21 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ArrowUp } from 'lucide-vue-next';
 import { shopCategories } from '../data/catalog';
-import { CONTACT_EMAIL, contacts, contactEmailHref, socialLinks } from '../data/siteInfo';
+import {
+  CONTACT_EMAIL,
+  contacts,
+  contactEmailHref,
+  paymentMethods,
+  socialLinks,
+} from '../data/siteInfo';
 
 /**
  * Site-wide footer: brand, navigation, policies, newsletter and back-to-top.
  *
  * Links point only at pages that exist. The newsletter form has no backend yet,
  * so it never pretends to have subscribed anyone — it tells the visitor to email
- * us instead. `socialLinks` in `src/data/siteInfo.js` is still empty, so the
- * "Follow us" column stays hidden until those URLs are filled in.
+ * us instead. `socialLinks` in `src/data/siteInfo.js` has no URLs yet, so the
+ * "Follow us" column stays hidden until the TikTok / LinkedIn links are pasted in.
  */
 
 const shopLinks = [
@@ -143,6 +149,15 @@ onBeforeUnmount(() => {
         <div class="footer-meta">
           <p v-if="address" class="footer-address">{{ address }}</p>
           <p class="footer-copyright">&copy; {{ year }} Meower. All rights reserved.</p>
+
+          <div class="footer-payments">
+            <span class="footer-payments-label">We accept</span>
+            <ul class="footer-payment-list" aria-label="Accepted payment methods">
+              <li v-for="method in paymentMethods" :key="method.id">
+                <img :src="method.image" :alt="method.label" loading="lazy" decoding="async" />
+              </li>
+            </ul>
+          </div>
         </div>
 
         <form class="footer-newsletter" novalidate @submit.prevent="subscribe">
@@ -220,7 +235,7 @@ onBeforeUnmount(() => {
   margin-top: 14px;
   color: #334c51;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -237,7 +252,7 @@ onBeforeUnmount(() => {
   margin: 0 0 14px;
   color: #274b52;
   font-size: 16px;
-  font-weight: 850;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -313,6 +328,46 @@ onBeforeUnmount(() => {
   font-size: 13.5px;
 }
 
+.footer-payments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer-payments-label {
+  color: #5a7c85;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-payment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-payment-list li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The PayPal artwork is already a white rounded card, so it needs no chip of
+   its own. */
+.footer-payment-list img {
+  display: block;
+  width: auto;
+  height: 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(51, 76, 81, 0.12);
+}
+
 .footer-newsletter {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -351,7 +406,7 @@ onBeforeUnmount(() => {
   color: #fef5ed;
   font: inherit;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 160ms ease;
 }

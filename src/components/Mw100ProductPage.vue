@@ -359,7 +359,7 @@ const specs = computed(() => [
   margin-top: 0;
   color: var(--ink);
   font-family: inherit;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .mw100 p {
@@ -387,7 +387,7 @@ const specs = computed(() => [
 .hero-copy h1 {
   margin-bottom: 24px;
   font-size: var(--section-title-size);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 0.98;
 }
@@ -396,7 +396,7 @@ const specs = computed(() => [
 .why-heading h2 {
   margin-bottom: 4px;
   font-size: var(--section-title-size);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 0.98;
 }
@@ -404,7 +404,7 @@ const specs = computed(() => [
 .closing-section h2 {
   margin-bottom: 24px;
   font-size: var(--section-title-size);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 0.98;
 }
@@ -866,7 +866,7 @@ const specs = computed(() => [
   color: var(--accent);
   font-family: inherit;
   font-size: clamp(22px, 1.8vw, 30px);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .coverage-card > strong {

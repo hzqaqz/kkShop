@@ -281,7 +281,7 @@ const care = [
   margin: 0 0 12px;
   color: var(--sisal-red);
   font-size: 12.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -290,7 +290,7 @@ const care = [
   margin: 0;
   color: var(--sisal-ink);
   font-size: clamp(32px, 4.4vw, 62px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;
 }
@@ -319,13 +319,13 @@ const care = [
   background: rgba(255, 255, 255, 0.78);
   color: #4d666b;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .sisal-hero-facts strong {
   margin-right: 5px;
   color: var(--sisal-ink);
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .sisal-hero-actions {
@@ -343,7 +343,7 @@ const care = [
   padding: 0 24px;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   transition:
     background-color 180ms ease,
@@ -398,7 +398,7 @@ const care = [
   margin: 0;
   color: var(--sisal-ink);
   font-size: clamp(26px, 3.1vw, 42px);
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
@@ -441,7 +441,7 @@ const care = [
   margin: 0;
   color: var(--sisal-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -450,7 +450,7 @@ const care = [
   margin: 6px 0 0;
   color: var(--sisal-ink);
   font-size: 18px;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.25;
 }
 
@@ -483,7 +483,7 @@ const care = [
   margin: 0;
   color: var(--sisal-red);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -492,14 +492,14 @@ const care = [
   margin: 6px 0 0;
   color: #4d666b;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .sisal-buy-price {
   margin: 8px 0 0;
   color: var(--sisal-ink);
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -516,7 +516,7 @@ const care = [
   color: #fef5ed;
   font: inherit;
   font-size: 13.5px;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition:
@@ -567,7 +567,7 @@ const care = [
   margin: 12px 0 0;
   color: var(--sisal-ink);
   font-size: 16.5px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .sisal-feature-card p {

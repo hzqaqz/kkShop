@@ -5,7 +5,8 @@
  * the homepage and the About page. Business and Support now reuse this file so
  * there is a single place to update a phone number.
  */
-import { Facebook, House, Instagram, Mail, MessageCircle, PhoneCall, Twitter } from 'lucide-vue-next';
+import { House, Linkedin, Mail, MessageCircle, PhoneCall } from 'lucide-vue-next';
+import TikTokIcon from '../components/icons/TikTokIcon.vue';
 
 export const CONTACT_EMAIL = 'info@meowerair.com';
 
@@ -29,16 +30,26 @@ export const contacts = [
 ];
 
 /**
+ * Payment marks shown in the footer.
+ *
+ * Only PayPal is switched on in the Shopify store, so it is the only mark we
+ * publish — add a line here when another method is enabled in Shopify.
+ */
+export const paymentMethods = [
+  { id: 'paypal', label: 'PayPal', image: '/images/payments/paypal.svg' },
+];
+
+/**
  * Official profiles, shown in the footer.
  *
  * `href` is intentionally empty until an account exists: the footer renders only
  * the entries that have a URL, so we never publish an icon that goes nowhere.
- * Fill in the three strings below and the "Follow us" column appears.
+ * TikTok and LinkedIn accounts exist; paste their URLs below and the
+ * "Follow us" column appears automatically.
  */
 export const socialLinks = [
-  { id: 'x', label: 'X (Twitter)', icon: Twitter, href: '' },
-  { id: 'facebook', label: 'Facebook', icon: Facebook, href: '' },
-  { id: 'instagram', label: 'Instagram', icon: Instagram, href: '' },
+  { id: 'tiktok', label: 'TikTok', icon: TikTokIcon, href: '' },
+  { id: 'linkedin', label: 'LinkedIn', icon: Linkedin, href: '' },
 ];
 
 /** `mailto:` link for a quote request about a specific product (or the range in general). */
