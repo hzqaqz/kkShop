@@ -160,8 +160,8 @@
 | **slug** | `cat-litter-box-smell` |
 | **支柱** | C（兼 A） |
 | **内链** | 产品：`/products/mw200`；文章：`/blogs/how-to-choose-an-air-purifier-for-pets`、`/blogs/how-indoor-air-quality-affects-your-pets` |
-| **字数** | 1500–2000 |
-| **差异化** | v1 保留项（原 P0 #1）。必须写"先解决源头，再用活性炭层处理悬浮气味分子"，否则会变成软文 |
+| **字数** | 1500–2000（**已发布 2026-11-14**，正文约 2,060 词，存档 `docs/blog-drafts/cat-litter-box-smell.md`） |
+| **差异化** | v1 保留项（原 P0 #1）。必须写"先解决源头，再用活性炭层处理悬浮气味分子"，否则会变成软文。已按此结构落地：Step 1 源头 / Step 2 通风 / Step 3 才讲碳滤网，并写明普通活性炭对氨气吸附有限 |
 
 **大纲**
 - H2 为什么砂盆味道会弥漫整个房间（氨气 + 悬浮颗粒 + 气流）
@@ -171,6 +171,8 @@
 - H2 常见误区：香薰、空气清新剂、除臭喷雾只是遮盖，且可能刺激猫的呼吸道
 - H3 MW200 在猫砂盆场景的合理用法（距离、风量、24 小时开着）
 - 结尾：一天 5 分钟的流程清单
+
+> **实际成文（2026-11-14）与上面的差异**：把猫砂盆场景的 H3 合并成独立 H2 `Using the MW200 in a Litter Box Corner`（H3 只留三条通用摆放规则，避免和产品段落重复）；另加一节 `When Litter Box Smell Is a Vet Problem`（Cornell + 公猫尿闭急诊），把"气味"和"该看兽医"切开，既降医疗风险也更像懂猫的站。5 分钟清单改成表格，放在 Step 1 里，不单独收尾。
 
 ---
 
@@ -211,8 +213,8 @@
 | **slug** | `cat-wont-sleep-in-its-bed` |
 | **支柱** | B |
 | **内链** | 产品：`/products/triangle-cat-bed`、`/products/christmas-pet-bed`；文章：`/blogs/how-humid-air-affects-pets` |
-| **字数** | 1500–1800 |
-| **差异化** | 季节红利：11 月中发布，吃"入冬买窝 + 圣诞送礼"两个搜索波；圣诞床只做 H3 场景，不做主推 |
+| **字数** | 1500–1800（**已发布 2026-11-14**，正文约 1,690 词，存档 `docs/blog-drafts/cat-wont-sleep-in-its-bed.md`） |
+| **差异化** | 季节红利：11 月中发布，吃"入冬买窝 + 圣诞送礼"两个搜索波；圣诞床只做 H3 场景，不做主推。实际成文符合：圣诞床只出现在 H3「If it is a gift」里 |
 
 **大纲**
 - H2 猫挑睡处只看三件事：温度、遮蔽感、视野
@@ -222,6 +224,10 @@
 - H2 冬天：为什么"能立起来"的床更受欢迎
 - H2 让旧床重新被用起来的四个办法
 - H3 节日场景：圣诞格纹床作为礼物怎么选尺码（S/M/L 对应猫、比格、拉布拉多）
+
+> **实际成文（2026-11-14）与上面的差异**：① 标题砍掉副标题，只留 `Why Won't My Cat Sleep in Its Bed?`——带副标题会到 60 字以上，SERP 里被截断，「six things」放在首段与 H2 里；② 原因从 5 条写成 6 条（拆出"没法定形/不能调整"，因为它直接对应可变形床）；③ 新增一节 `If You're Buying One as a Gift`（圣诞床选码）；④ 加一节 FAQ × 3。**（2026-11-14 按作者要求删掉了"可水洗 vs 只能局部清洁"一节，`washable cat bed` 这个次要词随之放弃——两张床的护理说明都是 spot clean，写不出可水洗的卖点。）**
+
+> ⚠️ **排期调整**：按理第 3 周该写 #3 带猫坐车，但 #3 是春季/出行题材，#4 的窗口只有 11–12 月，所以把 #4 提前到 #3 之前发（2026-11-14），#3 顺延到下一周。
 
 ---
 
@@ -578,10 +584,10 @@ B 端：commercial-air-purifier · md001 · md002 · commercial-dehumidifier · 
 
 | 老文章 | 加什么 |
 |---|---|
-| How to Choose an Air Purifier for You and Your Pet | → `#11 H13 vs H12`、`#7 摆放`（等它们发布后各加一句） |
-| Air Purifier for Pet Dander in Bedroom | → `#2 猫砂异味` |
+| How to Choose an Air Purifier for You and Your Pet | ✅ 已回填 → `#2 猫砂异味`（2026-11-14，碳层那条）；仍待 → `#11 H13 vs H12`、`#7 摆放`（等它们发布后各加一句） |
+| Air Purifier for Pet Dander in Bedroom | ✅ 已回填 → `#2 猫砂异味`（2026-11-14） |
 | How Indoor Air Quality Affects Your Pets | ✅ 已回填 → `#1`（2026-11-06）；仍待加 → `#6 室内猫玩耍` |
-| How Humid Air Affects Pets | → `#9 理想湿度`、`#4 猫窝`（湿度/温度舒适） |
+| How Humid Air Affects Pets | ✅ 已回填 → `#4 猫窝`（2026-11-14，温度/舒适那段）；仍待 → `#9 理想湿度` |
 | Beyond Comfort / Data-Driven Science | → `#9`、`#10` |
 | Filter Care for Everyday Performance | → `#11` |
 | 每篇新宠物用品文章 | → `/products#对应分类` + 1 篇空气/湿度文章（把人群接到净化器线） |
@@ -637,9 +643,9 @@ B 端：commercial-air-purifier · md001 · md002 · commercial-dehumidifier · 
 | 时间 | 交付 | 备注 |
 |---|---|---|
 | 第 1 周 | #1 抓沙发 — **已完成（2026-11-06 上线）** | 已回填 1 篇老文内链；抓板两个商品页已自动出现「相关阅读」 |
-| 第 2 周 | #2 猫砂盆异味 | 与 #1 互相内链，共吃"养猫家庭"人群 |
-| 第 3 周 | #3 带猫坐车 | 圣诞/冬季出行 + 车载床 |
-| 第 4 周 | #4 猫不睡窝 | **必须 11 月内上线**，吃入冬 + 圣诞送礼两个波 |
+| 第 2 周 | #2 猫砂盆异味 — **已完成（2026-11-14 上线）** | 与 #1 互相内链已做；回填了 choose / dander 两篇老文 |
+| 第 3 周 | #3 带猫坐车（顺延） | 圣诞/冬季出行 + 车载床；因 #4 季节窗口更紧，两者对调 |
+| 第 4 周 | #4 猫不睡窝 — **已完成（2026-11-14 提前上线）** | 吃入冬 + 圣诞送礼两个波；已回填 humid-air 老文 |
 | 第 5 周 | #5 猫推车 | 春季前铺好，3–5 月回暖时开始吃量 |
 | 第 6 周 | #6 室内猫玩耍 | 可与 #1 复用素材 |
 | 第 7 周 | #7 净化器摆放 | 顺手把 `how-to-choose` 那篇的内链补上 |

@@ -9,6 +9,14 @@ import { getProduct } from './products';
  * matching stays meaningful.
  */
 export const articleTopics = {
+  'cat-wont-sleep-in-its-bed': {
+    tags: ['cats', 'pet-beds', 'cat-behaviour', 'seasonal'],
+    products: ['triangle-cat-bed', 'christmas-pet-bed'],
+  },
+  'cat-litter-box-smell': {
+    tags: ['cats', 'air-purifier', 'air-quality'],
+    products: ['mw200'],
+  },
   'how-to-stop-cat-scratching-furniture': {
     tags: ['cats', 'cat-scratchers', 'cat-behaviour', 'buying-guide'],
     products: ['woven-sisal-cat-scratcher', 'sisal-cat-scratcher'],

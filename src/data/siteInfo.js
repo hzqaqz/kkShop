@@ -62,7 +62,7 @@ export const socialLinks = [
     id: 'tiktok',
     label: 'TikTok',
     image: '/images/social/tiktok.svg',
-    href: 'https://vt.tiktok.com/ZSp6wbb8M/',
+    href: 'https://www.tiktok.com/@meowerair',
   },
 ];
 

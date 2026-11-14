@@ -1,5 +1,287 @@
 export const blogArticles = [
   {
+    slug: 'cat-wont-sleep-in-its-bed',
+    title: 'Why Won\'t My Cat Sleep in Its Bed?',
+    // Renders the hero eyebrow as "Guide" rather than the generic blog label.
+    guide: true,
+    date: '2026-11-14',
+    sortDate: '2026-11-14',
+    // Cover is the close-up of a cat inside the cave; the hero and social card
+    // are wide crops of the room shot. The two shape photos in the body show
+    // the bed as a triangle cave and folded flat as a mat.
+    coverImage: '/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-cover.webp',
+    heroImage: '/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-hero.webp',
+    ogImage: '/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-og.webp',
+    imageFit: 'natural',
+    contentMarkdown: `# Why Won't My Cat Sleep in Its Bed?
+
+Why won't my cat sleep in its bed? Because cats choose a sleeping spot on three things: warmth, cover, and how safe the approach feels. The bed itself is rarely what is wrong — the place it sits, the shape it was made in, or the smell it arrived with usually is.
+
+That is why the same cat will sleep in a cardboard box, on clean laundry and on the one chair nobody uses: all three get those things right.
+
+![A tabby cat curled inside a triangle-shaped cat bed with a fleece floor](/images/blogs/cat-wont-sleep-in-its-bed/cat-inside.webp)
+
+## What a Cat Is Actually Looking For When It Sleeps
+
+Cats sleep in short bouts and change position constantly. Three preferences explain almost all of that behaviour:
+
+- **Warmth.** Cats are comfortable at warmer temperatures than we are, which is why a sunlit patch of floor or a laptop beats a padded bed in a cold corner. A bed has to hold warmth, not just be soft.
+- **Cover.** Very few cats sleep in the open middle of a room. They want something on at least one side — a wall, a bolster, the back of a sofa — and something to rest a chin on.
+- **A safe approach.** Not the middle of a corridor, not beside a door onto the rest of the house, not on the dog's route through the room. Cats like to see what is coming, with a way out that does not mean walking towards the noise.
+
+Color, price and how it looks beside the sofa are our preferences, not theirs.
+
+## Six Reasons Your Cat Won't Sleep in Its Bed
+
+### 1. It is too big
+
+A bed a cat can stretch out in and still have room to spare feels exposed, not generous. Cats curl, and a curled cat wants the sides close enough to press against. This is the most common reason a bed gets ignored; the fix is usually to buy smaller than instinct suggests.
+
+### 2. It is too open
+
+A flat mat in the open is the least appealing shape for most cats in winter. Raised sides, a hood, or a shape that can stand up give the cat something to lean against and something between it and the room.
+
+### 3. It is in the wrong place
+
+Placement beats design. The bed has to sit where the cat already sleeps — the end of the sofa, the corner behind the door, the sunny patch at 3 p.m. — not where it fits the furniture, and out of walk-through routes. The [iCatCare guide to a cat-friendly home](https://icatcare.org/articles/making-your-home-cat-friendly) makes the same point about keeping beds away from doorways and cat flaps, so the cat feels access is safe.
+
+### 4. It smells wrong
+
+A new bed arrives smelling of the factory, the bag and the detergent it was washed in. To a nose far better than yours, that is a stranger's object — which is also why the laundry pile wins. Washing is necessary eventually, but a bed washed and put straight back is often ignored for days.
+
+### 5. The surface is wrong
+
+Cats knead before they settle, and the surface has to take it. Slippery synthetic covers slide under their paws, scratchy wool is unpleasant, and a bed that is too firm never gets a cat to lie down. Fleece, plush and brushed cotton are what cats work their paws into.
+
+### 6. It cannot be adjusted
+
+Cats dig, circle and rearrange before settling. A fixed shape, or sides that collapse under a paw, removes that ritual. A bed that holds its shape but can be changed is used differently in November than in May, which is how it avoids the cupboard by March.
+
+## How to Measure a Cat for a Bed
+
+- **Length:** from the base of the tail to the tip of the nose, plus about 5 cm.
+- **Curl:** watch the cat sleep. A cat that balls up wants a bed closer to its curled diameter than to its full length; a sprawler needs the length.
+- **Weight:** most cats sit between 4 and 6 kg, but a big male can pass 7 kg, and the filling has to support that without flattening.
+
+Two details matter as much as size: a low entry, because older cats and cats with arthritis find a high-sided bed painful to step into, and a base that does not slide when a cat jumps in.
+
+## Cave, Mat, Bolster or Triangle: Which Shape Suits Which Cat
+
+- **Cave (hooded).** For cats that hide under furniture, sleep under the duvet, or are nervous of the room — though most cave beds only do one thing.
+- **Bolster (raised rim, open middle).** The default for confident cats that sprawl with a chin on the edge; most dog beds are shaped this way too.
+- **Mat or pad.** Right for a cat that already sleeps on hard surfaces, windowsills or your desk, and for summer — warmth without walls.
+- **Triangle or convertible.** Two padded sides buttoned into a cave, opened into a sofa, or folded flat into a mat — one bed that changes with the season instead of a cave that is wrong for eight months of the year.
+
+![A padded waffle-weave cat bed stood up as a triangular cave on a wooden floor](/images/blogs/cat-wont-sleep-in-its-bed/form-triangle.webp)
+
+Meower's [3-in-1 triangle cat bed](/products/triangle-cat-bed) is the last of those: 58 × 50 × 40 cm, with a waffle-weave outer, a white sherpa fleece lining, and a PP cotton fill stiff enough for the sides to stand up. Buttoned rather than zipped, and it suits cats and small dogs up to about 7.5 kg.
+
+## Why a Bed That Can Stand Up Gets Used All Winter
+
+From November the competition changes. Floors near windows go cold, the sun moves, and a cat's preference shifts to whatever holds warmth: a chair by the radiator, a pile of blankets, the gap behind a cushion.
+
+Two things matter more than padding. **Enclosure** keeps a cat's own heat around it, the way a coat does — a flat mat only insulates from below. And **height off the floor** matters for the same reason: a bed on cold tile loses heat downwards all night.
+
+What makes the best cat bed for winter is therefore shape rather than thickness: sides that stay up, a fleece or plush surface, and a size small enough to trap warmth. A folded blanket can do the same job for a cat with a favorite corner — the honest answer to the cat bed vs blanket question — but a blanket flattens, slides, and provides no walls at all.
+
+![The same cat bed folded flat into a fleece-topped sleeping mat](/images/blogs/cat-wont-sleep-in-its-bed/form-mat.webp)
+
+Put the bed **near** the radiator or a sunny window, not against either: pressed to a radiator the surface gets too hot, and against a window it sits in the coldest draught in the room. If the room is heated hard and the air is dry, [how humid air affects pets](/blogs/how-humid-air-affects-pets) covers that side of it.
+
+## Four Ways to Get an Ignored Bed Used Again
+
+Try these before buying anything else. One of them usually works within two weeks.
+
+1. **Move it to where the cat already sleeps.** Not the corner you chose — the spot the cat chose. Even two meters can flip a bed from ignored to occupied.
+2. **Make it smell like home.** A worn T-shirt of yours, or a blanket the cat already sleeps on, for a week; remove it once the bed is in use.
+3. **Put something in it.** A few treats, a catnip toy, or a play session that ends on the bed. Kneading a surface is how a cat claims it.
+4. **Leave it alone.** Cats often ignore a new bed for a week or two, then use it as if they always had — moving it around restarts that clock.
+
+What does not work is placing the cat in the bed and holding it there: that teaches the cat the bed is where boring things happen.
+
+## If You're Buying One as a Gift
+
+Festive beds are the seasonal trap: they sell out in December and get ignored in January, usually because the size was chosen for the photograph.
+
+![The festive plaid pet bed in three sizes, modelled by a cat, a beagle and a labrador](/images/products/christmas-pet-bed/hero-sizes.webp)
+
+The [Christmas plaid pet bed](/products/christmas-pet-bed) comes in three sizes: 40 × 30 × 20 cm for cats and small pets, 50 × 40 × 25 cm for a medium dog such as a beagle, and 60 × 50 × 30 cm for a larger dog such as a labrador. For a cat, take the small. In a multi-cat house, two small beds in two places beat one large one. Order early enough to arrive before the holiday.
+
+## FAQ
+
+**Why does my cat sleep on my bed instead of its own?**
+
+Warmth, your smell and height — your bed has all three. Put the cat bed on or beside your bed for a week or two, then move it step by step.
+
+**How long does a cat take to use a new bed?**
+
+Anywhere from an hour to a few weeks. Leaving it in one place and adding a familiar smell speeds that up more than moving it around.
+
+**Do cats prefer small beds or big ones?**
+
+Small, almost always: big enough to curl into, not to stretch out in. Cats want the sides close and something to press against.
+
+## The Short Version
+
+Cats pick a sleeping place for warmth, cover and a safe approach. Buy smaller than instinct suggests, choose a shape with sides, and put it where the cat already sleeps. If a bed is ignored, move it, add a familiar smell, and give it two weeks. For winter, sides that stay up beat extra padding — and if one bed has to serve as cave, sofa and mat across the year, a convertible one earns its place.
+
+Next step, if you are choosing one now: [see the 3-in-1 triangle cat bed](/products/triangle-cat-bed) or browse the [pet bed range](/products#pet-beds). And if a cat will not settle anywhere, the tray is worth a look too — [cat litter box smell](/blogs/cat-litter-box-smell) covers that.`,
+  },
+  {
+    slug: 'cat-litter-box-smell',
+    title: 'Cat Litter Box Smell: What Actually Works',
+    // Renders the hero eyebrow as "Guide" rather than the generic blog label.
+    guide: true,
+    date: '2026-11-14',
+    sortDate: '2026-11-14',
+    // One photograph of the MW200 scene shot, cropped three ways:
+    //   cover   — list-card thumbnail at the card's 1.18 ratio
+    //   hero    — the wide band behind the title
+    //   ogImage — the 1.91:1 frame social platforms display
+    // `cat-litter-box-smell.webp` is the uncropped 4:3 original used as the
+    // in-article figure; `imageFit: 'natural'` keeps it at its own ratio.
+    coverImage: '/images/blogs/cat-litter-box-smell/cat-litter-box-smell-cover.webp',
+    heroImage: '/images/blogs/cat-litter-box-smell/cat-litter-box-smell-hero.webp',
+    ogImage: '/images/blogs/cat-litter-box-smell/cat-litter-box-smell-og.webp',
+    imageFit: 'natural',
+    contentMarkdown: `# Cat Litter Box Smell: What Actually Works
+
+Cat litter box smell is almost never just the litter. Three things keep it coming back: waste sitting in the tray, a room that never exchanges its air, and odor that has already soaked into soft furnishings. Deal with them in that order and most apartments stop smelling within a week.
+
+Most shortcuts work against you. Scented litter, plug-in fresheners and "odor eliminator" sprays add fragrance on top of ammonia, which is why a treated box smells like fake flowers and cat urine at once. A purifier helps only with the third problem, and only with the part of the smell it can reach.
+
+![A Bengal cat sitting between a Meower air purifier, a cat tree and a yellow litter box in a sunlit room](/images/blogs/cat-litter-box-smell/cat-litter-box-smell.webp)
+
+## Why Cat Litter Box Smell Spreads Through the Whole Room
+
+Cat urine contains urea, and bacteria in the litter break it down into ammonia within hours — faster in a warm room, which is why a tray that was tolerable at breakfast is sharp by evening.
+
+You are smelling two different things at once:
+
+- **Gases.** Ammonia, sulfur compounds from feces, and volatile organic compounds from litter and waste. Ammonia is lighter than air and drifts upward; the heavier compounds hang low around the tray. Most of what people call litter box odour is gas, and gas passes straight through a particle filter.
+- **Particles.** Clay dust, tracked litter and cat dander. This is what a HEPA filter is for, and the particles carry odor on their surface as well.
+
+Both spread through air movement: a tray in a warm bathroom with the door shut is a closed system that fills up and leaks under the door. You also stop noticing your own box within half an hour — olfactory adaptation, not cleanliness. Guests get the full picture.
+
+## Step 1: Fix What Is in the Tray
+
+### Scoop twice a day, not once
+
+One scoop a day is the floor, not the target: a tray cleaned at 8 a.m. has ten hours of deposits in it by early evening. Morning and evening take under a minute each.
+
+Bag the waste and take it out of the room. A full bag in the bathroom bin keeps releasing odor — the classic reason a "clean" box still smells.
+
+### Change all the litter, and wash the tray
+
+For clumping litter, replace everything every two to four weeks; for non-clumping, weekly. Wash the tray with unscented soap and warm water, rinse well, and let it dry completely before refilling. Damp litter starts producing ammonia immediately.
+
+Plastic scratches, and the scratches hold bacteria no scoop reaches — the same reason a chopping board keeps a smell after washing. If the corner where the cat urinates still smells after a wash, replace the tray. That is the honest answer to "why does my box still smell after scooping?"
+
+### Choose litter for absorption, not for scent
+
+**Clumping clay** works best for everyday smell, because the urine leaves with the clump instead of sitting in the tray. **Crystal (silica)** absorbs moisture but holds the urine in place until it is stirred or removed, so ammonia builds under a dry-looking surface. **Wood pellets and paper** are low-dust and kind to kittens and seniors, but weaker on smell.
+
+Scented litter is the one to skip. It covers ammonia rather than removing it, and a cat that dislikes the smell of its own tray may start urinating somewhere else entirely.
+
+### Depth, size and number of trays
+
+The [ASPCA's litter box guidance](https://www.aspca.org/pet-care/cat-care/common-cat-behavior-issues/litter-box-problems) is one to two inches (2.5–5 cm) of litter for most cats: deeper and the cat sinks, shallower and urine reaches the plastic. The same source lists a box that is too small, a hood, or a liner as reasons a cat may avoid a tray — and a hood traps odor around a cat's nose as well as yours.
+
+A tray should be about one and a half times the length of the cat, with a low entry for kittens and older cats. One tray per cat plus one extra is the standard rule, and it means trays in *different places*: a cat reads three trays in a row as one location.
+
+For smell, avoid the smallest and most enclosed spot in the house — a bathroom with no fan is the worst case, not the best. Keep the tray off the radiator and away from the washing machine's exhaust, in a quiet corner with two exits.
+
+### A five-minute routine
+
+| When | What |
+|---|---|
+| Morning | Scoop solids and clumps, bag them, take the bag out of the room. |
+| Evening | Scoop again; check depth and top up. |
+| Weekly | Wipe the rim and any hood with unscented soap. |
+| Monthly | Full litter change; wash the tray; check for deep scratches. |
+
+## Step 2: Move the Air — Ventilation Is Not Optional
+
+A purifier is not ventilation. It recirculates the air already in the room; ventilation takes that air out of the building, which is the part that matters for ammonia.
+
+The tools, in order of effectiveness:
+
+- **An exhaust fan that vents outdoors**, run while the tray is in use and for 20–30 minutes afterwards.
+- **A window with a fan blowing out**, not in. An open window in still air does very little.
+- **An open window on its own** — better than nothing, and useless as soon as the weather turns.
+
+### Apartment problem: why the cat litter smell reaches the rest of the home
+
+Cat litter smell in an apartment is rarely a filtration problem. Air moves through the gap under a closed door, and in a modern block the corridor often sits at a different pressure from the room, so the smell leaves whether you want it to or not. A brush strip on the door and a tray moved away from the doorway do more than a stronger purifier.
+
+The winter trade-off is real: nobody opens a window at -2 °C, but ten minutes twice a day is enough. A room sealed from November to March is why the smell shows up in January and not in June.
+
+## Step 3: What a Filter Can and Cannot Do About the Air
+
+The two kinds of pollution in a litter box room need two different filter stages. HEPA media captures particles and does nothing for ammonia: a gas molecule passes straight through. Activated carbon is the stage that takes on gases and odors. The [filter-stage explainer in our air purifier guide](/blogs/how-to-choose-an-air-purifier-for-pets) covers how they work, so the part worth being honest about here is the limit.
+
+Ordinary activated carbon handles the larger odor molecules from litter, cleaning products and waste gas well enough, but ammonia is a small, polar molecule that plain carbon holds less effectively. A domestic carbon stage takes the edge off; it is not a scrubber and cannot compensate for a tray that needs cleaning. "Air purifier for litter box" gets sold as a complete solution when it is a backstop for steps 1 and 2.
+
+What filtration adds once those steps are done: it catches the litter dust and tracked particles that carry odor back into the air every time the cat digs, and keeps them out of bedding beside the tray. If the box sits in the room where the cat sleeps, [the difference indoor air quality makes to pets](/blogs/how-indoor-air-quality-affects-your-pets) is worth reading next.
+
+Carbon is spent long before the HEPA media looks dirty, and the signal is the smell returning at the exhaust: if you can smell the box while standing at the unit, the carbon is done, whatever the calendar says.
+
+### Positioning a purifier in a litter box corner
+
+- **Distance:** one to two meters from the tray. Directly beside it, the unit re-filters air it has just cleaned.
+- **Height:** on the floor, where the heavier compounds and the litter dust sit.
+- **Out of the path to the door:** if the fan pushes air toward the gap under the door, it is helping the smell leave the room.
+
+## What Only Masks the Smell — and What Makes It Worse
+
+- **Scented litter and odor-control powders.** Fragrance on top of ammonia is still ammonia, and a cat's nose is far more sensitive than ours: a tray that reeks of perfume is a reason to stop using it.
+- **Plug-ins, candles and incense.** They add their own volatile compounds, and candles add combustion particles. Near a litter box they make a small room worse.
+- **Essential oil diffusers.** Many common oils — tea tree, eucalyptus, citrus, peppermint, pine — are toxic to cats, and cats groom them off their fur and clear them slowly. Keep diffusers out of any room a cat lives in.
+- **Ozone generators.** The EPA's review is clear that ozone is a respiratory irritant, and that no federal agency has approved [ozone generators for use in occupied spaces](https://www.epa.gov/indoor-air-quality-iaq/ozone-generators-are-sold-air-cleaners). They also do nothing about the source.
+- **Enzyme cleaners in the wrong place.** Genuinely useful on accidents outside the box; inside the tray they are just another smell.
+
+## Using the MW200 in a Litter Box Corner
+
+[The Meower MW200](/products/mw200) is the unit we would put in a room with a litter box, with one caveat: it is the third step, not the first. It brings a 360° intake that pulls air in from every side at floor level, H13 HEPA media for the dust and dander a cat kicks up, and an activated carbon stage for gases, rated at 400 m³/h for rooms of roughly 20–40 m². In practice:
+
+- Placement as above, with nothing blocking the 360° intake.
+- Auto mode, running around the clock — at 36–50 dB(A) it is quiet enough to leave on overnight in the next room.
+- Replace the filter when the smell comes back, not only on the calendar.
+- If the tray is scooped twice a day and the room is ventilated, the purifier's job gets smaller: it is working on dust and staleness, and can move to wherever the cat actually sleeps.
+
+## When Litter Box Smell Is a Vet Problem
+
+Some changes are not an air quality question. See a vet if the smell changes sharply, the cat urinates more often or in smaller amounts, there is blood, it strains, or it suddenly stops using the tray. [Cornell's Feline Health Center](https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-behavior-problems-house-soiling) sets out the causes — urinary tract disease, cystitis, and in older cats kidney disease, diabetes or arthritis that makes the tray painful to get into.
+
+One emergency worth knowing: a male cat straining with little or no urine, especially with crying or a hard abdomen, may have a urethral obstruction. That is a same-day emergency.
+
+## FAQ
+
+**Does an air purifier get rid of litter box smell?**
+
+It helps with the part that is in the air, and only if it has a real carbon stage — HEPA alone does nothing for ammonia. It cannot fix a tray that needs cleaning, and it does not ventilate.
+
+**Why does the box still smell right after I clean it?**
+
+One of four things: a scratched tray holding bacteria, litter that went in damp, the waste bag left in the room, or a room that has not exchanged its air. The litter itself is the last suspect.
+
+**Is scented litter bad for cats?**
+
+It is unnecessary. Scent masks rather than removes, and some cats react by avoiding the tray — which is how a smell problem becomes a floor problem.
+
+**How many litter trays do two cats need?**
+
+Three, in at least two locations. Two trays side by side count as one place, and a multi-cat household is exactly where a single location fails.
+
+## The Short Version
+
+Scoop twice a day and take the waste out of the room. Change all the litter every few weeks; replace a scratched tray. One tray per cat plus one, in different quiet places. Ventilate with an exhaust fan, not a closed door. Skip anything scented or ozone-producing. Then, if the background staleness is still there, add filtration with a real carbon stage and run it continuously.
+
+Next step, if the air is the part left over: [see the Meower MW200 air purifier](/products/mw200), or browse the [air purifier range](/products#air-purifiers) if you need a unit for a larger living space.
+
+And if the litter box is not the only cat problem in the house, the other common one has a longer answer: [how to stop a cat from scratching furniture](/blogs/how-to-stop-cat-scratching-furniture).`,
+  },
+  {
     slug: 'how-to-stop-cat-scratching-furniture',
     title: 'How to Stop a Cat From Scratching Furniture',
     // Renders the hero eyebrow as "Guide" rather than the generic blog label.
@@ -165,7 +447,7 @@ You have to. Declawing is abuse — it is the amputation of a cat's toes, not a 
 
 Cats scratch for reasons that have nothing to do with obedience, and they scratch where the household already lives. To move the behaviour off the sofa: put a stable scratcher tall enough for a full stretch right beside the damage, choose a material the claws can catch in (sisal over carpet), protect the furniture for a few weeks, and give the cat one extra surface in another room. Don't punish, and never declaw: it is abuse, it is illegal in much of the world, and it does not fix the behaviour anyway.
 
-The surfaces you offer are the part you control, so make them easy to use: at the right height, in the right place, and in a material the cat will actually dig into. And if the spot you are protecting is also where the litter tray sits, the air in that corner is worth a look too — [how indoor air quality affects your pets](/blogs/how-indoor-air-quality-affects-your-pets) covers what accumulates there and what filters can and cannot remove.
+The surfaces you offer are the part you control, so make them easy to use: at the right height, in the right place, and in a material the cat will actually dig into. And if the spot you are protecting is also where the litter tray sits, the air in that corner is worth a look too — [how indoor air quality affects your pets](/blogs/how-indoor-air-quality-affects-your-pets) covers what accumulates there and what filters can and cannot remove, and [cat litter box smell](/blogs/cat-litter-box-smell) covers the order that actually clears it.
 `,
   },
   {
@@ -226,7 +508,7 @@ Three practical points:
 
 - **Check that there is real carbon, and how much of it.** A thin "carbon cloth" layer mostly sells the word rather than the performance; actual carbon pellets hold far more capacity for their size.
 - **Expect the carbon to be spent first.** Carbon has a finite capacity. Once its pores are full, odour removal fades long before the HEPA media has reached the end of its life — which is why a combined filter is replaced when the carbon is done, not when the HEPA looks grey.
-- **Change the litter tray first, filter second.** Carbon adsorbs what reaches it; it cannot out-run a tray that needs cleaning. No filter stage replaces the basics, it only buys you time between them.
+- **Change the litter tray first, filter second.** Carbon adsorbs what reaches it; it cannot out-run a tray that needs cleaning. No filter stage replaces the basics, it only buys you time between them — [what actually works for cat litter box smell](/blogs/cat-litter-box-smell) covers that order in full.
 
 [[block:stack]]
 
@@ -377,6 +659,7 @@ An air purifier works best when combined with sensible household habits. A few p
 - **Vacuum frequently.** Pay attention to carpets, rugs, upholstered furniture and the places the cat likes to sleep.
 - **Keep the bedroom as a lower-pet-exposure zone.** If someone in the household has a cat allergy, keeping the cat out of the bedroom can be an important measure. Allergens can still enter on clothing and other materials, so this is not absolute protection.
 - **Run the air purifier consistently.** Follow the manufacturer's guidance on operating modes, room size and filter maintenance. Continuous operation generally works better than switching the unit on only after symptoms appear.
+- **Fix the source as well as the air.** If a litter tray sits in or near the bedroom, no filter stage will out-run it. [Cat litter box smell: what actually works](/blogs/cat-litter-box-smell) sets out the order — source, ventilation, then filtration.
 - **Groom the cat regularly.** Appropriate grooming helps manage loose fur, although it does not eliminate the allergens cats produce.
 
 If a child experiences persistent allergy symptoms, consult a healthcare professional to identify possible triggers and discuss suitable treatment.
@@ -776,7 +1059,9 @@ High humidity creates conditions that encourage mold, dust mites, bacteria and u
 
 ## A Combined Air-Care Approach
 
-A dehumidifier helps reduce excess moisture, while an air purifier helps capture airborne particles such as pet dander, dust and allergens. Together with regular cleaning and ventilation, they can support a fresher, more comfortable home for pets.`,
+A dehumidifier helps reduce excess moisture, while an air purifier helps capture airborne particles such as pet dander, dust and allergens. Together with regular cleaning and ventilation, they can support a fresher, more comfortable home for pets.
+
+Temperature is the other half of that comfort picture. Cats pick a sleeping spot by warmth and cover, not by humidity alone, which is why the coldest corner of the house is never the one they use — [why your cat won't sleep in its bed](/blogs/cat-wont-sleep-in-its-bed) covers getting that right through winter.`,
   },
   {
     slug: 'how-indoor-air-quality-affects-your-pets',

@@ -17,7 +17,7 @@ import {
  * Links point only at pages that exist. The newsletter form has no backend: it
  * validates the address and opens a pre-filled email to info@meowerair.com, so
  * the visitor knows exactly what happens to their address. `socialLinks` in `src/data/siteInfo.js` renders under the brand
- * block; entries without a URL stay hidden (TikTok is still to come).
+ * block; entries without a URL stay hidden.
  */
 
 const shopLinks = [
