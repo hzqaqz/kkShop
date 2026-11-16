@@ -10,3 +10,6 @@ dist/
 # Cloudflare (wrangler) local state and secrets
 .wrangler/
 .dev.vars
+
+# 构建时生成的 Google Merchant feed（scripts/make-google-feed.mjs）
+public/feeds/

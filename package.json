@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite-ssg build && node scripts/clean-dist.mjs",
+    "build": "node scripts/make-google-feed.mjs --optional && vite-ssg build && node scripts/clean-dist.mjs",
     "preview": "vite preview --host 0.0.0.0",
-    "sync:policies": "node --env-file=.env scripts/sync-policies.mjs"
+    "sync:policies": "node --env-file=.env scripts/sync-policies.mjs",
+    "feed:google": "node scripts/make-google-feed.mjs"
   },
   "dependencies": {
     "@unhead/vue": "^2.1.17",

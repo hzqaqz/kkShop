@@ -138,5 +138,6 @@ git add src/data/policies.generated.json && git commit -m "sync policies"
 | `src/data/products.js` | MW200 标记 `purchasable + shopifyHandle`；MW100 标记 `hidden` |
 | `scripts/sync-policies.mjs` | 从 Shopify 后台拉四类政策 → `src/data/policies.generated.json` |
 | `src/views/LegalPage.vue` | 渲染政策页：优先 Shopify 正文，退回手写摘要 |
+| `scripts/make-google-feed.mjs` | 生成 Google Merchant feed → `public/feeds/google-<国家>.xml`（见 `docs/google-free-listings.md`） |
 
 未配置 `.env` 时，购物相关 UI 自动隐藏，站点表现与纯展示一致。
