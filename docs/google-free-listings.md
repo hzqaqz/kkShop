@@ -21,8 +21,17 @@ npm run feed:google -- --country AU --currency AUD
 ```
 
 脚本：`scripts/make-google-feed.mjs`，输出 `public/feeds/google-<country>.xml`。
-`npm run build` 会自动跑一次（`--optional`，失败也不会挡部署），所以
-Cloudflare 每次构建都会用当时的真实价格/库存重新生成。
+
+**这份 XML 要提交进仓库**（`.gitignore` 里特意没有忽略它）。原因：构建时那一步是
+`--optional` 的 —— CI 里如果拿不到 Shopify 变量就会跳过，此时线上用的就是仓库里
+这份；不提交就会变成 GMC 抓取 404。
+
+`npm run build` 也会重新生成一次，所以**改了价格、补了库存、上了新品之后**，
+要么让构建时的生成生效，要么手动跑一遍再提交：
+
+```bash
+npm run feed:google && git add public/feeds && git commit -m "update google feed" && git push
+```
 
 生成后的线上地址：
 

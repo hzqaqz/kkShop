@@ -11,5 +11,7 @@ dist/
 .wrangler/
 .dev.vars
 
-# 构建时生成的 Google Merchant feed（scripts/make-google-feed.mjs）
-public/feeds/
+# Google Merchant feed：默认提交进仓库作为兜底（见下行说明）
+# `public/feeds/*.xml` 是 `npm run feed:google` 的产物。构建时也会重新生成，
+# 但如果 CI 里拿不到 Shopify 变量，脚本会跳过（--optional），此时线上用的就是
+# 仓库里这份。所以它**要提交**，不要加回忽略列表，否则 GMC 直接 404。

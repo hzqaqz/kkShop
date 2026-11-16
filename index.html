@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#334c51" />
     <!-- Square badge icons. Never point rel="icon" at the wide wordmark: a tab
-         icon is forced into a square, which stretches a 3.3:1 logo. -->
+         icon is forced into a square, which stretches a 3.3:1 logo.
+
+         The PNG set below is not decoration: browsers key favicons by URL and
+         keep a cached "no icon" entry for months, so a working /favicon.ico can
+         still leave an empty tab. These URLs were added later, which forces a
+         fresh fetch. 96px is also the multiple-of-48 size Google wants for the
+         icon it shows next to search results. -->
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/icon-48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <title>Meower | Pet Supplies &amp; Pet-Friendly Air Purifiers</title>

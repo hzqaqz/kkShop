@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="优化了产品名称 更新了一些policy">
-      <change afterPath="$PROJECT_DIR$/docs/google-free-listings.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/make-google-feed.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/shopify-headless-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/shopify-headless-setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="US feed">
+      <change afterPath="$PROJECT_DIR$/public/icon-192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icon-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icon-96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1794830431205</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="US feed">
+      <created>1794833740738</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1794833740738</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +207,7 @@
     <MESSAGE value="更新了一篇C端相关的blog 猫咪为什么会挠家具" />
     <MESSAGE value="更新了两篇blog，更改了tiktok链接" />
     <MESSAGE value="优化了产品名称 更新了一些policy" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了产品名称 更新了一些policy" />
+    <MESSAGE value="US feed" />
+    <option name="LAST_COMMIT_MESSAGE" value="US feed" />
   </component>
 </project>
