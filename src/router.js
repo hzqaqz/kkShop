@@ -1,6 +1,7 @@
 import BlogDetailPage from './views/BlogDetailPage.vue';
 import BlogListPage from './views/BlogListPage.vue';
 import BusinessPage from './views/BusinessPage.vue';
+import CartRedirectPage from './views/CartRedirectPage.vue';
 import HomePage from './views/HomePage.vue';
 import LegalPage from './views/LegalPage.vue';
 import ProductDetailPage from './views/ProductDetailPage.vue';
@@ -66,6 +67,27 @@ export const routes = [
     name: 'shipping',
     component: LegalPage,
     props: { slug: 'shipping' },
+  },
+  {
+    /**
+     * 稳定的同域购物车入口：读取 localStorage 里的 Shopify 购物车并跳转到
+     * 真实结账地址。Google Merchant Center 的 Checkout URL 依赖它
+     * （见 views/CartRedirectPage.vue 的注释）。
+     *
+     * `/cart` 必须是**静态路由**才会被 vite-ssg 预渲染成 200 的 cart.html；
+     * 带参数的 `/cart/:id` 只用于兼容 GMC 里 `{id}` 的模板写法，走客户端兜底。
+     */
+    path: '/cart',
+    name: 'cart',
+    component: CartRedirectPage,
+  },
+  {
+    path: '/cart/:id',
+    component: CartRedirectPage,
+  },
+  {
+    path: '/checkout',
+    component: CartRedirectPage,
   },
   {
     // `/about` was folded into `/business`. Cloudflare Pages answers it with a
