@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite-ssg build && node scripts/clean-dist.mjs",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "sync:policies": "node --env-file=.env scripts/sync-policies.mjs"
   },
   "dependencies": {
     "@unhead/vue": "^2.1.17",

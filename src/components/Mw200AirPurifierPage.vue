@@ -116,12 +116,12 @@ const spaces = [
         alt="MW200 air purifier on a wooden floor beside a linen armchair and houseplants"
       />
       <div class="mw200-hero-copy">
-        <p class="mw200-eyebrow">Home Use Air Purifier · MW200</p>
+        <p class="mw200-eyebrow">360° Purification for Pet Homes</p>
         <h1 id="mw200-title">
-          <span class="mw200-title-lead">Pet-friendly MW200 H13</span>
+          <span class="mw200-title-lead">Meower MW200 H13 True HEPA</span>
           <span class="mw200-title-keep">Air Purifier</span>
+          <span class="mw200-title-sub">for Pet Dander, Hair &amp; Odor</span>
         </h1>
-        <p class="mw200-hero-lead">360° Purification, Built for Pet Homes</p>
 
         <div class="mw200-hero-actions">
           <a
@@ -226,14 +226,14 @@ const spaces = [
 .mw200-hero-copy { position: relative; z-index: 1; width: min(600px, 48vw); padding: clamp(150px, 13vw, 205px) 8vw 48px; }
 .mw200-eyebrow, .mw200-section-heading p { margin: 0 0 14px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .mw200-hero h1, .mw200-section-heading h2, .mw200-overview h2 { margin: 0; color: var(--ink); font-weight: 600; letter-spacing: -.045em; line-height: .98; }
-/* Long headline: 34–52px keeps both lines inside the copy column, and the
-   nowrap line keeps "Air Purifier" together. */
+/* The three lines are the Shopify product name, split so the category still
+   reads as the headline: model and filter grade above, use case below. */
 .mw200-hero h1 { font-size: clamp(52px, 6vw, 94px); letter-spacing: -.045em; line-height: 0.98; }
 /* Smaller lead, larger product name — the second line is the one that should
    read as the headline. */
-.mw200-title-lead { display: block; color: #1e2625; font-size: .58em; letter-spacing: -.02em; line-height: 1.3; white-space: nowrap; }
+.mw200-title-lead { display: block; color: #1e2625; font-size: .28em; letter-spacing: -.025em; line-height: 1.35; }
 .mw200-title-keep { display: block; color: var(--ink); font-size: 1em; white-space: nowrap; }
-.mw200-hero-lead { margin: 24px 0 0; color: #403a35; font-size: clamp(19px, 1.7vw, 28px); font-weight: 600; }
+.mw200-title-sub { display: block; margin-top: .14em; color: #403a35; font-size: .26em; font-weight: 600; letter-spacing: -.01em; line-height: 1.3; }
 .mw200-hero-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
 .mw200-cta {
   display: inline-flex; align-items: center; justify-content: center;
@@ -288,9 +288,6 @@ const spaces = [
   .mw200-overview { grid-template-columns: 1fr; min-height: 0; padding: 64px 28px; }
   .mw200-overview > img { max-width: 320px; }
   .mw200-space-grid { grid-template-columns: repeat(2, 1fr); }
-  /* Same size as MD001 on phones; the lead line wraps here instead of running
-     past the copy column. */
-  .mw200-title-lead { white-space: normal; }
 }
 @media (max-width: 520px) {
   .mw200-hero { min-height: 640px; }

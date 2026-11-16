@@ -113,7 +113,7 @@ const features = [
     <section class="tbed-hero" aria-labelledby="tbed-title">
       <div class="tbed-hero-copy">
         <p class="tbed-eyebrow">Winter collection</p>
-        <h1 id="tbed-title">3-in-1 Triangle Cat Bed</h1>
+        <h1 id="tbed-title">Meower 3-in-1 Triangle Cat Cave Bed &amp; Foldable Indoor Pet Tent</h1>
         <p class="tbed-lead">
           One bed for the spot your cat has already chosen, in three shapes: stood up and buttoned
           together it is a triangle cave with a fleece floor, propped open it becomes a sofa, folded
@@ -266,10 +266,14 @@ const features = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .tbed-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--tbed-ink);
-  font-size: clamp(32px, 4.4vw, 62px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;

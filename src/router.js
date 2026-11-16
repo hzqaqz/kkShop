@@ -62,6 +62,12 @@ export const routes = [
     props: { slug: 'terms' },
   },
   {
+    path: '/shipping',
+    name: 'shipping',
+    component: LegalPage,
+    props: { slug: 'shipping' },
+  },
+  {
     // `/about` was folded into `/business`. Cloudflare Pages answers it with a
     // 301 from `public/_redirects`; this keeps in-app links and SPA fallbacks
     // (`vite preview`, other hosts) working as well.

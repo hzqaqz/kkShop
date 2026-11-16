@@ -88,7 +88,7 @@ const featuredCards = [
   },
   {
     id: 'car-pet-seat',
-    name: 'Car Seat Pet Bed & Travel Carrier',
+    name: 'Waterproof 2-in-1 Pet Car Seat & Travel Carrier',
     image: '/images/products/car-pet-seat/car-dog.webp',
     pitch: 'Straps into the car, carries like a bag and unzips into a flat bed.',
   },

@@ -115,7 +115,7 @@ const features = [
     <section class="cframe-hero" aria-labelledby="cframe-title">
       <div class="cframe-hero-copy">
         <p class="cframe-eyebrow">Cat scratching</p>
-        <h1 id="cframe-title">Woven Sisal Cat Scratching Board</h1>
+        <h1 id="cframe-title">Meower Wall-Mounted Sisal Cat Scratcher &amp; Furniture Protector</h1>
         <p class="cframe-lead">
           A scratching board that hangs like a small woven wall hanging. Four velcro pads hold it to
           a wall, a sofa side or a cabinet — and when it comes down it leaves no glue behind. Woven
@@ -284,10 +284,14 @@ const features = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .cframe-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--cframe-ink);
-  font-size: clamp(30px, 4vw, 56px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;

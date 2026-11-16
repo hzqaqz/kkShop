@@ -128,7 +128,7 @@ const features = [
     <section class="petbed-hero" aria-labelledby="petbed-title">
       <div class="petbed-hero-copy">
         <p class="petbed-eyebrow">Festive collection</p>
-        <h1 id="petbed-title">Christmas Plaid Cat &amp; Dog Bed</h1>
+        <h1 id="petbed-title">Meower Christmas Plaid Bolster Cat &amp; Dog Bed, Washable Cushion</h1>
         <p class="petbed-lead">
           A warm bed for the spot your pet has already chosen: festive plaid outside, short plush
           inside with a PP cotton fill, raised bolsters to curl against and red pom-poms along the
@@ -337,10 +337,14 @@ const features = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .petbed-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--petbed-ink);
-  font-size: clamp(32px, 4.4vw, 62px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;

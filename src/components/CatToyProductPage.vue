@@ -63,7 +63,7 @@ const features = [
     <section class="cattoy-hero" aria-labelledby="cattoy-title">
       <div class="cattoy-hero-copy">
         <p class="cattoy-eyebrow">Playtime</p>
-        <h1 id="cattoy-title">Push-Button Pom-Pom Cat Toy</h1>
+        <h1 id="cattoy-title">Meower Interactive Cat Toy with Bell, Retractable Pom-Pom</h1>
         <p class="cattoy-lead">
           A battery-powered play wand with a reeling cord: one button shoots the pom-pom across the
           room, the other winds it back. The ball is real rabbit fur, which is what sets off a cat's
@@ -218,10 +218,14 @@ const features = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .cattoy-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--cattoy-ink);
-  font-size: clamp(31px, 4.2vw, 58px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.03em;

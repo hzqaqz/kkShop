@@ -18,7 +18,12 @@ const IMAGE_ALT = 'Meower pet supplies and pet-friendly air purifiers';
  * Open Graph and Twitter Card tags for each route.
  *
  * @param {Object} options
- * @param {string} [options.title]        Page title without the "| Meower" suffix.
+ * @param {string} [options.title]        Page title. The "| Meower" suffix is
+ *                                        appended unless the title already
+ *                                        starts with the brand — product titles
+ *                                        carry it, so appending again would
+ *                                        print the brand twice and spend the
+ *                                        characters on a repeat.
  * @param {string} [options.description]  Meta description.
  * @param {string} [options.path]         Canonical path, defaults to '/'.
  * @param {string} [options.image]        og:image / twitter:image absolute URL.
@@ -40,7 +45,13 @@ export function useSeo({
   noindex = false,
 }) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
-  const fullTitle = title ? `${title} | Meower` : DEFAULT_TITLE;
+  // Product titles already begin with "Meower"; only brand-less page titles get
+  // the suffix. Keeps the brand visible exactly once in the SERP.
+  const fullTitle = title
+    ? title.startsWith(SITE_NAME)
+      ? title
+      : `${title} | Meower`
+    : DEFAULT_TITLE;
   const metaDescription = description || DEFAULT_DESCRIPTION;
 
   // Only the branded card has known, guaranteed dimensions. Per-page images

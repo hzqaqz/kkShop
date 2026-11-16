@@ -109,7 +109,7 @@ const features = [
     <section class="ps-hero" aria-labelledby="ps-title">
       <div class="ps-hero-copy">
         <p class="ps-eyebrow">For getting out</p>
-        <h1 id="ps-title">Travel Pet Stroller</h1>
+        <h1 id="ps-title">Meower Foldable Cat &amp; Dog Stroller with Detachable Carrier</h1>
         <p class="ps-lead">
           An aluminium stroller with a carrycot and a six-panel canopy, for cats and small dogs up to
           25 kg — and the carrycot lifts off the frame with one click. Walk to the car, put the carrycot
@@ -256,10 +256,14 @@ const features = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .ps-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--ps-ink);
-  font-size: clamp(32px, 4.4vw, 62px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;

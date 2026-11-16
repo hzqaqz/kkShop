@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="更新了一篇C端相关的blog 猫咪为什么会挠家具">
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="更新了两篇blog，更改了tiktok链接">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1793975396308</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="更新了两篇blog，更改了tiktok链接">
+      <created>1794667308946</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1794667308946</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +187,7 @@
     <MESSAGE value="修改了猫抓板页面图片 更新了库存和推荐顺序" />
     <MESSAGE value="更新了stroller图片，加了C端弹窗广告 置顶广告，更新了底部social media按钮 和订阅按钮。" />
     <MESSAGE value="更新了一篇C端相关的blog 猫咪为什么会挠家具" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了一篇C端相关的blog 猫咪为什么会挠家具" />
+    <MESSAGE value="更新了两篇blog，更改了tiktok链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了两篇blog，更改了tiktok链接" />
   </component>
 </project>

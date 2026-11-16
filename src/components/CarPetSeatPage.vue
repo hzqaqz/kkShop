@@ -135,7 +135,7 @@ const safety = [
     <section class="carseat-hero" aria-labelledby="carseat-title">
       <div class="carseat-hero-copy">
         <p class="carseat-eyebrow">Travel &amp; car</p>
-        <h1 id="carseat-title">Car Seat Pet Bed &amp; Travel Carrier</h1>
+        <h1 id="carseat-title">Meower Waterproof 2-in-1 Pet Car Seat &amp; Travel Carrier</h1>
         <p class="carseat-lead">
           A padded seat that straps into the car, lifts out as a carrier, and unzips into a flat bed.
           Waterproof faux leather wipes clean and does not hold onto hair — for cats and small dogs
@@ -312,10 +312,14 @@ const safety = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .carseat-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--carseat-ink);
-  font-size: clamp(30px, 4vw, 56px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -0.03em;

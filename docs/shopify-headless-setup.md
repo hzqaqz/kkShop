@@ -85,6 +85,46 @@ node --env-file=.env scripts/test-shopify.mjs
 地址统一在 `src/data/siteInfo.js` 的 `QUOTE_EMAIL`（目前指向 `info@meowerair.com`，
 因为还没有 sales 邮箱）。建好 sales 邮箱后只改这一行即可。
 
+## 六、法律条款（Policies）同步
+
+**Shopify 后台改政策不会自动出现在这个站点上。** 后台的 Policies 只在两个地方生效：
+Shopify 托管的结账页（`checkout.shopify.com/<店铺ID>/policies/...`）和后台的
+「政策」页面。本站是无头前端，条款必须由自己渲染。
+
+本站的处理方式：**以 Shopify 后台为唯一权威来源，构建前同步一次**。
+
+```bash
+# 1) 在 Shopify 后台 Settings → Policies 改好条款
+# 2) 拉下来，生成静态数据
+npm run sync:policies
+# 3) 提交生成的文件并部署
+git add src/data/policies.generated.json && git commit -m "sync policies"
+```
+
+脚本走 Storefront API 的 `shop { refundPolicy privacyPolicy termsOfService shippingPolicy }`，
+把正文 HTML 和「Last updated」写进 `src/data/policies.generated.json`（要提交进仓库，
+这样 Cloudflare 构建不需要 token，产物也确定）。`LegalPage.vue` 优先渲染这份正文，
+后台某项为空时退回 `src/data/legalContent.js` 的手写版本。
+
+对应的四个页面与路由：
+
+| 后台字段 | 页面 |
+|---|---|
+| Refund policy | `/refunds` |
+| Privacy policy | `/privacy` |
+| Terms of service | `/terms` |
+| Shipping policy | `/shipping` |
+
+注意事项：
+
+- 结账页页脚链接的是 Shopify 自己那份政策。如果后台和本站显示不同内容，同一个买家
+  会在两个页面看到两套条款 —— 所以**别在 `legalContent.js` 里单独改条款正文**，
+  改后台再同步。
+- 后台模板是通用英语（面向美国市场）。面向 NZ 的政策必须保留 Consumer Guarantees
+  Act 1993 下的权利，不能写「no refunds」或把退货窗口写成对法定权利的排除。
+  模板正文建议人工过一遍再上线。
+- 后台没填的政策不会出现在生成的 JSON 里，页面会用兜底文案；脚本运行时会打印警告。
+
 ## 代码结构
 
 | 文件 | 作用 |
@@ -96,5 +136,7 @@ node --env-file=.env scripts/test-shopify.mjs
 | `src/components/InquiryBar.vue` | 询价商品的底部「Request a quote」栏 |
 | `src/views/ProductDetailPage.vue` | 按 `purchasable` 决定显示加购栏还是询价栏 |
 | `src/data/products.js` | MW200 标记 `purchasable + shopifyHandle`；MW100 标记 `hidden` |
+| `scripts/sync-policies.mjs` | 从 Shopify 后台拉四类政策 → `src/data/policies.generated.json` |
+| `src/views/LegalPage.vue` | 渲染政策页：优先 Shopify 正文，退回手写摘要 |
 
 未配置 `.env` 时，购物相关 UI 自动隐藏，站点表现与纯展示一致。

@@ -45,6 +45,7 @@ const supportLinks = [
 const policyLinks = [
   { label: 'Privacy Policy', to: { name: 'privacy' } },
   { label: 'Refund & Exchanges', to: { name: 'refunds' } },
+  { label: 'Shipping Policy', to: { name: 'shipping' } },
   { label: 'Terms of Service', to: { name: 'terms' } },
 ];
 

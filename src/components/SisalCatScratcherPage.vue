@@ -122,7 +122,7 @@ const care = [
     <section class="sisal-hero" aria-labelledby="sisal-title">
       <div class="sisal-hero-copy">
         <p class="sisal-eyebrow">Cat scratching</p>
-        <h1 id="sisal-title">Sisal Cat Scratcher &amp; Lounger</h1>
+        <h1 id="sisal-title">Meower Curved Sisal Cat Scratcher &amp; Lounger, 60 × 40 cm</h1>
         <p class="sisal-lead">
           A scratching board made from wrapped sisal rope instead of pressed cardboard, so it does not
           leave flakes on the floor. At 60 × 40 × 8 cm the raised rim also turns it into somewhere the cat
@@ -286,10 +286,14 @@ const care = [
   text-transform: uppercase;
 }
 
+/* The headline is the full Shopify product name (three lines at most
+   breakpoints): 26–54px and balanced wrapping keep it inside the copy
+   column instead of pushing the hero out of shape. */
 .sisal-hero h1 {
+  text-wrap: balance;
   margin: 0;
   color: var(--sisal-ink);
-  font-size: clamp(32px, 4.4vw, 62px);
+  font-size: clamp(26px, 4vw, 54px);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.03em;

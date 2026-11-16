@@ -1,10 +1,18 @@
 /**
- * Legal pages: privacy, refunds and terms.
+ * Legal pages: privacy, refunds, shipping and terms.
  *
- * These are deliberately conservative summaries — they describe only what the
- * site and its Shopify checkout actually do (contact emails, cart in
- * localStorage, Shopify-hosted payment) and avoid promises about retention
- * periods, refund windows or governing law that have not been agreed.
+ * 谁是正文的权威来源：**Shopify 后台 Settings → Policies**。
+ * `npm run sync:policies` 会把后台的政策拉成 `policies.generated.json`，
+ * `LegalPage.vue` 优先渲染它；这里的 `sections` 只在后台某项为空（或还没跑过
+ * 同步）时作为兜底。所以改条款请改 Shopify 后台，别只改这个文件。
+ *
+ * 保留下面的手写版本仍然有意义：它描述的是本站特有的实现（localStorage 里
+ * 的购物车、Shopify 托管结账、询价流程），后台的通用模板不会提到这些。
+ *
+ * 这些手写文案是刻意保守的摘要 — they describe only what the site and its
+ * Shopify checkout actually do (contact emails, cart in localStorage,
+ * Shopify-hosted payment) and avoid promises about retention periods, refund
+ * windows or governing law that have not been agreed.
  *
  * REVIEW BEFORE RELYING ON THEM: the refund window, warranty period and
  * governing-law jurisdiction are placeholders that need a human decision.
@@ -187,6 +195,33 @@ export const legalDocuments = {
         heading: 'Governing law and contact',
         paragraphs: [
           'These terms are governed by the laws that apply at our place of business, and disputes are subject to the courts there. Questions about these terms: info@meowerair.com.',
+        ],
+      },
+    ],
+  },
+  shipping: {
+    slug: 'shipping',
+    path: '/shipping',
+    title: 'Shipping Policy',
+    description:
+      'How Meower processes and ships orders: dispatch times, delivery estimates for New Zealand and Australia, tracking, and what to do if a parcel is delayed or damaged.',
+    lastUpdated: LAST_UPDATED,
+    intro:
+      'This policy explains how we process and ship orders, what delivery costs and what to do if something goes wrong in transit.',
+    // Shopify 后台的 Shipping policy 是权威版本（`npm run sync:policies` 会拉过来
+    // 覆盖这里）。下面只是后台为空、或本地构建没有生成文件时的兜底摘要。
+    sections: [
+      {
+        heading: 'Processing and delivery',
+        paragraphs: [
+          'Orders are processed on business days. Delivery estimates and shipping costs are shown at checkout before you pay, and depend on the destination and the size of the item.',
+        ],
+      },
+      {
+        heading: 'Tracking and problems in transit',
+        paragraphs: [
+          'A tracking link is emailed when your order is dispatched. If a parcel is delayed, arrives damaged or does not arrive, contact us at info@meowerair.com with your order number and we will follow it up with the carrier.',
+          'Nothing here limits your rights under the New Zealand Consumer Guarantees Act 1993 or the Australian Consumer Law.',
         ],
       },
     ],

@@ -8,6 +8,16 @@
  *   shopCategoryId — a Shop category id (see `src/data/catalog.js`)
  *   businessGroup  — a Business range id (see `src/data/catalog.js`)
  * Omit either field to keep the product out of that listing.
+ *
+ * `title` is the product name, and it mirrors the Shopify product title
+ * character for character (Shopify Admin → Products). The same string drives
+ * the <title>, the H1, the breadcrumb, the buy bar and the related-product
+ * cards, so both surfaces name a product the same way — that is what a shopper
+ * sees in the SERP, and what the Shopping feed reports. Renaming a product
+ * means renaming it in both places.
+ *
+ * `cardLabel` is the short name used where space is tight (product cards,
+ * navigation); it is not an SEO field and does not have to match `title`.
  */
 export const products = {
   mw100: {
@@ -38,7 +48,7 @@ export const products = {
     shopCategoryId: 'air-purifiers',
     // Business 页产品线归属。
     businessGroup: 'air-purifiers',
-    title: 'MW200 Air Purifier with H13 HEPA',
+    title: 'Meower MW200 H13 True HEPA Air Purifier for Pet Dander, Hair & Odor',
     cardSubtitle: '360° Air Intake with H13 HEPA',
     // Own page component, laid out like MD001 (Mw100ProductPage stays for MW100).
     page: 'mw200',
@@ -67,7 +77,7 @@ export const products = {
     // Shop 分类归属：Cat Scratching Posts（见 src/data/catalog.js）。
     shopCategoryId: 'cat-scratchers',
     page: 'woven-sisal-cat-scratcher',
-    title: 'Woven Sisal Cat Scratching Board',
+    title: 'Meower Wall-Mounted Sisal Cat Scratcher & Furniture Protector',
     cardSubtitle: 'Woven Sisal, Wall-Hung Art',
     description:
       'A wall-hung cat scratching board with a woven sisal face and a colour-matched woven border, made in four cat-themed artworks — 38 × 30 × 0.5 cm and 210 g, mounted on walls, sofas or cabinets with four velcro pads that leave no residue.',
@@ -89,7 +99,7 @@ export const products = {
     // Shop 分类归属：Cat Scratching Posts（见 src/data/catalog.js）。
     shopCategoryId: 'cat-scratchers',
     page: 'sisal-cat-scratcher',
-    title: 'Sisal Cat Scratcher & Lounger',
+    title: 'Meower Curved Sisal Cat Scratcher & Lounger, 60 × 40 cm',
     cardSubtitle: 'A Scratcher It Can Sleep In',
     description:
       'A sisal rope cat scratcher and lounger — 60 × 40 × 8 cm and 600 g, with a raised rim so a cat can stretch, scratch and then curl up on it. The rope wrap does not crumble into flakes the way a cardboard board does.',
@@ -111,7 +121,7 @@ export const products = {
     // Shop 分类归属：Pet Carriers & Bags（见 src/data/catalog.js）。
     shopCategoryId: 'pet-carriers',
     page: 'car-pet-seat',
-    title: 'Car Seat Pet Bed & Travel Carrier',
+    title: 'Meower Waterproof 2-in-1 Pet Car Seat & Travel Carrier',
     cardSubtitle: 'Seat, Carrier and Flat Bed',
     description:
       'A waterproof faux-leather car seat bed that straps into the car, carries like a bag and unzips into a flat bed — 60 × 50 × 32 cm, for cats and small dogs up to about 10 kg.',
@@ -126,12 +136,12 @@ export const products = {
     purchasable: true,
     shopifyHandle: 'travel-pet-stroller',
     label: 'Pet Stroller',
-    cardLabel: 'Travel Pet Stroller',
+    cardLabel: 'Foldable Pet Stroller',
     category: 'Pet Stroller',
     // Shop 分类归属：Pet Strollers（见 src/data/catalog.js）。
     shopCategoryId: 'pet-strollers',
     page: 'pet-stroller',
-    title: 'Travel Pet Stroller with Carrycot',
+    title: 'Meower Foldable Cat & Dog Stroller with Detachable Carrier',
     cardSubtitle: 'Click-Off Carrycot, Folding Frame',
     description:
       'An aluminium pet stroller whose carrycot lifts off the frame in one click — the carrycot rides on the back seat for a long drive while the frame folds into the boot. 82 × 59 × 95–105 cm open, 25 kg load, six-panel canopy, brake and quick-release ETPU wheels.',
@@ -151,7 +161,7 @@ export const products = {
     // Shop 分类归属：Pet Beds（见 src/data/catalog.js）。
     shopCategoryId: 'pet-beds',
     page: 'triangle-cat-bed',
-    title: '3-in-1 Triangle Cat Bed',
+    title: 'Meower 3-in-1 Triangle Cat Cave Bed & Foldable Indoor Pet Tent',
     cardSubtitle: 'Triangle, Sofa and Sleeping Mat',
     description:
       'A waffle-weave cat bed that works three ways — stood up as a triangle cave, propped open as a sofa or laid flat as a sleeping mat. 58 × 50 × 40 cm, with a sherpa fleece lining over a PP cotton fill that keeps its shape, for cats and small dogs up to about 7.5 kg.',
@@ -166,12 +176,12 @@ export const products = {
     purchasable: true,
     shopifyHandle: 'push-button-pom-pom-cat-toy',
     label: 'Pom-Pom Cat Toy',
-    cardLabel: 'Push-Button Pom-Pom Toy',
+    cardLabel: 'Retractable Pom-Pom Toy',
     category: 'Pet Toy',
     // Shop 分类归属：Pet Toys（见 src/data/catalog.js）。
     shopCategoryId: 'pet-toys',
     page: 'cat-toy',
-    title: 'Push-Button Pom-Pom Cat Toy',
+    title: 'Meower Interactive Cat Toy with Bell, Retractable Pom-Pom',
     cardSubtitle: 'Launch and Retract the Ball',
     description:
       'A battery-powered cat toy with one button to fire a rabbit-fur pom-pom across the room and another to reel it back in, so play carries on without anyone bending down. Two replaceable pom-poms included; takes 2 AAA batteries, not included.',
@@ -191,7 +201,7 @@ export const products = {
     // Shop 分类归属：Pet Beds（见 src/data/catalog.js）。
     shopCategoryId: 'pet-beds',
     page: 'pet-bed',
-    title: 'Christmas Plaid Cat & Dog Bed',
+    title: 'Meower Christmas Plaid Bolster Cat & Dog Bed, Washable Cushion',
     cardSubtitle: 'Festive Plaid, Plush Comfort',
     description:
       'A festive plaid cat and dog bed with a short plush surface and PP cotton fill, raised bolsters and red pom-pom trim — warm all year, in three sizes from 40 × 30 × 20 cm to 60 × 50 × 30 cm.',
