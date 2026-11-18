@@ -284,6 +284,8 @@ onBeforeUnmount(() => {
           <figure class="promo-ad-media">
             <img
               src="/images/promo-ad-lifestyle.webp"
+              width="1200"
+              height="964"
               alt="Meower air purifier with a cat in a sunlit room, beside a wooden cat tree and a yellow pet litter box"
             />
             <figcaption class="promo-ad-headline-wrap">
@@ -309,7 +311,7 @@ onBeforeUnmount(() => {
               <span class="promo-ad-cta-email"><span aria-hidden="true">→</span> info@meowerair.com</span>
             </a>
 
-            <img class="promo-ad-logo" src="/images/logo-meower.webp" alt="Meower" />
+            <img class="promo-ad-logo" src="/images/logo-meower.webp" width="560" height="168" alt="Meower" />
           </div>
         </div>
       </div>

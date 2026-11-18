@@ -111,6 +111,8 @@ const heroStats = [
       <img
         class="md002-hero-image"
         src="/images/products/md002/hero-living-room.webp"
+        width="1600"
+        height="1280"
         alt="MD002 dehumidifier standing on a jute rug in a sunlit living room with a linen sofa"
       />
       <div class="md002-hero-copy">
@@ -221,6 +223,8 @@ const heroStats = [
       </div>
       <img
         src="/images/products/md002/product-transparent.webp"
+        width="800"
+        height="800"
         alt="White MD002 home dehumidifier shown from the front"
       />
     </section>

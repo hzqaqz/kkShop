@@ -8,7 +8,9 @@
     "build": "node scripts/make-google-feed.mjs --optional && vite-ssg build && node scripts/clean-dist.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "sync:policies": "node --env-file=.env scripts/sync-policies.mjs",
-    "feed:google": "node scripts/make-google-feed.mjs"
+    "feed:google": "node scripts/make-google-feed.mjs",
+    "check:checkout": "node scripts/check-checkout-url.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs && node scripts/inject-image-dimensions.mjs"
   },
   "dependencies": {
     "@unhead/vue": "^2.1.17",

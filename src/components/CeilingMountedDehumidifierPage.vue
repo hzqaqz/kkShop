@@ -33,6 +33,8 @@ const sellingPoints = [
       <img
         class="ceiling-hero-scene"
         src="/images/products/md0002/ceiling-mounted-factory-scene.webp"
+        width="1600"
+        height="761"
         alt="White and black MD0002 ceiling-mounted dehumidifiers in a factory"
       />
 
@@ -58,6 +60,8 @@ const sellingPoints = [
       </div>
       <img
         src="/images/products/md0002/ceiling-mounted-dehumidifier-white.webp"
+        width="1200"
+        height="960"
         alt="MD0002 industrial dehumidifier"
       />
     </section>

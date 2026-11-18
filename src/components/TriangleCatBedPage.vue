@@ -137,6 +137,8 @@ const features = [
       <img
         class="tbed-hero-media"
         src="/images/products/triangle-cat-bed/hero.webp"
+        width="1600"
+        height="1200"
         alt="A Bengal cat investigating the waffle-weave triangle cat bed in a sunlit living room"
         loading="eager"
         decoding="async"
@@ -213,6 +215,8 @@ const features = [
       <img
         class="tbed-craft-media"
         src="/images/products/triangle-cat-bed/cat-inside.webp"
+        width="1000"
+        height="1000"
         alt="A grey tabby cat lying inside the triangle cat bed, looking out"
         loading="lazy"
         decoding="async"

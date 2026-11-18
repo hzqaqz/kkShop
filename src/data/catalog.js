@@ -65,7 +65,7 @@ export const shopCategories = [
     description:
       'Scratching posts, boards and loungers that redirect claws away from sofas and carpets.',
     // White-background product shot, framed like the other photo tiles.
-    image: '/images/products/woven-sisal-cat-scratcher/design-starry.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-starry.webp',
     icon: Cat,
   },
   {

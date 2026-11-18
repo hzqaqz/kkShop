@@ -19,6 +19,7 @@ import { useHead } from '@unhead/vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useCart } from '../composables/useCart';
 import { useSeo } from '../composables/useSeo';
+import { track } from '../composables/useAnalytics';
 
 const { initCart, checkoutUrl, count } = useCart();
 
@@ -45,6 +46,9 @@ onMounted(async () => {
 
   if (checkoutUrl.value) {
     state.value = 'redirecting';
+    // 跳走之前上报：这是本站能观测到的最后一步，再往后就交给 Shopify 了。
+    // 所以「加购 → 结账跳转 → Shopify 订单」这条漏斗里，本站负责前两段。
+    track('begin_checkout', { items: count.value });
     // `replace` 而不是 `assign`：不要把这个中转页留在浏览器历史里。
     window.location.replace(checkoutUrl.value);
     return;

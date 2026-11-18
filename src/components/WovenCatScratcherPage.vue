@@ -19,25 +19,25 @@ const designs = [
     key: 'starry',
     name: 'Starry Night',
     note: 'Deep blue swirls with a black cat silhouette.',
-    image: '/images/products/woven-sisal-cat-scratcher/design-starry.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-starry.webp',
   },
   {
     key: 'sunflowers',
     name: 'Sunflowers',
     note: 'Van Gogh sunflowers with a black cat at the vase.',
-    image: '/images/products/woven-sisal-cat-scratcher/design-sunflowers.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-sunflowers.webp',
   },
   {
     key: 'pearl',
     name: 'Meow with a Pearl Earring',
     note: 'A cream cat in a yellow turban, pearl earrings and a lilac scarf.',
-    image: '/images/products/woven-sisal-cat-scratcher/design-hood.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-hood.webp',
   },
   {
     key: 'cypress',
     name: 'Cypress Field',
     note: 'Swirling sky, tall cypresses, one pair of yellow eyes.',
-    image: '/images/products/woven-sisal-cat-scratcher/design-landscape.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-landscape.webp',
   },
 ];
 
@@ -137,7 +137,9 @@ const features = [
 
       <img
         class="cframe-hero-media"
-        src="/images/products/woven-sisal-cat-scratcher/hero.jpg"
+        src="/images/products/woven-sisal-cat-scratcher/hero.webp"
+        width="1135"
+        height="1386"
         alt="A Bengal cat stretching up to scratch the woven Starry Night sisal board mounted on a wall"
         loading="eager"
         decoding="async"
@@ -189,6 +191,8 @@ const features = [
         <figure class="cframe-tip">
           <img
             src="/images/products/woven-sisal-cat-scratcher/velcro-strip.webp"
+            width="900"
+            height="582"
             alt="Velcro pad being peeled apart, showing the hook and loop sides"
             loading="lazy"
             decoding="async"
@@ -232,7 +236,9 @@ const features = [
 
       <img
         class="cframe-specs-media"
-        src="/images/products/woven-sisal-cat-scratcher/design-hood.jpg"
+        src="/images/products/woven-sisal-cat-scratcher/design-hood.webp"
+        width="510"
+        height="654"
         alt="Meow with a Pearl Earring woven sisal cat scratching board"
         loading="lazy"
         decoding="async"

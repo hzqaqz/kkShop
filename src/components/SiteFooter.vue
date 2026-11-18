@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
       <div class="footer-top">
         <div class="footer-brand">
           <RouterLink to="/" class="footer-logo" aria-label="Meower home">
-            <img src="/images/logo-meower.webp" alt="Meower" />
+            <img src="/images/logo-meower.webp" width="560" height="168" alt="Meower" />
           </RouterLink>
           <p class="footer-tagline">Pet supplies and pet-friendly air care, made for homes with cats and dogs.</p>
           <a class="footer-mail" :href="contactEmailHref">{{ CONTACT_EMAIL }}</a>

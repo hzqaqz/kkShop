@@ -159,6 +159,8 @@ const safety = [
       <img
         class="carseat-hero-media"
         src="/images/products/car-pet-seat/car-cat.webp"
+        width="1000"
+        height="1012"
         alt="A silver tabby cat sitting in the car seat pet bed on a car seat"
         loading="eager"
         decoding="async"
@@ -264,6 +266,8 @@ const safety = [
       <img
         class="carseat-scene-media"
         src="/images/products/car-pet-seat/product-grey.webp"
+        width="1400"
+        height="1100"
         alt="The grey car seat pet bed photographed from the front, with its straps, pocket and zip"
         loading="lazy"
         decoding="async"

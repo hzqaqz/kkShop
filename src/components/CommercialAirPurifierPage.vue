@@ -76,6 +76,8 @@ const spaces = [
       <img
         class="purifier-hero-scene"
         src="/images/products/mw1000/hero-gym.webp"
+        width="1374"
+        height="1145"
         alt="MW1000 commercial air purifier standing in a sunlit gym"
       />
 
@@ -102,6 +104,8 @@ const spaces = [
       </div>
       <img
         src="/images/products/mw1000/product-white.webp"
+        width="803"
+        height="1500"
         alt="Meower MW1000 commercial air purifier with front display"
       />
     </section>

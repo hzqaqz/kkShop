@@ -81,7 +81,7 @@ export const products = {
     cardSubtitle: 'Woven Sisal, Wall-Hung Art',
     description:
       'A wall-hung cat scratching board with a woven sisal face and a colour-matched woven border, made in four cat-themed artworks — 38 × 30 × 0.5 cm and 210 g, mounted on walls, sofas or cabinets with four velcro pads that leave no residue.',
-    image: '/images/products/woven-sisal-cat-scratcher/design-starry.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/design-starry.webp',
     ogImage: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
     inquiryNote: 'Stock, designs and delivery — ask us and we will confirm.',
   },

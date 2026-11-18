@@ -129,7 +129,7 @@ export const productOverviews = {
       'Hallways, sofa sides and cabinet doors the cat already scratches',
       'Anyone who would rather not look at a carpet-covered post',
     ],
-    image: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/hero.webp',
     imageAlt: 'A Bengal cat scratching the woven Starry Night sisal board on a wall',
     imageFit: 'contain',
     specs: [
@@ -212,7 +212,7 @@ export const productOverviews = {
       'Senior or recovering pets that tire on a walk',
       'Anyone who would rather push than carry a carrier',
     ],
-    image: '/images/products/pet-stroller/hero-sunset.jpg',
+    image: '/images/products/pet-stroller/hero-sunset.webp',
     imageAlt: 'A corgi sitting in the cream travel pet stroller beside a lake at sunset',
     specs: [
       ['Type', 'Pet stroller with click-off carrycot and six-panel canopy'],

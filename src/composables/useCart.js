@@ -6,6 +6,7 @@
  * state, so the header badge and the drawer always stay in sync.
  */
 import { computed, ref } from 'vue';
+import { track } from './useAnalytics';
 import {
   addCartLines as shopifyAddLines,
   createCart,
@@ -114,6 +115,14 @@ async function addToCart(merchandiseId, quantity = 1) {
     }
 
     isOpen.value = true;
+
+    // 加购是整条漏斗里第一个「真人信号」。没有它，$15/天的广告跑一周也分不清
+    // 是没人来、还是来了没人加购 —— 这两个结论对应的动作完全相反。
+    track('add_to_cart', {
+      item_id: String(merchandiseId).split('/').pop(),
+      quantity: addedQuantity,
+    });
+
     return true;
   } catch (err) {
     error.value = err.message || 'Could not add to cart.';

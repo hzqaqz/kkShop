@@ -73,6 +73,15 @@ img {
   max-width: 100%;
 }
 
+/* width/height 属性只负责在图片下载完成之前占住位置（防 CLS）。
+   真实高度必须交还给 CSS，否则固有比例会和各页面自己的容器打架，
+   把图压扁或拉长。
+   `:where()` 让这条规则的特异性为 0：`.slide-media img { height: 100% }`
+   这类「容器里有明确意图」的规则依然能覆盖它，不会被这里悄悄改掉。 */
+:where(img[width][height]) {
+  height: auto;
+}
+
 /* Bold type across the site matches the hero slogan's 600 — headings, strong
    and any element relying on the browser's default bold get the same weight. */
 h1,

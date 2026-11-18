@@ -152,6 +152,8 @@ const features = [
       <img
         class="petbed-hero-media"
         src="/images/products/christmas-pet-bed/hero-sizes.webp"
+        width="1600"
+        height="1067"
         alt="The festive plaid pet bed in small, medium and large, with a cat, a beagle and a labrador"
         loading="eager"
         decoding="async"
@@ -216,6 +218,8 @@ const features = [
       <img
         class="petbed-craft-media"
         src="/images/products/christmas-pet-bed/detail.webp"
+        width="1000"
+        height="860"
         alt="Close-up of the festive plaid bed with green piping, red pom-poms and a plush lining"
         loading="lazy"
         decoding="async"
@@ -278,7 +282,9 @@ const features = [
       <div class="petbed-gallery">
         <figure class="petbed-gallery-item">
           <img
-            src="/images/products/christmas-pet-bed/home-corner.jpg"
+            src="/images/products/christmas-pet-bed/home-corner.webp"
+            width="1600"
+            height="1200"
             alt="The large festive plaid bed on a wooden floor beside a cat tree and a Meower air purifier"
             loading="lazy"
             decoding="async"
@@ -288,7 +294,9 @@ const features = [
 
         <figure class="petbed-gallery-item">
           <img
-            src="/images/products/christmas-pet-bed/home-cat.jpg"
+            src="/images/products/christmas-pet-bed/home-cat.webp"
+            width="1600"
+            height="1200"
             alt="A Bengal cat standing beside the festive plaid bed and air purifier"
             loading="lazy"
             decoding="async"
@@ -298,7 +306,9 @@ const features = [
 
         <figure class="petbed-gallery-item">
           <img
-            src="/images/products/christmas-pet-bed/home-climb.jpg"
+            src="/images/products/christmas-pet-bed/home-climb.webp"
+            width="1200"
+            height="1600"
             alt="A Bengal cat climbing the cat tree with the festive plaid bed in front of it"
             loading="lazy"
             decoding="async"

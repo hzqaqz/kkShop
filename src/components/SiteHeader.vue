@@ -143,7 +143,7 @@ onBeforeUnmount(() => {
     @mouseleave="closeMenuSoon"
   >
     <RouterLink class="brand" to="/" aria-label="kkShop home">
-      <img class="brand-logo" src="/images/logo-meower.webp" alt="Meower" />
+      <img class="brand-logo" src="/images/logo-meower.webp" width="560" height="168" alt="Meower" />
     </RouterLink>
 
     <nav class="nav-links" aria-label="Primary navigation">

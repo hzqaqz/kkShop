@@ -101,6 +101,37 @@ function googleCategory(vueProduct) {
   return CATEGORY_MAP[vueProduct.category] || PET_CATEGORY;
 }
 
+// --- 标题改写 ---------------------------------------------------------------
+
+/**
+ * Shopping 广告没有关键词出价，能不能被搜到几乎全靠 title 的前 3-5 个词。
+ * Shopify 里的标题以品牌开头（「Meower Christmas Plaid …」），前两个词就把
+ * 位置浪费在没人搜的品牌名上 —— 新店尤其吃亏，因为还没人搜 Meower。
+ *
+ * 通用规则：去掉开头的品牌名（品牌已在 g:brand 里给了，GMC 不缺这个信息）。
+ * 个别商品再按真实搜索词重写，把品类词顶到最前面。
+ *
+ * 约束：GMC 限 150 字符；不要写促销语（「Sale」「Free shipping」会被拒）；
+ * 变体后缀（尺寸/颜色）由 translateVariant 追加，这里只写公共部分。
+ */
+const TITLE_LEAD = {
+  'christmas-pet-bed': 'Christmas Plaid Cat Bed & Dog Bed, Bolster Cushion, Washable',
+  'pom-pom-cat-toy': 'Interactive Cat Toy with Bell, Retractable Pom-Pom Wand, Cat Teaser',
+  'car-pet-seat': 'Dog Car Seat & Pet Booster Carrier, Waterproof 2-in-1, Travel',
+  'woven-sisal-cat-scratcher':
+    'Wall Mounted Cat Scratcher, Sisal Scratching Board, Furniture Protector',
+  'triangle-cat-bed': 'Cat Cave Bed, 3-in-1 Triangle Cat Bed & Foldable Indoor Cat Tent',
+};
+
+const GMC_TITLE_MAX = 150;
+
+function feedTitle(shopifyTitle, siteProductId, suffix) {
+  const lead = TITLE_LEAD[siteProductId];
+  const base = lead || String(shopifyTitle).replace(/^meower\s+/i, '');
+  const full = suffix ? `${base} — ${suffix}` : base;
+  return full.length > GMC_TITLE_MAX ? `${full.slice(0, GMC_TITLE_MAX - 1).trimEnd()}…` : full;
+}
+
 // --- GraphQL ----------------------------------------------------------------
 
 const QUERY = `
@@ -246,7 +277,8 @@ async function buildFeed() {
       }
 
       const suffix = translateVariant(siteProduct, variantLabel(variant));
-      const title = suffix ? `${product.title} — ${suffix}` : product.title;
+      // 标题决定 Shopping 的曝光，见文件上方 TITLE_LEAD 的说明。
+      const title = feedTitle(product.title, siteProduct.id, suffix);
       const link = `${SITE}/products/${siteProduct.id}`;
 
       items.push({

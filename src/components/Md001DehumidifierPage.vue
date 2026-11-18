@@ -57,6 +57,8 @@ const spaces = [
       <img
         class="md001-hero-image"
         src="/images/products/md001/hero-living-room.webp"
+        width="1600"
+        height="1280"
         alt="MD001 dehumidifier in a sunlit living room"
       />
       <div class="md001-hero-copy">
@@ -103,7 +105,7 @@ const spaces = [
           <div><dt>Height</dt><dd>385 mm</dd></div>
         </dl>
       </div>
-      <img src="/images/products/md001/product-transparent.webp" alt="White MD001 home dehumidifier" />
+      <img src="/images/products/md001/product-transparent.webp" width="420" height="448" alt="White MD001 home dehumidifier" />
     </section>
 
     <section class="md001-spaces" aria-labelledby="md001-spaces-title">

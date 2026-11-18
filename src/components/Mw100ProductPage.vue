@@ -320,6 +320,8 @@ const specs = computed(() => [
     >
       <img
         src="/images/products/mw100/04-mw100-with-cat.webp"
+        width="1200"
+        height="675"
         alt="MW100 smart air purifier with a cat"
       />
       <div>

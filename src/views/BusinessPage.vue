@@ -80,6 +80,8 @@ const ranges = businessGroups.map((group) => ({
       <img
         class="business-hero-bg"
         src="/images/business/partner-hero.webp"
+        width="1600"
+        height="1333"
         alt="Meower MW1000 commercial air purifier standing in a gym"
         loading="eager"
         decoding="async"
@@ -240,6 +242,8 @@ const ranges = businessGroups.map((group) => ({
       <img
         class="business-closing-image"
         src="/images/business/about-closing.webp"
+        width="1600"
+        height="1200"
         alt="Meower air purifier beside a Bengal cat on a wooden floor"
         loading="lazy"
         decoding="async"

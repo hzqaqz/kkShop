@@ -171,6 +171,8 @@ onBeforeUnmount(() => {
           <figure class="offer-pop-media">
             <img
               src="/images/promo/offer-lifestyle.webp"
+              width="1254"
+              height="1486"
               alt="A Bengal cat beside the festive plaid bed and a Meower air purifier in a sunlit room"
               loading="lazy"
               decoding="async"

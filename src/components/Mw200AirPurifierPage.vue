@@ -113,6 +113,8 @@ const spaces = [
       <img
         class="mw200-hero-image"
         src="/images/products/mw200/hero-armchair.webp"
+        width="1600"
+        height="1462"
         alt="MW200 air purifier on a wooden floor beside a linen armchair and houseplants"
       />
       <div class="mw200-hero-copy">
@@ -191,6 +193,8 @@ const spaces = [
       </div>
       <img
         src="/images/products/navigation/mw200-transparent.webp"
+        width="287"
+        height="500"
         alt="White Meower MW200 air purifier"
       />
     </section>

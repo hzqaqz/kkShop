@@ -145,6 +145,8 @@ const care = [
       <img
         class="sisal-hero-media"
         src="/images/products/sisal-cat-scratcher/hero.webp"
+        width="1199"
+        height="1312"
         alt="A Bengal cat stretching forward to scratch the sisal rope cat scratcher in a sunlit living room"
         loading="eager"
         decoding="async"
@@ -214,6 +216,8 @@ const care = [
       <img
         class="sisal-craft-media"
         src="/images/products/sisal-cat-scratcher/lounging.webp"
+        width="1200"
+        height="1200"
         alt="A Bengal cat curled up asleep on the sisal cat scratcher"
         loading="lazy"
         decoding="async"

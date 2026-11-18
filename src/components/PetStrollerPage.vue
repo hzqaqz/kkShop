@@ -131,7 +131,9 @@ const features = [
 
       <div class="ps-hero-media">
         <img
-          src="/images/products/pet-stroller/hero-sunset.jpg"
+          src="/images/products/pet-stroller/hero-sunset.webp"
+          width="1536"
+          height="1024"
           alt="A corgi sitting in the cream travel pet stroller beside a lake at sunset"
           loading="eager"
           decoding="async"
@@ -177,6 +179,8 @@ const features = [
       <figure class="ps-view-single">
         <img
           src="/images/products/pet-stroller/studio-portrait.webp"
+          width="939"
+          height="1252"
           alt="The travel pet stroller in cream, seen from the side with its canopy folded back"
           loading="lazy"
           decoding="async"

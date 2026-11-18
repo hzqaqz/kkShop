@@ -88,7 +88,9 @@ watch(activeId, () => nextTick(centreActiveCategory));
     <header class="shop-hero" aria-labelledby="shop-title">
       <img
         class="shop-hero-bg"
-        src="/images/shop/shop-hero.jpg"
+        src="/images/shop/shop-hero.webp"
+        width="1536"
+        height="1024"
         alt="A cream Ragdoll cat resting in a red and cream plaid pet bed in a sunlit living room"
         loading="eager"
         decoding="async"

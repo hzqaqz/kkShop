@@ -81,6 +81,7 @@ export const legalDocuments = {
         heading: 'Cookies and local storage',
         paragraphs: [
           'This site does not use advertising cookies. It uses browser storage for the shopping cart and to remember that a promotional panel has already been shown in the current session.',
+          'For traffic statistics we use a cookie-free analytics service that records aggregate page views and a few aggregated actions (such as an item being added to the cart). It sets no cookies, does not build a profile of you, does not follow you to other sites and does not collect your name, email address or precise location, which is why you are not asked to accept a cookie banner.',
         ],
       },
       {

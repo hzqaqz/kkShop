@@ -46,6 +46,8 @@ const spaces = [
       <img
         class="commercial-hero-scene"
         src="/images/products/md0001/warehouse-hero.webp"
+        width="1600"
+        height="900"
         alt="White MD0001 commercial dehumidifier standing in a warehouse aisle"
       />
 
@@ -71,6 +73,8 @@ const spaces = [
       </div>
       <img
         src="/images/products/md0001/product-white.webp"
+        width="1200"
+        height="800"
         alt="MD0001 commercial dehumidifier"
       />
     </section>

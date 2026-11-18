@@ -87,6 +87,8 @@ const features = [
       <img
         class="cattoy-hero-media"
         src="/images/products/cat-toy/hero.webp"
+        width="1000"
+        height="1250"
         alt="A ragdoll kitten reaching for the pink pom-pom of the push-button cat toy"
         loading="eager"
         decoding="async"
@@ -159,6 +161,8 @@ const features = [
       <img
         class="cattoy-gift-media"
         src="/images/products/cat-toy/gift-box.webp"
+        width="1200"
+        height="1107"
         alt="The cat toy gift box with its user manual, spare pom-poms, screwdriver and handle"
         loading="lazy"
         decoding="async"
@@ -169,6 +173,8 @@ const features = [
       <img
         class="cattoy-scene-media"
         src="/images/products/cat-toy/lifestyle-wide.webp"
+        width="1600"
+        height="1067"
         alt="A kitten on its back reaching for the pom-pom while the handle is held above"
         loading="lazy"
         decoding="async"

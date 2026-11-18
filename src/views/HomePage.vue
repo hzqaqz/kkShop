@@ -43,7 +43,7 @@ const slides = [
     to: petBedRoute,
   },
   {
-    image: '/images/products/pet-stroller/hero-sunset.jpg',
+    image: '/images/products/pet-stroller/hero-sunset.webp',
     alt: 'A corgi sitting in a cream pet stroller beside a lake at sunset',
     slogan: 'Easy Travel, Together',
     // A dark photo: the Shop Now button flips to light glass so it stays legible.
@@ -94,7 +94,7 @@ const featuredCards = [
   },
   {
     id: 'woven-sisal-cat-scratcher',
-    image: '/images/products/woven-sisal-cat-scratcher/hero.jpg',
+    image: '/images/products/woven-sisal-cat-scratcher/hero.webp',
     imagePosition: 'center 38%',
     pitch: 'Woven sisal with a colour-matched border — a scratcher that saves the sofa without looking like one.',
   },
@@ -380,6 +380,8 @@ onBeforeUnmount(() => {
         <img
           class="business-invite-media"
           src="/images/business/partner-hero.webp"
+          width="1600"
+          height="1333"
           alt="Meower MW1000 commercial air purifier standing in a gym"
           loading="lazy"
           decoding="async"
