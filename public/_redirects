@@ -11,3 +11,16 @@
 # The framed scratching board became the woven sisal board; keep old links live.
 /products/cat-scratcher-frame /products/woven-sisal-cat-scratcher 301
 /products/cat-scratcher-frame/ /products/woven-sisal-cat-scratcher 301
+
+# Google Merchant Center 的「Cart or checkout page URL」是必填的模板，字段校验
+# 要求必须带 `{id}`，所以填不出 `/cart`（会报 Missing required parameter: {id}），
+# 只能填 `https://meowerair.com/cart/{id}:1`。`{id}` 会替换成 feed 里的 g:id，
+# 也就是 Shopify 的 variant id（见 scripts/make-google-feed.mjs）。
+#
+# 这个路径不是静态文件，构建时也不会被预渲染，所以这里 302 到 Shopify 真正的
+# 购物车直链 `<variant_id>:1` —— 那边会继续 302 到 /checkouts/... 结账页，
+# Google 跟随重定向后看到的是真实结账页。302 而不是 200 重写：让 URL 变成
+# 真正的购物车，而不是一个「空购物车」的静态页。
+#
+# `/cart`（无 id、精确匹配）不受影响，仍然是预渲染的 cart.html。
+/cart/* https://meowerair.myshopify.com/cart/:splat 302
