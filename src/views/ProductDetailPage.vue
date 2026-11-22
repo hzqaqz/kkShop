@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { Truck } from 'lucide-vue-next';
 import CarPetSeatPage from '../components/CarPetSeatPage.vue';
 import WovenCatScratcherPage from '../components/WovenCatScratcherPage.vue';
 import CatToyProductPage from '../components/CatToyProductPage.vue';
@@ -28,6 +29,7 @@ import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 import { getArticlesForProduct } from '../data/contentLinks';
 import { getProduct, getRelatedProducts } from '../data/products';
+import { fulfilment } from '../data/siteInfo';
 import { isShopifyConfigured } from '../composables/useShopify';
 
 const route = useRoute();
@@ -160,6 +162,24 @@ useSeo(currentMeta.value);
     <div v-if="currentProduct" class="product-post-content" :class="themeClass">
       <SiteBreadcrumbs :items="breadcrumbs" />
 
+      <!-- Shipping origin, delivery window and return window, on the landing
+           page itself. Merchant Center checks this page for the delivery terms
+           it shows next to the product, and a product page that never mentions
+           where it ships from is one of the classic Misrepresentation triggers.
+           Wrapped so the 80px `breadcrumbs + *` rhythm of this zone can be
+           overridden without touching the global rule. -->
+      <div class="product-fulfilment-row">
+        <p class="product-fulfilment">
+          <Truck aria-hidden="true" />
+          <span>
+            Ships from {{ fulfilment.shipsFrom }} · Dispatched in
+            {{ fulfilment.dispatchWindow }} · Delivery to the US
+            <strong>{{ fulfilment.usDelivery }}</strong> ·
+            <RouterLink :to="{ name: 'refunds' }">{{ fulfilment.returnsShortLabel }}</RouterLink>
+          </span>
+        </p>
+      </div>
+
       <ProductOverview :product-id="route.params.productId" />
 
       <ProductFaq :product-id="route.params.productId" />
@@ -188,6 +208,49 @@ useSeo(currentMeta.value);
 /* Keep the last content clear of the fixed bottom action bar (buy / inquiry). */
 .product-page {
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Sits right under the breadcrumbs, so the `breadcrumbs + *` gap of the SEO
+   zone (80px) is overridden: the delivery facts belong to the product, not to
+   a new section. */
+.product-fulfilment-row {
+  margin-top: clamp(16px, 2.2vw, 26px) !important;
+}
+
+.product-fulfilment {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  max-width: 860px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--seo-border, rgba(51, 76, 81, 0.16));
+  border-radius: 10px;
+  background: var(--seo-surface, rgba(248, 251, 250, 0.8));
+  color: var(--seo-body, #40595e);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.product-fulfilment svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: var(--seo-ink, #345258);
+  stroke-width: 1.9;
+}
+
+.product-fulfilment strong {
+  color: var(--seo-ink, #22383c);
+  font-weight: 600;
+}
+
+.product-fulfilment a {
+  color: var(--seo-ink, #274b52);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 640px) {

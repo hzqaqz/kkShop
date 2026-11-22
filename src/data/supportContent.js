@@ -6,9 +6,12 @@
  * Wholesale / OEM / project questions live on the Business page instead.
  *
  * Answers only restate facts already published on the site (contact details,
- * room sizes and filter care from the product pages and blog). Anything that
- * would commit the business to a shipping window, returns policy or warranty
- * period is deliberately left as "contact us" until those terms are confirmed.
+ * room sizes and filter care from the product pages and blog), plus the
+ * fulfilment facts that now live in `siteInfo.js`: ships from Beijing, 9–16 days
+ * to the United States, 30-day returns with the return-shipping split spelled
+ * out. Those three are the answers Google Merchant Center reads for shipping
+ * and returns, so they must stay identical to `src/data/siteInfo.js` and to the
+ * Shopify policy pages.
  */
 import { CONTACT_EMAIL } from './siteInfo';
 
@@ -46,11 +49,11 @@ export const supportFaqs = [
   },
   {
     question: 'Do you ship to my country?',
-    answer: `We ship worldwide. Send us the destination country together with the product you are interested in and we will confirm the shipping options and cost for your order before you commit. Email ${CONTACT_EMAIL}.`,
+    answer: `We ship from our own warehouse in Beijing, China to roughly 50 destinations — the United States, Canada, the United Kingdom, the EU and other European countries, Australia, New Zealand, the Middle East and parts of Asia. The exact country list is in our Shipping Policy. Every consumer order is dispatched within 1 business day, and typical delivery from dispatch is 9–16 days to the United States, 11–20 days to Europe and Canada, 10–15 days to Asia, and 11–15 days to New Zealand and Australia. If your country is not on the list, email ${CONTACT_EMAIL} and we will confirm whether we can ship there.`,
   },
   {
     question: 'What about returns, warranty and spare parts?',
-    answer: `Returns, warranty claims and spare-part requests are handled case by case. Email ${CONTACT_EMAIL} with your order details and a short description of the issue and we will take it from there.`,
+    answer: `Unused items in their original packaging can be returned within 30 days of delivery. You pay return shipping if you changed your mind; we pay it if the item arrived faulty, damaged or wrong. Start by emailing ${CONTACT_EMAIL} with your order number and a short description of the issue — returns, warranty claims and spare-part requests are all handled from that one address.`,
   },
 ];
 

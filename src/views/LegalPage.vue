@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue';
+import CompanyDetails from '../components/CompanyDetails.vue';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
@@ -22,6 +23,19 @@ const doc = computed(() => getLegalDocument(props.slug));
  * 后台没填时退回 `legalContent.js` 的手写版本。
  */
 const policy = computed(() => getShopifyPolicy(props.slug));
+
+/**
+ * The shipping origin, delivery window, return window and payment method, in a
+ * box above the prose.
+ *
+ * Why a separate box instead of trusting the prose: when a Shopify policy has
+ * been synced, `v-html` renders the Shopify text and the hand-written fallback
+ * in `legalContent.js` is skipped — and the Shopify template does not mention
+ * "9–16 days to the United States" or where the parcels ship from. A Merchant
+ * Center reviewer (and the automated check) needs those numbers on this page.
+ */
+const FULFILMENT_SLUGS = ['shipping', 'refunds'];
+const showFulfilment = computed(() => FULFILMENT_SLUGS.includes(props.slug));
 
 const pageTitle = computed(() => doc.value?.title ?? policy.value?.title ?? 'Information');
 const lastUpdated = computed(() => policy.value?.lastUpdated || doc.value?.lastUpdated || '');
@@ -51,6 +65,10 @@ const breadcrumbs = computed(() => [
     </header>
 
     <div class="legal-body">
+      <div v-if="showFulfilment" class="legal-fulfilment">
+        <CompanyDetails variant="compact" heading="Fulfilment at a glance" />
+      </div>
+
       <div v-if="policy" class="legal-prose" v-html="policy.bodyHtml"></div>
 
       <template v-else>
@@ -91,6 +109,11 @@ const breadcrumbs = computed(() => [
 .legal-updated { margin: 22px 0 0; color: #75949a; font-size: 14px; font-weight: 600; }
 .legal-intro { max-width: 780px; margin: 18px 0 0; color: #40595e; font-size: clamp(17px, 1.6vw, 22px); line-height: 1.55; }
 .legal-body { padding: clamp(24px, 4vw, 56px) max(7vw, calc((100vw - 1080px) / 2)) clamp(70px, 9vw, 120px); }
+/* The fulfilment summary sits between the hero and the legal prose, so it needs
+   the same measure and a clear gap below it — and no gap above, because the
+   `.legal-body` padding already provides it. */
+.legal-fulfilment { max-width: 860px; margin-bottom: clamp(26px, 3vw, 40px); }
+.legal-fulfilment :deep(.company-details) { margin-top: 0; }
 .legal-section { max-width: 860px; padding-top: clamp(26px, 3vw, 42px); border-top: 1px solid #ebe0d4; }
 .legal-section + .legal-section { margin-top: clamp(26px, 3vw, 42px); }
 .legal-section h2 { margin: 0 0 14px; color: #314e53; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.02em; }

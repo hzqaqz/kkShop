@@ -5,8 +5,10 @@ import { ArrowUp } from 'lucide-vue-next';
 import { shopCategories } from '../data/catalog';
 import {
   CONTACT_EMAIL,
-  contacts,
+  address,
+  company,
   contactEmailHref,
+  fulfilment,
   paymentMethods,
   socialLinks,
 } from '../data/siteInfo';
@@ -18,6 +20,12 @@ import {
  * validates the address and opens a pre-filled email to info@meowerair.com, so
  * the visitor knows exactly what happens to their address. `socialLinks` in `src/data/siteInfo.js` renders under the brand
  * block; entries without a URL stay hidden.
+ *
+ * The bottom row is also the site's smallest trust panel: the legal entity, the
+ * full postal address, the shipping origin, the US delivery window, the return
+ * window and the accepted payment methods are on every single page, because
+ * Google Merchant Center checks the landing page — not just the policy pages —
+ * for exactly these facts.
  */
 
 const shopLinks = [
@@ -57,7 +65,6 @@ const columns = [
 ];
 
 const liveSocialLinks = computed(() => socialLinks.filter((link) => link.href));
-const address = contacts.find((contact) => contact.label === 'Address')?.value ?? '';
 const year = new Date().getFullYear();
 
 const newsletterEmail = ref('');
@@ -175,8 +182,21 @@ onBeforeUnmount(() => {
 
       <div class="footer-bottom">
         <div class="footer-meta">
-          <p v-if="address" class="footer-address">{{ address }}</p>
-          <p class="footer-copyright">&copy; {{ year }} Meower. All rights reserved.</p>
+          <address class="footer-address">
+            <span class="footer-entity">{{ company.legalName }}</span>
+            <span v-for="line in address.lines" :key="line" class="footer-address-line">{{ line }}</span>
+            <span class="footer-address-zh" lang="zh">{{ address.zh }}</span>
+          </address>
+
+          <p class="footer-fulfilment">
+            Dispatched in {{ fulfilment.dispatchWindow }} · US delivery
+            {{ fulfilment.usDelivery }} ·
+            <RouterLink :to="{ name: 'refunds' }">{{ fulfilment.returnsShortLabel }}</RouterLink>
+          </p>
+
+          <p class="footer-copyright">
+            &copy; {{ year }} {{ company.legalName }}. All rights reserved.
+          </p>
 
           <div class="footer-payments">
             <span class="footer-payments-label">We accept</span>
@@ -384,9 +404,42 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
+/* The legal entity + postal address. `<address>` is italic by default and is
+   the semantically correct element here, so it is reset rather than avoided. */
 .footer-address {
+  display: grid;
+  gap: 2px;
+  font-style: normal;
   color: #4f6b70;
   font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.footer-entity {
+  color: #274b52;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-address-zh {
+  color: #6b878c;
+  font-size: 13.5px;
+}
+
+/* Shipping origin, delivery window and return window: three facts Google
+   Merchant Center looks for on the landing page itself. */
+.footer-fulfilment {
+  margin-top: 10px !important;
+  color: #4f6b70;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-fulfilment a {
+  color: #274b52;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-copyright {

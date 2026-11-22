@@ -17,7 +17,7 @@
  * REVIEW BEFORE RELYING ON THEM: the refund window, warranty period and
  * governing-law jurisdiction are placeholders that need a human decision.
  */
-const LAST_UPDATED = '28 October 2026';
+const LAST_UPDATED = '23 November 2026';
 
 export const legalDocuments = {
   privacy: {
@@ -97,11 +97,25 @@ export const legalDocuments = {
     path: '/refunds',
     title: 'Refund & Exchanges',
     description:
-      'How to raise a return, exchange or warranty claim with Meower, what we need from you, and how refunds are paid.',
+      'How to raise a return, exchange or warranty claim with Meower: the 30-day window, who pays return shipping, and how refunds are paid.',
     lastUpdated: LAST_UPDATED,
     intro:
-      'If something is wrong with an order, contact us before sending anything back — we will confirm what is possible for your case and, where a return is agreed, give you the return address.',
+      'Unused items can be returned within 30 days of delivery. If something is wrong with an order, contact us before sending anything back — we will confirm what is possible for your case and, where a return is agreed, give you the return address.',
     sections: [
+      {
+        heading: 'The 30-day return window',
+        paragraphs: [
+          'We accept returns of unused items in their original packaging within 30 days of delivery, for orders delivered to the United States, New Zealand, Australia, Canada, the United Kingdom, the European Union and the other destinations listed in our full policy.',
+          'Items must come back in the condition they arrived in: unused, with tags, and in the original packaging, or as otherwise set out in the return instructions we send you. We may reduce a refund where an item has been used, damaged, or handled more than necessary to check it.',
+        ],
+      },
+      {
+        heading: 'Who pays for return shipping',
+        bullets: [
+          'Change of mind: the customer pays the return shipping.',
+          'Faulty, damaged in transit, or the wrong item supplied: we pay the return shipping, and we cover the cost of putting it right.',
+        ],
+      },
       {
         heading: 'Before you return anything',
         paragraphs: [
@@ -123,9 +137,9 @@ export const legalDocuments = {
         ],
       },
       {
-        heading: 'Change of mind',
+        heading: 'Exchanges',
         paragraphs: [
-          'Change-of-mind returns are handled case by case, and only for unused products in their original packaging. Return shipping for change of mind is the buyer’s responsibility.',
+          'If you would rather swap an item than return it — a different size, colour or unit — say so in your email and we will confirm what is possible for that order. Any price difference is settled before the replacement ships.',
         ],
       },
       {
@@ -205,23 +219,53 @@ export const legalDocuments = {
     path: '/shipping',
     title: 'Shipping Policy',
     description:
-      'How Meower processes and ships orders: dispatch times, delivery estimates for New Zealand and Australia, tracking, and what to do if a parcel is delayed or damaged.',
+      'Where Meower ships from, delivery times (9–16 days to the United States), tracking, and what to do if a parcel is delayed or damaged.',
     lastUpdated: LAST_UPDATED,
     intro:
-      'This policy explains how we process and ship orders, what delivery costs and what to do if something goes wrong in transit.',
+      'This policy explains where we ship from, how long delivery takes, what it costs and what to do if something goes wrong in transit.',
     // Shopify 后台的 Shipping policy 是权威版本（`npm run sync:policies` 会拉过来
     // 覆盖这里）。下面只是后台为空、或本地构建没有生成文件时的兜底摘要。
+    // 无论哪种情况，页面顶部都会渲染 `CompanyDetails` 里的「Fulfilment at a
+    // glance」，所以发货地 / 美国时效 / 退货窗口这三项不会因为同步而丢失。
     sections: [
       {
-        heading: 'Processing and delivery',
+        heading: 'Where we ship from',
         paragraphs: [
-          'Orders are processed on business days. Delivery estimates and shipping costs are shown at checkout before you pay, and depend on the destination and the size of the item.',
+          'Every order is packed and dispatched from our registered address and warehouse in Beijing, China: Room 1369, Block D, Building 3, Yard 8, Fenggu 4th Road, Zhongguancun Yanqing Park, Yanqing District, Beijing, China.',
+          'We are the seller for every order placed on this site — there is no marketplace or third-party reseller between you and us. Retail orders are accepted for the countries available at checkout; if yours is not among them, email us and we will confirm whether we can ship there.',
         ],
       },
       {
-        heading: 'Tracking and problems in transit',
+        heading: 'Delivery times',
+        bullets: [
+          'United States: 9–16 days.',
+          'Europe: 11–20 days.',
+          'Canada: 11–20 days.',
+          'Asia: 10–15 days.',
+          'New Zealand: 11–15 days.',
+          'Australia: 11–15 days.',
+        ],
         paragraphs: [
-          'A tracking link is emailed when your order is dispatched. If a parcel is delayed, arrives damaged or does not arrive, contact us at info@meowerair.com with your order number and we will follow it up with the carrier.',
+          'Region windows apply to the destinations listed in this policy. Delivery times are counted from dispatch, not from the moment the order is placed, and they are estimates rather than guarantees: customs clearance, public holidays, weather and carrier backlogs can all add days.',
+        ],
+      },
+      {
+        heading: 'Processing and tracking',
+        paragraphs: [
+          'Orders are processed on business days and every consumer order is dispatched within 1 business day. You will receive a confirmation email, and a tracking number once the parcel has been handed to the carrier, where the carrier provides one.',
+          'Shipping costs are calculated at checkout before you pay, based on the destination and the size of the item.',
+        ],
+      },
+      {
+        heading: 'Duties and import taxes',
+        paragraphs: [
+          'Orders may be subject to import duties, sales tax or customs fees in the destination country. Where these are collected at checkout they are shown before you pay; where they are not, the carrier may collect them on delivery.',
+        ],
+      },
+      {
+        heading: 'Problems in transit',
+        paragraphs: [
+          'If your order is lost, damaged or delayed, contact us. We are responsible for the order until it is delivered and will arrange a replacement or refund.',
           'Nothing here limits your rights under the New Zealand Consumer Guarantees Act 1993 or the Australian Consumer Law.',
         ],
       },

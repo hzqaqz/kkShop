@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useHead } from '@unhead/vue';
+import CompanyDetails from '../components/CompanyDetails.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 import { getBlogArticle } from '../data/blogArticles';
@@ -118,6 +119,11 @@ useHead(() => ({
           <span><strong>{{ contact.label }}:</strong> {{ contact.value }}</span>
         </li>
       </ul>
+
+      <!-- Same facts as the Business page: the parcel address, the shipping
+           origin, the delivery window and the return rule. A support page that
+           only offers a form reads as anonymous to both shoppers and Google. -->
+      <CompanyDetails variant="compact" heading="Company details" />
     </section>
 
     <section class="support-section" aria-labelledby="support-topics-title">

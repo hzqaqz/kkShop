@@ -55,6 +55,15 @@
       content="Meower pet supplies and pet-friendly air purifiers"
     />
 
+    <!--
+      Organization structured data. These values are the machine-readable copy of
+      `src/data/siteInfo.js` — the legal entity, the unified social credit code
+      (`taxID`), the full Beijing registered address, the contact point and the
+      official profiles. Google matches the site against the business it verified
+      in Merchant Center, so if an address or phone number changes in siteInfo.js,
+      change it here too. A mismatch reads as "the business on the site is not
+      the business in the account".
+    -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -63,11 +72,34 @@
             "@type": "Organization",
             "@id": "https://meowerair.com/#organization",
             "name": "Meower",
+            "legalName": "Beijing Zhuoyue Youshi Technology Co., Ltd.",
+            "taxID": "91110119MAKB3X4U0M",
             "url": "https://meowerair.com/",
             "logo": "https://meowerair.com/images/logo-meower.webp",
+            "description": "Pet supplies and pet-friendly HEPA H13 air purifiers and dehumidifiers, dispatched from the company's own warehouse in Beijing, China.",
             "email": "info@meowerair.com",
             "telephone": "+86 1337 049 7731",
-            "address": { "@type": "PostalAddress", "addressCountry": "CN", "addressLocality": "Beijing" }
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Room 1369, Block D, Building 3, Yard 8, Fenggu 4th Road, Zhongguancun Yanqing Park",
+              "addressLocality": "Beijing",
+              "addressRegion": "Yanqing District",
+              "addressCountry": "CN"
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "info@meowerair.com",
+                "telephone": "+86 1337 049 7731",
+                "availableLanguage": ["en", "zh"]
+              }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/meowerpet/",
+              "https://www.linkedin.com/company/meower-air",
+              "https://www.tiktok.com/@meowerair"
+            ]
           },
           {
             "@type": "WebSite",

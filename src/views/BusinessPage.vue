@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import CompanyDetails from '../components/CompanyDetails.vue';
 import PromoAdModal from '../components/PromoAdModal.vue';
 import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
@@ -207,6 +208,26 @@ const ranges = businessGroups.map((group) => ({
 
       <p class="business-signoff">Meower — Cleaner Air. Happier Pet Homes.</p>
 
+      <!-- Who is behind the store. This paragraph plus the CompanyDetails card
+           below are what Google Merchant Center reads as "business identity":
+           a legal entity, a real address, where the parcels leave from, how long
+           delivery takes and who is responsible for a return. -->
+      <p class="business-about-entity">
+        Meower is the pet air-care brand of
+        <strong>Beijing Zhuoyue Youshi Technology Co., Ltd.</strong><span lang="zh"
+          >（北京卓越优识科技有限公司）</span
+        >, a company based in Beijing, China. Every consumer order is packed and dispatched from our
+        own warehouse in Beijing within <strong>1 business day</strong> — there is no third-party
+        seller between you and us. Delivery takes <strong>9–16 days to the United States</strong> and
+        10–20 days to the other destinations we serve, returns can be raised within
+        <strong>30 days</strong> of delivery, and email is answered within one business day. Retail
+        orders go to the destinations listed in our Shipping Policy; wholesale and project orders are
+        quoted individually. The full company details, including the delivery times by destination
+        and the terms that apply, are below.
+      </p>
+
+      <CompanyDetails heading="Company information" />
+
       <span id="contact" class="business-anchor" aria-hidden="true"></span>
       <div class="business-heading business-heading--contact">
         <p class="business-eyebrow">Partner with Meower</p>
@@ -301,6 +322,17 @@ const ranges = businessGroups.map((group) => ({
 .business-story { display: grid; gap: clamp(20px, 2.6vw, 34px); max-width: 1080px; font-size: clamp(18px, 1.6vw, 25px); line-height: 1.5; }
 .business-story p { margin: 0; }
 .business-signoff { margin: clamp(32px, 4vw, 56px) 0 0; color: var(--ink); font-size: clamp(21px, 1.9vw, 30px); font-weight: 600; }
+/* Business identity paragraph: sits between the brand story and the contact
+   band, so it reads as "about the company" rather than as marketing copy. */
+.business-about-entity {
+  max-width: 900px;
+  margin: clamp(22px, 2.6vw, 32px) 0 0;
+  color: #3f5b60;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.6;
+}
+.business-about-entity strong { color: #22383c; font-weight: 600; }
+.business-about-entity span[lang='zh'] { color: #4f6b70; }
 .business-ranges { display: grid; gap: clamp(44px, 5vw, 72px); }
 .business-range { scroll-margin-top: 118px; }
 /* Range titles ("Air Purifiers" / "Dehumidifiers") stay on one line; product
