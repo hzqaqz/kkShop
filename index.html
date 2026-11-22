@@ -79,6 +79,28 @@
         ]
       }
     </script>
+
+    <!-- Plausible 统计：这是站点专属脚本（pa-...），域名已写在脚本里，
+         所以不需要 data-domain。放这里而不是运行时注入，是因为 Plausible
+         的安装校验是抓页面源码找 plausible.init，动态注入的它看不见。
+
+         ⚠️ 若之后在 Cloudflare Pages 里设了 VITE_ANALYTICS_PROVIDER=plausible，
+         useAnalytics.js 会再注入一份同样的脚本 —— 那样每次访问会被算两次。
+         两者只能留一个。
+
+         脚本在 localhost 上会自动禁用，本地开发不会污染数据。 -->
+    <script async src="https://plausible.io/js/pa-ryBky5b6BdMRm5yxJj_lA.js"></script>
+    <script>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        };
+      plausible.init = plausible.init || function (i) {
+        plausible.o = i || {};
+      };
+      plausible.init();
+    </script>
   </head>
   <body>
     <div id="app"></div>
