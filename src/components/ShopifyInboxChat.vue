@@ -82,6 +82,35 @@ function visitToken() {
 }
 
 /**
+ * Two gates have to be satisfied before chat.js renders anything:
+ *
+ *   1. `window.Shopify.customerPrivacy.analyticsProcessingAllowed()` must exist
+ *      and report at least one allowed consent type — on a Liquid storefront
+ *      Shopify's privacy banner provides this, and without it the widget waits
+ *      forever ("status: waiting", no launcher, no console error).
+ *   2. `window.ShopifyAnalytics.lib.trekkie.defaultAttributes` must carry
+ *      `shopId` + `uniqToken`.
+ *
+ * This site uses no cookie banner (analytics are cookieless), so consent is
+ * reported as allowed. If a consent tool is ever added, point these three
+ * callbacks at it instead of returning `true`.
+ */
+function installPrivacyShim() {
+  const existing = window.Shopify ?? {};
+  window.Shopify = {
+    ...existing,
+    shop: 'meowerair.myshopify.com',
+    customerPrivacy: {
+      ...(existing.customerPrivacy ?? {}),
+      analyticsProcessingAllowed: () => true,
+      marketingAllowed: () => true,
+      preferencesProcessingAllowed: () => true,
+      saleOfDataAllowed: () => false,
+    },
+  };
+}
+
+/**
  * The analytics shape chat.js waits for. Without it the widget stays in its
  * "waiting" state and never renders a launcher.
  */
@@ -181,6 +210,7 @@ onMounted(() => {
     return;
   }
 
+  installPrivacyShim();
   installAnalyticsShim();
 
   /* The Inbox runtime expects to own the page's load cycle; injecting after
