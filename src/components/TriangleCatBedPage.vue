@@ -5,6 +5,7 @@ import { formatMoney, isShopifyConfigured } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct, useShopifyPrices } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -128,6 +129,8 @@ const features = [
           <li><strong>Filling</strong> PP cotton</li>
         </ul>
 
+        <ProductPriceTag :handle="shopifyHandle" />
+
         <div class="tbed-hero-actions">
           <a class="tbed-cta tbed-cta--primary" href="#tbed-forms">See the three shapes</a>
           <a class="tbed-cta tbed-cta--ghost" :href="contactEmailHref">Ask about this bed</a>
@@ -249,6 +252,8 @@ const features = [
   --tbed-accent: #75949a;
   --tbed-warm: #f7ece1;
   --tbed-red: #a33a33;
+  --price-ink: var(--tbed-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────────────── */

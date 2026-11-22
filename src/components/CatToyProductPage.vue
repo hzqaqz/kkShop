@@ -1,5 +1,7 @@
 <script setup>
 import { Bell, PawPrint, RefreshCcw, Sparkles } from 'lucide-vue-next';
+import ProductPriceTag from './ProductPriceTag.vue';
+import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
 /**
@@ -10,6 +12,8 @@ import { contactEmailHref } from '../data/siteInfo';
  * pom-pom is rabbit fur; two are included and they are replaceable. Batteries
  * are not included — the handle takes two AAA cells.
  */
+const shopifyHandle = getProduct('pom-pom-cat-toy')?.shopifyHandle ?? '';
+
 const steps = [
   {
     step: '01',
@@ -77,6 +81,8 @@ const features = [
           <li>Bell on top of the ball</li>
           <li>2 AAA batteries not included</li>
         </ul>
+
+        <ProductPriceTag :handle="shopifyHandle" />
 
         <div class="cattoy-hero-actions">
           <a class="cattoy-cta cattoy-cta--primary" href="#cattoy-how">See how it plays</a>
@@ -203,6 +209,9 @@ const features = [
   --cattoy-pink: #d98aa6;
   --cattoy-blue: #6fa9c4;
   --cattoy-warm: #fdf6f2;
+  /* Price lockup colours (see ProductPriceTag.vue). */
+  --price-ink: var(--cattoy-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────────── */

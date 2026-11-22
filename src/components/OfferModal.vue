@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
             <ul class="offer-pop-list">
               <li>
                 <span class="offer-pop-spark" aria-hidden="true">✨</span>
-                Free shipping on orders over $99.
+                Free shipping on orders over $129.
               </li>
               <li>
                 <span class="offer-pop-spark" aria-hidden="true">✨</span>

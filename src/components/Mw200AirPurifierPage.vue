@@ -15,6 +15,8 @@ import {
   Wind,
   Zap,
 } from 'lucide-vue-next';
+import ProductPriceTag from './ProductPriceTag.vue';
+import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
 /**
@@ -27,6 +29,8 @@ import { contactEmailHref } from '../data/siteInfo';
  * 36–50 dB(A), 4 fan speeds with auto mode, 38 W, air-quality monitoring and
  * timer shut-off.
  */
+const shopifyHandle = getProduct('mw200')?.shopifyHandle ?? '';
+
 const benefits = [
   {
     title: 'Cleaner air, all day.',
@@ -125,6 +129,8 @@ const spaces = [
           <span class="mw200-title-sub">for Pet Dander, Hair &amp; Odor</span>
         </h1>
 
+        <ProductPriceTag :handle="shopifyHandle" />
+
         <div class="mw200-hero-actions">
           <a
             class="mw200-cta mw200-cta--primary"
@@ -216,7 +222,7 @@ const spaces = [
 
 <style scoped>
 /* Same palette and rhythm as Md001DehumidifierPage.vue. */
-.mw200-purifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; color: #202222; background: #fff; }
+.mw200-purifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; --price-ink: var(--ink); --price-muted: var(--accent); color: #202222; background: #fff; }
 /* Hero matched to the MD001 page: the photo fills the band (contain, anchored
    right/bottom) and a warm left-to-right wash keeps the copy readable. */
 .mw200-hero { position: relative; min-height: clamp(570px, 48vw, 760px); overflow: hidden; background: var(--warm); }

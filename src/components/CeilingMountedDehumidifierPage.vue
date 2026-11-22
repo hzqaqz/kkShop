@@ -1,4 +1,5 @@
 <script setup>
+import ProductPriceTag from './ProductPriceTag.vue';
 import { Droplets, Gauge, Wind } from 'lucide-vue-next';
 
 /** Selling points, in the same shape as MD001 / MD002: icon + short title + one line. */
@@ -28,6 +29,7 @@ const sellingPoints = [
         <p class="ceiling-eyebrow">Commercial Dehumidifier · MD0002</p>
         <h1 id="ceiling-title">Ceiling-Mounted<br />Dehumidifier</h1>
         <p>Powerful moisture control for demanding commercial environments.</p>
+        <ProductPriceTag fallback="Price on request" />
       </div>
 
       <img
@@ -75,6 +77,8 @@ const sellingPoints = [
   --accent: #5f858d;
   --tint: #bfd8dc;
   --band: #eef4f5;
+  --price-ink: var(--ink);
+  --price-muted: var(--accent);
   color: #101213;
   background: #fff;
 }

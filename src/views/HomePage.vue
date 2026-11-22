@@ -227,41 +227,102 @@ function handleManualSlide(index) {
   restartAutoSlideAfterManual();
 }
 
-/* Store offers: a slim bar above the header, rotating between the two messages. */
+/* Store offers: a slim bar above the header, rotating between the messages.
+   The Black Friday line is wider than a phone screen, so a message that does not
+   fit pans gently into view instead of wrapping or losing its tail. */
 const offers = [
-  'Free shipping on orders over $99.',
+  'Black Friday Sale 🔥 Spend $200, Save $25 • Spend $400, Save $75',
+  'Free shipping on orders over $129.',
   'New Customers: Get $10 off your first order.',
 ];
 const activeOffer = ref(0);
 const OFFER_INTERVAL_MS = 4000;
+const offerTextEl = ref(null);
+const offerPanStyle = ref({});
+const offerIsPanning = ref(false);
+let offerPanDuration = 0;
 let offerTimer;
 
-function startOffers() {
-  offerTimer = window.setInterval(() => {
+function stopOffers() {
+  if (offerTimer) {
+    window.clearTimeout(offerTimer);
+    offerTimer = null;
+  }
+}
+
+function scheduleNextOffer() {
+  stopOffers();
+  if (offers.length < 2) {
+    return;
+  }
+
+  /* A panning message needs the extra beats it takes to travel there and back. */
+  const delay = Math.max(OFFER_INTERVAL_MS, offerPanDuration * 1000 + 1600);
+
+  offerTimer = window.setTimeout(() => {
     activeOffer.value = (activeOffer.value + 1) % offers.length;
-  }, OFFER_INTERVAL_MS);
+  }, delay);
+}
+
+/* Only the message on screen can be measured, so this runs once it has entered. */
+function measureOfferPan() {
+  const text = offerTextEl.value;
+  const paragraph = text?.parentElement ?? null;
+
+  offerPanStyle.value = {};
+  offerIsPanning.value = false;
+  offerPanDuration = 0;
+
+  if (text && paragraph) {
+    const gap = Number.parseFloat(getComputedStyle(paragraph).columnGap) || 0;
+    const sparks = [...paragraph.querySelectorAll('.home-announcement-spark')].filter(
+      (spark) => spark.getClientRects().length > 0,
+    );
+    const contentWidth =
+      text.getBoundingClientRect().width +
+      sparks.reduce((total, spark) => total + spark.getBoundingClientRect().width, 0) +
+      gap * sparks.length;
+    const distance = Math.round(contentWidth - paragraph.clientWidth);
+
+    if (distance > 4) {
+      const duration = Math.min(6, Math.max(3, 1.6 + distance / 60));
+
+      offerPanDuration = duration;
+      offerIsPanning.value = true;
+      offerPanStyle.value = {
+        '--offer-pan-distance': `-${distance + 4}px`,
+        '--offer-pan-duration': `${duration.toFixed(2)}s`,
+      };
+    }
+  }
+
+  scheduleNextOffer();
 }
 
 onMounted(() => {
   startAutoSlide();
-  startOffers();
+  measureOfferPan();
+  window.addEventListener('resize', measureOfferPan);
 });
 
 onBeforeUnmount(() => {
   stopAutoSlide();
-  if (offerTimer) {
-    window.clearInterval(offerTimer);
-  }
+  stopOffers();
+  window.removeEventListener('resize', measureOfferPan);
 });
 </script>
 
 <template>
   <main class="site-shell home-page">
     <div class="home-announcement" aria-label="Store offers">
-      <Transition name="offer-slide" mode="out-in">
-        <p :key="activeOffer">
+      <Transition name="offer-slide" mode="out-in" @after-enter="measureOfferPan">
+        <p
+          :key="activeOffer"
+          :class="{ 'is-panning': offerIsPanning }"
+          :style="offerPanStyle"
+        >
           <span class="home-announcement-spark" aria-hidden="true">✨</span>
-          {{ offers[activeOffer] }}
+          <span ref="offerTextEl" class="home-announcement-text">{{ offers[activeOffer] }}</span>
           <span class="home-announcement-spark" aria-hidden="true">✨</span>
         </p>
       </Transition>

@@ -5,6 +5,7 @@ import { formatMoney, isShopifyConfigured } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct, useShopifyPrices } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -123,6 +124,8 @@ const features = [
           <li><strong>Carrycot</strong> Clicks off</li>
         </ul>
 
+        <ProductPriceTag :handle="shopifyHandle" />
+
         <div class="ps-hero-actions">
           <a class="ps-cta ps-cta--primary" href="#ps-travel">See how it travels</a>
           <a class="ps-cta ps-cta--ghost" :href="contactEmailHref">Ask about this stroller</a>
@@ -239,6 +242,8 @@ const features = [
   --ps-accent: #75949a;
   --ps-warm: #f7ece1;
   --ps-red: #a33a33;
+  --price-ink: var(--ps-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────────────── */

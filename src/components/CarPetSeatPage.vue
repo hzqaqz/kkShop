@@ -4,6 +4,7 @@ import { Anchor, BedDouble, Droplets, Link2, PawPrint, ShieldCheck } from 'lucid
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -150,6 +151,8 @@ const safety = [
           <li>Two colours</li>
         </ul>
 
+        <ProductPriceTag :handle="shopifyHandle" note="Two colours" />
+
         <div class="carseat-hero-actions">
           <a class="carseat-cta carseat-cta--primary" href="#carseat-modes">See the three modes</a>
           <a class="carseat-cta carseat-cta--ghost" :href="contactEmailHref">Ask about this bed</a>
@@ -295,6 +298,8 @@ const safety = [
   --carseat-ink: #314e53;
   --carseat-tan: #b98a5c;
   --carseat-cream: #f7f1e8;
+  --price-ink: var(--carseat-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────────── */

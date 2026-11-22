@@ -4,198 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="US feed">
-      <change afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-cat.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-climb.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-corner.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/pet-stroller/hero-sunset.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-hood.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-landscape.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-starry.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-sunflowers.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/hero.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/shop/shop-hero.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/check-checkout-url.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/inject-image-dimensions.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/optimize-images.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/composables/useAnalytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/feeds/google-us.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/feeds/google-us.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/beyond-comfort/humidity-control-preview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/beyond-comfort/humidity-control-preview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/beyond-comfort/mold-cleanup-guide.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/beyond-comfort/mold-cleanup-guide.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-cover.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-cover.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-og.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell-og.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-litter-box-smell/cat-litter-box-smell.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-cover.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-cover.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-og.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture-og.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-scratching-furniture/cat-scratching-furniture.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-inside.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-inside.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-cover.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-cover.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-og.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/cat-wont-sleep-in-its-bed-og.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/form-mat.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/form-mat.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/form-triangle.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/cat-wont-sleep-in-its-bed/form-triangle.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/children-air-quality/classroom-air-purifier.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/children-air-quality/classroom-air-purifier.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/children-air-quality/classroom-ventilation-air-cleaner.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/children-air-quality/classroom-ventilation-air-cleaner.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/children-air-quality/mother-and-son-indoor-air-quality.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/new/ac-dry-mode-dehumidifier.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/new/ac-dry-mode-dehumidifier.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/new/humidity-science.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/new/humidity-science.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/new/pet-humidity-air-quality.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/new/pet-humidity-air-quality.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/new/pet-indoor-air-quality.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/new/pet-indoor-air-quality.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/new/property-asset-protection.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/new/property-asset-protection.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/pet-dander-bedroom/pet-dander-bedroom-cover.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blogs/pollen-season/pollen-season-indoor-air-quality.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blogs/pollen-season/pollen-season-indoor-air-quality.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/business/about-closing.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/business/about-closing.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/business/partner-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/business/partner-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/carousel/hero-air-purifier-pets.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/carousel/hero-air-purifier-pets.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/carousel/hero-dehumidifier-home.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/carousel/hero-dehumidifier-home.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/carousel/hero-dehumidifier-plants.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/carousel/hero-dehumidifier-plants.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/carousel/hero-festive-bed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/carousel/hero-festive-bed.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/carousel/hero-pet-stroller.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/carousel/hero-pet-stroller.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/collection-daily.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/collection-daily.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/collection-gift.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/collection-gift.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/collection-limited.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/collection-limited.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logo-meower.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logo-meower.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-cat.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-cat.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-dog.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/car-dog.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-stage.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/card-stage.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/flat-bed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/flat-bed.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-grey.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-grey.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/product-white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/tile-stage.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/tile-stage.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/car-pet-seat/white-tile.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/car-pet-seat/white-tile.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/card.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/card.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/closeup.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/closeup.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/gift-box.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/gift-box.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-floor.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-floor.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-lying.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-lying.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-wide.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/lifestyle-wide.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/white-card.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/white-card.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/cat-toy/white-tile.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/cat-toy/white-tile.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/detail.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/detail.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/hero-sizes.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/hero-sizes.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-climb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/home-corner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/large.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/large.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/medium.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/medium.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/small.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/small.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-card.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-card.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-tile.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white-tile.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/christmas-pet-bed/white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/list/commercial-dehumidifier.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/list/commercial-dehumidifier.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/list/home-dehumidifier.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/list/home-dehumidifier.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/list/mw100.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/list/mw100.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/list/mw200.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/list/mw200.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md0001/basement-garage.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md0001/basement-garage.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md0001/warehouse-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md0001/warehouse-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md0001/warehouse-space.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md0001/warehouse-space.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md0002/ceiling-mounted-dehumidifier-white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md0002/ceiling-mounted-dehumidifier-white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md0002/ceiling-mounted-factory-scene.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md0002/ceiling-mounted-factory-scene.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/hero-living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/hero-living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/product-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/product-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/product-white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/product-white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/space-bathroom.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/space-bathroom.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/space-bedroom.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/space-bedroom.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/space-closet.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/space-closet.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md001/space-living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md001/space-living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md002/hero-living-room-portrait-md002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md002/hero-living-room-portrait-md002.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md002/hero-living-room-portrait-md002.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md002/hero-living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md002/hero-living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/md002/product-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/md002/product-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/00-carousel.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/00-carousel.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/01-self-grooming.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/01-self-grooming.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/02-cat-friendly-space.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/02-cat-friendly-space.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/03-why-meower100.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/03-why-meower100.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/04-hero-overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/04-hero-overview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/04-mw100-with-cat.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/04-mw100-with-cat.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/bedroom.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/bedroom.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/hero-scene.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/hero-scene.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/mw100-logo-panel.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/mw100-logo-panel.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw100/pet-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw100/pet-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/hero-gym.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/hero-gym.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/product-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/product-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/product-white.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/product-white.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/space-classroom.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/space-classroom.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/space-gym.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/space-gym.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw1000/space-office.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw1000/space-office.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/01-hero-overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/01-hero-overview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/02-why-meower200.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/02-why-meower200.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/hero-armchair.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/hero-armchair.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/hero-scene.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/hero-scene.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/mw200-detail-hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/mw200-detail-hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/mw200-why-image.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/mw200-why-image.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/scene-cat-corner.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/scene-cat-corner.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/scene-living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/scene-living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/space-bedroom.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/space-bedroom.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/space-living-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/space-living-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/mw200/space-pet-room.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/mw200/space-pet-room.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/navigation/md0001-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/navigation/md0001-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/navigation/md0002-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/navigation/md0002-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/navigation/mw100-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/navigation/mw100-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/navigation/mw200-transparent.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/navigation/mw200-transparent.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/studio-portrait.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/pet-stroller/studio-portrait.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/pet-stroller/studio.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/pet-stroller/studio.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/lounging.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/sisal-cat-scratcher/lounging.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/card-cutout.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/card-cutout.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/cat-inside.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/cat-inside.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-mat.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-mat.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-sofa.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-sofa.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-triangle.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/form-triangle.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/hero.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/hero.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/triangle-cat-bed/overview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-hood.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-landscape.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-starry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/design-sunflowers.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/velcro-strip.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/products/woven-sisal-cat-scratcher/velcro-strip.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/promo-ad-lifestyle.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/promo-ad-lifestyle.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/promo/offer-lifestyle.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/promo/offer-lifestyle.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/shop/shop-hero.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/make-google-feed.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/make-google-feed.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CatToyProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CatToyProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CeilingMountedDehumidifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CeilingMountedDehumidifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommercialAirPurifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommercialAirPurifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommercialDehumidifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommercialDehumidifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Md001DehumidifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Md001DehumidifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Md002DehumidifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Md002DehumidifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Mw100ProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Mw100ProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Mw200AirPurifierPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Mw200AirPurifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OfferModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OfferModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PromoAdModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PromoAdModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SiteFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SiteHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SiteHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composables/useCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/composables/useCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/catalog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/legalContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/legalContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/BusinessPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BusinessPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/CartRedirectPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CartRedirectPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductListPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductListPage.vue" afterDir="false" />
-    </list>
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="US feed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -365,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1794996436262</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="US feed">
+      <created>1794999576254</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1794999576254</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

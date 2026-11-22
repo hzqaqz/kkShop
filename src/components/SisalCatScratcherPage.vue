@@ -5,6 +5,7 @@ import { formatMoney, isShopifyConfigured } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct, useShopifyPrices } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -135,6 +136,8 @@ const care = [
           <li><strong>Surface</strong> Sisal rope</li>
           <li><strong>Use</strong> Scratch and sleep</li>
         </ul>
+
+        <ProductPriceTag :handle="shopifyHandle" />
 
         <div class="sisal-hero-actions">
           <a class="sisal-cta sisal-cta--primary" href="#sisal-why">See what makes it different</a>
@@ -269,6 +272,8 @@ const care = [
   --sisal-accent: #75949a;
   --sisal-warm: #f7ece1;
   --sisal-red: #a33a33;
+  --price-ink: var(--sisal-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────────────── */

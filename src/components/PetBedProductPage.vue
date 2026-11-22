@@ -5,6 +5,7 @@ import { useCart } from '../composables/useCart';
 import { formatMoney } from '../composables/useShopify';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -142,6 +143,8 @@ const features = [
             {{ size.dimensions }}
           </li>
         </ul>
+
+        <ProductPriceTag :handle="shopifyHandle" note="Small · Medium · Large" />
 
         <div class="petbed-hero-actions">
           <a class="petbed-cta petbed-cta--primary" href="#petbed-sizes">Choose your size</a>
@@ -326,6 +329,8 @@ const features = [
   --petbed-accent: #75949a;
   --petbed-warm: #f7ece1;
   --petbed-red: #a33a33;
+  --price-ink: var(--petbed-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ─────────────────────────────────────────────────────────────────── */

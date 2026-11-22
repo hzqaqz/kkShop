@@ -1,4 +1,5 @@
 <script setup>
+import ProductPriceTag from './ProductPriceTag.vue';
 import {
   BellRing,
   Box,
@@ -65,6 +66,7 @@ const spaces = [
         <p class="md001-eyebrow">Home Use Dehumidifier · MD001</p>
         <h1 id="md001-title"><span>Meower</span> Dehumidifier</h1>
         <p>Comfortable Living, Healthier Home</p>
+        <ProductPriceTag fallback="Price on request" />
       </div>
     </section>
 
@@ -125,7 +127,7 @@ const spaces = [
 </template>
 
 <style scoped>
-.md001-dehumidifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; color: #202222; background: #fff; }
+.md001-dehumidifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; --price-ink: var(--ink); --price-muted: var(--accent); color: #202222; background: #fff; }
 .md001-hero { position: relative; min-height: clamp(570px, 48vw, 760px); overflow: hidden; background: #f5eee5; }
 .md001-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: right bottom; }
 .md001-hero::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(255,250,244,.93) 0%, rgba(255,250,244,.7) 28%, rgba(255,250,244,0) 57%); }

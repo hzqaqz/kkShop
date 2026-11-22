@@ -15,6 +15,8 @@ import PetBedProductPage from '../components/PetBedProductPage.vue';
 import PetStrollerPage from '../components/PetStrollerPage.vue';
 import SisalCatScratcherPage from '../components/SisalCatScratcherPage.vue';
 import TriangleCatBedPage from '../components/TriangleCatBedPage.vue';
+import LoofahCatToyPage from '../components/LoofahCatToyPage.vue';
+import PlushChewToyPage from '../components/PlushChewToyPage.vue';
 import InquiryBar from '../components/InquiryBar.vue';
 import ProductBuyBar from '../components/ProductBuyBar.vue';
 import ProductFaq from '../components/ProductFaq.vue';
@@ -43,6 +45,8 @@ const THEME_CLASSES = {
   'ceiling-mounted-dehumidifier': 'post-theme-green',
   'christmas-pet-bed': 'post-theme-warm',
   'pom-pom-cat-toy': 'post-theme-warm',
+  'loofah-cat-toy': 'post-theme-warm',
+  'plush-squeaky-chew-toys': 'post-theme-warm',
   'car-pet-seat': 'post-theme-warm',
   'woven-sisal-cat-scratcher': 'post-theme-warm',
   'sisal-cat-scratcher': 'post-theme-warm',
@@ -132,6 +136,10 @@ useSeo(currentMeta.value);
     <PetStrollerPage v-else-if="currentProduct?.page === 'pet-stroller'" />
 
     <CatToyProductPage v-else-if="currentProduct?.page === 'cat-toy'" />
+
+    <LoofahCatToyPage v-else-if="currentProduct?.page === 'loofah-cat-toy'" />
+
+    <PlushChewToyPage v-else-if="currentProduct?.page === 'plush-chew-toys'" />
 
     <CarPetSeatPage v-else-if="currentProduct?.page === 'car-pet-seat'" />
 

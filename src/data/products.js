@@ -190,6 +190,45 @@ export const products = {
     image: '/images/products/cat-toy/card-cutout.webp',
     ogImage: '/images/products/cat-toy/lifestyle-wide.webp',
   },
+  'loofah-cat-toy': {
+    id: 'loofah-cat-toy',
+    // 通过 Shopify Storefront 在线下单（单变体 Default Title，US$25.00）。
+    // handle 是 Shopify 自动生成的，和站内路由 id 无关，改名容易忘，所以照抄全名。
+    purchasable: true,
+    shopifyHandle: 'meower-loofah-silvervine-cat-chew-toy-set-bread-cookie-donut',
+    label: 'Loofah Cat Toy',
+    cardLabel: 'Loofah Bakery Cat Toy Set',
+    category: 'Pet Toy',
+    // Shop 分类归属：Pet Toys（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-toys',
+    page: 'loofah-cat-toy',
+    title: 'Meower Loofah & Silvervine Cat Chew Toy Set, Bread, Cookie & Donut',
+    cardSubtitle: 'Bread, Cookie & Donut Chew Toys',
+    description:
+      'Three bakery-shaped cat chew toys — a bread loaf, a donut and a star cookie — made from loofah sponge and silvervine, packed in a printed bakery bag. Washable, durable and US$25 a set.',
+    image: '/images/products/loofah-cat-toy/hero.webp',
+    ogImage: '/images/products/loofah-cat-toy/hero.webp',
+    inquiryNote: 'Stock, sizes and delivery — ask us and we will confirm.',
+  },
+  'plush-squeaky-chew-toys': {
+    id: 'plush-squeaky-chew-toys',
+    // 通过 Shopify Storefront 在线下单（9 个款式为 9 个 variant，每个 US$20.00）。
+    purchasable: true,
+    shopifyHandle: 'meower-plush-squeaky-chew-toys-for-puppies-cats-machine-washable',
+    label: 'Plush Chew Toys',
+    cardLabel: 'Plush Squeaky Chew Toys',
+    category: 'Pet Toy',
+    // Shop 分类归属：Pet Toys（见 src/data/catalog.js）。
+    shopCategoryId: 'pet-toys',
+    page: 'plush-chew-toys',
+    title: 'Meower Plush Squeaky Chew Toys for Puppies & Cats, Machine Washable',
+    cardSubtitle: 'Squeaker Inside, Washable',
+    description:
+      'Plush squeaky chew toys — two puppies, a donkey, a green onion, a banana, three seahorses and a manta ray — about 21 × 12 cm and 74 g each, with a rope loop or tail and a squeaker sealed inside. Machine washable.',
+    image: '/images/products/plush-squeaky-toys/puppy-mint.webp',
+    ogImage: '/images/products/plush-squeaky-toys/puppy-mint.webp',
+    inquiryNote: 'Designs, stock and delivery — ask us and we will confirm.',
+  },
   'christmas-pet-bed': {
     id: 'christmas-pet-bed',
     // 通过 Shopify Storefront 在线下单（三个尺码为三个 variant）。
@@ -296,6 +335,8 @@ export const productOrder = [
   'mw200',
   'christmas-pet-bed',
   'pom-pom-cat-toy',
+  'loofah-cat-toy',
+  'plush-squeaky-chew-toys',
   'car-pet-seat',
   'pet-stroller',
   'triangle-cat-bed',

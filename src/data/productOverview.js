@@ -232,6 +232,59 @@ export const productOverviews = {
     ],
   },
 
+  'loofah-cat-toy': {
+    heading: 'A Chew Toy Set That Looks Like Breakfast',
+    paragraphs: [
+      'Most cat toys are fabric, foam or plastic. This set is compressed loofah sponge — the same ridged fibre sold as a bath sponge — cut and stitched into three bakery shapes and packed in a bag printed like a bakery order. It is a chew toy first and a chase toy second, which is the order cats tend to use it in.',
+      'Loofah is springy and slightly abrasive, so a cat chewing on it gets the resistance it is looking for without the toy collapsing after a week the way soft fabric does. The surface is ridged rather than smooth, and those ridges are where the silvervine sits: a pinch is packed into the pads on the bread loaf and into the stuffing, so the pieces smell interesting before they feel interesting. The set is unscented apart from the silvervine — no added perfume and no plastic parts to chew loose.',
+      'The set weighs 210 g, which is light enough for a cat to carry the donut around and heavy enough that the loaf stays put while it is being chewed. Three pieces cover three kinds of play. The bread loaf (11.5 × 5.5 cm) is the one cats hold between their front paws and gnaw; the donut (7.5 × 7.5 cm) is light enough to bat along a hallway and chase; the star cookie (10.5 × 9 cm) has vent holes that give teeth something to catch at any angle and is big enough to bunny-kick. All three go in the washing-up bowl: rinse or hand-wash in warm water, squeeze it out and air-dry. Washing rinses away some of the silvervine scent, so rub a little back into the ridges afterwards.',
+    ],
+    bestFor: [
+      'Kittens that are teething and chewing everything',
+      'Adult cats that gnaw cables, cardboard and furniture corners',
+      'Indoor cats that need a short, intense play session',
+      'A ready-to-give present for a new kitten or a friend’s cat',
+    ],
+    // No figure here: the measurement artwork already appears in the page's
+    // "gift ready" section, so the overview stays text-only instead of repeating it.
+    specs: [
+      ['Type', 'Loofah chew toy set in a printed bakery bag'],
+      ['Set includes', '1 bread loaf, 1 donut, 1 star cookie'],
+      ['Bread loaf', '11.5 × 5.5 cm'],
+      ['Donut', '7.5 × 7.5 cm'],
+      ['Star cookie', '10.5 × 9 cm'],
+      ['Materials', 'Compressed loofah sponge with silvervine'],
+      ['Scent', 'Silvervine only — no added perfume'],
+      ['Care', 'Rinse or hand-wash in warm water, squeeze out, air-dry'],
+      ['Best for', 'Kittens and adult cats'],
+      ['Weight', '210 g for the set of three'],
+    ],
+  },
+  'plush-squeaky-chew-toys': {
+    heading: 'Plush Chew Toys With a Squeaker and a Rope',
+    paragraphs: [
+      'A puppy or a kitten that is teething will chew whatever is nearest: a chair leg, a cable, the corner of a rug. A chew toy works because it is more interesting than the furniture — plush that gives way under the teeth, plus a squeaker that answers back every time it is bitten.',
+      'These toys put those two things together. The body is plush, with a squeaker sealed inside, and a cotton rope loop or tail is sewn through it. The rope is the firm part: it resists when a pet chews, which is the resistance teeth are looking for, and it is also what a person can grab during a game of tug. Four of the nine designs — the three seahorses and the manta ray — have the rope; the puppies, green onion and banana are plush alone.',
+      'The scale is deliberately small and light: about 21 cm tall, 12 cm wide and 74 g, so a puppy can carry one around and shake it without dragging it along the floor, and a cat can hook it with a claw and kick it. The range runs across two puppies, a donkey, a green onion, a banana, three seahorses and a manta ray, all built the same way.',
+      'Washing is the whole toy rather than a removable cover. A cold machine cycle inside a mesh bag, then air-drying, is enough — the squeaker is sealed inside the body, so it keeps working afterwards. Seams and the squeaker are worth checking now and then, and a toy with an open seam should be replaced rather than left with the pet.',
+    ],
+    bestFor: [
+      'Puppies that are teething and chewing furniture',
+      'Small dogs that carry and shake their toys',
+      'Cats and kittens that grab, bite and bunny-kick',
+      'Households that want a toy they can wash rather than throw away',
+    ],
+    specs: [
+      ['Type', 'Plush squeaky chew toy with a rope loop or tail'],
+      ['Designs', 'Two puppies, a donkey, green onion, banana, three seahorses, manta ray'],
+      ['Size', 'About 21 cm tall × 12 cm wide'],
+      ['Weight', '74 g'],
+      ['Materials', 'Plush fabric with a cotton rope part'],
+      ['Squeaker', 'Sealed inside the body'],
+      ['Care', 'Machine wash cold in a mesh bag, air-dry'],
+      ['Best for', 'Puppies, small dogs and cats'],
+    ],
+  },
   'car-pet-seat': {
     heading: 'A Car Seat That Keeps Working Once You Park',
     paragraphs: [

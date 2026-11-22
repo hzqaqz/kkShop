@@ -1,22 +1,10 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { blogArticles } from './src/data/blogArticles.js';
-
-const PRODUCT_IDS = [
-  'mw200',
-  'christmas-pet-bed',
-  'triangle-cat-bed',
-  'pom-pom-cat-toy',
-  'car-pet-seat',
-  'pet-stroller',
-  'woven-sisal-cat-scratcher',
-  'sisal-cat-scratcher',
-  'commercial-air-purifier',
-  'md001',
-  'md002',
-  'commercial-dehumidifier',
-  'ceiling-mounted-dehumidifier',
-];
+// Pre-rendered product pages come from `productOrder` — the same list that drives
+// the site — so adding a product to `src/data/products.js` is enough and the two
+// lists cannot drift apart again.
+import { productOrder } from './src/data/products.js';
 
 const REQUIRED_SHOPIFY_VARS = ['VITE_SHOPIFY_STORE_DOMAIN', 'VITE_SHOPIFY_STOREFRONT_TOKEN'];
 
@@ -39,7 +27,7 @@ export default defineConfig(({ mode }) => {
         // Drop the raw dynamic templates (`/products/:productId`, `/blogs/:slug`)
         // and replace them with the concrete paths.
         const staticPaths = paths.filter((path) => !path.includes(':'));
-        const productPaths = PRODUCT_IDS.map((id) => `/products/${id}`);
+        const productPaths = productOrder.map((id) => `/products/${id}`);
         const blogPaths = blogArticles.map((article) => `/blogs/${article.slug}`);
         return [...staticPaths, ...productPaths, ...blogPaths];
       },

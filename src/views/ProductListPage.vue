@@ -35,6 +35,7 @@ const categories = shopCategories.map((category) => ({
     name: product.label,
     image: product.image,
     shopifyHandle: product.shopifyHandle ?? '',
+    priceFallback: product.priceFallback ?? '',
     to: { name: 'product-detail', params: { productId: product.id } },
   })),
 }));
@@ -157,7 +158,7 @@ watch(activeId, () => nextTick(centreActiveCategory));
           >
             <img :src="product.image" :alt="product.name" loading="lazy" decoding="async" />
             <h3>{{ product.name }}</h3>
-            <ProductFromPrice :handle="product.shopifyHandle" />
+            <ProductFromPrice :handle="product.shopifyHandle" :fallback="product.priceFallback" />
             <span>View product</span>
           </RouterLink>
         </div>

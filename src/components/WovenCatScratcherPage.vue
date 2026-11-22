@@ -4,6 +4,7 @@ import { Layers, Ruler, Sticker, TreePine } from 'lucide-vue-next';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
 import { useVariantSelection } from '../composables/useVariantSelection';
+import ProductPriceTag from './ProductPriceTag.vue';
 import { getProduct } from '../data/products';
 import { contactEmailHref } from '../data/siteInfo';
 
@@ -128,6 +129,8 @@ const features = [
           <li>No-residue velcro mounting</li>
           <li>Four artworks</li>
         </ul>
+
+        <ProductPriceTag :handle="shopifyHandle" note="Four designs" />
 
         <div class="cframe-hero-actions">
           <a class="cframe-cta cframe-cta--primary" href="#cframe-designs">See the designs</a>
@@ -269,6 +272,8 @@ const features = [
   --cframe-ink: #314e53;
   --cframe-accent: #8a6a4a;
   --cframe-cream: #f8f3ec;
+  --price-ink: var(--cframe-ink);
+  --price-muted: #7a9499;
 }
 
 /* ── Hero ────────────────────────────────────────────────────────────────── */

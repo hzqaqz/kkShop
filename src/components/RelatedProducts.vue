@@ -98,7 +98,7 @@ watch(
       >
         <img :src="product.image" :alt="product.title" />
         <h3>{{ product.cardLabel }}</h3>
-        <ProductFromPrice :handle="product.shopifyHandle" />
+        <ProductFromPrice :handle="product.shopifyHandle" :fallback="product.priceFallback" />
         <p class="related-product-subtitle">{{ product.cardSubtitle }}</p>
         <span>{{ product.category }}</span>
       </RouterLink>

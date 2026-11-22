@@ -1,4 +1,5 @@
 <script setup>
+import ProductPriceTag from './ProductPriceTag.vue';
 import { Droplets, Gauge, Wind } from 'lucide-vue-next';
 
 /** Selling points, in the same shape as MD001 / MD002: icon + short title + one line. */
@@ -41,6 +42,7 @@ const spaces = [
         <p class="commercial-eyebrow">Commercial Dehumidifier · MD0001</p>
         <h1 id="commercial-title">Commercial<br />Dehumidifier</h1>
         <p>Powerful moisture control for demanding commercial environments.</p>
+        <ProductPriceTag fallback="Price on request" />
       </div>
 
       <img
@@ -102,6 +104,8 @@ const spaces = [
   --commercial-accent: #5f858d;
   --commercial-tint: #bfd8dc;
   --band: #eef4f5;
+  --price-ink: var(--commercial-ink);
+  --price-muted: var(--commercial-accent);
   color: #0b0b0b;
   background: #fff;
   font-family:

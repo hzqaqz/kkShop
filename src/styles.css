@@ -2454,9 +2454,13 @@ main.product-page + .site-footer .footer-to-top {
   align-items: center;
   gap: 10px;
   margin: 0;
+  max-width: 100%;
   font-size: 13px;
   letter-spacing: 0.01em;
   text-align: center;
+  /* The Black Friday line is long; keep it on one line inside the fixed-height
+     bar instead of letting it wrap and get clipped. */
+  white-space: nowrap;
 }
 
 .home-announcement-spark {
@@ -2483,10 +2487,39 @@ main.product-page + .site-footer .footer-to-top {
   transform: translateY(-10px);
 }
 
+/* A message wider than the bar (the Black Friday line on phones) stays on one
+   line and pans across instead of wrapping or clipping its tail. The distance
+   and duration come from the measured overflow in HomePage.vue. */
+.home-announcement p.is-panning {
+  justify-content: flex-start;
+  animation: offer-pan var(--offer-pan-duration, 4s) ease-in-out infinite;
+}
+
+@keyframes offer-pan {
+  0%,
+  12% {
+    transform: translateX(0);
+  }
+
+  45%,
+  55% {
+    transform: translateX(var(--offer-pan-distance, -20px));
+  }
+
+  88%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .offer-slide-enter-active,
   .offer-slide-leave-active {
     transition: none;
+  }
+
+  .home-announcement p.is-panning {
+    animation: none;
   }
 }
 
@@ -2496,11 +2529,29 @@ main.product-page + .site-footer .footer-to-top {
   }
 
   .home-announcement p {
+    gap: 6px;
     font-size: 12px;
   }
 
   .home-page .topbar {
     top: 34px;
+  }
+}
+
+/* Small phones: tighten the type and drop the sparkles before falling back to
+   the pan. */
+@media (max-width: 480px) {
+  .home-announcement {
+    padding: 0 10px;
+  }
+
+  .home-announcement p {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .home-announcement-spark {
+    display: none;
   }
 }
 

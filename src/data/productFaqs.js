@@ -279,6 +279,70 @@ export const productFaqs = {
     },
   ],
 
+  'loofah-cat-toy': [
+    {
+      question: 'What is the set made of?',
+      answer:
+        'Compressed loofah sponge with silvervine. The loofah gives the pieces their ridged, springy texture — the part a cat chews and rubs against — and the silvervine is packed into the ridges on the bread loaf and into the stuffing of all three pieces.',
+    },
+    {
+      question: 'How big are the three pieces?',
+      answer:
+        'The bread loaf measures 11.5 × 5.5 cm, the donut 7.5 × 7.5 cm and the star cookie 10.5 × 9 cm. The loaf is the one cats hold down and gnaw, the donut is light enough to bat and chase, and the cookie is the biggest surface to chew.',
+    },
+    {
+      question: 'Is it safe for kittens to chew?',
+      answer:
+        'It is made for chewing: loofah fibre and silvervine, with no plastic squeaker, glued-on parts or added perfume. Kittens that are teething tend to take to it straight away. Still, play and chewing are best supervised, and any piece that has been chewed through should be replaced rather than left with the cat.',
+    },
+    {
+      question: 'Can I wash it?',
+      answer:
+        'Yes. Rinse it or hand-wash it in warm water, squeeze the water out and let it air-dry — do not tumble dry it or leave it in direct sun. Washing rinses away part of the silvervine scent, so rub a pinch of silvervine (or catnip) back into the ridges to make it interesting again.',
+    },
+    {
+      question: 'Will it survive a strong chewer?',
+      answer:
+        'The loofah is layered and stitched rather than glued, so it holds up to daily chewing and bunny kicks far better than fabric or foam. It is still a natural fibre, so a determined chewer will eventually get through it — which is why the set works as a rotation: check the stitching now and then, and swap pieces rather than leaving one out all day.',
+    },
+    {
+      question: 'How do I buy it?',
+      answer:
+        'Add the set to the cart on this page — the price shown at the top is the live price from our shop, and delivery is calculated at checkout. The set ships as the three pieces in their printed bakery bag.',
+    },
+  ],
+  'plush-squeaky-chew-toys': [
+    {
+      question: 'What makes the squeak?',
+      answer:
+        'A squeaker is sealed inside the plush body, so the toy makes a sound whenever it is bitten or shaken. It is not a removable part — which also means it cannot be pulled out and swallowed.',
+    },
+    {
+      question: 'How big is one toy, and how heavy?',
+      answer:
+        'About 21 cm tall and 12 cm wide, and 74 g. That is small enough for a puppy to pick up and carry and light enough that a cat can bat it across a room.',
+    },
+    {
+      question: 'Which designs do you have?',
+      answer:
+        'Two puppies (mint and cocoa), a donkey (charcoal), a green onion, a banana, three seahorses (sunshine, turquoise and lilac) and a manta ray. The seahorses and the manta ray have a cotton rope loop or tail; the puppies, green onion and banana are plush only. Stock of individual designs changes — ask us before ordering a specific one.',
+    },
+    {
+      question: 'Can it really go in the washing machine?',
+      answer:
+        'Yes. Put the whole toy in a mesh bag and wash it on a cold cycle, then let it air-dry — do not tumble dry. The squeaker is sealed inside, so it does not fill with water, and the plush comes back up rather than matting down.',
+    },
+    {
+      question: 'Does it help with teething and teeth cleaning?',
+      answer:
+        'It gives a puppy or kitten something to chew that resists a little: the ribbed plush and the rope are what the teeth work against, which is the chewing a teething animal is looking for. It is a chew toy rather than a toothbrush — it does not replace brushing, but it does redirect chewing away from furniture and cables.',
+    },
+    {
+      question: 'How do I buy one?',
+      answer:
+        'Online checkout for this range is being set up. Until it is live, use the “Ask about these toys” button and we will confirm the designs we have, the price and delivery by email.',
+    },
+  ],
   'pom-pom-cat-toy': [
     {
       question: 'How does the toy launch and retract the pom-pom?',

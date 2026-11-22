@@ -81,5 +81,35 @@
       <g:google_product_category>Animals &amp; Pet Supplies &gt; Pet Supplies</g:google_product_category>
       <g:product_type>Pet Bed</g:product_type>
     </item>
+    <item>
+      <g:id>68096299499746</g:id>
+      <title>Loofah &amp; Silvervine Cat Chew Toy Set, Bread, Cookie &amp; Donut</title>
+      <description>Three chew toys shaped like breakfast — a bread loaf, a donut and a star cookie — made from loofah sponge and silvervine, and packed in a printed bakery bag. Cats roll on them, carry them around and chew the ridged surface, which is what gives a kitten&apos;s teeth something to work against between meals.</description>
+      <link>https://meowerair.com/products/loofah-cat-toy</link>
+      <g:image_link>https://cdn.shopify.com/s/files/1/0843/2127/2034/files/2026-11-2101.24.56.png?v=1795276670</g:image_link>
+      <g:price>25.00 USD</g:price>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Meower</g:brand>
+      <g:mpn>meower-loofah-silvervine-cat-chew-toy-set-bread-cookie-donut</g:mpn>
+      <g:identifier_exists>false</g:identifier_exists>
+      <g:google_product_category>Animals &amp; Pet Supplies &gt; Pet Supplies</g:google_product_category>
+      <g:product_type>Pet Toy</g:product_type>
+    </item>
+    <item>
+      <g:id>68142196359394</g:id>
+      <title>Plush Squeaky Chew Toys for Puppies &amp; Cats, Machine Washable — Puppy — mint &amp; sunshine</title>
+      <description>Plush chew toys with a squeaker buried inside: three puppies, a carrot, a banana, three seahorses and a stingray. Each one is about 21 cm tall and 12 cm wide, weighs 74 g and can go in the washing machine — and the seahorses and the stingray add a cotton rope loop or tail to grab.</description>
+      <link>https://meowerair.com/products/plush-squeaky-chew-toys</link>
+      <g:image_link>https://cdn.shopify.com/s/files/1/0843/2127/2034/files/2026-11-2119.38.24.png?v=1795333884</g:image_link>
+      <g:price>20.00 USD</g:price>
+      <g:availability>in stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Meower</g:brand>
+      <g:mpn>meower-plush-squeaky-chew-toys-for-puppies-cats-machine-washable</g:mpn>
+      <g:identifier_exists>false</g:identifier_exists>
+      <g:google_product_category>Animals &amp; Pet Supplies &gt; Pet Supplies</g:google_product_category>
+      <g:product_type>Pet Toy</g:product_type>
+    </item>
   </channel>
 </rss>

@@ -7,9 +7,17 @@ import { useShopifyPrices } from '../composables/useShopifyPrices';
  * Price label for a product card. Reads the cheapest buyable variant from
  * Shopify and prefixes "From" only when the product really has more than one
  * price (e.g. three bed sizes).
+ *
+ * `fallback` covers products that are not on Shopify yet: no handle means no
+ * live price to load, so the card shows the seller's wording instead (see
+ * `priceFallback` in `src/data/products.js`) rather than no price at all.
  */
 const props = defineProps({
   handle: {
+    type: String,
+    default: '',
+  },
+  fallback: {
     type: String,
     default: '',
   },
@@ -21,7 +29,7 @@ const entry = computed(() => (props.handle ? prices.value[props.handle] : null))
 
 const label = computed(() => {
   if (!entry.value) {
-    return '';
+    return props.handle ? '' : props.fallback;
   }
   return formatMoney(entry.value.amount, entry.value.currencyCode);
 });

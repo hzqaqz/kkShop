@@ -1,4 +1,5 @@
 <script setup>
+import ProductPriceTag from './ProductPriceTag.vue';
 import { House, ShieldCheck, Volume1, Wind } from 'lucide-vue-next';
 
 /**
@@ -71,6 +72,7 @@ const spaces = [
           High-efficiency purification for large commercial spaces — reliable clean-air
           performance that helps keep shared rooms healthier, fresher and more comfortable.
         </p>
+        <ProductPriceTag fallback="Price on request" />
       </div>
 
       <img
@@ -158,6 +160,8 @@ const spaces = [
   --accent: #5f858d;
   --tint: #bfd8dc;
   --band: #eef4f5;
+  --price-ink: var(--ink);
+  --price-muted: var(--accent);
   color: #101213;
   background: #fff;
 }

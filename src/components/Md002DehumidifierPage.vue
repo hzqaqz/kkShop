@@ -1,4 +1,5 @@
 <script setup>
+import ProductPriceTag from './ProductPriceTag.vue';
 import {
   Bath,
   Bed,
@@ -125,6 +126,7 @@ const heroStats = [
             <span>{{ stat.label }}</span>
           </li>
         </ul>
+        <ProductPriceTag fallback="Price on request" />
       </div>
     </section>
 
@@ -246,7 +248,7 @@ const heroStats = [
 </template>
 
 <style scoped>
-.md002-dehumidifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; color: #202222; background: #fff; }
+.md002-dehumidifier { --ink: #314e53; --accent: #75949a; --warm: #f5eee5; --price-ink: var(--ink); --price-muted: var(--accent); color: #202222; background: #fff; }
 /* Hero panel: same two-tone split as MD001 — a light #fefaf3 panel that falls to
    #f9f3eb where the photo starts, against the #f5eee5 benefits band below. MD001
    gets this from a white overlay; here it is the panel itself, because a CSS
