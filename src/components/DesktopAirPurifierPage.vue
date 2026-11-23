@@ -1,10 +1,10 @@
 <script setup>
 import {
   Feather,
-  Gauge,
   House,
   Layers,
   RefreshCw,
+  RotateCcw,
   ShieldCheck,
   Usb,
   Volume2,
@@ -24,7 +24,7 @@ import { contactEmailHref } from '../data/siteInfo';
  *
  * Every figure repeats the manufacturer data sheet: 114 × 114 × 190 mm body,
  * 119 × 119 × 199 mm packing, 333.3 g net (pack 490 g), EPA11 filter with a VOC
- * pad, 51–150 m³/h airflow across three fan speeds, ≤ 37 dB(A), 11–20 m²,
+ * pad, 51–150 m³/h airflow at a single fan setting, ≤ 37 dB(A), 11–20 m²,
  * USB-C 5 V 2 A / 50 Hz, 10 W rated with a 12 W peak. Keep `products.js`,
  * `productOverview.js` and `productFaqs.js` in sync with any change here.
  */
@@ -38,12 +38,12 @@ const benefits = [
   },
   {
     title: 'Quiet enough to leave on.',
-    text: 'Three fan speeds run at ≤ 37 dB(A), so it can stay beside you through a working day, an evening of reading or a night’s sleep.',
+    text: 'At ≤ 37 dB(A) it can stay beside you through a working day, an evening of reading or a night’s sleep — there is no speed to fiddle with.',
     icon: Volume2,
   },
   {
-    title: 'One cable, no socket.',
-    text: 'USB-C at 5 V 2 A draws 10 W, peaking at 12 W, so a laptop, a wall charger or a power bank is enough to run it.',
+    title: 'Pick it up and take it.',
+    text: 'At 333.3 g it lifts off the desk in one hand, and USB-C at 5 V 2 A (10 W, 12 W peak) runs it from a laptop, a charger or a power bank — no socket required.',
     icon: Usb,
   },
 ];
@@ -51,7 +51,7 @@ const benefits = [
 const features = [
   { label: '11–20 m² Coverage', icon: House },
   { label: '51–150 m³/h Airflow', icon: Wind },
-  { label: '3 Fan Speeds', icon: Gauge },
+  { label: 'Lift-Off Top', icon: RotateCcw },
   { label: '≤ 37 dB(A)', icon: Volume2 },
   { label: '10 W Rated Power', icon: Zap },
   { label: 'USB-C Input', icon: Usb },
@@ -108,18 +108,35 @@ const upClose = [
     alt: 'The desktop air purifier with its top section lifted off beside the perforated body',
   },
 ];
+
+/** The four places the unit is shown working, in page order. */
+const scenes = [
+  {
+    label: 'The bedside table',
+    image: '/images/products/desktop-air-purifier/scene-bedside.webp',
+    alt: 'Desktop air purifier on a bedside table beside a lamp, with the bed pillows behind it',
+  },
+  {
+    label: 'The office desk',
+    image: '/images/products/desktop-air-purifier/scene-office.webp',
+    alt: 'Desktop air purifier on an office desk beside an open laptop, a mug and a plant',
+  },
+  {
+    label: 'The study corner',
+    image: '/images/products/desktop-air-purifier/scene-study.webp',
+    alt: 'Desktop air purifier on a sunlit study desk with a laptop, books and a mug',
+  },
+  {
+    label: 'The dining table',
+    image: '/images/products/desktop-air-purifier/scene-dining.webp',
+    alt: 'Desktop air purifier on a wooden dining table with flowers, a striped mug and cane chairs',
+  },
+];
 </script>
 
 <template>
   <article class="dp-purifier">
     <section class="dp-hero" aria-labelledby="dp-title">
-      <img
-        class="dp-hero-image"
-        src="/images/products/desktop-air-purifier/hero-desk.webp"
-        width="1600"
-        height="1200"
-        alt="Meower desktop air purifier standing on a grey desk beside a monitor, a laptop and a mug"
-      />
       <div class="dp-hero-copy">
         <p class="dp-eyebrow">USB-C Purification for One Person</p>
         <h1 id="dp-title">
@@ -137,6 +154,14 @@ const upClose = [
           <a class="dp-cta dp-cta--ghost" :href="contactEmailHref">Ask about this purifier</a>
         </div>
       </div>
+
+      <img
+        class="dp-hero-image"
+        src="/images/products/desktop-air-purifier/scene-office.webp"
+        width="1536"
+        height="1024"
+        alt="Meower desktop air purifier on an office desk beside an open laptop, a mug and a plant"
+      />
     </section>
 
     <section class="dp-benefits" aria-label="Everyday benefits">
@@ -162,6 +187,23 @@ const upClose = [
       </div>
     </section>
 
+    <section class="dp-scenes" aria-labelledby="dp-scenes-title">
+      <div class="dp-section-heading">
+        <p>One person, four places</p>
+        <h2 id="dp-scenes-title">Where It Earns Its Space</h2>
+        <p class="dp-section-note">
+          Same unit in all four: 333.3 g, one USB-C cable, no socket of its own — so it moves
+          with you instead of staying where it was plugged in.
+        </p>
+      </div>
+      <div class="dp-scene-grid">
+        <article v-for="scene in scenes" :key="scene.label" class="dp-scene-card">
+          <img :src="scene.image" :alt="scene.alt" loading="lazy" decoding="async" />
+          <h3>{{ scene.label }}</h3>
+        </article>
+      </div>
+    </section>
+
     <section class="dp-overview" aria-labelledby="dp-overview-title">
       <div class="dp-overview-copy">
         <span class="dp-rule" aria-hidden="true"></span>
@@ -176,10 +218,12 @@ const upClose = [
           The body is 114 mm across and 190 mm tall, and weighs 333.3 g with the EPA11 filter and
           VOC pad fitted. Air comes in through the perforated lower half from every direction and
           leaves through the concentric rings on top, so the unit only has to be near you rather
-          than pointed at you. Three fan speeds let it idle on the lowest setting overnight and
-          work harder while you are out of the room. USB-C at 5 V 2 A draws 10 W, peaking at
-          12 W, which is what lets it run from a laptop or a power bank instead of a dedicated
-          socket.
+          than pointed at you. It runs at a single fan setting rather than offering a speed
+          selector, so it works the same way whether you are at the desk or out of the room.
+          USB-C at 5 V 2 A draws 10 W, peaking at
+          12 W, which is what makes it genuinely portable: 333.3 g in one hand, a cable in the
+          bag, and it runs from a laptop, a charger or a power bank wherever you set it down —
+          desk, nightstand, hotel shelf or café table.
         </p>
 
         <ul class="dp-chips" aria-label="Key specifications">
@@ -235,6 +279,9 @@ const upClose = [
 
 /* Hero matched to the MW200 page: the photo fills the band (contain, anchored
    right/bottom) and a warm left-to-right wash keeps the copy readable. */
+/* Hero exactly as MW200: the photo fills the band (contain, anchored
+   right/bottom) and a warm left-to-right wash keeps the copy readable. No
+   rounded corner here — the radius belongs to the illustrations further down. */
 .dp-hero {
   position: relative;
   min-height: clamp(570px, 48vw, 760px);
@@ -418,6 +465,19 @@ const upClose = [
   font-size: clamp(38px, 4vw, 64px);
 }
 
+/* The shared eyebrow rule styles every `p` inside a section heading, so the
+   note below it has to undo the uppercase/accent treatment explicitly. */
+.dp-section-heading .dp-section-note {
+  max-width: 62ch;
+  margin: 18px auto 0;
+  color: #40595e;
+  font-size: clamp(15px, 1.15vw, 17.5px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-transform: none;
+}
+
 .dp-feature-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(130px, 1fr));
@@ -541,14 +601,53 @@ const upClose = [
   stroke-width: 1.7;
 }
 
-/* A photograph rather than a cut-out here, so it gets the same corner radius
-   as the "Up close" cards instead of floating as a hard rectangle. */
+/* A photograph rather than a cut-out here, so it gets the same corner radius as
+   the other cards. The box matches the photo's own 3:4 ratio: with `contain` the
+   image letterboxes inside its box and the radius would fall on empty space. */
 .dp-overview > img {
   width: min(100%, 420px);
-  max-height: 520px;
+  aspect-ratio: 3 / 4;
   justify-self: center;
-  border-radius: 14px;
-  object-fit: contain;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+/* Scene strip: four places, so four columns on desktop. White band with cream
+   cards, so it reads as its own module between the features grid and the cream
+   overview block that follows. */
+.dp-scenes {
+  padding: clamp(62px, 7vw, 108px) max(7vw, calc((100vw - 1440px) / 2));
+  background: #fff;
+}
+
+.dp-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.dp-scene-card {
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--warm);
+}
+
+.dp-scene-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.dp-scene-card h3 {
+  margin: 0;
+  padding: 16px;
+  color: var(--ink);
+  font-size: 18px;
+  text-align: center;
 }
 
 .dp-spaces {
@@ -565,7 +664,7 @@ const upClose = [
 
 .dp-space-card {
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--warm);
 }
 
@@ -605,6 +704,7 @@ const upClose = [
   }
 
   .dp-features,
+  .dp-scenes,
   .dp-spaces {
     padding: 64px 28px;
   }
@@ -621,6 +721,10 @@ const upClose = [
 
   .dp-overview > img {
     max-width: 320px;
+  }
+
+  .dp-scene-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .dp-space-grid {
@@ -645,6 +749,7 @@ const upClose = [
     min-height: 126px;
   }
 
+  .dp-scene-grid,
   .dp-space-grid {
     grid-template-columns: 1fr;
   }

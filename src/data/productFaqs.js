@@ -67,9 +67,9 @@ export const productFaqs = {
         'It is rated for rooms of 11–20 m², with an airflow of 51–150 m³/h. In practice that is the air around one person rather than a whole floor: a desk, a bedside table or a reading chair.',
     },
     {
-      question: 'Can I adjust how hard the desktop air purifier works?',
+      question: 'Does the desktop air purifier have adjustable fan speeds?',
       answer:
-        'Yes — it has three fan speeds. The lowest setting is the one for a bedside table overnight, and the top setting clears a room faster before you settle into it. All three run at ≤ 37 dB(A).',
+        'No — it runs at a single fan setting rather than offering speeds to choose between. It is on or off, and at that one setting it is rated for 11–20 m² at ≤ 37 dB(A).',
     },
     {
       question: 'What filter does the desktop air purifier use?',
@@ -82,6 +82,11 @@ export const productFaqs = {
         'The body measures 114 × 114 × 190 mm and weighs 333.3 g with the EPA11 filter and VOC pad fitted; packed, it is 490 g in a 119 × 119 × 199 mm carton. That is light enough to pick up in one hand and move between the desk, the bedside table and the sofa.',
     },
     {
+      question: 'Can I take the desktop air purifier with me?',
+      answer:
+        'Yes. It weighs 333.3 g with the EPA11 filter and VOC pad fitted — 490 g in its carton — so it goes into a bag with its USB-C cable and comes out again on a hotel shelf, an office desk or a café table. There is no built-in battery: it runs from any USB-C port, charger or power bank.',
+    },
+    {
       question: 'How do I clean the desktop air purifier?',
       answer:
         'The top section lifts off the body in one piece — there are no clips and no tools involved — so the inside and the filter are reached for routine cleaning.',
@@ -89,7 +94,7 @@ export const productFaqs = {
     {
       question: 'How quiet is it at a desk?',
       answer:
-        'It runs at ≤ 37 dB(A) across all three fan speeds, so it can stay on beside you while you work, read or sleep.',
+        'It runs at ≤ 37 dB(A), so it can stay on beside you while you work, read or sleep.',
     },
   ],
 

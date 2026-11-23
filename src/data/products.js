@@ -80,9 +80,9 @@ export const products = {
     // 与 Shopify 后台商品标题逐字一致（Shopify Admin → Products）。
     title:
       'Meower Desktop EPA11 Air Purifier for the Desk, the Bedside Table & the Study Corner',
-    cardSubtitle: 'USB-C · 11–20 m² · 3 Fan Speeds',
+    cardSubtitle: 'USB-C · 11–20 m² · ≤ 37 dB(A)',
     description:
-      'A 114 × 114 × 190 mm desktop air purifier that weighs 333.3 g with its EPA11 filter fitted. 51–150 m³/h airflow covers 11–20 m² across three fan speeds at ≤ 37 dB(A), and it runs from USB-C at 5 V 2 A on 10 W rated power (12 W peak).',
+      'A 114 × 114 × 190 mm desktop air purifier that weighs 333.3 g with its EPA11 filter fitted. 51–150 m³/h airflow covers 11–20 m² at a single fan setting and ≤ 37 dB(A), and it runs from USB-C at 5 V 2 A on 10 W rated power (12 W peak).',
     // 卡片、导航和概览区统一用透明底产品图（和 MW200 的 card/cut-out 一致）；
     // 社交卡片保留桌面实景。
     image: '/images/products/desktop-air-purifier/product-cutout.webp',
