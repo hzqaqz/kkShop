@@ -62,29 +62,33 @@ export const products = {
   'desktop-air-purifier': {
     id: 'desktop-air-purifier',
     // 桌面 / 个人空间空气净化器。参数来自厂家数据表：114×114×190mm、净重 333.3g、
-    // EPA11 滤网 + VOC 贴棉、风量 51–150 m³/h、≤37 dB(A)、11–20 m²、USB-C 5V2A、
-    // 5–12W。页面上的规格表见 DesktopAirPurifierPage.vue 的 `specs`，改一处要三处同步
+    // EPA11 滤网 + VOC 贴棉、风量 51–150 m³/h（三档）、≤37 dB(A)、11–20 m²、
+    // USB-C 5V2A、额定 10W / 峰值 12W。页面上的规格表见
+    // DesktopAirPurifierPage.vue 的 `specs`，改一处要三处同步
     // （这里 + productOverview.js + productFaqs.js）。
-    // 暂未上 Shopify，因此走询价条，而不是 Add to cart。
+    // 通过 Shopify Storefront 在线下单（单变体 Default Title，US$29.00）。
+    // handle 是 Shopify 自动生成的超长串，和站内路由 id 无关，所以照抄全名。
+    purchasable: true,
+    shopifyHandle:
+      'meower-desktop-epa11-air-purifier-for-the-desk-the-bedside-table-the-study-corner',
     label: 'Desktop Air Purifier',
     cardLabel: 'Desktop Air Purifier',
     category: 'Air Purifier',
     // Shop 分类归属：Air Purifiers（见 src/data/catalog.js）。
     shopCategoryId: 'air-purifiers',
     page: 'desktop-air-purifier',
-    title: 'Meower Desktop Air Purifier with EPA11 Filter, USB-C Powered',
-    cardSubtitle: 'USB-C · 11–20 m² · ≤ 37 dB(A)',
+    // 与 Shopify 后台商品标题逐字一致（Shopify Admin → Products）。
+    title:
+      'Meower Desktop EPA11 Air Purifier for the Desk, the Bedside Table & the Study Corner',
+    cardSubtitle: 'USB-C · 11–20 m² · 3 Fan Speeds',
     description:
-      'A 114 × 114 × 190 mm desktop air purifier that weighs 333.3 g with its EPA11 filter fitted. 51–150 m³/h airflow covers 11–20 m² at ≤ 37 dB(A), and it runs from USB-C at 5 V 2 A, drawing 5–12 W from a laptop, charger or power bank.',
+      'A 114 × 114 × 190 mm desktop air purifier that weighs 333.3 g with its EPA11 filter fitted. 51–150 m³/h airflow covers 11–20 m² across three fan speeds at ≤ 37 dB(A), and it runs from USB-C at 5 V 2 A on 10 W rated power (12 W peak).',
     // 卡片、导航和概览区统一用透明底产品图（和 MW200 的 card/cut-out 一致）；
     // 社交卡片保留桌面实景。
     image: '/images/products/desktop-air-purifier/product-cutout.webp',
     navImage: '/images/products/desktop-air-purifier/product-cutout.webp',
     ogImage: '/images/products/desktop-air-purifier/og-card.jpg',
-    // 还没有 Shopify handle，所以卡片上没有可读的实时价格，用这句代替
-    // （一旦补上 shopifyHandle，这个 fallback 会自动被真实价格覆盖）。
-    priceFallback: 'Price on request',
-    inquiryNote: 'Stock, price and filter spares — ask us and we will confirm.',
+    inquiryNote: 'Stock and filter spares — ask us and we will confirm.',
   },
 
   'woven-sisal-cat-scratcher': {

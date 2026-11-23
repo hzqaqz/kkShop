@@ -59,12 +59,17 @@ export const productFaqs = {
     {
       question: 'How is the Meower desktop air purifier powered?',
       answer:
-        'It runs from USB-C at 5 V 2 A, rated 5–12 W. One cable connects it to a laptop port, a USB-C wall charger or a power bank, so it does not need a dedicated adapter or a power socket of its own.',
+        'It runs from USB-C at 5 V 2 A, rated 10 W with a 12 W peak. One cable connects it to a laptop port, a USB-C wall charger or a power bank, so it does not need a dedicated adapter or a power socket of its own.',
     },
     {
       question: 'How much space does the desktop air purifier clean?',
       answer:
         'It is rated for rooms of 11–20 m², with an airflow of 51–150 m³/h. In practice that is the air around one person rather than a whole floor: a desk, a bedside table or a reading chair.',
+    },
+    {
+      question: 'Can I adjust how hard the desktop air purifier works?',
+      answer:
+        'Yes — it has three fan speeds. The lowest setting is the one for a bedside table overnight, and the top setting clears a room faster before you settle into it. All three run at ≤ 37 dB(A).',
     },
     {
       question: 'What filter does the desktop air purifier use?',
@@ -84,7 +89,7 @@ export const productFaqs = {
     {
       question: 'How quiet is it at a desk?',
       answer:
-        'It runs at ≤ 37 dB(A), so it can stay on beside you while you work, read or sleep.',
+        'It runs at ≤ 37 dB(A) across all three fan speeds, so it can stay on beside you while you work, read or sleep.',
     },
   ],
 

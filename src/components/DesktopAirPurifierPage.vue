@@ -1,10 +1,10 @@
 <script setup>
 import {
   Feather,
+  Gauge,
   House,
   Layers,
   RefreshCw,
-  RotateCcw,
   ShieldCheck,
   Usb,
   Volume2,
@@ -24,9 +24,9 @@ import { contactEmailHref } from '../data/siteInfo';
  *
  * Every figure repeats the manufacturer data sheet: 114 × 114 × 190 mm body,
  * 119 × 119 × 199 mm packing, 333.3 g net (pack 490 g), EPA11 filter with a VOC
- * pad, 51–150 m³/h airflow, ≤ 37 dB(A), 11–20 m², USB-C 5 V 2 A / 50 Hz,
- * 5–12 W. Keep `products.js`, `productOverview.js` and `productFaqs.js` in sync
- * with any change here.
+ * pad, 51–150 m³/h airflow across three fan speeds, ≤ 37 dB(A), 11–20 m²,
+ * USB-C 5 V 2 A / 50 Hz, 10 W rated with a 12 W peak. Keep `products.js`,
+ * `productOverview.js` and `productFaqs.js` in sync with any change here.
  */
 const shopifyHandle = getProduct('desktop-air-purifier')?.shopifyHandle ?? '';
 
@@ -38,12 +38,12 @@ const benefits = [
   },
   {
     title: 'Quiet enough to leave on.',
-    text: 'At ≤ 37 dB(A) it can stay beside you through a working day, an evening of reading or a night’s sleep.',
+    text: 'Three fan speeds run at ≤ 37 dB(A), so it can stay beside you through a working day, an evening of reading or a night’s sleep.',
     icon: Volume2,
   },
   {
     title: 'One cable, no socket.',
-    text: 'USB-C at 5 V 2 A draws 5–12 W, so a laptop, a wall charger or a power bank is enough to run it.',
+    text: 'USB-C at 5 V 2 A draws 10 W, peaking at 12 W, so a laptop, a wall charger or a power bank is enough to run it.',
     icon: Usb,
   },
 ];
@@ -51,14 +51,14 @@ const benefits = [
 const features = [
   { label: '11–20 m² Coverage', icon: House },
   { label: '51–150 m³/h Airflow', icon: Wind },
+  { label: '3 Fan Speeds', icon: Gauge },
   { label: '≤ 37 dB(A)', icon: Volume2 },
-  { label: '5–12 W Draw', icon: Zap },
+  { label: '10 W Rated Power', icon: Zap },
   { label: 'USB-C Input', icon: Usb },
   { label: 'EPA11 Filter', icon: ShieldCheck },
   { label: 'VOC Pad', icon: Layers },
   { label: '360° Air Intake', icon: RefreshCw },
   { label: '333.3 g Portable', icon: Feather },
-  { label: 'Lift-Off Top', icon: RotateCcw },
 ];
 
 const filterStages = [
@@ -71,7 +71,7 @@ const specs = [
   ['Airflow', '51–150 m³/h'],
   ['Recommended room', '11–20 m²'],
   ['Noise level', '≤ 37 dB(A)'],
-  ['Rated power', '5–12 W'],
+  ['Rated power', '10 W'],
 ];
 
 /**
@@ -176,8 +176,10 @@ const upClose = [
           The body is 114 mm across and 190 mm tall, and weighs 333.3 g with the EPA11 filter and
           VOC pad fitted. Air comes in through the perforated lower half from every direction and
           leaves through the concentric rings on top, so the unit only has to be near you rather
-          than pointed at you. USB-C at 5 V 2 A draws 5–12 W, which is what lets it run from a
-          laptop or a power bank instead of a dedicated socket.
+          than pointed at you. Three fan speeds let it idle on the lowest setting overnight and
+          work harder while you are out of the room. USB-C at 5 V 2 A draws 10 W, peaking at
+          12 W, which is what lets it run from a laptop or a power bank instead of a dedicated
+          socket.
         </p>
 
         <ul class="dp-chips" aria-label="Key specifications">

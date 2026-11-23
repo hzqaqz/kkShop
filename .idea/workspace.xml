@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="增加了chat气泡">
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/design-angle.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/front-usb-c.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/hero-desk.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/og-card.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/product-cutout.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/top-rings.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/two-piece.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DesktopAirPurifierPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FeaturedProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOverview.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShopifyInboxChat.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composables/useCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/composables/useCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/productFaqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productFaqs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" afterDir="false" />
-    </list>
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="增加了chat气泡" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -67,7 +67,7 @@ export const productOverviews = {
     paragraphs: [
       'Most air purifiers are sized for a room and sold on room coverage. A desktop purifier starts from the other end: the air that matters is the air someone is actually sitting in. On a work desk, at a bedside table or in a reading chair that is a small, well-defined pocket of air — and it is exactly the pocket a floor-standing unit has to clean indirectly, by turning over the whole room around it.',
       'The Meower desktop air purifier is built around that. It stands 190 mm tall on a 114 × 114 mm base and weighs 333.3 g with its EPA11 filter and VOC pad fitted, so it sits on the desk itself rather than beside it. Air is drawn in through a perforated band around the lower half and returned through concentric rings on the top face, upward and away from the surface; because the intake runs the whole way round, the unit does not have to be turned towards the person using it.',
-      'Its airflow of 51–150 m³/h is rated for rooms of 11–20 m², which is the scale of a desk, a bedside table or a study corner rather than an open-plan floor, and it runs at ≤ 37 dB(A) — quiet enough to stay on beside you while you work or sleep. Power arrives over USB-C at 5 V 2 A, drawing 5–12 W, so one cable to a laptop, a wall charger or a power bank is enough and the unit can move between rooms without being tied to a socket.',
+      'Its airflow of 51–150 m³/h is rated for rooms of 11–20 m², which is the scale of a desk, a bedside table or a study corner rather than an open-plan floor, and it runs at ≤ 37 dB(A) — quiet enough to stay on beside you while you work or sleep. Three fan speeds cover that range: the lowest setting is the one for a bedside table at night, the top setting for clearing a room before you settle into it. Power arrives over USB-C at 5 V 2 A, drawing 10 W (12 W at peak), so one cable to a laptop, a wall charger or a power bank is enough and the unit can move between rooms without being tied to a socket.',
       'Servicing is a lift, not a disassembly. The top section comes off the body in one piece, which is how the EPA11 filter and VOC pad are reached for cleaning or replacement — no clips and no tools. Packed for shipping the unit is 490 g, and the packing carton measures 119 × 119 × 199 mm.',
     ],
     bestFor: [
@@ -85,11 +85,13 @@ export const productOverviews = {
     specs: [
       ['Filter', 'EPA11 filter with VOC pad'],
       ['Airflow', '51–150 m³/h'],
+      ['Fan speeds', '3 levels'],
       ['Recommended room size', '11–20 m²'],
       ['Noise level', '≤ 37 dB(A)'],
       ['Power input', 'USB-C, 5 V 2 A'],
       ['Frequency', '50 Hz'],
-      ['Rated power', '5–12 W'],
+      ['Rated power', '10 W'],
+      ['Peak power', '12 W'],
       ['Product size', '114 × 114 × 190 mm'],
       ['Packing size', '119 × 119 × 199 mm'],
       ['Net weight', '333.3 g (with filter and VOC pad)'],
