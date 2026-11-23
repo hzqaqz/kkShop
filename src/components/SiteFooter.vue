@@ -184,6 +184,7 @@ onBeforeUnmount(() => {
         <div class="footer-meta">
           <address class="footer-address">
             <span class="footer-entity">{{ company.legalName }}</span>
+            <span class="footer-entity-zh" lang="zh">{{ company.legalNameZh }}</span>
             <span v-for="line in address.lines" :key="line" class="footer-address-line">{{ line }}</span>
             <span class="footer-address-zh" lang="zh">{{ address.zh }}</span>
           </address>
@@ -419,6 +420,16 @@ onBeforeUnmount(() => {
   color: #274b52;
   font-size: 15px;
   font-weight: 600;
+}
+
+/* The Chinese legal name, exactly as it appears on the business licence and as
+   it is entered in the Google payments profile. It sits on every page so the
+   name Google has on file can be found on the landing page itself, not only on
+   the About page. */
+.footer-entity-zh {
+  color: #33565c;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer-address-zh {
