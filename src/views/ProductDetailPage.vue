@@ -8,6 +8,7 @@ import CatToyProductPage from '../components/CatToyProductPage.vue';
 import CeilingMountedDehumidifierPage from '../components/CeilingMountedDehumidifierPage.vue';
 import CommercialAirPurifierPage from '../components/CommercialAirPurifierPage.vue';
 import CommercialDehumidifierPage from '../components/CommercialDehumidifierPage.vue';
+import DesktopAirPurifierPage from '../components/DesktopAirPurifierPage.vue';
 import Md001DehumidifierPage from '../components/Md001DehumidifierPage.vue';
 import Md002DehumidifierPage from '../components/Md002DehumidifierPage.vue';
 import Mw100ProductPage from '../components/Mw100ProductPage.vue';
@@ -43,6 +44,8 @@ const THEME_CLASSES = {
   md001: 'post-theme-warm',
   md002: 'post-theme-warm',
   'commercial-air-purifier': 'post-theme-teal',
+  // Same warm theme as MW100/MW200 — the page itself uses the MW200 palette.
+  'desktop-air-purifier': 'post-theme-warm',
   'commercial-dehumidifier': 'post-theme-teal',
   'ceiling-mounted-dehumidifier': 'post-theme-green',
   'christmas-pet-bed': 'post-theme-warm',
@@ -130,6 +133,8 @@ useSeo(currentMeta.value);
     <Md002DehumidifierPage v-else-if="currentProduct?.page === 'md002'" />
 
     <Mw200AirPurifierPage v-else-if="currentProduct?.page === 'mw200'" />
+
+    <DesktopAirPurifierPage v-else-if="currentProduct?.page === 'desktop-air-purifier'" />
 
     <PetBedProductPage v-else-if="currentProduct?.page === 'pet-bed'" />
 

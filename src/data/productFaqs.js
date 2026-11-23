@@ -55,6 +55,39 @@ export const productFaqs = {
         'It depends on how you use the purifier: how polluted the air is around it, how many hours it runs each day and which fan speed you keep it on all affect filter life. As a rule we suggest replacing the filter every 8–12 months. Judge it by the filter itself as well — once it has turned from white to grey, replace it as soon as you can so the purifier keeps its cleaning performance.',
     },
   ],
+  'desktop-air-purifier': [
+    {
+      question: 'How is the Meower desktop air purifier powered?',
+      answer:
+        'It runs from USB-C at 5 V 2 A, rated 5–12 W. One cable connects it to a laptop port, a USB-C wall charger or a power bank, so it does not need a dedicated adapter or a power socket of its own.',
+    },
+    {
+      question: 'How much space does the desktop air purifier clean?',
+      answer:
+        'It is rated for rooms of 11–20 m², with an airflow of 51–150 m³/h. In practice that is the air around one person rather than a whole floor: a desk, a bedside table or a reading chair.',
+    },
+    {
+      question: 'What filter does the desktop air purifier use?',
+      answer:
+        'An EPA11 filter with a VOC pad. Both are included in the 333.3 g net weight, and both are reached by lifting the top section off the body. Ask us about replacement filters and current availability.',
+    },
+    {
+      question: 'How big and how heavy is it?',
+      answer:
+        'The body measures 114 × 114 × 190 mm and weighs 333.3 g with the EPA11 filter and VOC pad fitted; packed, it is 490 g in a 119 × 119 × 199 mm carton. That is light enough to pick up in one hand and move between the desk, the bedside table and the sofa.',
+    },
+    {
+      question: 'How do I clean the desktop air purifier?',
+      answer:
+        'The top section lifts off the body in one piece — there are no clips and no tools involved — so the inside and the filter are reached for routine cleaning.',
+    },
+    {
+      question: 'How quiet is it at a desk?',
+      answer:
+        'It runs at ≤ 37 dB(A), so it can stay on beside you while you work, read or sleep.',
+    },
+  ],
+
   md001: [
     {
       question: 'How much moisture does the Meower MD001 remove per day?',

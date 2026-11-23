@@ -45,12 +45,15 @@ const priceLabel = computed(() =>
 
 onMounted(() => loadPrice(shopifyHandle));
 
-const { addToCart, loading: cartLoading } = useCart();
+const { addToCart, isAdding } = useCart();
 const { setVariant } = useVariantSelection();
+/* Only this page's variant drives the button, so an add elsewhere in the app
+   (or the cart finishing its restore on load) never spins it. */
+const adding = computed(() => isAdding(variant.value?.id));
 
 function addToCartFromPage() {
   const entry = variant.value;
-  if (!entry?.id || !entry.availableForSale || cartLoading.value) {
+  if (!entry?.id || !entry.availableForSale || adding.value) {
     return;
   }
   setVariant(shopifyHandle, entry.id);
@@ -158,10 +161,10 @@ const features = [
           v-if="shopifyReady && variant?.availableForSale !== false"
           type="button"
           class="ps-buy-add"
-          :disabled="!variant?.availableForSale || cartLoading"
+          :disabled="!variant?.availableForSale || adding"
           @click="addToCartFromPage"
         >
-          {{ cartLoading ? 'Adding…' : 'Add to cart' }}
+          {{ adding ? 'Adding…' : 'Add to cart' }}
         </button>
         <a v-else class="ps-buy-add" :href="contactEmailHref">
           {{ variant ? 'Ask about availability' : 'Ask about this stroller' }}

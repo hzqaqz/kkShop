@@ -2263,6 +2263,13 @@ b {
   margin: 52px auto 0;
 }
 
+/* A product published before its data sheet: only the "Best suited to" block,
+   held to half width so it does not stretch across both columns. */
+.product-overview-columns--single {
+  grid-template-columns: minmax(0, 1fr);
+  width: min(560px, 100%);
+}
+
 /* Anchor target for "View product specs" buttons. */
 #product-specs {
   scroll-margin-top: 110px;

@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { Layers, Ruler, Sticker, TreePine } from 'lucide-vue-next';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
@@ -60,23 +60,25 @@ const variantsByDesign = computed(() => {
   return map;
 });
 
-const { addToCart, loading: cartLoading } = useCart();
+const { addToCart, isAdding } = useCart();
 const { setVariant } = useVariantSelection();
-const addingDesign = ref('');
 
 async function addDesign(design) {
   const entry = variantsByDesign.value[design.key];
-  if (!entry?.id || !entry.available || addingDesign.value) {
+  if (!entry?.id || !entry.available || isAdding(entry.id)) {
     return;
   }
-  addingDesign.value = design.key;
   setVariant(shopifyHandle, entry.id);
   await addToCart(entry.id, 1);
-  addingDesign.value = '';
 }
 
 function designVariant(design) {
   return variantsByDesign.value[design.key] ?? null;
+}
+
+/** Add state for one design, so only the clicked button shows "Adding…". */
+function designAdding(design) {
+  return isAdding(designVariant(design)?.id);
 }
 
 const steps = [
@@ -170,10 +172,10 @@ const features = [
               v-if="designVariant(design)"
               type="button"
               class="cframe-design-add"
-              :disabled="!designVariant(design).available || cartLoading || !!addingDesign"
+              :disabled="!designVariant(design).available || designAdding(design)"
               @click="addDesign(design)"
             >
-              {{ !designVariant(design).available ? 'Sold out' : addingDesign === design.key ? 'Adding…' : 'Add to cart' }}
+              {{ !designVariant(design).available ? 'Sold out' : designAdding(design) ? 'Adding…' : 'Add to cart' }}
             </button>
           </div>
         </article>

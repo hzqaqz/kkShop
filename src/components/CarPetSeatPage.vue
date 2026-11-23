@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { Anchor, BedDouble, Droplets, Link2, PawPrint, ShieldCheck } from 'lucide-vue-next';
 import { useCart } from '../composables/useCart';
 import { useShopifyProduct } from '../composables/useShopifyPrices';
@@ -98,23 +98,25 @@ const variantsByColour = computed(() => {
   return map;
 });
 
-const { addToCart, loading: cartLoading } = useCart();
+const { addToCart, isAdding } = useCart();
 const { setVariant } = useVariantSelection();
-const addingColour = ref('');
 
 async function addColour(colour) {
   const entry = variantsByColour.value[colour.key];
-  if (!entry?.id || !entry.available || addingColour.value) {
+  if (!entry?.id || !entry.available || isAdding(entry.id)) {
     return;
   }
-  addingColour.value = colour.key;
   setVariant(shopifyHandle, entry.id);
   await addToCart(entry.id, 1);
-  addingColour.value = '';
 }
 
 function colourVariant(colour) {
   return variantsByColour.value[colour.key] ?? null;
+}
+
+/** Add state for one colour, so only the clicked button shows "Adding…". */
+function colourAdding(colour) {
+  return isAdding(colourVariant(colour)?.id);
 }
 
 const safety = [
@@ -255,10 +257,10 @@ const safety = [
               v-if="colourVariant(colour)"
               type="button"
               class="carseat-colour-add"
-              :disabled="!colourVariant(colour).available || cartLoading || !!addingColour"
+              :disabled="!colourVariant(colour).available || colourAdding(colour)"
               @click="addColour(colour)"
             >
-              {{ !colourVariant(colour).available ? 'Sold out' : addingColour === colour.key ? 'Adding…' : 'Add to cart' }}
+              {{ !colourVariant(colour).available ? 'Sold out' : colourAdding(colour) ? 'Adding…' : 'Add to cart' }}
             </button>
           </div>
         </article>

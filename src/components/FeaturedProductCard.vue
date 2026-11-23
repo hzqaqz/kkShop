@@ -60,7 +60,7 @@ const route = computed(() => ({
 /* Prices and variant ids belong to Shopify; the price label is shared with the
    product cards, and the same cached product supplies the quick-add variant. */
 const { product: shopifyProduct } = useShopifyProduct(handle);
-const { addToCart, loading: cartLoading, error: cartError } = useCart();
+const { addToCart, isAdding, errorFor } = useCart();
 
 /* Quick add can only work when the built site actually has credentials.
    Rendering the button without them left a control that did nothing. */
@@ -75,8 +75,13 @@ const variant = computed(() => {
   return variants.find((item) => item.availableForSale) ?? variants[0] ?? null;
 });
 
+/* Each card tracks its own request: a shared cart flag used to put every card
+   on the page into the loading state at once. */
+const adding = computed(() => isAdding(variant.value?.id));
+const cardError = computed(() => (variant.value?.id ? errorFor(variant.value.id) : null));
+
 function addToCartFromCard() {
-  if (!variant.value?.id || cartLoading.value) {
+  if (!variant.value?.id || adding.value) {
     return;
   }
   addToCart(variant.value.id, 1);
@@ -118,21 +123,21 @@ function addToCartFromCard() {
           v-if="shopifyReady"
           class="feature-card-add"
           type="button"
-          :disabled="!variant || cartLoading"
+          :disabled="!variant || adding"
           @click="addToCartFromCard"
         >
           <Loader2
-            v-if="cartLoading"
+            v-if="adding"
             class="feature-card-spinner"
             :size="18"
             aria-hidden="true"
           />
           <ShoppingBag v-else :size="18" aria-hidden="true" />
-          <span>{{ cartLoading ? 'Adding…' : 'Add to cart' }}</span>
+          <span>{{ adding ? 'Adding…' : 'Add to cart' }}</span>
         </button>
       </div>
 
-      <p v-if="cartError" class="feature-card-error" role="status">{{ cartError }}</p>
+      <p v-if="cardError" class="feature-card-error" role="status">{{ cardError }}</p>
     </div>
   </article>
 </template>

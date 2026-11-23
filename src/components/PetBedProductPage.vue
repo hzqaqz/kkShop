@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { BedDouble, Feather, Gift, Sparkles } from 'lucide-vue-next';
 import { useCart } from '../composables/useCart';
 import { formatMoney } from '../composables/useShopify';
@@ -84,20 +84,22 @@ function sizeAvailable(size) {
 }
 
 /** Picking a size on the card selects it in the buy bar and adds it to the cart. */
-const { addToCart, loading: cartLoading } = useCart();
+const { addToCart, isAdding } = useCart();
 const { setVariant } = useVariantSelection();
-const addingSize = ref('');
 
 async function addSize(size) {
   const entry = sizeVariant(size);
-  if (!entry?.id || !entry.available || addingSize.value) {
+  if (!entry?.id || !entry.available || isAdding(entry.id)) {
     return;
   }
 
-  addingSize.value = size.name.toLowerCase();
   setVariant(shopifyHandle, entry.id);
   await addToCart(entry.id, 1);
-  addingSize.value = '';
+}
+
+/** Add state for one size, so only the clicked button shows "Adding…". */
+function sizeAdding(size) {
+  return isAdding(sizeVariant(size)?.id);
 }
 
 const features = [
@@ -190,10 +192,10 @@ const features = [
               v-if="sizePrice(size)"
               type="button"
               class="petbed-size-add"
-              :disabled="!sizeAvailable(size) || cartLoading || !!addingSize"
+              :disabled="!sizeAvailable(size) || sizeAdding(size)"
               @click="addSize(size)"
             >
-              {{ !sizeAvailable(size) ? 'Sold out' : addingSize === size.name.toLowerCase() ? 'Adding…' : 'Add to cart' }}
+              {{ !sizeAvailable(size) ? 'Sold out' : sizeAdding(size) ? 'Adding…' : 'Add to cart' }}
             </button>
           </div>
         </article>

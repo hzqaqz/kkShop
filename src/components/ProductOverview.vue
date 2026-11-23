@@ -35,7 +35,10 @@ const overview = computed(() => getProductOverview(props.productId));
       </figure>
     </div>
 
-    <div class="product-overview-columns">
+    <div
+      class="product-overview-columns"
+      :class="{ 'product-overview-columns--single': !overview.specs?.length }"
+    >
       <div class="product-overview-block">
         <h3>Best suited to</h3>
         <ul>
@@ -43,7 +46,9 @@ const overview = computed(() => getProductOverview(props.productId));
         </ul>
       </div>
 
-      <div id="product-specs" class="product-overview-block">
+      <!-- Products whose data sheet is not signed off yet ship without a spec
+           list; the block (and its anchor) is skipped rather than shown empty. -->
+      <div v-if="overview.specs?.length" id="product-specs" class="product-overview-block">
         <h3>Key specifications</h3>
         <dl class="product-spec-list">
           <div v-for="[label, value] in overview.specs" :key="label" class="product-spec-row">

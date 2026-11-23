@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="US feed" />
+    <list default="true" id="96aea8bd-3f36-4821-9c3e-bbba4a319473" name="Changes" comment="增加了chat气泡">
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/design-angle.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/front-usb-c.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/hero-desk.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/og-card.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/product-cutout.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/top-rings.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/products/desktop-air-purifier/two-piece.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DesktopAirPurifierPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarPetSeatPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetBedProductPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PetStrollerPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductBuyBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductOverview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductOverview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShopifyInboxChat.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SisalCatScratcherPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TriangleCatBedPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WovenCatScratcherPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composables/useCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/composables/useCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productFaqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productFaqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/productOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductDetailPage.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +211,21 @@
       <option name="project" value="LOCAL" />
       <updated>1794999576254</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="新增了产品 增加了chat旗袍">
+      <created>1795339528847</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1795339528847</updated>
+    </task>
+    <task id="LOCAL-00021" summary="增加了chat气泡">
+      <created>1795339955403</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1795339955403</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +272,8 @@
     <MESSAGE value="更新了两篇blog，更改了tiktok链接" />
     <MESSAGE value="优化了产品名称 更新了一些policy" />
     <MESSAGE value="US feed" />
-    <option name="LAST_COMMIT_MESSAGE" value="US feed" />
+    <MESSAGE value="新增了产品 增加了chat旗袍" />
+    <MESSAGE value="增加了chat气泡" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了chat气泡" />
   </component>
 </project>

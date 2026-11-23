@@ -28,7 +28,7 @@ const emit = defineEmits(['unavailable']);
 
 const configured = isShopifyConfigured();
 
-const { addToCart, loading: cartLoading, error: cartError } = useCart();
+const { addToCart, isAdding, error: cartError } = useCart();
 
 const product = ref(null);
 const loading = ref(false);
@@ -53,6 +53,9 @@ const selectedVariant = computed(
 const price = computed(() => selectedVariant.value?.price ?? null);
 const compareAtPrice = computed(() => selectedVariant.value?.compareAtPrice ?? null);
 const available = computed(() => selectedVariant.value?.availableForSale ?? false);
+/* Track the add for the selected variant only: the cart store is shared with
+   every other button on the page, so its global flag is not this bar's state. */
+const adding = computed(() => isAdding(selectedVariant.value?.id));
 const onSale = computed(() => {
   if (!price.value || !compareAtPrice.value) {
     return false;
@@ -87,7 +90,7 @@ async function load() {
 }
 
 async function add() {
-  if (!selectedVariant.value || !available.value) {
+  if (!selectedVariant.value || !available.value || adding.value) {
     return;
   }
   await addToCart(selectedVariant.value.id, quantity.value);
@@ -139,7 +142,7 @@ watch(() => props.handle, load);
         <div class="buy-bar-qty" aria-label="Quantity">
           <button
             type="button"
-            :disabled="quantity <= 1 || cartLoading"
+            :disabled="quantity <= 1 || adding"
             aria-label="Decrease quantity"
             @click="quantity -= 1"
           >
@@ -148,7 +151,7 @@ watch(() => props.handle, load);
           <span>{{ quantity }}</span>
           <button
             type="button"
-            :disabled="cartLoading"
+            :disabled="adding"
             aria-label="Increase quantity"
             @click="quantity += 1"
           >
@@ -159,10 +162,10 @@ watch(() => props.handle, load);
         <button
           class="buy-bar-add"
           type="button"
-          :disabled="loading || cartLoading || !available"
+          :disabled="loading || adding || !available"
           @click="add"
         >
-          <Loader2 v-if="cartLoading" class="spin" aria-hidden="true" />
+          <Loader2 v-if="adding" class="spin" aria-hidden="true" />
           <ShoppingBag v-else aria-hidden="true" />
           {{ !product ? 'Loading…' : available ? 'Add to cart' : 'Sold out' }}
         </button>

@@ -19,13 +19,48 @@ import {
 const CART_STORAGE_KEY = 'kkshop:shopify-cart-id';
 
 const cart = ref(null); // Shopify `Cart` object, or null when there is no cart yet.
+// Cart-level work (restoring the cart, changing quantities). Deliberately NOT
+// set by addToCart(): one shared flag made every "Add to cart" button on a page
+// spin at once when a single card was clicked.
 const loading = ref(false);
 const error = ref(null);
+// Merchandise ids with an add request in flight, so each button can show its
+// own spinner instead of the whole grid reacting to one click.
+const pendingAdds = ref(new Set());
+// Merchandise id the current `error` came from; lets a card show only errors
+// about the item it owns.
+const errorMerchandiseId = ref(null);
 const isOpen = ref(false); // cart drawer visibility
 
 const count = computed(() => cart.value?.totalQuantity ?? 0);
 const subtotal = computed(() => cart.value?.cost?.subtotalAmount ?? null);
 const checkoutUrl = computed(() => cart.value?.checkoutUrl ?? null);
+
+/** Whether this exact merchandise id is mid-add. Safe to call from a template. */
+function isAdding(merchandiseId) {
+  return Boolean(merchandiseId) && pendingAdds.value.has(merchandiseId);
+}
+
+/** The current error when it belongs to `merchandiseId` (or to the cart as a whole). */
+function errorFor(merchandiseId) {
+  if (!error.value) {
+    return null;
+  }
+  if (errorMerchandiseId.value && errorMerchandiseId.value !== merchandiseId) {
+    return null;
+  }
+  return error.value;
+}
+
+function setError(message, merchandiseId = null) {
+  error.value = message;
+  errorMerchandiseId.value = message ? merchandiseId : null;
+}
+
+function clearError() {
+  error.value = null;
+  errorMerchandiseId.value = null;
+}
 
 function readStoredCartId() {
   if (typeof window === 'undefined') {
@@ -74,8 +109,10 @@ async function addToCart(merchandiseId, quantity = 1) {
   // returning silently: a missing build-time env var used to make every
   // "Add to cart" button on the live site look like a dead button.
   if (!isShopifyConfigured()) {
-    error.value =
-      'Online checkout is unavailable right now. Please email us and we will take your order.';
+    setError(
+      'Online checkout is unavailable right now. Please email us and we will take your order.',
+      merchandiseId,
+    );
     return false;
   }
 
@@ -87,8 +124,14 @@ async function addToCart(merchandiseId, quantity = 1) {
     return false;
   }
 
-  loading.value = true;
-  error.value = null;
+  // The same variant can be reachable from two buttons (a size card and the buy
+  // bar); the first click owns the request, so ignore the second.
+  if (isAdding(merchandiseId)) {
+    return false;
+  }
+
+  pendingAdds.value.add(merchandiseId);
+  clearError();
   try {
     const lines = [{ merchandiseId, quantity }];
     const nextCart =
@@ -110,7 +153,10 @@ async function addToCart(merchandiseId, quantity = 1) {
     );
 
     if (addedQuantity < 1) {
-      error.value = 'This item is out of stock right now. Email us and we will confirm availability.';
+      setError(
+        'This item is out of stock right now. Email us and we will confirm availability.',
+        merchandiseId,
+      );
       return false;
     }
 
@@ -125,10 +171,10 @@ async function addToCart(merchandiseId, quantity = 1) {
 
     return true;
   } catch (err) {
-    error.value = err.message || 'Could not add to cart.';
+    setError(err.message || 'Could not add to cart.', merchandiseId);
     return false;
   } finally {
-    loading.value = false;
+    pendingAdds.value.delete(merchandiseId);
   }
 }
 
@@ -137,7 +183,7 @@ async function updateQuantity(lineId, quantity) {
     return;
   }
   loading.value = true;
-  error.value = null;
+  clearError();
   try {
     if (quantity <= 0) {
       cart.value = await shopifyRemoveLines(cart.value.id, [lineId]);
@@ -145,7 +191,7 @@ async function updateQuantity(lineId, quantity) {
       cart.value = await shopifyUpdateLines(cart.value.id, [{ id: lineId, quantity }]);
     }
   } catch (err) {
-    error.value = err.message || 'Could not update cart.';
+    setError(err.message || 'Could not update cart.');
   } finally {
     loading.value = false;
   }
@@ -156,11 +202,11 @@ async function removeLine(lineId) {
     return;
   }
   loading.value = true;
-  error.value = null;
+  clearError();
   try {
     cart.value = await shopifyRemoveLines(cart.value.id, [lineId]);
   } catch (err) {
-    error.value = err.message || 'Could not remove item.';
+    setError(err.message || 'Could not remove item.');
   } finally {
     loading.value = false;
   }
@@ -184,6 +230,8 @@ export function useCart() {
     checkoutUrl,
     loading,
     error,
+    isAdding,
+    errorFor,
     isOpen,
     initCart,
     addToCart,
