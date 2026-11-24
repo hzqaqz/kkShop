@@ -134,6 +134,40 @@ export function initGoogleAnalytics(router) {
   // 首屏单独发一次（afterEach 注册时首跳可能已经发生），再接管后续跳转。
   sendPageView(router.currentRoute.value.fullPath);
   router.afterEach((to) => sendPageView(to.fullPath));
+
+  warmIdentifiers();
+}
+
+/**
+ * 预热 client_id / session_id 缓存。
+ *
+ * 为什么需要：`_ga` 和 `_ga_<container>` 是 gtag 第一次上报之后才写下的。如果访客
+ * 打开页面几秒内就点结账，点的那一刻 cookie 还不存在，会话号就拼不到链接上——
+ * 实测就是这个情况（gacid 有、gasid 没有）。
+ *
+ * 这里在后台反复试 10 秒，把值提前塞进缓存；点结账时直接命中，不用等。
+ */
+function warmIdentifiers() {
+  let tries = 0;
+  const tick = () => {
+    if (!cachedClientId) cachedClientId = clientIdFromCookie();
+    if (!cachedSession) cachedSession = sessionFromCookie();
+    if (!cachedSession) {
+      try {
+        window.gtag('get', GA4_ID, 'session_id', (sid) => {
+          if (sid && !cachedSession) {
+            cachedSession = { sid: String(sid), sct: sessionFromCookie()?.sct ?? '1' };
+          }
+        });
+      } catch {
+        // gtag 还没加载完就先靠 cookie
+      }
+    }
+    if ((cachedClientId && cachedSession) || tries >= 20) return;
+    tries += 1;
+    setTimeout(tick, 500);
+  };
+  tick();
 }
 
 /**
@@ -187,7 +221,8 @@ export function getGaSession() {
       resolve(value || null);
     };
 
-    setTimeout(() => finish(sessionFromCookie()), 800);
+    // 比 client_id 多等一会儿：会话 cookie 是首屏上报之后才写的
+    setTimeout(() => finish(sessionFromCookie()), 1500);
 
     try {
       window.gtag('get', GA4_ID, 'session_id', (sid) => {
