@@ -1,5 +1,94 @@
 # 结账页点 Logo 返回 meowerair.com（而不是 Shopify 页面）
 
+## 零、2026-11-25 回归：跳转又没了（先看这一节）
+
+线上实测（`npm run check:redirect`）：
+
+| 检查 | 结果 |
+|---|---|
+| `https://meowerair.myshopify.com/` | `200`，渲染的是市场主题 **Dwell**（theme id `188747940066`），**一点跳转代码都没有** |
+| `/collections/all`、`/products`、`/cart` | 都是 `200`，都没被送去主站 |
+| `/password` | `302`（密码保护是关的，这条没问题） |
+
+也就是说 2026-11-14 配好的那套（下面的方案 A `theme.liquid` 片段，或方案 B 的跳转主题）
+**在换主题 / 更新主题时被覆盖了**。表现是：付款完成页（`myshopify.com/…/thank_you`）上的
+Logo 和「Continue shopping」落在 Shopify 的 Dwell 首页上，不再回 `meowerair.com`。
+
+### 现在的做法：上传这个已经配好的包
+
+```text
+parked/shopify-headless-theme-meowerair.zip
+```
+
+1. Shopify 后台 → **在线商店 → 模板 → 添加模板 → 上传 zip 文件** → 选它；
+2. 新主题卡片 → **⋯ → 发布**；
+3. 终端跑 `npm run check:redirect`，**退出码 0** 才算好。
+
+这个包相对 `parked/shopify-headless-theme.zip`（原始下载版）改了四处：
+
+- 文件直接放在 zip 根目录，不再套一层 `shopify-headless-theme-master/`；
+- 加了 `config/settings_data.json`，**预填** `storefront_hostname = meowerair.com` 与
+  下面那 13 条 `custom_redirects` —— 上传+发布即可，不用再进主题编辑器手填；
+- 删掉 `.vscode/`、`README.md`、`LICENSE`、`package.json`；
+- 配色/字体/间距等设置全部写成 `settings_schema.json` 里的默认值，避免渲染时取到空值。
+
+> 万一上传报「无效的主题文件」：改用 `parked/shopify-headless-theme.zip` 上传，
+> 再进 **主题编辑器 → 主题设置 → Storefront** 手填下面两段（内容完全一样）。
+
+### Hostname
+
+```text
+meowerair.com
+```
+
+不带 `https://`，不带结尾斜杠。
+
+### Custom redirects（13 行，原样粘贴）
+
+```text
+/collections/all > /products
+/collections/frontpage > /products
+/pages/about > /business
+/products/meower-desktop-epa11-air-purifier-for-the-desk-the-bedside-table-the-study-corner > /products/desktop-air-purifier
+/products/framed-cat-scratching-board > /products/woven-sisal-cat-scratcher
+/products/sisal-cat-scratcher-lounger > /products/sisal-cat-scratcher
+/products/car-seat-pet-bed-travel-carrier > /products/car-pet-seat
+/products/travel-pet-stroller > /products/pet-stroller
+/products/3-in-1-triangle-cat-bed > /products/triangle-cat-bed
+/products/push-button-pom-pom-cat-toy > /products/pom-pom-cat-toy
+/products/meower-loofah-silvervine-cat-chew-toy-set-bread-cookie-donut > /products/loofah-cat-toy
+/products/meower-plush-squeaky-chew-toys-for-puppies-cats-machine-washable > /products/plush-squeaky-chew-toys
+/products/christmas-plaid-cat-dog-bed > /products/christmas-pet-bed
+```
+
+为什么需要这些映射：跳转主题默认按**同路径**换域名，而 Shopify 的 handle 与主站 slug
+大多对不上，直接换会 404 —— 比如 `/products/framed-cat-scratching-board` 在主站叫
+`/products/woven-sisal-cat-scratcher`。映射表跟着 `src/data/products.js` 的
+`shopifyHandle` 走，**新增/改名商品时要同步改这里**（`npm run check:redirect` 会报出漏掉的）。
+
+### 验收清单
+
+`npm run check:redirect` 自动覆盖前 4 条：
+
+- [ ] `https://meowerair.myshopify.com/` 源码里出现 `storefrontHostname = "meowerair.com"`
+- [ ] 无痕窗口打开 `https://meowerair.myshopify.com/` → 落到 `https://meowerair.com/`
+- [ ] `…myshopify.com/products/framed-cat-scratching-board` → 落到主站猫抓板页
+- [ ] `…myshopify.com/checkouts/…` 不被拦，结账照常
+- [ ] 真下一单：付款完成页点 Logo /「Continue shopping」→ 回主站
+- [ ] 订单邮件里的店铺链接 → 回主站
+
+### 这步对 GA4 有没有影响：没有
+
+GA4 归因靠的是结账链接上的 `?gacid=<client_id>`（见 `src/composables/useGoogleAnalytics.js`）
++ Shopify 侧自定义像素读这个参数，跟「结账挂在哪个域名」无关。跳转主题只接管**主题模板**
+（`/`、`/products/…`），`/cart/c/*`、`/checkouts/*`、`/orders/*` 都不经过它，
+`gacid` 也不会被丢。**不要**在任何地方给 `myshopify.com` 或结账路径加服务端 302。
+
+### 回滚
+
+在线商店 → 模板 → 点 Dwell 那张卡片 → **⋯ → 发布**。跳转主题会留在模板库里，
+下次直接发布就能恢复，不用重新上传。
+
 ## 一、为什么现在会跳去 Shopify
 
 Shopify 结账页（`meowerair.myshopify.com/checkouts/...`）顶部的 Logo 是一个**写死的链接**，
@@ -14,12 +103,12 @@ Shopify 结账页（`meowerair.myshopify.com/checkouts/...`）顶部的 Logo 是
 
 所以"改 Logo 链接"这条路不存在，**正确做法是让 Shopify 的根路径自己跳回 meowerair.com**。
 
-当前实测（2026-11-06）：
+当前实测（2026-11-06，2026-11-25 复核）：
 
 | 请求 | 结果 |
 |---|---|
-| Storefront API 建购物车 → `checkoutUrl` | `https://meowerair.myshopify.com/cart/c/...` |
-| `https://meowerair.myshopify.com/` | `302 → /password`（在线商店还开着密码保护） |
+| Storefront API 建购物车 → `checkoutUrl` | `https://meowerair.myshopify.com/cart/c/...`（2026-11-25 复核未变） |
+| `https://meowerair.myshopify.com/` | 2026-11-06：`302 → /password`（密码保护开着）；2026-11-25：`200` + Dwell 主题、无跳转（见「零」节） |
 
 也就是说：客户在结账页点左上角 Meower，会落到 Shopify 的密码页 / 主题首页，
 而不是 meowerair.com。
@@ -112,6 +201,8 @@ Shopify 结账页（`meowerair.myshopify.com/checkouts/...`）顶部的 Logo 是
 
 1. 拿到主题 zip：已经下载好放在仓库里 —— `parked/shopify-headless-theme.zip`
    （来源 <https://github.com/instantcommerce/shopify-headless-theme>，`master` 分支）；
+   **日常请用「零」节那个预配好的 `parked/shopify-headless-theme-meowerair.zip`**，
+   这个原始包只在预配包上传失败时当退路；
 2. `在线商店 → 模板` → 页面右上「**添加模板 / Add theme**」→「**上传 zip 文件 / Upload zip file**」→ 选这个 zip；
 3. 上传完成后，在新主题卡片上点「**自定义 / Customize**」→ 左侧「**主题设置 / Theme settings**」→
    「**Storefront**」→ `storefront_hostname` 填 `meowerair.com` → 保存；
