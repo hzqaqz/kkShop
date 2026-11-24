@@ -80,8 +80,9 @@ export const legalDocuments = {
       {
         heading: 'Cookies and local storage',
         paragraphs: [
-          'This site does not use advertising cookies. It uses browser storage for the shopping cart and to remember that a promotional panel has already been shown in the current session.',
-          'For traffic statistics we use a cookie-free analytics service that records aggregate page views and a few aggregated actions (such as an item being added to the cart). It sets no cookies, does not build a profile of you, does not follow you to other sites and does not collect your name, email address or precise location, which is why you are not asked to accept a cookie banner.',
+          'This site uses browser storage for the shopping cart and to remember that a promotional panel has already been shown in the current session.',
+          'For traffic statistics we use Plausible, a cookie-free analytics service that records aggregate page views and a few aggregated actions (such as an item being added to the cart). It sets no cookies, does not build a profile of you and does not follow you to other sites.',
+          'On product and checkout pages we also use Google Analytics 4 and Google Ads measurement, which do set cookies. What they collect and how to opt out is described under “Analytics and advertising” below.',
         ],
       },
       {
@@ -271,6 +272,44 @@ export const legalDocuments = {
       },
     ],
   },
+};
+
+/**
+ * Analytics and advertising disclosure for /privacy.
+ *
+ * Rendered by `LegalPage.vue` *outside* the synced Shopify policy body, the same
+ * way the "Fulfilment at a glance" box works on /shipping and /refunds.
+ *
+ * Why not put this in the Shopify policy only: the privacy page renders
+ * `policies.generated.json` (Shopify 后台 → 设置 → 政策), and that generated
+ * template says nothing about which analytics or advertising services this shop
+ * actually uses — it only offers a generic "cookies and similar technologies".
+ * Editing the admin policy is still the right long-term home for the wording,
+ * but any admin template the shop uses will not name these tools, so the
+ * disclosure would disappear on the next `npm run sync:policies`.
+ *
+ * Keep this factual. Naming the services and their opt-outs is what a shopper —
+ * and a Merchant Center reviewer — needs. Do not promise "no cookies" here:
+ * GA4 and Google Ads measurement do set them.
+ */
+export const analyticsNotice = {
+  heading: 'Analytics and advertising',
+  paragraphs: [
+    'Two analytics services help us understand how this site is used. Plausible Analytics records aggregate page views and a few aggregated actions, such as an item being added to the cart; it sets no cookies and does not build a profile of an individual visitor. Google Analytics 4 records visits and orders using cookies, so that we can see which pages and campaigns lead to a sale.',
+    'We advertise our products through Google Ads and Google Shopping. When you click one of those ads, Google and we use cookies and similar identifiers to measure whether that click resulted in an order, and to show our products to people who have shown interest in similar ones. The ads are served by Google, not by us.',
+    'These tools do not give us your name, email address or payment details. Orders and payments are handled by Shopify on its own checkout domain.',
+    'Where the law requires it, we ask for your consent before setting analytics or advertising cookies. You can withdraw that consent at any time by emailing info@meowerair.com.',
+  ],
+  links: [
+    {
+      label: 'Google Ads settings — turn off personalised advertising',
+      href: 'https://adssettings.google.com',
+    },
+    {
+      label: 'Google Analytics opt-out browser add-on',
+      href: 'https://tools.google.com/dlpage/gaoptout',
+    },
+  ],
 };
 
 export function getLegalDocument(slug) {

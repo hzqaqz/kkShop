@@ -5,7 +5,7 @@ import SiteBreadcrumbs from '../components/SiteBreadcrumbs.vue';
 import SiteHeader from '../components/SiteHeader.vue';
 import { useSeo } from '../composables/useSeo';
 import { contactEmailHref } from '../data/siteInfo';
-import { getLegalDocument } from '../data/legalContent';
+import { getLegalDocument, analyticsNotice } from '../data/legalContent';
 import { getShopifyPolicy } from '../data/policies';
 
 const props = defineProps({
@@ -36,6 +36,16 @@ const policy = computed(() => getShopifyPolicy(props.slug));
  */
 const FULFILMENT_SLUGS = ['shipping', 'refunds'];
 const showFulfilment = computed(() => FULFILMENT_SLUGS.includes(props.slug));
+
+/**
+ * Analytics and advertising disclosure on /privacy.
+ *
+ * Same reason as the fulfilment box above: the synced Shopify privacy template
+ * never names the services this shop actually uses (Plausible, GA4, Google Ads),
+ * so the disclosure is rendered here instead of inside the `v-html` body, where
+ * the next policy sync would replace it.
+ */
+const showAnalyticsNotice = computed(() => props.slug === 'privacy');
 
 const pageTitle = computed(() => doc.value?.title ?? policy.value?.title ?? 'Information');
 const lastUpdated = computed(() => policy.value?.lastUpdated || doc.value?.lastUpdated || '');
@@ -90,6 +100,20 @@ const breadcrumbs = computed(() => [
         </section>
       </template>
 
+      <section
+        v-if="showAnalyticsNotice"
+        class="legal-notice"
+        aria-labelledby="analytics-and-advertising"
+      >
+        <h2 id="analytics-and-advertising">{{ analyticsNotice.heading }}</h2>
+        <p v-for="paragraph in analyticsNotice.paragraphs" :key="paragraph">{{ paragraph }}</p>
+        <ul>
+          <li v-for="link in analyticsNotice.links" :key="link.href">
+            <a :href="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+          </li>
+        </ul>
+      </section>
+
       <aside class="legal-contact" aria-label="Contact about policies">
         <p>Something unclear, or a question about your own order?</p>
         <a class="legal-contact-link" :href="contactEmailHref">Email info@meowerair.com</a>
@@ -114,6 +138,16 @@ const breadcrumbs = computed(() => [
    `.legal-body` padding already provides it. */
 .legal-fulfilment { max-width: 860px; margin-bottom: clamp(26px, 3vw, 40px); }
 .legal-fulfilment :deep(.company-details) { margin-top: 0; }
+/* The analytics / advertising disclosure sits after the policy body and is
+   rendered outside `v-html`, so it needs its own typography to match
+   `.legal-prose` — scoped styles would not reach into the injected HTML, and
+   :deep() rules would not apply to this element's own children. */
+.legal-notice { max-width: 860px; margin-top: clamp(30px, 3.4vw, 46px); padding-top: clamp(26px, 3vw, 42px); border-top: 1px solid #ebe0d4; }
+.legal-notice h2 { margin: 0 0 14px; color: #314e53; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
+.legal-notice p { margin: 0 0 14px; color: #40595e; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.65; }
+.legal-notice ul { display: grid; gap: 8px; margin: 0; padding-left: 22px; color: #40595e; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.6; }
+.legal-notice a { color: #2f6d78; text-decoration: underline; text-underline-offset: 2px; }
+.legal-notice a:hover { color: #334c51; }
 .legal-section { max-width: 860px; padding-top: clamp(26px, 3vw, 42px); border-top: 1px solid #ebe0d4; }
 .legal-section + .legal-section { margin-top: clamp(26px, 3vw, 42px); }
 .legal-section h2 { margin: 0 0 14px; color: #314e53; font-size: clamp(22px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.02em; }
