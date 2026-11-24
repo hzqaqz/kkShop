@@ -32,6 +32,7 @@ const CONSENT_REQUIRED_REGIONS = [
 let started = false;
 let lastPagePath = null;
 let cachedClientId = null;
+let cachedSession = null;
 
 /** vite-ssg 会在 Node 里预渲染，所以这里的判断不能少。 */
 function shouldRun() {
@@ -57,6 +58,27 @@ function clientIdFromCookie() {
     const value = hit.slice('_ga='.length);
     const parts = value.split('.');
     return parts.length >= 4 ? parts.slice(2).join('.') : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 从 `_ga_<container>` cookie 读会话：`GS1.1.<session_start>.<session_number>.<...>`。
+ * 这个 cookie 的名字带容器 ID（不是 G- 开头那个），所以按前缀扫。
+ */
+function sessionFromCookie() {
+  try {
+    const hit = document.cookie
+      .split('; ')
+      .find((entry) => entry.startsWith('_ga_') && !entry.startsWith('_ga='));
+    if (!hit) return null;
+    const value = hit.slice(hit.indexOf('=') + 1);
+    const seg = value.split('.');
+    // GS1.1.1699999999.3.1.1699999999.0.0.0 —— 下标 2 是会话开始时间，3 是会话序号
+    if (seg[0] !== 'GS1' || seg.length < 4) return null;
+    if (!/^\d+$/.test(seg[2])) return null;
+    return { sid: seg[2], sct: /^\d+$/.test(seg[3]) ? seg[3] : '1' };
   } catch {
     return null;
   }
@@ -142,16 +164,68 @@ export function getGaClientId() {
 }
 
 /**
- * 给结账链接追加 `gacid=<client_id>`。
- * 拿不到 client_id 时原样返回 —— 宁可少一次归因，也不能让结账失败。
+ * 取当前会话的 `session_id` 和 `session_number`。
+ *
+ * 为什么需要它们：只有 client_id 的事件在 GA4 里能看见、能算电商，但**没有挂在
+ * 任何一段会话上**。而 Google Ads 导入 GA4 转化时要靠会话来建立归属，没有会话
+ * 的事件在 Ads 的「选择事件」列表里会显示为「无效」，导不进去。
+ *
+ * 优先用 `gtag('get', ..., 'session_id')`；拿不到就解析 `_ga_<container>` cookie
+ * （`GS1.1.<session_start>.<session_number>.<...>`）。两条都失败就返回 null——
+ * 这时宁可不带，也不要编一个假的会话号。
+ */
+export function getGaSession() {
+  if (!shouldRun()) return Promise.resolve(null);
+  if (cachedSession) return Promise.resolve(cachedSession);
+
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = (value) => {
+      if (settled) return;
+      settled = true;
+      if (value) cachedSession = value;
+      resolve(value || null);
+    };
+
+    setTimeout(() => finish(sessionFromCookie()), 800);
+
+    try {
+      window.gtag('get', GA4_ID, 'session_id', (sid) => {
+        const fromCookie = sessionFromCookie();
+        // gtag 只给 session_id，会话序号沿用 cookie 里的；都没有就退化成 1。
+        if (sid) {
+          finish({ sid: String(sid), sct: fromCookie?.sct ?? '1' });
+          return;
+        }
+        finish(fromCookie);
+      });
+    } catch {
+      finish(sessionFromCookie());
+    }
+  });
+}
+
+/**
+ * 给结账链接追加 GA 身份参数：
+ *   gacid=<client_id>   —— 订单归属到哪个访客
+ *   gasid=<session_id>  —— 归属到哪一段会话（Ads 导入转化需要）
+ *   gasct=<session_number>
+ *
+ * 拿不到就少拼几个参数，原样返回 —— 宁可少一次归因，也不能让结账失败。
  */
 export async function withGaClientId(url) {
   if (!url) return url;
-  const clientId = await getGaClientId();
-  if (!clientId) return url;
+
+  const [clientId, session] = await Promise.all([getGaClientId(), getGaSession()]);
+  if (!clientId && !session) return url;
+
   try {
     const target = new URL(url);
-    target.searchParams.set('gacid', clientId);
+    if (clientId) target.searchParams.set('gacid', clientId);
+    if (session?.sid) {
+      target.searchParams.set('gasid', session.sid);
+      target.searchParams.set('gasct', session.sct || '1');
+    }
     return target.toString();
   } catch {
     return url;
