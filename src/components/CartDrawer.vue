@@ -4,6 +4,7 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-vue-next';
 import { RouterLink } from 'vue-router';
 import { formatMoney } from '../composables/useShopify';
 import { useCart } from '../composables/useCart';
+import { withGaClientId } from '../composables/useGoogleAnalytics';
 import { products } from '../data/products';
 
 const { cart, count, subtotal, checkoutUrl, loading, error, isOpen, closeCart, updateQuantity, removeLine } =
@@ -11,11 +12,18 @@ const { cart, count, subtotal, checkoutUrl, loading, error, isOpen, closeCart, u
 
 const lines = computed(() => cart.value?.lines?.nodes ?? []);
 
-function checkout() {
+/**
+ * 跳 Shopify 结账。
+ *
+ * `withGaClientId` 会在链接上补 `gacid=<GA client_id>`：这是程序化跳转，
+ * gtag 的自动跨域装饰管不到，而 Shopify 侧的自定义像素要靠它把订单算到
+ * 同一个访客（进而算到广告点击）头上。拿不到 id 时原样返回，不影响结账。
+ */
+async function checkout() {
   if (!checkoutUrl.value) {
     return;
   }
-  window.location.assign(checkoutUrl.value);
+  window.location.assign(await withGaClientId(checkoutUrl.value));
 }
 
 function lineTitle(line) {

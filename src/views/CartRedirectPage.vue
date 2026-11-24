@@ -20,6 +20,7 @@ import SiteHeader from '../components/SiteHeader.vue';
 import { useCart } from '../composables/useCart';
 import { useSeo } from '../composables/useSeo';
 import { track } from '../composables/useAnalytics';
+import { withGaClientId } from '../composables/useGoogleAnalytics';
 
 const { initCart, checkoutUrl, count } = useCart();
 
@@ -50,7 +51,8 @@ onMounted(async () => {
     // 所以「加购 → 结账跳转 → Shopify 订单」这条漏斗里，本站负责前两段。
     track('begin_checkout', { items: count.value });
     // `replace` 而不是 `assign`：不要把这个中转页留在浏览器历史里。
-    window.location.replace(checkoutUrl.value);
+    // 链接上补 `gacid`：Shopify 结账页的像素要靠它把订单算回同一个访客 / 同一次广告点击。
+    window.location.replace(await withGaClientId(checkoutUrl.value));
     return;
   }
 
